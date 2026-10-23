@@ -9,6 +9,7 @@ Proyecto de la web de StateX, startup de ciberseguridad. Fase actual: **explorac
 - **Áreas:** External Attack Surface Assessment, Web Application Security, Vulnerability Assessment, Security Engineering, AI-Assisted Security Research. Complementario: ingeniería de software y automatización.
 - **Método:** Alcance → Descubrimiento → Verificación → Priorización → Reducción. La monitorización continua es roadmap, no capacidad actual.
 - **Origen (verificado):** blog InfoStateX (archivo 2012–2018) y DoubleReboot ("Un proyecto de State X", 2013 y 2016). Ver `docs/design-research.md`.
+- **Decisiones:** año de origen 2012; web y menú en español; no mostrar las certificaciones del blog (CEH, perito) sin confirmar vigencia; CTA de contacto pendiente de email/formulario.
 - **Tono:** profesional, técnico, claro y creíble.
 - **Para quién:** empresas medianas y scaleups (España / UE); interlocutores CTO, CISO o responsable de IT. `[POR CONFIRMAR: segmento prioritario]`
 

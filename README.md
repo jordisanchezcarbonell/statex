@@ -99,10 +99,16 @@ Se recomienda tener instalado el plugin oficial `frontend-design`:
 
 Las reglas completas están en [`CLAUDE.md`](CLAUDE.md).
 
+## Decisiones tomadas
+
+- Año de origen: **2012** (primer año del archivo de InfoStateX).
+- Idioma: **español**, incluido el menú.
+- Certificaciones del blog (CEH, perito telemático forense): **no se muestran** hasta confirmar su vigencia.
+- Botón de contacto: **pendiente** hasta definir email o formulario.
+
 ## Pendiente
 
 - Elegir la dirección de marca que se va a desarrollar.
-- Confirmar el año de origen (el archivo de InfoStateX empieza en 2012; el brief decía 2013).
 - Definir el destino del CTA de contacto (formulario o email).
 - Confirmar las automatizaciones internas de «Disponible hoy» y el equipo de «Sobre StateX».
 - Añadir los datos legales.
