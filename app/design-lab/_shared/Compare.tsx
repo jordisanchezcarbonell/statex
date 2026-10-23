@@ -6,17 +6,20 @@ import { DIRECTIONS } from "../directions";
 
 const SIZES = { desktop: { w: 1440, h: 900 }, mobile: { w: 390, h: 844 } } as const;
 type Device = keyof typeof SIZES;
+type View = "home" | "marca";
 const STORE = "statex-lab-shortlist";
 
 export function Compare() {
   const [active, setActive] = useState(0);
   const [device, setDevice] = useState<Device>("desktop");
+  const [view, setView] = useState<View>("home");
   const [scale, setScale] = useState(0.5);
   const [shortlist, setShortlist] = useState<string[]>([]);
   const stage = useRef<HTMLDivElement>(null);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const d = DIRECTIONS[active];
   const size = SIZES[device];
+  const src = `/design-lab/${d.slug}${view === "marca" ? "/marca" : ""}`;
 
   // Preselección solo en este navegador (localStorage puede no estar disponible).
   useEffect(() => {
@@ -45,7 +48,7 @@ export function Compare() {
     return () => ro.disconnect();
   }, [device, size.w, size.h]);
 
-  // Teclas 1–6 para saltar entre conceptos.
+  // Teclas 1–7 para saltar entre conceptos.
   useEffect(() => {
     const onKey = (e: globalThis.KeyboardEvent) => {
       if ((e.target as HTMLElement).closest("input, textarea, select")) return;
@@ -66,12 +69,13 @@ export function Compare() {
   }
 
   const focus = "focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-zinc-900";
+  const seg = (on: boolean) => `min-h-11 rounded-md px-3.5 ${focus} ${on ? "bg-zinc-900 text-white" : "hover:bg-zinc-100"}`;
   const picked = shortlist.includes(d.slug);
 
   return (
     <>
-      <div className="mb-4 flex flex-wrap items-stretch justify-between gap-3">
-        <div role="tablist" aria-label="Conceptos" onKeyDown={onTabKey} className="grid min-w-0 flex-[1_1_720px] grid-cols-2 gap-1.5 sm:grid-cols-3 xl:grid-cols-6">
+      <div className="mb-4 grid gap-3">
+        <div role="tablist" aria-label="Conceptos" onKeyDown={onTabKey} className="grid grid-cols-2 gap-1.5 sm:grid-cols-4 xl:grid-cols-7">
           {DIRECTIONS.map((x, i) => {
             const sel = i === active;
             return (
@@ -87,22 +91,20 @@ export function Compare() {
                 className={`grid min-h-14 gap-0.5 rounded-[10px] border px-3.5 py-2.5 text-left ${focus} ${sel ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-300 bg-white hover:border-zinc-900"}`}
               >
                 <b className="text-[15px]">Concept {x.letter}{shortlist.includes(x.slug) ? " ★" : ""}</b>
-                <span className={`text-[13px] ${sel ? "text-zinc-300" : "text-zinc-600"}`}>{x.name}</span>
+                <span className={`text-[13px] leading-snug ${sel ? "text-zinc-300" : "text-zinc-600"}`}>{x.name}</span>
               </button>
             );
           })}
         </div>
-        <div role="group" aria-label="Tamaño de pantalla" className="flex gap-1 rounded-[10px] border border-zinc-300 bg-white p-1">
-          {(["desktop", "mobile"] as const).map((dev) => (
-            <button
-              key={dev}
-              aria-pressed={device === dev}
-              onClick={() => setDevice(dev)}
-              className={`min-h-11 rounded-md px-3.5 ${focus} ${device === dev ? "bg-zinc-900 text-white" : "hover:bg-zinc-100"}`}
-            >
-              {dev === "desktop" ? "Escritorio" : "Móvil"}
-            </button>
-          ))}
+        <div className="flex flex-wrap gap-3">
+          <div role="group" aria-label="Qué ver" className="flex gap-1 rounded-[10px] border border-zinc-300 bg-white p-1">
+            <button aria-pressed={view === "home"} onClick={() => setView("home")} className={seg(view === "home")}>Homepage</button>
+            <button aria-pressed={view === "marca"} onClick={() => setView("marca")} className={seg(view === "marca")}>Identidad de marca</button>
+          </div>
+          <div role="group" aria-label="Tamaño de pantalla" className="flex gap-1 rounded-[10px] border border-zinc-300 bg-white p-1">
+            <button aria-pressed={device === "desktop"} onClick={() => setDevice("desktop")} className={seg(device === "desktop")}>Escritorio</button>
+            <button aria-pressed={device === "mobile"} onClick={() => setDevice("mobile")} className={seg(device === "mobile")}>Móvil</button>
+          </div>
         </div>
       </div>
 
@@ -113,9 +115,9 @@ export function Compare() {
             style={{ width: size.w * scale, height: size.h * scale }}
           >
             <iframe
-              key={`${d.slug}-${device}`}
-              src={`/design-lab/${d.slug}`}
-              title={`Concept ${d.letter} en ${device === "desktop" ? "escritorio" : "móvil"}`}
+              key={`${src}-${device}`}
+              src={src}
+              title={`Concept ${d.letter}, ${view === "home" ? "homepage" : "identidad"} en ${device === "desktop" ? "escritorio" : "móvil"}`}
               width={size.w}
               height={size.h}
               className="absolute left-0 top-0 origin-top-left border-0"
@@ -126,8 +128,8 @@ export function Compare() {
 
         <aside className="rounded-xl border border-zinc-300 bg-white p-5">
           <h2 className="text-xl font-bold leading-tight">
-            Concept {d.letter}
-            <span className="block text-base font-medium text-zinc-600">{d.name}</span>
+            <span className="block text-base font-medium text-zinc-600">Concept {d.letter}</span>
+            {d.name}
           </h2>
           <p className="mt-3">{d.intent}</p>
           <dl className="mt-4 grid gap-1 text-[15px]">
@@ -139,7 +141,7 @@ export function Compare() {
             <dd>
               <ul>{d.fonts.map((f) => <li key={f.family}><b>{f.family}</b><span className="block text-zinc-600">{f.role}</span></li>)}</ul>
             </dd>
-            <dt className="mt-2 text-zinc-600">Referencias que lo inspiran</dt>
+            <dt className="mt-2 text-zinc-600">Referencias verificadas</dt>
             <dd>
               <ul className="grid gap-1.5">
                 {d.references.map((r) => (
@@ -161,7 +163,10 @@ export function Compare() {
           </ul>
           <div className="grid gap-2">
             <Link href={`/design-lab/${d.slug}`} className={`flex min-h-11 items-center justify-center rounded-lg bg-zinc-900 px-3.5 text-center font-semibold text-white hover:bg-zinc-700 ${focus}`}>
-              Abrir Concept {d.letter} a pantalla completa
+              Abrir homepage completa
+            </Link>
+            <Link href={`/design-lab/${d.slug}/marca`} className={`flex min-h-11 items-center justify-center rounded-lg border border-zinc-300 px-3.5 text-center font-semibold hover:border-zinc-900 ${focus}`}>
+              Abrir identidad de marca
             </Link>
             <button
               aria-pressed={picked}
@@ -175,17 +180,18 @@ export function Compare() {
       </div>
 
       <section aria-labelledby="table-title" className="mt-14">
-        <h2 id="table-title" className="text-xl font-bold">Comparativa de los seis conceptos</h2>
-        <p className="mt-1 text-zinc-600">Tipografías, colores y recurso principal de cada dirección.</p>
+        <h2 id="table-title" className="text-xl font-bold">Comparativa de las direcciones</h2>
+        <p className="mt-1 text-zinc-600">Tipografías, colores, recurso principal, ventajas e inconvenientes.</p>
         <div className="mt-5 overflow-x-auto rounded-xl border border-zinc-300 bg-white">
-          <table className="w-full min-w-[900px] border-collapse text-left text-[14px]">
+          <table className="w-full min-w-[1100px] border-collapse text-left text-[14px]">
             <thead className="bg-zinc-50 text-zinc-600">
               <tr>
                 <th scope="col" className="p-3 font-semibold">Concepto</th>
                 <th scope="col" className="p-3 font-semibold">Tipografía</th>
                 <th scope="col" className="p-3 font-semibold">Paleta</th>
                 <th scope="col" className="p-3 font-semibold">Lo memorable</th>
-                <th scope="col" className="p-3 font-semibold">Referencias</th>
+                <th scope="col" className="p-3 font-semibold">Ventajas</th>
+                <th scope="col" className="p-3 font-semibold">Inconvenientes</th>
               </tr>
             </thead>
             <tbody>
@@ -206,7 +212,8 @@ export function Compare() {
                     </div>
                   </td>
                   <td className="p-3">{x.memorable}</td>
-                  <td className="p-3">{x.references.map((r) => r.name).join(", ")}</td>
+                  <td className="p-3"><ul className="grid list-disc gap-1 pl-4">{x.pros.map((t) => <li key={t}>{t}</li>)}</ul></td>
+                  <td className="p-3"><ul className="grid list-disc gap-1 pl-4">{x.cons.map((t) => <li key={t}>{t}</li>)}</ul></td>
                 </tr>
               ))}
             </tbody>

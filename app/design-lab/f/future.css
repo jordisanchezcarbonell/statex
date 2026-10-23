@@ -1,0 +1,31 @@
+/* Concept F — Future Security. Tokens y estilos propios de esta ruta. */
+.future-root {
+  --nieve: #f7f8fb;
+  --tinta: #0a0f1f;
+  --cobalto: #2c4bff;
+  --violeta: #7a5cff;
+  --hielo: #bfe6ff;
+  --lavanda: #b9a8ff;
+  --gris: #4a5164;
+  font-family: var(--font-future), system-ui, sans-serif;
+  overflow-x: clip;
+}
+
+.future-root :focus-visible {
+  outline: 2px solid var(--cobalto);
+  outline-offset: 3px;
+}
+
+.future-root .f-dark :focus-visible {
+  outline-color: var(--hielo);
+}
+
+.future-root ::selection {
+  background: var(--hielo);
+  color: var(--tinta);
+}
+
+/* Piezas de marca dentro de BrandBoard (que fija font-sans en su <main>). */
+.future-root .ff {
+  font-family: var(--font-future), system-ui, sans-serif;
+}

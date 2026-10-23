@@ -5,9 +5,10 @@ Proyecto de la web de StateX, startup de ciberseguridad. Fase actual: **explorac
 ## Posicionamiento
 
 - **Marca:** únicamente **StateX**. Sin submarcas ni nombres comerciales alternativos.
-- **Qué es:** startup de ciberseguridad especializada en **descubrir, evaluar y reducir la exposición externa** de las organizaciones (todo lo que se ve y se puede atacar desde internet).
-- **Servicios complementarios:** seguridad web (aplicaciones y APIs), ingeniería y automatización (infraestructura como código, pipelines seguros, controles automatizados).
-- **Método:** Descubrir → Evaluar → Reducir → Vigilar.
+- **Qué es:** startup de ciberseguridad (fase inicial) especializada en **detectar, comprender y reducir riesgos** en entornos digitales, con foco en la exposición externa. Hoy es una firma de servicios con vocación de producto; **no** presentarla como financiada ni como SaaS operativo.
+- **Áreas:** External Attack Surface Assessment, Web Application Security, Vulnerability Assessment, Security Engineering, AI-Assisted Security Research. Complementario: ingeniería de software y automatización.
+- **Método:** Alcance → Descubrimiento → Verificación → Priorización → Reducción. La monitorización continua es roadmap, no capacidad actual.
+- **Origen (verificado):** blog InfoStateX (archivo 2012–2018) y DoubleReboot ("Un proyecto de State X", 2013 y 2016). Ver `docs/design-research.md`.
 - **Tono:** profesional, técnico, claro y creíble.
 - **Para quién:** empresas medianas y scaleups (España / UE); interlocutores CTO, CISO o responsable de IT. `[POR CONFIRMAR: segmento prioritario]`
 
@@ -49,24 +50,29 @@ Proyecto de la web de StateX, startup de ciberseguridad. Fase actual: **explorac
 ```
 app/
   design-lab/
-    page.tsx              # Comparador con selector (pestañas, teclas 1–4, escritorio/móvil)
+    page.tsx              # Comparador (pestañas/teclas 1–7, homepage/identidad, escritorio/móvil, tabla)
     content.ts            # Contenido ÚNICO de StateX compartido por todos los conceptos
-    directions.ts         # Metadatos de cada concepto (paleta, tipografía, intención)
-    _shared/              # LabBar (navegación entre conceptos) y Compare (selector)
-    a/ b/ c/ d/           # Concept A–D: misma estructura, distinta dirección artística
+    directions.ts         # Metadatos: paleta, tipografía, referencias verificadas, ventajas/inconvenientes
+    _shared/              # Compare, LabBar y BrandBoard (ficha de identidad común)
+    a/ … g/               # Concept A–G: homepage (page.tsx) + identidad (marca/page.tsx)
+docs/
+  design-research.md      # Investigación de referencias (rondas 1–3) y hechos verificados de la marca
+  capturas/               # Capturas de los conceptos
 .claude/
-  agents/                 # creative-director, frontend-engineer, ux-reviewer, security-reviewer
+  agents/                 # creative-director, brand-strategist, frontend-engineer, ux-reviewer, security-reviewer
   skills/                 # statex-design-lab, statex-ux-audit
 ```
 
-Regla del design lab: los conceptos comparan **diseño**, no negocios. Todos consumen `content.ts` y tienen las mismas secciones (hero, servicios, método, entregables, CTA). Los nombres "Concept A–D" son internos; la marca visible es siempre StateX.
+Regla del design lab: los conceptos comparan **diseño**, no negocios. Todos consumen `content.ts` y tienen las mismas secciones y ids: hero, `#problema`, `#enfoque`, `#soluciones`, `#tecnologia` (Hoy vs Visión, siempre separados), `#investigacion`, `#sobre`, `#contacto` (vía empresas + vía inversores/socios). Los nombres "Concept A–G" son internos; la marca visible es siempre StateX.
+
+Aviso: el repositorio está conectado a Vercel; **un push a `main` publica el design lab**. No hacer push sin aprobación explícita.
 
 ## Flujo de trabajo con agentes y skills
 
 - Explorar o iterar direcciones visuales → skill `statex-design-lab` (usa `frontend-design` si está disponible).
 - Revisar una propuesta → skill `statex-ux-audit` o agente `ux-reviewer`.
 - Antes de cualquier merge que toque dependencias, formularios, cabeceras o contenido con afirmaciones → agente `security-reviewer`.
-- Decisiones de dirección de arte → agente `creative-director`; implementación → `frontend-engineer`.
+- Decisiones de dirección de arte → agente `creative-director`; posicionamiento y mensajes → `brand-strategist`; implementación → `frontend-engineer`.
 
 ## Calidad mínima
 

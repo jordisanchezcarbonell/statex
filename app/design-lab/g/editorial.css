@@ -1,0 +1,32 @@
+/* Concept G — piezas que Tailwind no expresa bien: barras de censura y cursor. */
+
+/* Barras de censura: decorativas. Solo existen si hay JS (scripting) y no se pide
+   movimiento reducido; sin JS el texto se ve siempre. */
+.ed-bar {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+  background: var(--ink, #111111);
+  transform-origin: var(--ed-origin, left) center;
+}
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .ed-bar { display: block; }
+}
+
+/* Barras del titular: se retiran solas con CSS, sin esperar a la hidratación. */
+.ed-bar--intro {
+  animation: ed-uncover 0.75s cubic-bezier(0.76, 0, 0.24, 1) var(--ed-delay, 0s) both;
+}
+@keyframes ed-uncover {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+
+/* Cursor de terminal: parpadea cinco veces y se queda fijo (WCAG 2.2.2). */
+.ed-cursor { animation: ed-blink 1.1s steps(1, end) 5; }
+@keyframes ed-blink {
+  50% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ed-cursor { animation: none; }
+}

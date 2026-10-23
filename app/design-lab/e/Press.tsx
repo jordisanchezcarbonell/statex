@@ -10,36 +10,53 @@ function hardShadow(color: string, d = SHADOW) {
   return `${d}px ${d}px 0px 0px ${color}`;
 }
 
-/** Enlace con sombra dura que "se pulsa": se desplaza sobre su sombra al hover o al pulsar. */
-export function PressLink({
-  href,
-  children,
-  className = "",
-  shadowColor = "#000000",
-  describedBy,
-}: {
-  href: string;
+const spring = { type: "spring", stiffness: 700, damping: 32 } as const;
+const pressBase =
+  "inline-flex items-center justify-center border-[3px] border-black font-bold leading-none tracking-[-0.01em] focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[var(--e-cobalt)]";
+
+function usePress(shadowColor: string) {
+  const reduce = useReducedMotion();
+  const pressed = { x: SHADOW, y: SHADOW, boxShadow: hardShadow(shadowColor, 0) };
+  return {
+    initial: false as const,
+    style: { boxShadow: hardShadow(shadowColor) },
+    whileHover: reduce ? undefined : pressed,
+    whileTap: reduce ? undefined : pressed,
+    transition: spring,
+  };
+}
+
+type PressProps = {
   children: ReactNode;
   className?: string;
   shadowColor?: string;
   describedBy?: string;
-}) {
-  const reduce = useReducedMotion();
-  const pressed = { x: SHADOW, y: SHADOW, boxShadow: hardShadow(shadowColor, 0) };
+};
 
+/** Enlace con sombra dura que "se pulsa": se desplaza sobre su sombra al hover o al pulsar. */
+export function PressLink({
+  href,
+  onClick,
+  children,
+  className = "",
+  shadowColor = "#000000",
+  describedBy,
+}: PressProps & { href: string; onClick?: () => void }) {
+  const press = usePress(shadowColor);
   return (
-    <motion.a
-      href={href}
-      aria-describedby={describedBy}
-      initial={false}
-      style={{ boxShadow: hardShadow(shadowColor) }}
-      whileHover={reduce ? undefined : pressed}
-      whileTap={reduce ? undefined : pressed}
-      transition={{ type: "spring", stiffness: 700, damping: 32 }}
-      className={`inline-flex items-center justify-center whitespace-nowrap border-[3px] border-black font-bold leading-none tracking-[-0.01em] focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[var(--e-cobalt)] ${className}`}
-    >
+    <motion.a href={href} onClick={onClick} aria-describedby={describedBy} {...press} className={`${pressBase} whitespace-nowrap ${className}`}>
       {children}
     </motion.a>
+  );
+}
+
+/** Mismo gesto para botones (contacto pendiente de destino real). */
+export function PressButton({ children, className = "", shadowColor = "#000000", describedBy }: PressProps) {
+  const press = usePress(shadowColor);
+  return (
+    <motion.button type="button" aria-describedby={describedBy} {...press} className={`${pressBase} cursor-pointer ${className}`}>
+      {children}
+    </motion.button>
   );
 }
 
@@ -77,7 +94,7 @@ export function HeroStack() {
             <motion.div
               initial={false}
               whileHover={reduce ? undefined : pressed}
-              transition={{ type: "spring", stiffness: 700, damping: 32 }}
+              transition={spring}
               style={{ boxShadow: hardShadow("#000000") }}
               className="flex min-w-0 flex-wrap items-center justify-between gap-x-3 gap-y-2 border-[3px] border-black bg-white px-4 py-3.5 sm:px-5"
             >

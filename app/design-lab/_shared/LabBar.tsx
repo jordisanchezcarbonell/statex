@@ -7,7 +7,7 @@ export function LabBar({ current }: { current: string }) {
   const prev = DIRECTIONS[(i - 1 + DIRECTIONS.length) % DIRECTIONS.length];
   const next = DIRECTIONS[(i + 1) % DIRECTIONS.length];
   const here = DIRECTIONS[i];
-  const item = "inline-flex min-h-9 items-center justify-center rounded-full hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
+  const item = "inline-flex min-h-11 items-center justify-center rounded-full hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
 
   return (
     <nav
@@ -16,8 +16,9 @@ export function LabBar({ current }: { current: string }) {
     >
       <Link href="/design-lab" className={`${item} bg-white/10 px-3.5`}>Design lab</Link>
       <Link href={`/design-lab/${prev.slug}`} className={`${item} w-9 text-xl`} aria-label={`Anterior: Concept ${prev.letter}`}>‹</Link>
-      <span className="min-w-[6.5em] px-2 text-center" title={here.name}>Concept {here.letter}</span>
+      <span className="min-w-[6.5em] px-2 text-center" title={here?.name}>Concept {here?.letter}</span>
       <Link href={`/design-lab/${next.slug}`} className={`${item} w-9 text-xl`} aria-label={`Siguiente: Concept ${next.letter}`}>›</Link>
+      <Link href={`/design-lab/${here?.slug}/marca`} className={`${item} px-3`}>Marca</Link>
     </nav>
   );
 }
