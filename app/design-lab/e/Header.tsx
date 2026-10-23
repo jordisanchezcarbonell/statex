@@ -2,7 +2,10 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { brand, cta, nav } from "../content";
+import { brand, cta, nav as baseNav, offers } from "../content";
+
+// E es la versión orientada a vender: añade las ofertas al menú, justo después de Soluciones.
+const nav = [baseNav[0], { href: "#ofertas", label: offers.label }, ...baseNav.slice(1)];
 import { PressLink } from "./Press";
 import s from "./e.module.css";
 

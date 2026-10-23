@@ -204,6 +204,105 @@ export const contact = {
   pending: "[Pendiente: email o formulario de contacto]",
 };
 
+// Ofertas de entrada: empaquetan los servicios en algo que una empresa puede pedir.
+// Sin precios inventados: el precio y el plazo quedan pendientes.
+export const offers = {
+  label: "Ofertas",
+  title: "Por dónde empezar.",
+  intro: "Tres formas de trabajar con StateX, de la más acotada a la más profunda. Todas terminan en un informe que tu equipo puede ejecutar.",
+  items: [
+    {
+      id: "evaluacion-inicial",
+      name: "Evaluación inicial de exposición",
+      forWho: "Para saber qué ve hoy un atacante cuando mira tu empresa.",
+      includes: [
+        "Inventario de lo que expones en internet",
+        "Verificación de los hallazgos de mayor riesgo",
+        "Resumen ejecutivo y sesión de resultados",
+      ],
+      featured: true,
+    },
+    {
+      id: "auditoria-web",
+      name: "Auditoría de aplicación web",
+      forWho: "Para una aplicación o API concreta, antes o después de publicarla.",
+      includes: [
+        "Autenticación, control de acceso y lógica de negocio",
+        "Informe técnico con evidencias y plan de corrección",
+        "Sesión con tu equipo de desarrollo",
+      ],
+      featured: false,
+    },
+    {
+      id: "arquitectura",
+      name: "Revisión de arquitectura y hardening",
+      forWho: "Para infraestructuras y entornos cloud que van a crecer.",
+      includes: [
+        "Revisión de servidores, nube y servicios expuestos",
+        "Recomendaciones de hardening priorizadas",
+        "Acompañamiento al aplicar los cambios",
+      ],
+      featured: false,
+    },
+  ],
+  cta: "Pedir esta evaluación",
+  pricePending: "[Pendiente: precio y plazo]",
+};
+
+export const faq = {
+  label: "Preguntas frecuentes",
+  title: "Lo que suelen preguntarnos.",
+  items: [
+    {
+      q: "¿Es legal que probéis la seguridad de nuestra web?",
+      a: "Sí, si lo autorizáis. Firmamos el alcance y la autorización por escrito antes de empezar; sin ese documento no se hace ninguna prueba.",
+    },
+    {
+      q: "¿Puede afectar a nuestros sistemas en producción?",
+      a: "Acordamos con tu equipo qué se prueba, cuándo y con qué intensidad. Lo que pueda afectar al servicio se coordina antes.",
+    },
+    {
+      q: "¿Qué necesitáis de nosotros?",
+      a: "Una persona de contacto técnica, la lista de dominios o aplicaciones a evaluar y la autorización firmada.",
+    },
+    {
+      q: "¿Cuánto cuesta?",
+      a: "Depende del alcance. Tras una primera conversación te enviamos una propuesta cerrada, sin compromiso.",
+    },
+    {
+      q: "¿Qué hacéis con la información que encontráis?",
+      a: "La tratamos como confidencial y solo la compartimos con las personas que designéis.",
+    },
+  ],
+};
+
+// Formulario de contacto: textos de interfaz. El envío lo gestiona app/actions/contact.ts.
+export const contactForm = {
+  title: "Solicita tu evaluación",
+  fields: {
+    name: "Nombre",
+    company: "Empresa",
+    email: "Email de trabajo",
+    role: "Cargo (opcional)",
+    interest: "Qué te interesa",
+    message: "Cuéntanos qué quieres proteger",
+  },
+  interestOptions: [
+    { value: "evaluacion-inicial", label: "Evaluación inicial de exposición" },
+    { value: "auditoria-web", label: "Auditoría de aplicación web" },
+    { value: "arquitectura", label: "Revisión de arquitectura y hardening" },
+    { value: "otra", label: "Otra consulta" },
+    { value: "colaboracion", label: "Inversión o colaboración" },
+  ],
+  consent: "Acepto que StateX use estos datos solo para responder a mi solicitud.",
+  privacyPending: "[Pendiente: enlace a la política de privacidad]",
+  submit: "Enviar solicitud",
+  sending: "Enviando…",
+  success: "Solicitud enviada. Te responderemos lo antes posible.",
+  error: "No se ha podido enviar. Revisa los campos marcados e inténtalo de nuevo.",
+  notConfigured: "El formulario todavía no está conectado a un buzón de correo. [Pendiente: configurar el envío]",
+};
+
 export const footer = { legal: "[Pendiente: datos legales]", year: "2026" };
 
 // Datos para tarjeta digital y portada de pitch deck: sin inventar personas.

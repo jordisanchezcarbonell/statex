@@ -7,8 +7,10 @@ import {
   complementary,
   contact,
   cta,
+  faq,
   footer,
   hero,
+  offers,
   problem,
   sections,
   solutions,
@@ -18,7 +20,8 @@ import {
 import { LabBar } from "../_shared/LabBar";
 import { Header } from "./Header";
 import { Research } from "./Research";
-import { HeroStack, PressButton, PressLink } from "./Press";
+import { ContactForm, OfferLink } from "./ContactForm";
+import { HeroStack, PressLink } from "./Press";
 import s from "./e.module.css";
 
 export const metadata: Metadata = { title: "Concept E" };
@@ -104,8 +107,8 @@ export default function ConceptE() {
                   <PressLink href="#contacto" className="min-h-12 bg-[var(--e-cobalt)] px-5 text-[17px] text-white">
                     {cta.primary}
                   </PressLink>
-                  <PressLink href="#soluciones" className="min-h-12 bg-white px-5 text-[17px] text-black">
-                    {cta.explore}
+                  <PressLink href="#ofertas" className="min-h-12 bg-white px-5 text-[17px] text-black">
+                    Ver por dónde empezar
                   </PressLink>
                 </div>
               </div>
@@ -195,6 +198,44 @@ export default function ConceptE() {
           </div>
         </section>
 
+        {/* Ofertas: lo que una empresa puede pedir hoy */}
+        <section id="ofertas" aria-labelledby="e-ofertas" className="scroll-mt-4 border-b-[3px] border-black bg-[var(--e-lilac)]">
+          <div className={`${wrap} py-20 lg:py-28`}>
+            <SectionHead id="e-ofertas" label={offers.label} title={offers.title} intro={offers.intro} />
+            <ol className="m-0 mt-12 grid list-none gap-8 p-0 lg:grid-cols-3">
+              {offers.items.map((o, i) => (
+                <li
+                  key={o.id}
+                  className={`flex flex-col border-[3px] border-black p-6 sm:p-8 ${
+                    o.featured ? "bg-black text-[var(--e-concrete)] shadow-[6px_6px_0_0_var(--e-cobalt)]" : "bg-white"
+                  }`}
+                >
+                  <span className={`${monoLabel} ${o.featured ? "text-[var(--e-mint)]" : ""}`}>
+                    {o.featured ? "Recomendado para empezar" : `Opción ${i + 1}`}
+                  </span>
+                  <h3 className={`${s.display} m-0 mt-5 text-[clamp(1.8rem,2.6vw,2.4rem)] leading-[0.95]`}>{o.name}</h3>
+                  <p className="m-0 mt-4 text-[18px]">{o.forWho}</p>
+                  <ul className="m-0 mt-6 grid flex-1 list-none content-start gap-3 p-0">
+                    {o.includes.map((x) => (
+                      <li key={x} className="grid grid-cols-[auto_1fr] gap-3">
+                        <span aria-hidden="true" className={`mt-[0.45em] block size-3.5 ${o.featured ? "bg-[var(--e-mint)]" : "bg-black"}`} />
+                        <span>{x}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className={`${s.pending} m-0 mt-6 self-start`}>{offers.pricePending}</p>
+                  <OfferLink
+                    interest={o.id}
+                    className={`mt-6 self-start text-[17px] ${o.featured ? "bg-[var(--e-mint)] text-black" : "bg-[var(--e-cobalt)] text-white"}`}
+                  >
+                    {offers.cta}
+                  </OfferLink>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
         {/* Tecnología: hoy (bloque sólido con sombra) frente a visión (borde discontinuo, sin sombra) */}
         <section id="tecnologia" aria-labelledby="e-tecnologia" className="scroll-mt-4 border-b-[3px] border-black bg-white">
           <div className={`${wrap} py-20 lg:py-28`}>
@@ -271,6 +312,27 @@ export default function ConceptE() {
           </div>
         </section>
 
+        {/* Preguntas frecuentes: objeciones antes de contactar */}
+        <section id="preguntas" aria-labelledby="e-preguntas" className="scroll-mt-4 border-b-[3px] border-black">
+          <div className={`${wrap} grid gap-12 py-20 lg:grid-cols-12 lg:py-28`}>
+            <SectionHead id="e-preguntas" label={faq.label} title={faq.title} className="lg:col-span-5" />
+            <div className="border-t-[3px] border-black lg:col-span-7">
+              {faq.items.map((f) => (
+                <details key={f.q} className="group border-b-[3px] border-black">
+                  <summary className={`flex min-h-16 cursor-pointer list-none items-center justify-between gap-6 py-4 text-[clamp(1.15rem,1.8vw,1.4rem)] font-extrabold ${focus} [&::-webkit-details-marker]:hidden`}>
+                    {f.q}
+                    <span aria-hidden="true" className="grid size-9 shrink-0 place-items-center border-[3px] border-black bg-white text-[22px] leading-none group-open:bg-black group-open:text-white">
+                      <span className="group-open:hidden">+</span>
+                      <span className="hidden group-open:inline">−</span>
+                    </span>
+                  </summary>
+                  <p className="m-0 max-w-[60ch] pb-6 text-[18px]">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Contacto */}
         <section id="contacto" aria-labelledby="e-contacto" className="scroll-mt-4 border-b-[3px] border-black bg-[var(--e-mint)]">
           <div className={`${wrap} py-20 lg:py-32`}>
@@ -279,32 +341,24 @@ export default function ConceptE() {
               {contact.title}
             </h2>
 
-            <div className="mt-14 grid gap-8 md:grid-cols-2 lg:gap-12">
-              {[contact.primary, contact.secondary].map((c, i) => (
-                <article
-                  key={c.label}
-                  aria-labelledby={`e-via-${i}`}
-                  className={`flex flex-col border-[3px] border-black p-6 sm:p-8 ${i === 0 ? "bg-white" : "bg-[var(--e-concrete)]"}`}
-                >
-                  <h3 id={`e-via-${i}`} className={`${s.display} m-0 text-[clamp(1.6rem,2.6vw,2.25rem)] leading-[1]`}>
-                    {c.label}
-                  </h3>
-                  <p className="m-0 mt-4 max-w-[44ch] flex-1 text-[18px]">{c.text}</p>
-                  <PressButton
-                    describedBy="e-contacto-pendiente"
-                    shadowColor={i === 0 ? "#2E4BFF" : "#000000"}
-                    className={`mt-8 min-h-14 self-start px-6 py-3 text-left text-[18px] ${
-                      i === 0 ? "bg-black text-white" : "bg-[var(--e-lilac)] text-black"
-                    }`}
-                  >
-                    {c.cta}
-                  </PressButton>
-                </article>
-              ))}
+            <div className="mt-14 grid gap-10 lg:grid-cols-12 lg:gap-12">
+              <div className="grid content-start gap-8 lg:col-span-5">
+                <div className="border-[3px] border-black bg-white p-6 sm:p-8">
+                  <h3 className={`${s.display} m-0 text-[clamp(1.6rem,2.6vw,2.25rem)] leading-[1]`}>{contact.primary.label}</h3>
+                  <p className="m-0 mt-4 text-[18px]">{contact.primary.text}</p>
+                </div>
+                <div className="border-[3px] border-black bg-[var(--e-concrete)] p-6 sm:p-8">
+                  <h3 className={`${s.display} m-0 text-[clamp(1.6rem,2.6vw,2.25rem)] leading-[1]`}>{contact.secondary.label}</h3>
+                  <p className="m-0 mt-4 text-[18px]">{contact.secondary.text}</p>
+                  <OfferLink interest="colaboracion" className="mt-6 bg-[var(--e-lilac)] text-[17px] text-black">
+                    {contact.secondary.cta}
+                  </OfferLink>
+                </div>
+              </div>
+              <div className="lg:col-span-7">
+                <ContactForm />
+              </div>
             </div>
-            <p id="e-contacto-pendiente" className={`${s.pending} m-0 mt-10`}>
-              {contact.pending}
-            </p>
           </div>
         </section>
       </main>
