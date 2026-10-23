@@ -75,6 +75,8 @@ export const approach = {
   ],
 };
 
+export const solutionsHead = { title: "Cinco áreas, un mismo método." };
+
 export type Solution = { id: string; name: string; short: string; text: string };
 
 export const solutions: Solution[] = [

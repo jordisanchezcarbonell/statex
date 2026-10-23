@@ -14,6 +14,7 @@ import {
   research,
   sections,
   solutions,
+  solutionsHead,
   technology,
 } from "../content";
 import { LabBar } from "../_shared/LabBar";
@@ -40,7 +41,6 @@ const mono = DM_Mono({
 const wrap = "mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12";
 const monoLabel = "font-[family-name:var(--e-mono)] text-[13px] leading-none";
 const focus = "focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-[var(--e-cobalt)]";
-const lead = `${s.display} m-0 mt-6 max-w-[22ch] text-[clamp(1.6rem,3.2vw,2.75rem)] leading-[0.98]`;
 const hardShadow = "shadow-[6px_6px_0_0_#000]";
 
 // Celdas del bento: la primera en Cobalto y a doble ancho; el resto alterna blanco/Lila/Menta.
@@ -51,6 +51,33 @@ const cellTone = [
   "bg-[var(--e-mint)]",
   "bg-white",
 ];
+
+// Cabecera de sección: el nombre va en una pestaña (pequeña, como la de una carpeta)
+// y el titular de verdad es el único h2 grande. Evita dos titulares compitiendo.
+function SectionHead({ id, label, title, intro, dark = false, className = "" }: {
+  id: string;
+  label: string;
+  title: string;
+  intro?: string;
+  dark?: boolean;
+  className?: string;
+}) {
+  return (
+    <div className={className}>
+      <p
+        className={`${monoLabel} m-0 inline-block border-[3px] px-3 py-2 ${
+          dark ? "border-[var(--e-concrete)] bg-[var(--e-concrete)] text-black" : "border-black bg-black text-white"
+        }`}
+      >
+        {label}
+      </p>
+      <h2 id={id} className={`${s.display} ${s.h2} m-0 mt-6 max-w-[16ch]`}>
+        {title}
+      </h2>
+      {intro && <p className="m-0 mt-6 max-w-[52ch] text-[clamp(1.125rem,1.6vw,1.3rem)] leading-[1.45]">{intro}</p>}
+    </div>
+  );
+}
 
 export default function ConceptE() {
   return (
@@ -94,11 +121,7 @@ export default function ConceptE() {
         <section id="problema" aria-labelledby="e-problema" className="scroll-mt-4 border-b-[3px] border-black">
           <div className={`${wrap} py-20 lg:py-28`}>
             <div className="bg-black p-8 text-[var(--e-concrete)] sm:p-12 lg:p-16">
-              <h2 id="e-problema" className={`${s.display} ${s.h2} m-0`}>
-                {sections.problem}
-              </h2>
-              <p className={lead}>{problem.title}</p>
-              <p className="m-0 mt-8 max-w-[52ch] text-[clamp(1.125rem,1.6vw,1.375rem)] leading-[1.45]">{problem.intro}</p>
+              <SectionHead id="e-problema" label={sections.problem} title={problem.title} intro={problem.intro} dark />
             </div>
 
             <ul className="m-0 mt-8 grid list-none grid-cols-1 border-l-[3px] border-t-[3px] border-black p-0 sm:grid-cols-2 lg:grid-cols-4">
@@ -115,11 +138,7 @@ export default function ConceptE() {
         {/* Enfoque */}
         <section id="enfoque" aria-labelledby="e-enfoque" className="scroll-mt-4 border-b-[3px] border-black bg-white">
           <div className={`${wrap} py-20 lg:py-28`}>
-            <h2 id="e-enfoque" className={`${s.display} ${s.h2} m-0`}>
-              {sections.approach}
-            </h2>
-            <p className={lead}>{approach.title}</p>
-            <p className="m-0 mt-5 max-w-[52ch] text-[19px]">{approach.intro}</p>
+            <SectionHead id="e-enfoque" label={sections.approach} title={approach.title} intro={approach.intro} />
             <ol className="m-0 mt-12 grid list-none grid-cols-1 gap-6 p-0 md:grid-cols-3 xl:grid-cols-5">
               {approach.steps.map((m, i) => (
                 <li key={m.name} className={`${s.step} border-[3px] border-black bg-[var(--e-concrete)] p-5 sm:p-6 xl:p-5`}>
@@ -140,9 +159,7 @@ export default function ConceptE() {
         {/* Soluciones */}
         <section id="soluciones" aria-labelledby="e-soluciones" className="scroll-mt-4 border-b-[3px] border-black">
           <div className={`${wrap} py-20 lg:py-28`}>
-            <h2 id="e-soluciones" className={`${s.display} ${s.h2} m-0 max-w-[14ch]`}>
-              {sections.solutions}
-            </h2>
+            <SectionHead id="e-soluciones" label={sections.solutions} title={solutionsHead.title} />
             <ul className="m-0 mt-12 grid list-none grid-cols-1 border-l-[3px] border-t-[3px] border-black p-0 md:grid-cols-2 lg:grid-cols-3">
               {solutions.map((sv, i) => (
                 <li
@@ -182,11 +199,7 @@ export default function ConceptE() {
         {/* Tecnología: hoy (bloque sólido con sombra) frente a visión (borde discontinuo, sin sombra) */}
         <section id="tecnologia" aria-labelledby="e-tecnologia" className="scroll-mt-4 border-b-[3px] border-black bg-white">
           <div className={`${wrap} py-20 lg:py-28`}>
-            <h2 id="e-tecnologia" className={`${s.display} ${s.h2} m-0 max-w-[16ch]`}>
-              {sections.technology}
-            </h2>
-            <p className={lead}>{technology.title}</p>
-            <p className="m-0 mt-5 max-w-[52ch] text-[19px]">{technology.intro}</p>
+            <SectionHead id="e-tecnologia" label={sections.technology} title={technology.title} intro={technology.intro} />
 
             <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-12">
               <article aria-labelledby="e-hoy" className={`border-[3px] border-black bg-[var(--e-mint)] p-6 sm:p-8 ${hardShadow}`}>
@@ -231,11 +244,7 @@ export default function ConceptE() {
         <section id="investigacion" aria-labelledby="e-investigacion" className="scroll-mt-4 border-b-[3px] border-black">
           <div className={`${wrap} grid gap-12 py-20 lg:grid-cols-12 lg:py-28`}>
             <div className="lg:col-span-4">
-              <h2 id="e-investigacion" className={`${s.display} ${s.h2} m-0`}>
-                {sections.research}
-              </h2>
-              <p className={lead}>{research.title}</p>
-              <p className="m-0 mt-5 max-w-[46ch]">{research.intro}</p>
+              <SectionHead id="e-investigacion" label={sections.research} title={research.title} intro={research.intro} />
             </div>
 
             <div className="min-w-0 lg:col-span-8">
@@ -289,10 +298,7 @@ export default function ConceptE() {
           <div className={`${wrap} py-20 lg:py-28`}>
             <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-5">
-                <h2 id="e-sobre" className={`${s.display} ${s.h2} m-0`}>
-                  {sections.about}
-                </h2>
-                <p className={lead}>{about.title}</p>
+                <SectionHead id="e-sobre" label={sections.about} title={about.title} />
               </div>
               <p className="m-0 max-w-[44ch] self-end text-[clamp(1.2rem,2vw,1.6rem)] leading-[1.4] lg:col-span-6 lg:col-start-7">
                 {about.text}
@@ -319,10 +325,10 @@ export default function ConceptE() {
         {/* Contacto */}
         <section id="contacto" aria-labelledby="e-contacto" className="scroll-mt-4 border-b-[3px] border-black bg-[var(--e-mint)]">
           <div className={`${wrap} py-20 lg:py-32`}>
-            <h2 id="e-contacto" className={`${s.display} ${s.h2} m-0`}>
-              {sections.contact}
+            <p className={`${monoLabel} m-0 inline-block border-[3px] border-black bg-black px-3 py-2 text-white`}>{sections.contact}</p>
+            <h2 id="e-contacto" className={`${s.display} ${s.giant} m-0 mt-6 max-w-[14ch]`}>
+              {contact.title}
             </h2>
-            <p className={`${s.display} ${s.giant} m-0 mt-6 max-w-[14ch]`}>{contact.title}</p>
 
             <div className="mt-14 grid gap-8 md:grid-cols-2 lg:gap-12">
               {[contact.primary, contact.secondary].map((c, i) => (
