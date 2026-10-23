@@ -1,0 +1,97 @@
+/* Tokens del Concept E — Neo Brutalism */
+.root {
+  --e-concrete: #edede8;
+  --e-black: #000000;
+  --e-lilac: #c4b5fd;
+  --e-mint: #86efac;
+  --e-cobalt: #2e4bff;
+  --e-rule: 3px;
+
+  background: var(--e-concrete);
+  color: var(--e-black);
+  font-family: var(--e-sans), system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  overflow-x: clip;
+}
+
+.root ::selection {
+  background: var(--e-lilac);
+  color: var(--e-black);
+}
+
+/* Titulares: opsz 96, peso 800, ligeramente condensados */
+.display {
+  font-family: var(--e-sans), system-ui, sans-serif;
+  font-weight: 800;
+  font-variation-settings: "opsz" 96, "wdth" 86;
+  letter-spacing: -0.035em;
+  line-height: 0.9;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+
+.h1 {
+  font-size: clamp(2.6rem, 9.2vw, 8rem);
+}
+
+.h2 {
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 0.92;
+}
+
+.giant {
+  font-size: clamp(2.6rem, 8vw, 7rem);
+}
+
+/* Metodología: conectores negros entre pasos */
+.step {
+  position: relative;
+}
+
+.step::after {
+  content: "";
+  position: absolute;
+  background: var(--e-black);
+  /* Móvil: conector vertical bajo cada paso */
+  left: 2.25rem;
+  top: 100%;
+  width: var(--e-rule);
+  height: 1.5rem;
+}
+
+.step:last-child::after {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .step::after {
+    left: 100%;
+    top: 3.25rem;
+    width: 1.5rem;
+    height: var(--e-rule);
+  }
+  /* Tablet, 3 columnas: el tercer paso cierra fila */
+  .step:nth-child(3)::after {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .step:nth-child(3)::after {
+    display: block;
+  }
+  .step:last-child::after {
+    display: none;
+  }
+}
+
+.pending {
+  font-family: var(--e-mono), ui-monospace, monospace;
+  font-size: 14px;
+  line-height: 1.45;
+  display: inline-block;
+  border: 2px dashed currentColor;
+  padding: 0.4rem 0.6rem;
+}
