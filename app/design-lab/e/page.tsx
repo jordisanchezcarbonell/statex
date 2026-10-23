@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, DM_Mono } from "next/font/google";
-import { ExternalLink } from "lucide-react";
 import {
   about,
   approach,
@@ -11,7 +10,6 @@ import {
   footer,
   hero,
   problem,
-  research,
   sections,
   solutions,
   solutionsHead,
@@ -19,6 +17,7 @@ import {
 } from "../content";
 import { LabBar } from "../_shared/LabBar";
 import { Header } from "./Header";
+import { Research } from "./Research";
 import { HeroStack, PressButton, PressLink } from "./Press";
 import s from "./e.module.css";
 
@@ -241,57 +240,7 @@ export default function ConceptE() {
         </section>
 
         {/* Investigación */}
-        <section id="investigacion" aria-labelledby="e-investigacion" className="scroll-mt-4 border-b-[3px] border-black">
-          <div className={`${wrap} grid gap-12 py-20 lg:grid-cols-12 lg:py-28`}>
-            <div className="lg:col-span-4">
-              <SectionHead id="e-investigacion" label={sections.research} title={research.title} intro={research.intro} />
-            </div>
-
-            <div className="min-w-0 lg:col-span-8">
-              <ul className="m-0 list-none border-t-[6px] border-black p-0">
-                {research.archive.map((r) => (
-                  <li
-                    key={r.name}
-                    className="grid grid-cols-[auto_1fr] gap-x-5 border-b-[6px] border-black py-6 sm:grid-cols-[auto_minmax(0,18rem)_1fr] sm:gap-x-8"
-                  >
-                    <span aria-hidden="true" className="mt-2 block size-4 bg-black" />
-                    <div>
-                      <h3 className={`${s.display} m-0 text-[1.6rem] leading-[1]`}>
-                        <a
-                          href={r.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`inline-flex items-baseline gap-2 underline decoration-[3px] underline-offset-[5px] hover:text-[var(--e-cobalt)] ${focus}`}
-                        >
-                          {r.name}
-                          <ExternalLink size={18} strokeWidth={2.5} aria-hidden="true" className="self-center" />
-                          <span className="sr-only"> (se abre en una pestaña nueva)</span>
-                        </a>
-                      </h3>
-                      <p className={`${monoLabel} m-0 mt-3 inline-block border-2 border-black bg-white px-2 py-1`}>{r.years}</p>
-                    </div>
-                    <p className="col-start-2 m-0 mt-4 sm:col-start-3 sm:mt-0">{r.text}</p>
-                  </li>
-                ))}
-              </ul>
-
-              <h3 className={`${monoLabel} m-0 mt-10 text-[14px] font-medium`}>{research.topicsLabel}</h3>
-              <ul className="m-0 mt-4 flex list-none flex-wrap gap-3 p-0">
-                {research.topics.map((t) => (
-                  <li key={t} className="border-[3px] border-black bg-white px-3 py-2 font-semibold">
-                    {t}
-                  </li>
-                ))}
-              </ul>
-
-              <div className={`mt-12 border-[3px] border-black bg-[var(--e-lilac)] p-6 sm:p-8 ${hardShadow}`}>
-                <h3 className={`${s.display} m-0 text-[clamp(1.8rem,3vw,2.5rem)]`}>{research.lab.name}</h3>
-                <p className="m-0 mt-3 text-[18px]">{research.lab.text}</p>
-                <p className={`${s.pending} m-0 mt-6`}>{research.lab.pending}</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Research />
 
         {/* Sobre StateX */}
         <section id="sobre" aria-labelledby="e-sobre" className="scroll-mt-4 border-b-[3px] border-black bg-white">

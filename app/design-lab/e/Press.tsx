@@ -41,10 +41,12 @@ export function PressLink({
   className = "",
   shadowColor = "#000000",
   describedBy,
-}: PressProps & { href: string; onClick?: () => void }) {
+  external = false,
+}: PressProps & { href: string; onClick?: () => void; external?: boolean }) {
   const press = usePress(shadowColor);
+  const ext = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
   return (
-    <motion.a href={href} onClick={onClick} aria-describedby={describedBy} {...press} className={`${pressBase} whitespace-nowrap ${className}`}>
+    <motion.a href={href} onClick={onClick} aria-describedby={describedBy} {...ext} {...press} className={`${pressBase} whitespace-nowrap ${className}`}>
       {children}
     </motion.a>
   );
