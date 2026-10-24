@@ -243,6 +243,18 @@ export function StatexHome({ children }: { children?: ReactNode }) {
                 );
               })}
             </ol>
+            <div className="mt-16 grid gap-10 border-t border-(--h-line) pt-10 lg:ml-[calc(25%+0.625rem)] lg:grid-cols-9 lg:gap-10">
+              <p className="m-0 max-w-[30ch] text-[clamp(1.25rem,1.8vw,1.5rem)] font-medium leading-[1.35] text-balance lg:col-span-3">{about.foundersNote}</p>
+              <ul className="m-0 grid list-none gap-8 p-0 sm:grid-cols-2 lg:col-span-6">
+                {about.founders.map((f) => (
+                  <li key={f.name}>
+                    <p className="m-0 text-[1.1rem] font-semibold">{f.name}</p>
+                    <p className={`m-0 mt-1 ${muted}`}>{f.role}</p>
+                    <Pending className="mt-4">{f.bio}</Pending>
+                  </li>
+                ))}
+              </ul>
+            </div>
             <Pending className="mt-10 lg:ml-[calc(25%+0.625rem)]">{about.pending}</Pending>
           </div>
         </section>

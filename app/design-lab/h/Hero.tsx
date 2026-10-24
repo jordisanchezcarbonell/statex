@@ -102,7 +102,7 @@ export function Hero() {
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,#0B0D10_6%,rgba(11,13,16,0.78)_34%,rgba(11,13,16,0)_62%)]" />
 
       <div className={`${wrap} mt-auto pb-10 pt-40 sm:pb-14`}>
-        <h1 id="h-hero" className={`${display} m-0 max-w-[19ch] text-[clamp(2.1rem,5.4vw,5.5rem)]`}>
+        <h1 id="h-hero" className={`${display} m-0 max-w-[17ch] text-[clamp(1.9rem,5.4vw,5.5rem)]`}>
           {words.map((w, i) => (
             <Fragment key={i}>
               <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
@@ -144,7 +144,7 @@ export function Hero() {
 
         <div className="mt-14 flex flex-wrap justify-between gap-3 border-t border-(--h-line) pt-5 text-[13px] text-(--h-titanium)">
           <span>{brand.descriptor}</span>
-          <span>Investigación propia desde {about.timeline[0].year}</span>
+          <span>Firma nueva, con investigación propia desde {about.timeline[0].year}</span>
         </div>
       </div>
     </section>
