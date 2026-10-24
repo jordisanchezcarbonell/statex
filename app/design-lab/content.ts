@@ -337,6 +337,7 @@ export const contactForm = {
   ],
   consent: "Acepto que StateX use estos datos solo para responder a mi solicitud.",
   privacyPending: "[Pendiente: enlace a la política de privacidad]",
+  privacyNote: { before: "Cómo tratamos tus datos: ", link: "política de privacidad", href: "/privacidad" },
   submit: "Enviar solicitud",
   sending: "Enviando…",
   success: "Solicitud enviada. Te responderemos lo antes posible.",
@@ -345,6 +346,22 @@ export const contactForm = {
 };
 
 export const footer = { legal: "[Pendiente: datos legales]", year: "2026" };
+
+// Datos de la empresa: ÚNICO sitio donde rellenarlos. Mientras valgan null, la web muestra un
+// [Pendiente] visible en el pie, el formulario y las páginas legales. No inventar ninguno.
+export const company: Record<"legalName" | "taxId" | "address" | "registry" | "email", string | null> = {
+  legalName: null, // Razón social o, si aún no hay sociedad, nombre del titular
+  taxId: null, // CIF / NIF
+  address: null, // Domicilio social
+  registry: null, // Datos registrales (Registro Mercantil), si es sociedad
+  email: null, // Correo corporativo de contacto y para ejercer derechos de protección de datos
+};
+
+export const legalLinks = [
+  { href: "/aviso-legal", label: "Aviso legal" },
+  { href: "/privacidad", label: "Privacidad" },
+  { href: "/cookies", label: "Cookies" },
+];
 
 // Datos para tarjeta digital y portada de pitch deck: sin inventar personas.
 export const identity = {

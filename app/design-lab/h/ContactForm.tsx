@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState, useEffect, useRef, useState, type ReactNode } from "react";
 import { sendContact, type ContactState } from "../../actions/contact";
 import { contactForm as t } from "../content";
@@ -122,7 +123,10 @@ export function ContactForm() {
           <span>{t.consent}</span>
         </label>
         {err("consent")}
-        <p className="m-0 mt-3 text-[13px] text-(--h-titanium)">{t.privacyPending}</p>
+        <p className="m-0 mt-3 text-[13px] text-(--h-titanium)">
+          {t.privacyNote.before}
+          <Link href={t.privacyNote.href} className={`underline underline-offset-4 hover:text-(--h-ivory) ${focus}`}>{t.privacyNote.link}</Link>.
+        </p>
       </div>
 
       <button
