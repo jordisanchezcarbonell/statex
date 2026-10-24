@@ -48,7 +48,7 @@ export function Compare() {
     return () => ro.disconnect();
   }, [device, size.w, size.h]);
 
-  // Teclas 1–8 para saltar entre conceptos.
+  // Teclas 1–9 para saltar entre conceptos.
   useEffect(() => {
     const onKey = (e: globalThis.KeyboardEvent) => {
       if ((e.target as HTMLElement).closest("input, textarea, select")) return;
@@ -75,7 +75,7 @@ export function Compare() {
   return (
     <>
       <div className="mb-4 grid gap-3">
-        <div role="tablist" aria-label="Conceptos" onKeyDown={onTabKey} className="grid grid-cols-2 gap-1.5 sm:grid-cols-4 xl:grid-cols-8">
+        <div role="tablist" aria-label="Conceptos" onKeyDown={onTabKey} className="grid grid-cols-2 gap-1.5 sm:grid-cols-4 xl:grid-cols-9">
           {DIRECTIONS.map((x, i) => {
             const sel = i === active;
             return (

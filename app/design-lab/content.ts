@@ -67,11 +67,11 @@ export const approach = {
   title: "De la exposición al riesgo reducido.",
   intro: "Un proceso acotado, autorizado y documentado, pensado para que tu equipo pueda actuar.",
   steps: [
-    { name: "Alcance", text: "Definimos objetivos, activos y límites. Ninguna prueba empieza sin autorización por escrito." },
-    { name: "Descubrimiento", text: "Mapeamos lo que está expuesto desde fuera, como lo vería un atacante." },
-    { name: "Verificación", text: "Comprobamos a mano cada hallazgo que entra en el informe y descartamos falsos positivos." },
-    { name: "Priorización", text: "Ordenamos los riesgos por explotabilidad, exposición y esfuerzo de corrección." },
-    { name: "Reducción", text: "Entregamos el plan de remediación y acompañamos a tu equipo durante la corrección." },
+    { name: "Alcance", text: "Definimos objetivos, activos y límites. Ninguna prueba empieza sin autorización por escrito.", deliverable: "Documento de alcance y autorización firmada" },
+    { name: "Descubrimiento", text: "Mapeamos lo que está expuesto desde fuera, como lo vería un atacante.", deliverable: "Inventario de activos expuestos" },
+    { name: "Verificación", text: "Comprobamos a mano cada hallazgo que entra en el informe y descartamos falsos positivos.", deliverable: "Hallazgos con evidencia reproducible" },
+    { name: "Priorización", text: "Ordenamos los riesgos por explotabilidad, exposición y esfuerzo de corrección.", deliverable: "Informe técnico y resumen ejecutivo" },
+    { name: "Reducción", text: "Entregamos el plan de remediación y acompañamos a tu equipo durante la corrección.", deliverable: "Plan de remediación y sesión con tu equipo" },
   ],
 };
 
@@ -187,6 +187,12 @@ export const about = {
     { year: "2026", text: "StateX se relanza como firma de ciberseguridad." },
   ],
   pending: "[Pendiente: equipo y datos de la empresa]",
+  // Fundadores reales (confirmado por ellos). Las bios quedan pendientes hasta tener datos verificables.
+  founders: [
+    { name: "Jordi Sánchez", role: "Cofundador", bio: "[Pendiente: experiencia verificable]" },
+    { name: "Albert Sánchez", role: "Cofundador", bio: "[Pendiente: experiencia verificable]" },
+  ],
+  foundersNote: "Una firma pequeña, dirigida por sus fundadores. Hablas con quien hace el trabajo.",
 };
 
 export const contact = {
@@ -286,6 +292,29 @@ export const principles = {
     { name: "Riesgos reales", text: "Priorizamos lo que es explotable y relevante para tu negocio, no la lista más larga." },
     { name: "Confidencialidad", text: "Tratamos lo que encontramos como información sensible y solo lo compartimos con quien designes." },
   ],
+};
+
+// Informe de ejemplo: todo es ilustrativo (dominio reservado y rangos RFC 5737). No es un cliente real.
+export const sampleReport = {
+  label: "Informe de ejemplo",
+  title: "Lo que recibes, antes de pedirlo.",
+  intro: "Cada evaluación termina en un informe que tu equipo puede ejecutar: resumen para dirección, hallazgos con evidencia y un plan de corrección ordenado.",
+  cover: {
+    kind: "Informe de exposición externa",
+    scope: "ejemplo.com · 203.0.113.0/24",
+    version: "Versión 1.0",
+    classification: "Confidencial",
+  },
+  findings: [
+    { id: "EX-01", title: "Entorno de pruebas accesible sin autenticación", host: "staging.ejemplo.com", level: "Alta" },
+    { id: "EX-02", title: "Servicio VPN con versión sin actualizar", host: "203.0.113.14", level: "Alta" },
+    { id: "EX-03", title: "API sin limitación de peticiones", host: "api.ejemplo.com", level: "Media" },
+    { id: "EX-04", title: "Cabeceras de seguridad incompletas", host: "www.ejemplo.com", level: "Baja" },
+  ],
+  pages: ["Resumen ejecutivo", "Hallazgos con evidencia", "Plan de corrección"],
+  note: "Ejemplo ilustrativo: dominio reservado y rangos de documentación.",
+  cta: "Ver el informe completo",
+  pending: "[Pendiente: informe de ejemplo completo en PDF]",
 };
 
 // Formulario de contacto: textos de interfaz. El envío lo gestiona app/actions/contact.ts.
