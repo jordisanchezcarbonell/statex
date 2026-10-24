@@ -9,11 +9,11 @@ export default function DesignLab() {
       <header className="mb-7 max-w-[56rem]">
         <h1 className="text-[clamp(1.6rem,3vw,2.25rem)] font-bold leading-tight tracking-tight">StateX: design lab</h1>
         <p className="mt-2 text-zinc-600">
-          Ocho direcciones de marca y homepage para la misma empresa: mismo posicionamiento, mismos servicios y mismos
+          Nueve direcciones de marca y homepage para la misma empresa: mismo posicionamiento, mismos servicios y mismos
           hechos. Cambian la composición, la tipografía, la paleta, el sistema gráfico y el movimiento.
         </p>
         <p className="mt-2 text-[15px] text-zinc-600">
-          Cambia de concepto con las pestañas o las teclas 1–8, alterna entre homepage e identidad de marca, y entre
+          Cambia de concepto con las pestañas o las teclas 1–9, alterna entre homepage e identidad de marca, y entre
           escritorio y móvil. Donde faltan datos reales aparece <code className="rounded bg-zinc-200 px-1">[Pendiente]</code>.
           Investigación: <code className="rounded bg-zinc-200 px-1">docs/design-research.md</code>.
         </p>

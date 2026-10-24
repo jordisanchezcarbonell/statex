@@ -216,4 +216,32 @@ export const DIRECTIONS: Direction[] = [
     pros: ["La más «cara» de todas: transmite exclusividad y discreción ante dirección y consejo.", "Un solo acento con significado (la línea roja) da un sistema muy reconocible y barato de mantener.", "Hero cinematográfico sin fotografía: escena vectorial propia, ligera y sin derechos de imagen."],
     cons: ["Oscuro y sobrio: menos diferencial frente a D si no se cuida la línea roja.", "Los titulares en mayúsculas exigen frases cortas; el titular común es largo.", "Puede sonar a consultora establecida más que a startup en fase inicial."],
   },
+  {
+    slug: "i",
+    letter: "I",
+    name: "Private Advisory",
+    intent: "Firma privada de lujo silencioso: marfil y grafito, serif editorial y el informe de ejemplo como imagen principal. Dirección C de research/creative-directions.md.",
+    memorable: "El informe de ejemplo tratado como fotografía de producto: hojas de papel que se enderezan al pasar el cursor y tres páginas en miniatura.",
+    fonts: [
+      { family: "Newsreader", role: "Titulares (opsz 72) y números del método" },
+      { family: "Inter", role: "Texto y navegación" },
+      { family: "IBM Plex Mono", role: "Solo dentro de los artefactos del informe" },
+    ],
+    palette: [
+      { name: "Ivory", hex: "#F5F2EC" },
+      { name: "Sand", hex: "#D9D0C3" },
+      { name: "Graphite", hex: "#33352F" },
+      { name: "Olive", hex: "#777E70" },
+      { name: "Olive texto", hex: "#5C6356" },
+      { name: "Paper", hex: "#FBFAF7" },
+    ],
+    references: [
+      { name: "Polestar", url: "https://www.polestar.com/", takeaway: "Monocromo, un solo acento y lo técnico como parte de la marca." },
+      { name: "Bang & Olufsen", url: "https://www.bang-olufsen.com/", takeaway: "Precisión con calidez humana." },
+      { name: "Trail of Bits", url: "https://www.trailofbits.com/", takeaway: "Un informe de ejemplo como prueba de trabajo." },
+    ],
+    motion: "Hojas del informe que se enderezan al pasar el cursor, subrayados que se dibujan y aparición suave al hacer scroll. Estático con prefers-reduced-motion.",
+    pros: ["La mayor percepción de calidad sin perder claridad: se entiende qué hace StateX y qué entrega.", "El informe de ejemplo es imagen, prueba y conversión secundaria a la vez; ningún competidor español lo ofrece.", "Presenta a los fundadores: convierte el tamaño pequeño en trato directo."],
+    cons: ["Depende de un informe de ejemplo real y bien hecho, y de retratos que aún no existen.", "Serif sobre marfil roza el cliché editorial si se descuida la tipografía.", "Más sobria que memorable: el impacto está en los detalles, no en un gran efecto."],
+  },
 ];
