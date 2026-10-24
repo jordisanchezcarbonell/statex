@@ -1,4 +1,4 @@
-// Contenido ÚNICO de StateX. Los seis conceptos lo consumen tal cual:
+// Contenido ÚNICO de StateX. Todos los conceptos lo consumen tal cual:
 // cambian el diseño, nunca el mensaje ni los hechos.
 // Reglas: nada de clientes, cifras de negocio, financiación, equipo, testimonios ni certificaciones inventadas.
 // Los hechos de "Sobre StateX" e "Investigación" están verificados en los blogs originales (ver docs/design-research.md).
@@ -273,6 +273,18 @@ export const faq = {
       q: "¿Qué hacéis con la información que encontráis?",
       a: "La tratamos como confidencial y solo la compartimos con las personas que designéis.",
     },
+  ],
+};
+
+// Principios de trabajo: compromisos verificables sobre cómo trabaja StateX (no son certificaciones).
+export const principles = {
+  label: "Cómo trabajamos",
+  title: "La confianza se construye con rigor.",
+  items: [
+    { name: "Comunicación clara", text: "Explicamos cada riesgo en lenguaje técnico para tu equipo y en lenguaje de negocio para dirección." },
+    { name: "Alcance definido", text: "Cada evaluación tiene objetivos, límites y entregables acordados por escrito antes de empezar." },
+    { name: "Riesgos reales", text: "Priorizamos lo que es explotable y relevante para tu negocio, no la lista más larga." },
+    { name: "Confidencialidad", text: "Tratamos lo que encontramos como información sensible y solo lo compartimos con quien designes." },
   ],
 };
 

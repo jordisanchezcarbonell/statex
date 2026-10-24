@@ -194,4 +194,26 @@ export const DIRECTIONS: Direction[] = [
     pros: ["Usa el archivo real de InfoStateX y DoubleReboot como argumento de credibilidad.", "Personalidad editorial única entre las webs de ciberseguridad.", "Los guiños de terminal informan (hoy frente a visión como código comentado)."],
     cons: ["Puede leerse como poco corporativo para empresas medianas conservadoras.", "Titulares serif enormes alargan la página, sobre todo en móvil.", "Depende del peso que quieras dar al pasado bloguero en el pitch."],
   },
+  {
+    slug: "h",
+    letter: "H",
+    name: "Boutique Precision",
+    intent: "Firma boutique de alta gama: oscura, editorial y cinematográfica, con la sobriedad de la ingeniería de precisión y una sola línea roja.",
+    memorable: "La línea roja: un único trazo rojo que es horizonte del hero, avance del método, foco de cada servicio y firma del contacto.",
+    fonts: [{ family: "Inter", role: "Titulares en mayúsculas (opsz 32) y texto; cifras tabulares" }],
+    palette: [
+      { name: "Obsidiana", hex: "#0B0D10" },
+      { name: "Grafito", hex: "#20242A" },
+      { name: "Marfil", hex: "#F2F0EA" },
+      { name: "Titanio", hex: "#A8A39B" },
+      { name: "Rojo línea", hex: "#A83A35" },
+    ],
+    references: [
+      { name: "Linear", url: "https://linear.app/", takeaway: "Contención y precisión tipográfica sobre oscuro." },
+      { name: "Oxide Computer", url: "https://oxide.computer/", takeaway: "Ingeniería de hardware tratada con rigor editorial." },
+    ],
+    motion: "Aparición tipográfica por líneas, travelling lento del hero con el scroll, línea roja que avanza con el método. Todo estático con prefers-reduced-motion.",
+    pros: ["La más «cara» de todas: transmite exclusividad y discreción ante dirección y consejo.", "Un solo acento con significado (la línea roja) da un sistema muy reconocible y barato de mantener.", "Hero cinematográfico sin fotografía: escena vectorial propia, ligera y sin derechos de imagen."],
+    cons: ["Oscuro y sobrio: menos diferencial frente a D si no se cuida la línea roja.", "Los titulares en mayúsculas exigen frases cortas; el titular común es largo.", "Puede sonar a consultora establecida más que a startup en fase inicial."],
+  },
 ];
