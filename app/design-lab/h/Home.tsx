@@ -22,15 +22,18 @@
  *
  * Elemento memorable: la línea roja. Es el único uso del rojo en toda la página.
  */
+import Link from "next/link";
 import type { ReactNode } from "react";
 import {
   about,
   approach,
   brand,
+  company,
   complementary,
   contact,
   faq,
   footer,
+  legalLinks,
   nav,
   offers,
   principles,
@@ -328,9 +331,23 @@ export function StatexHome({ children }: { children?: ReactNode }) {
             </ul>
           </nav>
           <div className={`grid content-start gap-3 text-[14px] lg:col-span-4 ${muted}`}>
-            <Pending className="justify-self-start">[Pendiente: correo corporativo]</Pending>
-            <Pending className="justify-self-start">{footer.legal}</Pending>
-            <Pending className="justify-self-start">[Pendiente: aviso legal, privacidad y cookies]</Pending>
+            {company.email ? (
+              <a href={`mailto:${company.email}`} className={`justify-self-start text-(--h-ivory)/80 hover:text-(--h-ivory) ${focus}`}>{company.email}</a>
+            ) : (
+              <Pending className="justify-self-start">[Pendiente: correo corporativo]</Pending>
+            )}
+            {company.legalName && company.taxId ? (
+              <span>{company.legalName} · {company.taxId}</span>
+            ) : (
+              <Pending className="justify-self-start">{footer.legal}</Pending>
+            )}
+            <ul className="m-0 flex list-none flex-wrap gap-x-5 p-0">
+              {legalLinks.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className={`inline-flex min-h-10 items-center hover:text-(--h-ivory) ${focus}`}>{l.label}</Link>
+                </li>
+              ))}
+            </ul>
             <span className="mt-4">© {footer.year} {brand.name}</span>
           </div>
         </div>
