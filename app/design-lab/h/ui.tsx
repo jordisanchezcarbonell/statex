@@ -18,7 +18,7 @@ export const focus = "focus-visible:outline-2 focus-visible:outline-offset-4 foc
 export const section = "scroll-mt-20 py-[clamp(5.5rem,11vw,10rem)]";
 /** Titulares: mayúsculas, peso 600, interletrado ajustado. Las frases vienen de content.ts en minúsculas. */
 export const display = "font-semibold uppercase leading-[0.98] tracking-[-0.025em] [font-variation-settings:'opsz'_32] text-balance";
-export const h2 = `${display} m-0 text-[clamp(2rem,4.6vw,4.25rem)]`;
+export const h2 = `${display} m-0 text-[clamp(1.75rem,4.6vw,4.25rem)]`;
 export const muted = "text-(--h-titanium)";
 export const pendingCls = "inline-block border border-dashed border-(--h-titanium)/60 px-2 py-1 text-[13px] text-(--h-titanium)";
 

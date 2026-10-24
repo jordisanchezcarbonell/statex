@@ -24,7 +24,7 @@ export const cta = {
 };
 
 export const hero = {
-  title: "Encontramos lo que tu empresa expone antes de que lo haga un atacante.",
+  title: "Encontramos lo que tu empresa expone antes que un atacante.",
   body:
     "StateX descubre lo que tu organización expone en internet (dominios, aplicaciones, APIs y servicios), verifica qué es explotable y lo entrega como un plan de corrección priorizado para tu equipo técnico.",
 };
@@ -285,7 +285,7 @@ export const faq = {
 // Principios de trabajo: compromisos verificables sobre cómo trabaja StateX (no son certificaciones).
 export const principles = {
   label: "Cómo trabajamos",
-  title: "La confianza se construye con rigor.",
+  title: "Lo que puedes exigirnos.",
   items: [
     { name: "Comunicación clara", text: "Explicamos cada riesgo en lenguaje técnico para tu equipo y en lenguaje de negocio para dirección." },
     { name: "Alcance definido", text: "Cada evaluación tiene objetivos, límites y entregables acordados por escrito antes de empezar." },
