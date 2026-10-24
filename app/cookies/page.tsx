@@ -15,6 +15,7 @@ export default function Cookies() {
         <li>No cargamos fuentes, vídeos ni scripts de terceros: las tipografías se sirven desde nuestro propio dominio.</li>
         <li>No guardamos información en tu navegador para reconocerte en otras visitas.</li>
       </ul>
+      <p>La única excepción es la sección interna de diseño (<code>/design-lab</code>): recuerda en tu navegador (almacenamiento local) qué propuestas habías elegido comparar. Ese dato no sale de tu dispositivo, no te identifica y puedes borrarlo desde los ajustes del navegador.</p>
 
       <h2>Si esto cambia</h2>
       <p>Si algún día añadimos cookies que no sean estrictamente necesarias, actualizaremos esta página y te pediremos el consentimiento antes de instalarlas.</p>
