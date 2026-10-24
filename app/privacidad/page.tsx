@@ -36,7 +36,7 @@ export default function Privacidad() {
       <p>Tu consentimiento, que das al marcar la casilla del formulario (art. 6.1.a RGPD), y, si pides una propuesta, la aplicación de medidas precontractuales a tu petición (art. 6.1.b RGPD). Puedes retirar el consentimiento cuando quieras.</p>
 
       <h2>Cuánto tiempo los guardamos</h2>
-      <p>El tiempo necesario para atender tu solicitud. Si no llega a haber relación comercial, los borramos como máximo a los 12 meses. <Pending>[Por confirmar: plazo de conservación]</Pending></p>
+      <p>El tiempo necesario para atender tu solicitud. Si no llega a haber relación comercial, los borramos en un plazo máximo de <Pending>[Por confirmar: plazo de conservación]</Pending>.</p>
 
       <h2>Quién más accede</h2>
       <p>No cedemos tus datos a terceros. Para que la web funcione usamos proveedores que los tratan por cuenta nuestra (encargados del tratamiento):</p>
