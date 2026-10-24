@@ -1,6 +1,6 @@
 # StateX — Web corporativa
 
-Proyecto de la web de StateX, startup de ciberseguridad. Fase actual: **exploración visual** (`/design-lab`). Todavía no se construye la web completa.
+Proyecto de la web de StateX, startup de ciberseguridad. **Dirección elegida: Concept H — Boutique Precision** (2026-10-24). Fase actual: desarrollar la web sobre H. La home `/` renderiza `app/design-lab/h/Home.tsx` (`StatexHome`); `/design-lab/h` muestra lo mismo con la barra del lab. El resto de conceptos quedan como archivo de exploración: no iterarlos salvo petición expresa.
 
 ## Posicionamiento
 
@@ -10,6 +10,7 @@ Proyecto de la web de StateX, startup de ciberseguridad. Fase actual: **explorac
 - **Método:** Alcance → Descubrimiento → Verificación → Priorización → Reducción. La monitorización continua es roadmap, no capacidad actual.
 - **Origen (verificado):** blog InfoStateX (archivo 2012–2018) y DoubleReboot ("Un proyecto de State X", 2013 y 2016). Ver `docs/design-research.md`.
 - **Decisiones:** año de origen 2012; web y menú en español; no mostrar las certificaciones del blog (CEH, perito) sin confirmar vigencia; CTA de contacto pendiente de email/formulario.
+- **Sistema visual (H):** Obsidiana `#0B0D10`, Grafito `#20242A`, Marfil `#F2F0EA`, Titanio `#A8A39B` y un único acento, Rojo línea `#A83A35`, reservado a la línea roja. Inter (titulares en mayúsculas, opsz 32; cifras tabulares).
 - **Tono:** profesional, técnico, claro y creíble.
 - **Para quién:** empresas medianas y scaleups (España / UE); interlocutores CTO, CISO o responsable de IT. `[POR CONFIRMAR: segmento prioritario]`
 
