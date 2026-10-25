@@ -61,8 +61,11 @@ export type Service = {
   deliverables: string[];
   when: string;
   note?: string;
-  // Precio de lanzamiento "desde" (cálculo en research/services-pricing.md §8). null = no se muestra.
+  // Precio de lanzamiento (cálculo en research/services-pricing.md §9). null = no se muestra.
   price: string | null;
+  priceFrom: number | null; // importe mínimo sin IVA, para los datos estructurados
+  priceScope: string; // a qué alcance corresponde el precio "desde"
+  reference: string; // marcos de referencia públicos que seguimos (no son certificaciones)
 };
 
 export const services: Service[] = [
@@ -95,9 +98,13 @@ export const services: Service[] = [
       "Clasificación de riesgos",
       "Recomendaciones de corrección para tu stack",
       "Sesión de presentación de resultados",
+      "Retest de las correcciones durante 6 meses",
     ],
     when: "Antes de un lanzamiento, de la entrada de un cliente grande o de una due diligence, y después de cambios importantes en la aplicación.",
-    price: "Desde 2.900 € + IVA",
+    price: "Web desde 990 € · API desde 690 € (+ IVA)",
+    priceFrom: 690,
+    priceScope: "El precio desde corresponde a una web de hasta 10 pantallas con un rol de usuario, o a una API de hasta 15 endpoints. Más roles, endpoints o aplicaciones se presupuestan aparte.",
+    reference: "OWASP WSTG, OWASP API Security Top 10 y OWASP ASVS",
   },
   {
     id: "exposicion-externa",
@@ -126,10 +133,14 @@ export const services: Service[] = [
       "Hallazgos verificados",
       "Priorización por criticidad",
       "Plan de reducción de la exposición",
+      "Nueva comprobación de lo corregido durante 6 meses",
     ],
     when: "Cuando no sabes con certeza qué tiene publicado tu empresa, tras una migración o adquisición, o como primer paso antes de auditar una aplicación concreta.",
     note: "Las pruebas activas se hacen solo sobre activos autorizados y dentro del alcance firmado.",
-    price: "Desde 1.500 € + IVA",
+    price: "Desde 390 € + IVA",
+    priceFrom: 390,
+    priceScope: "El precio desde corresponde a un dominio con sus subdominios. Cada dominio adicional o rango de IP se presupuesta aparte.",
+    reference: "Buenas prácticas OWASP y CIS para servicios expuestos",
   },
   {
     id: "ingenieria-segura",
@@ -162,7 +173,10 @@ export const services: Service[] = [
       "Revisión posterior de las correcciones",
     ],
     when: "Al diseñar un producto nuevo, antes de escalar la plataforma o cuando el equipo necesita criterio de seguridad sin contratar un perfil a tiempo completo.",
-    price: "Desde 1.800 € + IVA",
+    price: "Desde 790 € + IVA",
+    priceFrom: 790,
+    priceScope: "El precio desde corresponde a un diagnóstico de una aplicación con su repositorio y su pipeline de despliegue. El acompañamiento posterior se contrata por días.",
+    reference: "OWASP ASVS, OWASP SAMM y OWASP Top 10 CI/CD Security Risks",
   },
 ];
 
@@ -174,12 +188,19 @@ export const servicesSection = {
   deliverablesLabel: "Qué recibes",
   more: "Ver el servicio",
   request: "Solicitar",
+  commitmentsLabel: "En todos los servicios",
+  commitments: [
+    { name: "Retest durante 6 meses", text: "Cuando corrijas, comprobamos que los fallos críticos y altos están resueltos y te lo dejamos por escrito." },
+    { name: "Propuesta en 48 h laborables", text: "Alcance, plazo y precio cerrados tras la primera conversación." },
+    { name: "Aviso inmediato", text: "Si encontramos algo crítico, te avisamos el mismo día, sin esperar al informe." },
+    { name: "Confidencialidad", text: "Firmamos un acuerdo de confidencialidad si lo necesitas, antes de ver nada." },
+  ],
   start: {
     title: "¿No sabes por dónde empezar?",
     text: "Empieza por una evaluación inicial de alcance limitado: una revisión acotada de tu exposición externa y de tu aplicación principal para decidir, con datos, qué conviene auditar a fondo.",
     cta: "Pedir una evaluación inicial",
     interest: "evaluacion-inicial",
-    price: "900 € + IVA, precio cerrado",
+    price: "290 € + IVA, precio cerrado. Si después contratas una auditoría, te lo descontamos.",
   },
 };
 
@@ -219,7 +240,7 @@ export const method = {
     { name: "Priorizar", text: "Clasificamos los hallazgos según impacto, probabilidad y contexto de negocio.", record: "Informe técnico y resumen ejecutivo" },
     { name: "Corregir", text: "Entregamos recomendaciones concretas y, cuando se contrata, acompañamos la corrección y la validamos.", record: "Plan de corrección y revisión posterior" },
   ],
-  rule: "Ninguna prueba activa empieza sin autorización por escrito ni sale del alcance acordado.",
+  rule: "Ninguna prueba activa empieza sin un plan de pruebas firmado. Las que puedan afectar al servicio se hacen en la ventana horaria que acordemos y, si algo se desvía de lo previsto, paramos y te llamamos.",
 };
 
 // ─── Entregables: informe de demostración ────────────────────────────────────
@@ -376,7 +397,7 @@ export const faq = {
     },
     {
       q: "¿Cómo se contrata y cuánto cuesta?",
-      a: "La evaluación inicial tiene precio cerrado (900 € + IVA). Para el resto, cada servicio indica un precio desde, que depende sobre todo del número de aplicaciones, endpoints, roles y dominios. Tras una primera conversación te enviamos una propuesta cerrada con alcance, plazo y precio, sin sorpresas después.",
+      a: "La evaluación inicial cuesta 290 € + IVA, precio cerrado. Los demás servicios empiezan en 390 € (exposición externa), 690 € (API), 990 € (web) y 790 € (ingeniería segura), sin IVA. El precio final depende del número de aplicaciones, endpoints, roles y dominios. Tras una primera conversación te enviamos en 48 horas laborables una propuesta cerrada, sin sorpresas después.",
     },
     {
       q: "¿Qué necesitáis de nosotros?",
@@ -384,11 +405,15 @@ export const faq = {
     },
     {
       q: "¿Revisáis las correcciones?",
-      a: "Sí, cuando se incluye en la propuesta: comprobamos que cada corrección resuelve el problema y no abre otro.",
+      a: "Sí. Durante los 6 meses siguientes al informe, comprobamos que los fallos críticos y altos están corregidos y que la corrección no abre otro problema, y te lo entregamos por escrito.",
     },
     {
       q: "¿Trabajáis con agencias?",
       a: "Sí. Podemos auditar las plataformas que desarrolláis para vuestros clientes. Como los activos son del cliente final, la autorización también la firma él.",
+    },
+    {
+      q: "¿Qué pasa si encontráis algo grave durante la auditoría?",
+      a: "Te avisamos el mismo día, sin esperar al informe, para que puedas corregirlo cuanto antes. El protocolo y la persona de contacto se acuerdan antes de empezar.",
     },
     {
       q: "¿Qué hacéis con la información que encontráis?",
@@ -407,7 +432,7 @@ export const contact = {
   steps: [
     { name: "Nos escribes", text: "Con lo que quieres proteger y el contexto. Sin datos sensibles." },
     { name: "Hablamos", text: "Una primera conversación para entender la aplicación, los plazos y lo que necesitas." },
-    { name: "Recibes una propuesta", text: "Alcance, plazo y precio cerrados antes de empezar cualquier trabajo." },
+    { name: "Recibes una propuesta", text: "En 48 horas laborables: alcance, plazo y precio cerrados antes de empezar cualquier trabajo." },
   ],
 };
 
