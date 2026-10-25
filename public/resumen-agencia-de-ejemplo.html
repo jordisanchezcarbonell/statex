@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resumen de agencia de ejemplo · StateX</title>
+
+<style>
+  :root { --accent: #A83A35; --ink: #0B0D10; --text: #20242A; --muted: #5C5850; --line: #D9D6CF; --soft: #F2F0EA; }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #E9E7E1; }
+  body { font: 10pt/1.5 Inter, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; overflow: hidden; margin: 12mm auto; padding: 16mm 18mm 22mm; background: #fff; position: relative; }
+  @media print { html, body { background: none; } .page { margin: 0; } }
+  @media screen { .page { box-shadow: 0 10px 40px rgba(0,0,0,.12); } }
+  .brand { font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--ink); }
+  .rule { height: 2px; background: var(--accent); margin: 5mm 0; }
+  .label { font-size: 8pt; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 500; }
+  h1 { font-size: 22pt; line-height: 1.05; text-transform: uppercase; letter-spacing: -.02em; color: var(--ink); margin: 2mm 0 0; }
+  h2 { font-size: 11.5pt; text-transform: uppercase; color: var(--ink); margin: 7mm 0 2.5mm; }
+  p { margin: 0 0 3mm; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
+  th, td { text-align: left; vertical-align: top; padding: 2.2mm 3mm 2.2mm 0; border-top: 1px solid var(--line); }
+  thead th { font-size: 8pt; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 500; border-top: 0; }
+  td.n { text-align: center; font-variant-numeric: tabular-nums; }
+  .callout { background: var(--soft); padding: 4mm 5mm; border-left: 2px solid var(--accent); }
+  .muted { color: var(--muted); }
+  .foot { position: absolute; left: 20mm; right: 20mm; bottom: 12mm; display: flex; justify-content: space-between; font-size: 8pt; color: var(--muted); border-top: 1px solid var(--line); padding-top: 3mm; }
+</style>
+</head>
+<body>
+<div class="sample-bar"><span>Informe de ejemplo con datos ficticios. Ni la empresa, ni el dominio, ni los hallazgos son reales.</span> <a href="/">Volver a StateX</a></div>
+<style>.sample-bar{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;gap:4mm;justify-content:center;padding:3mm 5mm;background:#0B0D10;color:#F2F0EA;font:9.5pt/1.4 Inter,-apple-system,"Segoe UI",sans-serif}.sample-bar a{color:#F2F0EA}@media print{.sample-bar{display:none}}</style>
+<section class="page">
+  <div class="brand" data-brand="logo">StateX</div>
+  <div class="rule"></div>
+  <p class="label">Resumen de cartera · Pack para agencias</p>
+  <h1>Agencia de ejemplo (ficticia)</h1>
+  <p class="muted" style="margin-top:3mm">5 webs revisadas · del 13 al 17 de octubre de 2026 · Confidencial</p>
+
+  <div class="callout" style="margin-top:6mm">
+    <p class="label">En una frase</p>
+    <p style="margin:0">Dos de las cinco webs tienen un riesgo alto que conviene corregir esta semana; las demás necesitan ajustes de configuración que pueden planificarse.</p>
+  </div>
+
+  <h2>Estado por web</h2>
+  <table>
+    <thead><tr><th>Web</th><th>Cliente</th><th class="n">Alta</th><th class="n">Media</th><th class="n">Baja</th><th>Lo más urgente</th></tr></thead>
+    <tbody>
+      <tr><td>ejemplo.com</td><td>Cliente 1</td><td class="n">1</td><td class="n">2</td><td class="n">3</td><td>Panel de administración accesible desde internet</td></tr>
+      <tr><td>ejemplo.net</td><td>Cliente 2</td><td class="n">1</td><td class="n">0</td><td class="n">2</td><td>Plugin con vulnerabilidad conocida</td></tr>
+      <tr><td>ejemplo.org</td><td>Cliente 3</td><td class="n">0</td><td class="n">1</td><td class="n">2</td><td>Correo sin DMARC</td></tr>
+      <tr><td>tienda.ejemplo.com</td><td>Cliente 4</td><td class="n">0</td><td class="n">1</td><td class="n">1</td><td>Copia de seguridad descargable</td></tr>
+      <tr><td>blog.ejemplo.com</td><td>Cliente 5</td><td class="n">0</td><td class="n">0</td><td class="n">2</td><td>Cabeceras de seguridad incompletas</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Patrones comunes</h2>
+  <p>Tres de las cinco webs comparten la misma plantilla de servidor sin cabeceras de seguridad, y en dos los plugins no tienen una política de actualización. Corregirlo en la forma de trabajar de la agencia evita que vuelva a aparecer en los próximos proyectos.</p>
+
+  <h2>Recomendaciones para la agencia</h2>
+  <ol>
+    <li>Corregir esta semana los riesgos altos de ejemplo.com y ejemplo.net.</li>
+    <li>Añadir cabeceras de seguridad y DMARC a la plantilla base de nuevos proyectos.</li>
+    <li>Establecer una revisión mensual de actualizaciones de plugins.</li>
+    <li>Pedir el retest de los riesgos altos cuando estén corregidos (incluido durante 6 meses).</li>
+  </ol>
+
+  <p class="muted" style="margin-top:6mm">Cada web tiene su propio informe con evidencias y recomendaciones técnicas. La autorización de cada una la firmó su titular.</p>
+
+  <div class="foot"><span data-brand="footer">StateX · Resumen de ejemplo con datos ficticios</span><span>Confidencial</span></div>
+</section>
+</body>
+</html>

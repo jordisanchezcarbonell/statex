@@ -27,7 +27,7 @@ Actualizado: 2026-10-25.
   - Titulaciones universitarias marcadas "en curso" en LinkedIn: no se mencionan.
   - Autoría de InfoStateX: confirmada: InfoStateX es de Albert y DoubleReboot de Jordi; ya en Trayectoria.
 - **Primeras publicaciones de investigación** (2–3 notas fechadas y firmadas). Cuando existan, crear `/investigacion` y enlazarla desde la sección Trayectoria.
-- **Informe de ejemplo completo en PDF** (sobre `ejemplo.com` y rangos de documentación). Conversión secundaria.
+- **Informe de ejemplo publicado** (2026-10-25): `/informe-de-ejemplo.html` y PDF, y resumen de agencia de ejemplo. Generados desde `docs/plantillas` con `scripts/muestras-informe.py`.
 - **`/.well-known/security.txt`** y política de divulgación: necesitan el correo corporativo.
 - **Clave PGP** o canal seguro para enviar detalles sensibles.
 

@@ -55,7 +55,7 @@ export function WebAuditGuide() {
           <li><strong>Sesión de resultados</strong> con tu equipo técnico.</li>
           <li><strong>Retest:</strong> una comprobación posterior de que lo corregido está bien corregido.</li>
         </ol>
-        <p>Pide siempre un <strong>informe de ejemplo</strong> antes de contratar. Puedes ver <Link href="/#entregables" className={focus}>cómo es el nuestro</Link>, con datos ficticios.</p>
+        <p>Pide siempre un <strong>informe de ejemplo</strong> antes de contratar. Puedes ver <a href="/informe-de-ejemplo.html" className={focus}>nuestro informe de ejemplo completo</a>, con datos ficticios, o <a href="/informe-de-ejemplo.pdf" download className={focus}>descargarlo en PDF</a>.</p>
       </Section>
 
       <Section id="g-precio" title="De qué depende el precio">
