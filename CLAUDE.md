@@ -68,6 +68,7 @@ app/
 docs/
   auditoria-y-estrategia-2026-10-25.md  # Auditoría, posicionamiento, modelo comercial y SEO
   pendientes.md           # Datos y decisiones que faltan (no se publican)
+  plantillas/             # Informe de auditoría (marca blanca) y resumen de agencia, HTML imprimible a PDF
   design-research.md      # Investigación de referencias (rondas 1–3) y hechos verificados de la marca
   capturas/               # Capturas de los conceptos
 .claude/

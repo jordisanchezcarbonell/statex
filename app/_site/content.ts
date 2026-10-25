@@ -482,6 +482,22 @@ export const guides = [
       "Qué revisa una auditoría de seguridad web, qué entregables exigir, qué hay que preparar y qué factores mueven el precio, con ejemplos de alcance y precios orientativos.",
     published: "2026-10-25",
   },
+  {
+    slug: "que-incluye-una-auditoria-de-seguridad-de-apis",
+    title: "Qué incluye una auditoría de seguridad de APIs",
+    short: "Qué incluye una auditoría de APIs",
+    description:
+      "El OWASP API Security Top 10 explicado en llano, qué cambia en REST, GraphQL y webhooks, qué preparar, qué entregables pedir y ejemplos de precio.",
+    published: "2026-10-25",
+  },
+  {
+    slug: "como-preparar-tu-web-para-una-auditoria-de-seguridad",
+    title: "Cómo preparar tu web para una auditoría de seguridad",
+    short: "Cómo preparar tu web para una auditoría",
+    description:
+      "Autorización, alcance, entorno de pruebas, cuentas por rol y lista de comprobación por fases para que la auditoría encuentre más y cueste menos.",
+    published: "2026-10-25",
+  },
 ];
 
 export const footer = {

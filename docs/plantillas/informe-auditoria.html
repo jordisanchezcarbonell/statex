@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informe de auditoría de seguridad — [Cliente]</title>
+<!--
+  PLANTILLA DE INFORME DE AUDITORÍA (StateX o marca blanca de agencia)
+
+  Cómo usarla (detalle en docs/plantillas/README.md):
+  1. Copia este archivo por proyecto: informes/AAAA-MM-cliente.html (fuera del repositorio si contiene datos reales).
+  2. Marca: edita el bloque :root (color) y los textos marcados con data-brand (nombre y logo).
+     - StateX: deja los valores por defecto.
+     - Marca blanca: pon el nombre y el logo de la agencia; la línea "Elaborado por StateX" es opcional
+       (quita la clase "hidden" de .credit si la agencia quiere mencionarnos).
+  3. Rellena todo lo que va entre [corchetes]. Los hallazgos de ejemplo (SX-01…) son FICTICIOS: bórralos.
+  4. Imprime a PDF: Chrome → Imprimir → Guardar como PDF, A4, márgenes "Ninguno", activar "Gráficos de fondo".
+
+  Nunca incluyas credenciales completas, datos personales de clientes finales ni secretos en las evidencias:
+  enmascáralos (p. ej. Bearer eyJ…<recortado>).
+-->
+<style>
+  :root {
+    --accent: #A83A35;        /* Color de marca: StateX = rojo línea. Agencia: su color principal. */
+    --ink: #0B0D10;
+    --text: #20242A;
+    --muted: #5C5850;
+    --line: #D9D6CF;
+    --paper: #FFFFFF;
+    --soft: #F2F0EA;
+    --sev-critica: #0B0D10;
+    --sev-alta: #3A3D42;
+    --sev-media: #6E6A62;
+    --sev-baja: #A8A39B;
+    --sev-info: #D9D6CF;
+  }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #E9E7E1; }
+  body { font: 10.5pt/1.55 Inter, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; min-height: 297mm; margin: 12mm auto; padding: 22mm 20mm 24mm; background: var(--paper); position: relative; page-break-after: always; break-after: page; }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  @media print { html, body { background: none; } .page { margin: 0; box-shadow: none; } }
+  @media screen { .page { box-shadow: 0 10px 40px rgba(0,0,0,.12); } }
+  .hidden { display: none !important; }
+
+  /* Cabecera y pie de página interiores */
+  .head { display: flex; justify-content: space-between; align-items: center; font-size: 8.5pt; color: var(--muted); border-bottom: 1px solid var(--line); padding-bottom: 4mm; margin-bottom: 10mm; }
+  .foot { position: absolute; left: 20mm; right: 20mm; bottom: 12mm; display: flex; justify-content: space-between; font-size: 8pt; color: var(--muted); border-top: 1px solid var(--line); padding-top: 3mm; }
+  .brand { font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--ink); }
+  .brand img { height: 9mm; display: block; }
+
+  h1, h2, h3 { color: var(--ink); margin: 0; }
+  h2 { font-size: 15pt; text-transform: uppercase; letter-spacing: -.01em; margin: 0 0 5mm; }
+  h2 .n { color: var(--muted); font-weight: 400; margin-right: 3mm; }
+  h3 { font-size: 11.5pt; margin: 7mm 0 2mm; }
+  p { margin: 0 0 3mm; }
+  ul, ol { margin: 0 0 3mm; padding-left: 5mm; }
+  li { margin: 1mm 0; }
+  .muted { color: var(--muted); }
+  .rule { height: 2px; background: var(--accent); width: 100%; margin: 6mm 0; }
+  .label { font-size: 8pt; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 500; }
+  code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 8.5pt; }
+  pre { background: var(--ink); color: #F2F0EA; padding: 4mm; margin: 2mm 0 4mm; white-space: pre-wrap; word-break: break-all; }
+
+  table { width: 100%; border-collapse: collapse; margin: 2mm 0 5mm; font-size: 9.5pt; }
+  th, td { text-align: left; vertical-align: top; padding: 2.2mm 3mm 2.2mm 0; border-top: 1px solid var(--line); }
+  thead th { font-size: 8pt; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 500; border-top: 0; }
+  dl.meta { display: grid; grid-template-columns: 38mm 1fr; gap: 1.5mm 6mm; margin: 0; }
+  dl.meta dt { color: var(--muted); }
+  dl.meta dd { margin: 0; }
+
+  /* Severidad: texto + barra, nunca solo color */
+  .sev { display: inline-flex; align-items: center; gap: 2mm; white-space: nowrap; font-weight: 500; }
+  .sev::before { content: ""; width: 3mm; height: 3mm; background: var(--c); }
+  .sev.critica { --c: var(--sev-critica); } .sev.alta { --c: var(--sev-alta); } .sev.media { --c: var(--sev-media); } .sev.baja { --c: var(--sev-baja); } .sev.info { --c: var(--sev-info); }
+  .counts { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--line); margin: 4mm 0 6mm; }
+  .counts div { padding: 3mm; border-left: 1px solid var(--line); }
+  .counts div:first-child { border-left: 0; }
+  .counts b { display: block; font-size: 20pt; font-weight: 300; color: var(--ink); line-height: 1.1; }
+
+  .finding { border-top: 2px solid var(--ink); padding-top: 4mm; margin-top: 8mm; break-inside: avoid; }
+  .finding header { display: flex; justify-content: space-between; gap: 6mm; align-items: baseline; }
+  .finding .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 8mm; }
+  .callout { background: var(--soft); padding: 4mm 5mm; border-left: 2px solid var(--accent); margin: 4mm 0; }
+
+  /* Portada */
+  .cover { display: flex; flex-direction: column; padding-top: 28mm; }
+  .cover .title { font-size: 28pt; line-height: 1.02; text-transform: uppercase; letter-spacing: -.02em; font-weight: 600; margin: 0; }
+  .cover .client { font-size: 14pt; margin-top: 6mm; color: var(--text); }
+  .cover .bottom { margin-top: auto; }
+  .stamp { display: inline-block; border: 1px solid var(--ink); padding: 1.5mm 3mm; font-size: 8pt; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+  .credit { font-size: 8.5pt; color: var(--muted); margin-top: 4mm; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ PORTADA ═══════════════ -->
+<section class="page cover">
+  <div class="brand" data-brand="logo">
+    <!-- Marca blanca: sustituye el texto por <img src="logo-agencia.png" alt="[Agencia]"> -->
+    StateX
+  </div>
+  <div class="rule"></div>
+  <p class="label">Informe de auditoría de seguridad</p>
+  <h1 class="title">[Auditoría de seguridad web y APIs]</h1>
+  <p class="client">[Nombre del cliente] · [app.ejemplo.com]</p>
+
+  <div class="bottom">
+    <dl class="meta">
+      <dt>Versión</dt><dd>[1.0] · [25 de octubre de 2026]</dd>
+      <dt>Periodo de pruebas</dt><dd>[del 3 al 7 de noviembre de 2026]</dd>
+      <dt>Preparado para</dt><dd>[Nombre y cargo del destinatario]</dd>
+      <dt>Preparado por</dt><dd data-brand="name">[StateX · Albert Sánchez y Jordi Sánchez]</dd>
+    </dl>
+    <p style="margin-top:8mm"><span class="stamp">Confidencial</span></p>
+    <p class="credit hidden">Elaborado técnicamente por StateX.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTROL Y ALCANCE ═══════════════ -->
+<section class="page">
+  <div class="head"><span class="brand" data-brand="name-short">StateX</span><span>[Cliente] · Confidencial</span></div>
+
+  <h2>Control del documento</h2>
+  <table>
+    <thead><tr><th>Versión</th><th>Fecha</th><th>Cambios</th><th>Autor</th></tr></thead>
+    <tbody>
+      <tr><td>[1.0]</td><td>[25/10/2026]</td><td>[Informe inicial]</td><td>[Iniciales]</td></tr>
+      <tr><td>[1.1]</td><td>[—]</td><td>[Resultado del retest]</td><td>[—]</td></tr>
+    </tbody>
+  </table>
+  <p class="muted">Distribución: solo las personas designadas por [Cliente]. Este documento contiene información sensible sobre la seguridad de sus sistemas.</p>
+
+  <h2 style="margin-top:10mm">Contenido</h2>
+  <ol>
+    <li>Resumen ejecutivo</li>
+    <li>Alcance y autorización</li>
+    <li>Metodología</li>
+    <li>Resumen de hallazgos</li>
+    <li>Detalle de los hallazgos</li>
+    <li>Plan de corrección</li>
+    <li>Retest</li>
+    <li>Limitaciones</li>
+  </ol>
+  <p>Anexo A. Criterios de severidad</p>
+
+  <div class="foot"><span>Página 2</span><span data-brand="footer">StateX · [web o correo]</span></div>
+</section>
+
+<!-- ═══════════════ 1. RESUMEN EJECUTIVO ═══════════════ -->
+<section class="page">
+  <div class="head"><span class="brand" data-brand="name-short">StateX</span><span>[Cliente] · Confidencial</span></div>
+
+  <h2><span class="n">1</span>Resumen ejecutivo</h2>
+  <div class="callout">
+    <p class="label">En una frase</p>
+    <p style="margin:0">[Ejemplo: La aplicación protege bien el acceso, pero dos fallos de autorización permiten a un usuario consultar o modificar datos de otras cuentas. Recomendamos corregirlos antes del próximo lanzamiento.]</p>
+  </div>
+
+  <div class="counts">
+    <div><span class="label">Crítica</span><b>[0]</b></div>
+    <div><span class="label">Alta</span><b>[2]</b></div>
+    <div><span class="label">Media</span><b>[1]</b></div>
+    <div><span class="label">Baja</span><b>[1]</b></div>
+    <div><span class="label">Informativa</span><b>[0]</b></div>
+  </div>
+
+  <h3>Qué significa para el negocio</h3>
+  <p>[2–3 frases sin jerga: qué podría pasar, a quién afectaría (clientes, datos, ingresos) y con qué probabilidad.]</p>
+
+  <h3>Qué está bien</h3>
+  <ul>
+    <li>[Controles que funcionan correctamente: no todo el informe son problemas.]</li>
+  </ul>
+
+  <h3>Decisiones recomendadas</h3>
+  <ol>
+    <li>[Corregir SX-01 y SX-02 antes de [fecha / lanzamiento].]</li>
+    <li>[Planificar SX-03 en el próximo sprint.]</li>
+    <li>[Solicitar el retest cuando las correcciones estén desplegadas (incluido durante 6 meses).]</li>
+  </ol>
+
+  <div class="foot"><span>Página 3</span><span data-brand="footer">StateX · [web o correo]</span></div>
+</section>
+
+<!-- ═══════════════ 2–3. ALCANCE Y METODOLOGÍA ═══════════════ -->
+<section class="page">
+  <div class="head"><span class="brand" data-brand="name-short">StateX</span><span>[Cliente] · Confidencial</span></div>
+
+  <h2><span class="n">2</span>Alcance y autorización</h2>
+  <table>
+    <thead><tr><th>Activo</th><th>Tipo</th><th>Entorno</th><th>Roles probados</th></tr></thead>
+    <tbody>
+      <tr><td><code>[app.ejemplo.com]</code></td><td>[Aplicación web]</td><td>[Preproducción]</td><td>[Usuario, administrador]</td></tr>
+      <tr><td><code>[api.ejemplo.com/v1]</code></td><td>[API REST]</td><td>[Preproducción]</td><td>[Usuario, administrador]</td></tr>
+    </tbody>
+  </table>
+  <dl class="meta">
+    <dt>Fuera de alcance</dt><dd>[Denegación de servicio, ingeniería social, infraestructura interna, servicios de terceros.]</dd>
+    <dt>Autorización</dt><dd>[Firmada por Nombre, cargo, titular de los sistemas, el DD/MM/AAAA. Referencia: AUT-AAAA-NN.]</dd>
+    <dt>Ventana de pruebas</dt><dd>[Días y horario acordados.]</dd>
+    <dt>Contactos</dt><dd>[Técnico y de urgencias.]</dd>
+    <dt>IP de origen</dt><dd>[IP desde la que se hicieron las pruebas, para que el cliente pueda cotejar sus registros.]</dd>
+  </dl>
+
+  <h2 style="margin-top:12mm"><span class="n">3</span>Metodología</h2>
+  <p>Pruebas manuales apoyadas en herramientas, dentro del alcance autorizado. Cada hallazgo de este informe se ha verificado a mano; los resultados de herramientas sin verificar no se incluyen.</p>
+  <ul>
+    <li><b>Entender:</b> revisión de la aplicación, sus roles, flujos críticos e integraciones.</li>
+    <li><b>Evaluar:</b> pruebas según [OWASP WSTG, OWASP API Security Top 10 y OWASP ASVS nivel 2] en los controles aplicables.</li>
+    <li><b>Priorizar:</b> severidad según el Anexo A, ajustada al contexto de negocio.</li>
+    <li><b>Corregir:</b> recomendación específica para el stack y retest de lo corregido.</li>
+  </ul>
+
+  <div class="foot"><span>Página 4</span><span data-brand="footer">StateX · [web o correo]</span></div>
+</section>
+
+<!-- ═══════════════ 4. RESUMEN DE HALLAZGOS ═══════════════ -->
+<section class="page">
+  <div class="head"><span class="brand" data-brand="name-short">StateX</span><span>[Cliente] · Confidencial</span></div>
+
+  <h2><span class="n">4</span>Resumen de hallazgos</h2>
+  <p class="muted">Los hallazgos SX-01 a SX-04 son un EJEMPLO FICTICIO. Sustitúyelos por los reales.</p>
+  <table>
+    <thead><tr><th>ID</th><th>Hallazgo</th><th>Severidad</th><th>Prioridad</th><th>Estado</th></tr></thead>
+    <tbody>
+      <tr><td><code>SX-01</code></td><td>Acceso a facturas de otras cuentas cambiando el identificador<br><span class="muted"><code>GET /api/v1/invoices/{id}</code></span></td><td><span class="sev alta">Alta</span></td><td>Inmediata</td><td>Abierto</td></tr>
+      <tr><td><code>SX-02</code></td><td>Un usuario sin rol de administración puede invitar administradores<br><span class="muted"><code>POST /api/v1/team/invite</code></span></td><td><span class="sev alta">Alta</span></td><td>Inmediata</td><td>Abierto</td></tr>
+      <tr><td><code>SX-03</code></td><td>Sin límite de intentos en el inicio de sesión<br><span class="muted"><code>POST /api/v1/auth/login</code></span></td><td><span class="sev media">Media</span></td><td>Próximo sprint</td><td>Abierto</td></tr>
+      <tr><td><code>SX-04</code></td><td>Cabeceras de seguridad incompletas<br><span class="muted"><code>app.ejemplo.com</code></span></td><td><span class="sev baja">Baja</span></td><td>Planificada</td><td>Abierto</td></tr>
+    </tbody>
+  </table>
+
+  <div class="foot"><span>Página 5</span><span data-brand="footer">StateX · [web o correo]</span></div>
+</section>
+
+<!-- ═══════════════ 5. DETALLE (repetir el bloque .finding por hallazgo) ═══════════════ -->
+<section class="page">
+  <div class="head"><span class="brand" data-brand="name-short">StateX</span><span>[Cliente] · Confidencial</span></div>
+
+  <h2><span class="n">5</span>Detalle de los hallazgos</h2>
+
+  <article class="finding">
+    <header>
+      <h3 style="margin:0">SX-01 · Acceso a facturas de otras cuentas cambiando el identificador</h3>
+      <span class="sev alta">Alta</span>
+    </header>
+    <dl class="meta" style="margin-top:3mm">
+      <dt>Activo</dt><dd><code>GET /api/v1/invoices/{id}</code> · api.ejemplo.com</dd>
+      <dt>Categoría</dt><dd>OWASP API1 · Autorización rota a nivel de objeto</dd>
+      <dt>Referencia CVSS</dt><dd>[Opcional: vector y puntuación CVSS v3.1 o v4.0]</dd>
+    </dl>
+
+    <h3>Descripción</h3>
+    <p>La API devuelve cualquier factura a partir de su identificador sin comprobar que pertenece a la cuenta de la sesión.</p>
+
+    <h3>Evidencia</h3>
+    <pre>GET /api/v1/invoices/10482 HTTP/1.1
+Host: api.ejemplo.com
+Authorization: Bearer eyJ…&lt;recortado; sesión de la cuenta A&gt;
+
+HTTP/1.1 200 OK
+{ "id": 10482, "account": "cuenta-B", "tax_id": "&lt;enmascarado&gt;", … }</pre>
+
+    <h3>Pasos para reproducir</h3>
+    <ol>
+      <li>Iniciar sesión con la cuenta A y obtener el token.</li>
+      <li>Solicitar <code>GET /api/v1/invoices/{id}</code> con el identificador de una factura de la cuenta B.</li>
+      <li>La API responde 200 con los datos de la factura de B.</li>
+    </ol>
+
+    <div class="grid">
+      <div>
+        <h3>Impacto</h3>
+        <p>Cualquier usuario registrado puede descargar las facturas de otros clientes, con sus datos fiscales.</p>
+      </div>
+      <div>
+        <h3>Recomendación</h3>
+        <p>Comprobar en el servidor que la factura pertenece a la cuenta de la sesión antes de devolverla, preferiblemente en una capa común (middleware o consulta filtrada por cuenta) para cubrir el resto de recursos.</p>
+      </div>
+    </div>
+    <p class="muted">Referencias: OWASP API Security Top 10 (API1:2023); OWASP ASVS V4 (control de acceso).</p>
+  </article>
+
+  <div class="foot"><span>Página 6</span><span data-brand="footer">StateX · [web o correo]</span></div>
+</section>
+
+<!-- ═══════════════ 6–8. PLAN, RETEST Y LIMITACIONES ═══════════════ -->
+<section class="page">
+  <div class="head"><span class="brand" data-brand="name-short">StateX</span><span>[Cliente] · Confidencial</span></div>
+
+  <h2><span class="n">6</span>Plan de corrección</h2>
+  <table>
+    <thead><tr><th>Plazo</th><th>Hallazgos</th><th>Responsable sugerido</th></tr></thead>
+    <tbody>
+      <tr><td>Inmediato (antes de [fecha])</td><td>SX-01, SX-02</td><td>[Backend]</td></tr>
+      <tr><td>Próximo sprint</td><td>SX-03</td><td>[Backend]</td></tr>
+      <tr><td>Planificado</td><td>SX-04</td><td>[DevOps]</td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="margin-top:10mm"><span class="n">7</span>Retest</h2>
+  <p>El retest de los hallazgos críticos y altos está incluido durante los 6 meses siguientes a la entrega de este informe. Al completarlo se emite la versión 1.1 con el estado de cada hallazgo.</p>
+  <table>
+    <thead><tr><th>ID</th><th>Fecha del retest</th><th>Estado</th><th>Comentario</th></tr></thead>
+    <tbody>
+      <tr><td><code>SX-01</code></td><td>[—]</td><td>[Corregido / Parcial / Abierto]</td><td>[—]</td></tr>
+      <tr><td><code>SX-02</code></td><td>[—]</td><td>[—]</td><td>[—]</td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="margin-top:10mm"><span class="n">8</span>Limitaciones</h2>
+  <p>Este informe refleja las pruebas realizadas sobre el alcance indicado, en el periodo y con la información disponibles. No garantiza la ausencia de otras vulnerabilidades ni certifica el cumplimiento de ninguna norma. Los cambios posteriores en la aplicación pueden introducir riesgos nuevos.</p>
+
+  <div class="foot"><span>Página 7</span><span data-brand="footer">StateX · [web o correo]</span></div>
+</section>
+
+<!-- ═══════════════ ANEXO A ═══════════════ -->
+<section class="page">
+  <div class="head"><span class="brand" data-brand="name-short">StateX</span><span>[Cliente] · Confidencial</span></div>
+
+  <h2>Anexo A. Criterios de severidad</h2>
+  <p>La severidad combina el impacto y la probabilidad de explotación, ajustados al contexto del negocio. CVSS se usa como referencia, no como único criterio.</p>
+  <table>
+    <thead><tr><th style="width:30mm">Severidad</th><th>Criterio</th><th style="width:38mm">Plazo orientativo</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sev critica">Crítica</span></td><td>Explotable sin autenticación o de forma trivial; compromete datos de muchos usuarios, permite ejecutar código o tomar el control.</td><td>Inmediato (días)</td></tr>
+      <tr><td><span class="sev alta">Alta</span></td><td>Acceso a datos o funciones de otros usuarios, o escalada de privilegios, con requisitos bajos.</td><td>Antes del próximo despliegue</td></tr>
+      <tr><td><span class="sev media">Media</span></td><td>Requiere condiciones adicionales o tiene impacto limitado, pero facilita otros ataques.</td><td>Próximo sprint</td></tr>
+      <tr><td><span class="sev baja">Baja</span></td><td>Debilidad de configuración o de defensa en profundidad con impacto directo reducido.</td><td>Planificado</td></tr>
+      <tr><td><span class="sev info">Informativa</span></td><td>Buenas prácticas u observaciones sin riesgo directo.</td><td>Opcional</td></tr>
+    </tbody>
+  </table>
+
+  <div class="foot"><span>Página 8</span><span data-brand="footer">StateX · [web o correo]</span></div>
+</section>
+
+</body>
+</html>
