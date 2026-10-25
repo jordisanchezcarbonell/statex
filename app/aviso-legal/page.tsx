@@ -1,25 +1,33 @@
 import type { Metadata } from "next";
 import { Company, LegalPage } from "../_legal/LegalPage";
-import { Pending } from "../design-lab/h/ui";
+import { brand, company } from "../_site/content";
 
 export const metadata: Metadata = { title: "Aviso legal" };
 
-// Información exigida por el art. 10 de la LSSI-CE. Borrador: revisar antes de publicar.
+// Información exigida por el art. 10 de la LSSI-CE. Hasta constituir una sociedad, el titular es una
+// persona física y StateX es su nombre comercial (ver company en app/_site/content.ts).
 export default function AvisoLegal() {
   return (
-    <LegalPage title="Aviso legal" updated="24 de octubre de 2026">
+    <LegalPage title="Aviso legal" updated="25 de octubre de 2026">
       <h2>Titular de la web</h2>
+      {company.kind === "persona-fisica" && (
+        <p>{brand.name} es el nombre comercial con el que su titular, profesional con sede en {company.city}, presta servicios de ciberseguridad. Todavía no es una sociedad mercantil.</p>
+      )}
       <dl>
         <dt>Titular</dt>
-        <dd><Company field="legalName" label="razón social o titular" /></dd>
-        <dt>CIF / NIF</dt>
-        <dd><Company field="taxId" label="CIF o NIF" /></dd>
+        <dd><Company field="legalName" label={company.kind === "persona-fisica" ? "nombre y apellidos del titular" : "razón social"} /></dd>
+        <dt>{company.kind === "persona-fisica" ? "NIF" : "CIF"}</dt>
+        <dd><Company field="taxId" label={company.kind === "persona-fisica" ? "NIF" : "CIF"} /></dd>
         <dt>Domicilio</dt>
-        <dd><Company field="address" label="domicilio" /></dd>
-        <dt>Datos registrales</dt>
-        <dd><Company field="registry" label="inscripción en el Registro Mercantil, si aplica" /></dd>
+        <dd><Company field="address" label={`domicilio en ${company.city}`} /></dd>
+        {company.kind === "sociedad" && (
+          <>
+            <dt>Datos registrales</dt>
+            <dd><Company field="registry" label="inscripción en el Registro Mercantil" /></dd>
+          </>
+        )}
         <dt>Contacto</dt>
-        <dd><Company field="email" label="correo corporativo" /></dd>
+        <dd><Company field="email" label="correo de contacto" /></dd>
       </dl>
 
       <h2>Objeto</h2>
@@ -39,7 +47,7 @@ export default function AvisoLegal() {
       <p>Cuidamos que la información sea correcta y esté actualizada, pero no garantizamos que la web esté libre de errores ni disponible en todo momento. No respondemos del contenido de webs externas enlazadas.</p>
 
       <h2>Legislación aplicable</h2>
-      <p>Este aviso se rige por la legislación española. <Pending>[Pendiente: confirmar jurisdicción con asesoría legal]</Pending></p>
+      <p>Este aviso se rige por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales de {company.city}, salvo que la normativa de protección de consumidores establezca otro fuero.</p>
     </LegalPage>
   );
 }

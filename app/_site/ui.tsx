@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 
-// Concept H: una sola familia (Inter, en font.ts) y un solo acento (la línea roja).
+// Sistema visual de StateX (dirección H, Boutique Precision): una sola familia (Inter, en font.ts)
+// y un solo acento, la línea roja.
 
 export const tokens = {
   "--h-ink": "#0B0D10",
@@ -11,6 +12,9 @@ export const tokens = {
   // Solo para texto de error sobre oscuro: el rojo de marca no llega a AA como texto.
   "--h-red-text": "#E07A73",
   "--h-line": "rgba(242,240,234,0.14)",
+  // Texto secundario sobre papel marfil (informe): 6,2:1 sobre #F2F0EA; el titanio no llega a AA ahí.
+  "--h-stone": "#5C5850",
+  "--h-paper-line": "rgba(11,13,16,0.14)",
 } as CSSProperties;
 
 export const wrap = "mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-14";

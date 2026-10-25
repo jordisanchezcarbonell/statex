@@ -1,6 +1,9 @@
-// Contenido ÚNICO de StateX. Todos los conceptos lo consumen tal cual:
+// ARCHIVO DEL DESIGN LAB. La web pública usa app/_site/content.ts; esto solo alimenta los conceptos A–I.
+// Contenido común a todos los conceptos del lab. Todos lo consumen tal cual:
 // cambian el diseño, nunca el mensaje ni los hechos.
 // Reglas: nada de clientes, cifras de negocio, financiación, equipo, testimonios ni certificaciones inventadas.
+import { company, contactForm as siteForm, legalLinks } from "../_site/content";
+
 // Los hechos de "Sobre StateX" e "Investigación" están verificados en los blogs originales (ver docs/design-research.md).
 
 export const brand = {
@@ -328,13 +331,8 @@ export const contactForm = {
     interest: "Qué te interesa",
     message: "Cuéntanos qué quieres proteger",
   },
-  interestOptions: [
-    { value: "evaluacion-inicial", label: "Evaluación inicial de exposición" },
-    { value: "auditoria-web", label: "Auditoría de aplicación web" },
-    { value: "arquitectura", label: "Revisión de arquitectura y hardening" },
-    { value: "otra", label: "Otra consulta" },
-    { value: "colaboracion", label: "Inversión o colaboración" },
-  ],
+  // Mismas opciones que la web pública: la acción del servidor solo acepta esos valores.
+  interestOptions: siteForm.serviceOptions,
   consent: "Acepto que StateX use estos datos solo para responder a mi solicitud.",
   privacyPending: "[Pendiente: enlace a la política de privacidad]",
   privacyNote: { before: "Cómo tratamos tus datos: ", link: "política de privacidad", href: "/privacidad" },
@@ -347,21 +345,8 @@ export const contactForm = {
 
 export const footer = { legal: "[Pendiente: datos legales]", year: "2026" };
 
-// Datos de la empresa: ÚNICO sitio donde rellenarlos. Mientras valgan null, la web muestra un
-// [Pendiente] visible en el pie, el formulario y las páginas legales. No inventar ninguno.
-export const company: Record<"legalName" | "taxId" | "address" | "registry" | "email", string | null> = {
-  legalName: null, // Razón social o, si aún no hay sociedad, nombre del titular
-  taxId: null, // CIF / NIF
-  address: null, // Domicilio social
-  registry: null, // Datos registrales (Registro Mercantil), si es sociedad
-  email: null, // Correo corporativo de contacto y para ejercer derechos de protección de datos
-};
-
-export const legalLinks = [
-  { href: "/aviso-legal", label: "Aviso legal" },
-  { href: "/privacidad", label: "Privacidad" },
-  { href: "/cookies", label: "Cookies" },
-];
+// Datos de la empresa y enlaces legales: se definen en la web pública (una sola fuente).
+export { company, legalLinks };
 
 // Datos para tarjeta digital y portada de pitch deck: sin inventar personas.
 export const identity = {

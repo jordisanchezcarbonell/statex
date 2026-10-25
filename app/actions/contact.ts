@@ -1,60 +1,76 @@
 "use server";
 
+import { headers } from "next/headers";
+import { contactForm } from "../_site/content";
+import { readContact, validateContact, type ContactValues, type FieldErrors } from "../_site/validate";
+
 // Envío del formulario de contacto.
-// - Valida en servidor (nunca confiar en el cliente).
-// - Campo trampa "website" contra bots: si viene relleno, se finge éxito y no se envía nada.
-// - Envía con la API REST de Resend (sin dependencias). Si faltan las variables de entorno,
-//   devuelve "not-configured" para que la web lo diga claramente en lugar de fallar en silencio.
+// - Valida en servidor con las mismas reglas que el navegador (app/_site/validate.ts).
+// - Antiabuso sin dependencias: campo trampa "website", envíos demasiado rápidos tras pintar el
+//   formulario y límite por IP en memoria. En ambos primeros casos se finge éxito y no se envía nada.
+//   El límite en memoria es por instancia (orientativo en serverless); uno global necesitaría un
+//   almacén externo (ver docs/pendientes.md).
+// - Envía con la API REST de Resend. Si faltan las variables de entorno devuelve "not-configured"
+//   para que la web lo diga claramente: nunca se muestra éxito si no se ha enviado.
 //   Variables: RESEND_API_KEY, CONTACT_TO, CONTACT_FROM (ver .env.example).
 
 export type ContactState = {
-  status: "idle" | "ok" | "error" | "not-configured";
-  fieldErrors?: Partial<Record<"name" | "company" | "email" | "interest" | "message" | "consent", string>>;
+  status: "idle" | "ok" | "invalid" | "error" | "not-configured" | "rate-limited";
+  fieldErrors?: FieldErrors;
   // Valores enviados: React 19 vacía el formulario tras la acción; con esto se repueblan si hay error.
-  values?: Record<"name" | "company" | "email" | "role" | "interest" | "message", string>;
+  values?: ContactValues;
 };
 
-const INTERESTS = new Set(["evaluacion-inicial", "auditoria-web", "arquitectura", "otra", "colaboracion"]);
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const MIN_FILL_MS = 3000;
+const WINDOW_MS = 10 * 60 * 1000;
+const MAX_PER_WINDOW = 5;
+const hits = new Map<string, number[]>();
 
-function field(data: FormData, key: string, max: number) {
-  const v = data.get(key);
-  return typeof v === "string" ? v.trim().slice(0, max) : "";
+function rateLimited(ip: string) {
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
+  if (recent.length >= MAX_PER_WINDOW) return true;
+  recent.push(now);
+  hits.delete(ip);
+  hits.set(ip, recent);
+  // Cota de memoria: se descartan las IP más antiguas (Map conserva el orden de inserción).
+  while (hits.size > 5000) hits.delete(hits.keys().next().value!);
+  return false;
 }
 
+// Quita saltos de línea y caracteres de control: evita inyectar líneas falsas en el correo.
+const oneLine = (s: string) => s.replace(/[\u0000-\u001f\u007f\u2028\u2029]+/g, " ");
+
 export async function sendContact(_prev: ContactState, data: FormData): Promise<ContactState> {
-  if (field(data, "website", 200)) return { status: "ok" };
+  const website = data.get("website");
+  const renderedAt = Number(data.get("t"));
+  if (typeof website === "string" && website) return { status: "ok" };
+  // Demasiado rápido para una persona: no se envía y se pide repetir (nunca un falso éxito a quien
+  // pudiera ser real). Sin JavaScript la marca llega vacía y no se aplica.
+  const input = readContact(data);
+  const { values } = input;
+  if (renderedAt > 0 && Date.now() - renderedAt < MIN_FILL_MS) return { status: "error", values };
 
-  const name = field(data, "name", 120);
-  const company = field(data, "company", 160);
-  const email = field(data, "email", 200);
-  const role = field(data, "role", 120);
-  const interest = field(data, "interest", 40);
-  const message = field(data, "message", 4000);
-  const consent = data.get("consent") === "on";
+  const fieldErrors = validateContact(input);
+  if (Object.keys(fieldErrors).length) return { status: "invalid", fieldErrors, values };
 
-  const fieldErrors: ContactState["fieldErrors"] = {};
-  if (!name) fieldErrors.name = "Indica tu nombre.";
-  if (!company) fieldErrors.company = "Indica tu empresa.";
-  if (!EMAIL_RE.test(email)) fieldErrors.email = "Revisa el email.";
-  if (!INTERESTS.has(interest)) fieldErrors.interest = "Elige una opción.";
-  if (message.length < 10) fieldErrors.message = "Cuéntanos un poco más (mínimo 10 caracteres).";
-  if (!consent) fieldErrors.consent = "Necesitamos tu consentimiento para responderte.";
-  const values = { name, company, email, role, interest, message };
-  if (Object.keys(fieldErrors).length) return { status: "error", fieldErrors, values };
+  // En Vercel, x-vercel-forwarded-for y x-real-ip los fija el borde; x-forwarded-for es el último recurso.
+  const h = await headers();
+  const ip = (h.get("x-vercel-forwarded-for") ?? h.get("x-real-ip") ?? h.get("x-forwarded-for") ?? "").split(",")[0].trim() || "unknown";
+  if (rateLimited(ip)) return { status: "rate-limited", values };
 
   const key = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO;
   if (!key || !to) return { status: "not-configured", values };
 
+  const service = contactForm.serviceOptions.find((o) => o.value === values.service)?.label ?? values.service;
   const text = [
-    `Nombre: ${name}`,
-    `Empresa: ${company}`,
-    `Email: ${email}`,
-    `Cargo: ${role || "-"}`,
-    `Interés: ${interest}`,
+    `Nombre: ${oneLine(values.name)}`,
+    `Empresa: ${oneLine(values.company)}`,
+    `Email: ${oneLine(values.email)}`,
+    `Servicio: ${service}`,
     "",
-    message,
+    values.message,
   ].join("\n");
 
   try {
@@ -64,13 +80,17 @@ export async function sendContact(_prev: ContactState, data: FormData): Promise<
       body: JSON.stringify({
         from: process.env.CONTACT_FROM ?? "StateX <onboarding@resend.dev>",
         to: [to],
-        reply_to: email,
-        subject: `Nueva solicitud (${interest}): ${company.replace(/[\r\n]+/g, " ")}`,
+        reply_to: values.email,
+        subject: `Nueva solicitud (${oneLine(service)}): ${oneLine(values.company)}`,
         text,
       }),
+      signal: AbortSignal.timeout(10_000),
     });
-    return res.ok ? { status: "ok" } : { status: "error", values };
+    if (res.ok) return { status: "ok" };
+    console.error(`contact: Resend respondió ${res.status}`); // sin cuerpo ni datos personales
+    return { status: "error", values };
   } catch {
+    console.error("contact: fallo de red al enviar");
     return { status: "error", values };
   }
 }

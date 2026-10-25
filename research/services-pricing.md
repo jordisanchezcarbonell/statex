@@ -229,3 +229,29 @@ Ruta comercial prevista: Essential → Advanced (sobre lo que el Essential prior
 3. Medir días reales por paquete y recalcular la tarifa.
 4. Plantillas legales listas: autorización de pruebas, reglas de intervención, NDA, acuerdo de tratamiento de datos, condiciones de retest; seguro de RC profesional contratado.
 5. Revisar si Kit Consulting reabre (sede de Red.es) antes de diseñar cualquier variante subvencionable.
+
+---
+
+## 8. Precios de lanzamiento publicados (2026-10-25)
+
+Los fundadores piden ser competitivos por ser una firma pequeña. Estos precios **sustituyen a los rangos del §6** en la web. Sin IVA. Se publica un precio "desde" y la propuesta final es siempre cerrada.
+
+**Tarifa de lanzamiento: ≈600 €/día-persona.**
+- Está justo por debajo del mínimo europeo publicado más fiable (Securitum, 640–890 €) y del freelance senior en España (720–1.200 €).
+- Cubre el coste total por día del §2 en su tramo bajo, lo que es viable porque los fundadores no cobran sueldo de mercado al principio.
+- No se compite con escáneres automáticos (49 €) ni con la gama más baja de PentestingTeam:
+  - PentestingTeam publica "desde" 1.140 € (web), 760 € (API) y 450 € (superficie externa), según el documento `competencia-y-seo-2026-10-25.md`.
+  - StateX se diferencia por verificar a mano, entender el stack y ayudar a corregir. Por eso queda por encima de ese suelo y muy por debajo de las boutiques europeas (3.500–15.000 €).
+
+| Servicio | Alcance mínimo del "desde" | Días | Precio publicado |
+|---|---|---|---|
+| Evaluación inicial (puerta de entrada) | Superficie externa de hasta 2 dominios + revisión sin autenticar de la aplicación principal, informe breve y sesión de 45 min | 1,5 | **900 € precio cerrado** |
+| Evaluación de exposición externa | Hasta 3 dominios raíz y un rango /28, hallazgos verificados, plan de reducción y sesión | 2,5 | **desde 1.500 €** |
+| Auditoría de seguridad web y APIs | 1 aplicación + API (hasta ~30 endpoints, 2 roles), informe ejecutivo y técnico, sesión y **un retest de críticos/altos en 60 días** | 5 | **desde 2.900 €** |
+| Ingeniería de software segura | Diagnóstico técnico de arquitectura, autenticación, CI/CD y dependencias + plan de mejoras | 3 | **desde 1.800 €** (acompañamiento posterior a ≈600 €/día o bolsa mensual) |
+
+**Reglas:**
+- Lo que supere el alcance mínimo se presupuesta por días a la tarifa de lanzamiento.
+- Si el cliente contrata la auditoría en los 60 días siguientes, se le descuenta el importe de la evaluación inicial.
+- Revisar la tarifa al cerrar 3–5 proyectos (días reales frente a estimados) y subirla al acumular casos.
+- Lote para agencias (varias webs): pendiente de decidir; no se publica todavía.

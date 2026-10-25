@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 import { Company, LegalPage } from "../_legal/LegalPage";
-import { Pending } from "../design-lab/h/ui";
+import { Pending } from "../_site/ui";
 
 export const metadata: Metadata = { title: "Política de privacidad" };
 
 // Información del art. 13 RGPD para el formulario de contacto. Borrador: revisar antes de publicar.
 export default function Privacidad() {
   return (
-    <LegalPage title="Política de privacidad" updated="24 de octubre de 2026">
+    <LegalPage title="Política de privacidad" updated="25 de octubre de 2026">
       <p>Esta web solo recoge datos personales cuando nos escribes a través del formulario de contacto o por correo. No usa analítica, publicidad ni seguimiento.</p>
 
       <h2>Responsable del tratamiento</h2>
       <dl>
         <dt>Responsable</dt>
-        <dd><Company field="legalName" label="razón social o titular" /></dd>
-        <dt>CIF / NIF</dt>
-        <dd><Company field="taxId" label="CIF o NIF" /></dd>
+        <dd><Company field="legalName" label="nombre y apellidos del titular" /> (nombre comercial: StateX)</dd>
+        <dt>NIF</dt>
+        <dd><Company field="taxId" label="NIF" /></dd>
         <dt>Domicilio</dt>
         <dd><Company field="address" label="domicilio" /></dd>
         <dt>Contacto</dt>
@@ -33,10 +33,10 @@ export default function Privacidad() {
       <p>No los usamos para enviarte comunicaciones comerciales ni para crear perfiles.</p>
 
       <h2>Base legal</h2>
-      <p>Tu consentimiento, que das al marcar la casilla del formulario (art. 6.1.a RGPD), y, si pides una propuesta, la aplicación de medidas precontractuales a tu petición (art. 6.1.b RGPD). Puedes retirar el consentimiento cuando quieras.</p>
+      <p>La aplicación de medidas precontractuales a petición tuya, es decir, responder a tu solicitud y, si lo pides, preparar una propuesta (art. 6.1.b RGPD). La casilla del formulario recoge además tu consentimiento expreso para ese uso (art. 6.1.a RGPD), que puedes retirar cuando quieras.</p>
 
       <h2>Cuánto tiempo los guardamos</h2>
-      <p>El tiempo necesario para atender tu solicitud. Si no llega a haber relación comercial, los borramos en un plazo máximo de <Pending>[Por confirmar: plazo de conservación]</Pending>.</p>
+      <p>El tiempo necesario para atender tu solicitud. Si no llega a haber relación comercial, los borramos como máximo <strong>12 meses</strong> después de nuestra última comunicación. Si nos contratas, los conservamos mientras dure la relación y, después, durante los plazos que exige la ley para la documentación contable y fiscal; pasado ese tiempo, los eliminamos.</p>
 
       <h2>Quién más accede</h2>
       <p>No cedemos tus datos a terceros. Para que la web funcione usamos proveedores que los tratan por cuenta nuestra (encargados del tratamiento):</p>

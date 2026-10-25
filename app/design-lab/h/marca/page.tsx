@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 import { approach, brand, hero, identity, principles, problem, sampleAssets, solutions, technology } from "../../content";
 import { BrandBoard } from "../../_shared/BrandBoard";
-import { inter } from "../font";
-import { Wordmark, display, tokens } from "../ui";
+import { inter } from "../../../_site/font";
+import { Wordmark, display, tokens } from "../../../_site/ui";
 
 export const metadata = { title: "Concept H · Marca" };
 

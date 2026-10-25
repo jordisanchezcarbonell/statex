@@ -2,11 +2,14 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { cta, nav } from "../content";
+import { cta, nav } from "./content";
 import { Wordmark, focus } from "./ui";
 
-/** Transparente sobre el hero; al hacer scroll pasa a Obsidiana sólida con filete inferior (sin cristal ni desenfoque). */
-export function Header() {
+/**
+ * Transparente sobre el hero; al hacer scroll pasa a Obsidiana sólida con filete inferior (sin cristal ni desenfoque).
+ * `base` = "" en la home (anclas en la misma página) y "/" en las páginas interiores (vuelven a la home).
+ */
+export function Header({ base = "" }: { base?: "" | "/" }) {
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
   const panelId = useId();
@@ -36,6 +39,7 @@ export function Header() {
   }, [open]);
 
   const filled = solid || open;
+  const href = (h: string) => `${base}${h}`;
   const link = `relative inline-flex min-h-11 items-center px-3 text-[14px] text-(--h-ivory)/80 transition-colors hover:text-(--h-ivory) after:absolute after:inset-x-3 after:bottom-2.5 after:h-px after:origin-left after:scale-x-0 after:bg-(--h-red) after:transition-transform hover:after:scale-x-100 motion-reduce:after:transition-none ${focus}`;
 
   return (
@@ -44,8 +48,8 @@ export function Header() {
         filled ? "border-(--h-line) bg-(--h-ink)" : "border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-18 w-full max-w-[1440px] items-center gap-4 px-4 sm:h-20 sm:px-8 lg:px-14">
-        <a href="#inicio" aria-label="StateX, inicio" className={`text-[15px] sm:text-[17px] ${focus}`}>
+      <div className="mx-auto flex h-18 w-full max-w-[1440px] items-center gap-2 px-4 sm:gap-4 sm:h-20 sm:px-8 lg:px-14">
+        <a href={base || "#inicio"} aria-label="StateX, inicio" className={`text-[15px] sm:text-[17px] ${focus}`}>
           <Wordmark />
         </a>
 
@@ -53,15 +57,15 @@ export function Header() {
           <ul className="m-0 flex list-none p-0">
             {nav.map((n) => (
               <li key={n.href}>
-                <a href={n.href} className={link}>{n.label}</a>
+                <a href={href(n.href)} className={link}>{n.label}</a>
               </li>
             ))}
           </ul>
         </nav>
 
         <a
-          href="#contacto"
-          className={`ml-auto hidden min-h-11 items-center border border-(--h-ivory)/70 px-5 text-[14px] font-medium transition-colors hover:border-(--h-ivory) hover:bg-(--h-ivory) hover:text-(--h-ink) motion-reduce:transition-none sm:inline-flex lg:ml-4 ${focus}`}
+          href={href("#contacto")}
+          className={`ml-auto inline-flex min-h-11 items-center whitespace-nowrap border border-(--h-ivory)/70 px-3 text-[13px] font-medium transition-colors hover:border-(--h-ivory) hover:bg-(--h-ivory) hover:text-(--h-ink) motion-reduce:transition-none sm:px-5 sm:text-[14px] lg:ml-4 ${focus}`}
         >
           {cta.primary}
         </a>
@@ -72,7 +76,7 @@ export function Header() {
           aria-expanded={open}
           aria-controls={panelId}
           onClick={() => setOpen((o) => !o)}
-          className={`ml-auto inline-flex size-11 shrink-0 cursor-pointer items-center justify-center sm:ml-0 lg:hidden ${focus}`}
+          className={`inline-flex size-11 shrink-0 cursor-pointer items-center justify-center lg:hidden ${focus}`}
         >
           {open ? <X size={22} strokeWidth={1.5} aria-hidden="true" /> : <Menu size={22} strokeWidth={1.5} aria-hidden="true" />}
           <span className="sr-only">{open ? "Cerrar menú" : "Abrir menú"}</span>
@@ -85,7 +89,7 @@ export function Header() {
             {nav.map((n) => (
               <li key={n.href} className="border-b border-(--h-line)">
                 <a
-                  href={n.href}
+                  href={href(n.href)}
                   onClick={() => setOpen(false)}
                   className={`flex min-h-16 items-center text-[1.6rem] font-semibold uppercase tracking-[-0.02em] ${focus}`}
                 >
@@ -95,7 +99,7 @@ export function Header() {
             ))}
           </ul>
           <a
-            href="#contacto"
+            href={href("#contacto")}
             onClick={() => setOpen(false)}
             className={`mt-10 inline-flex min-h-13 items-center bg-(--h-ivory) px-6 font-medium text-(--h-ink) ${focus}`}
           >

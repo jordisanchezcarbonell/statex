@@ -48,7 +48,7 @@ export function ContactForm() {
 
   useEffect(() => {
     if (state.status !== "idle") status.current?.focus();
-    if (state.values?.interest) setInterest(state.values.interest);
+    if (state.values?.service) setInterest(state.values.service);
   }, [state]);
 
   if (state.status === "ok") {
@@ -75,16 +75,16 @@ export function ContactForm() {
         {t.title}
       </h3>
 
-      {(state.status === "error" || state.status === "not-configured") && (
+      {(state.status === "error" || state.status === "invalid" || state.status === "not-configured") && (
         <p
           ref={status}
           tabIndex={-1}
           role="alert"
           className={`m-0 mt-5 border-[3px] px-3 py-2 font-semibold outline-none ${
-            state.status === "error" ? "border-[#B81F18] text-[#8A1712]" : "border-dashed border-black"
+            state.status !== "not-configured" ? "border-[#B81F18] text-[#8A1712]" : "border-dashed border-black"
           }`}
         >
-          {state.status === "error" ? t.error : t.notConfigured}
+          {state.status !== "not-configured" ? t.error : t.notConfigured}
         </p>
       )}
 
@@ -106,7 +106,7 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="cf-role" className={label}>{t.fields.role}</label>
-          <input id="cf-role" name="role" defaultValue={v?.role} autoComplete="organization-title" maxLength={120} className={input} />
+          <input id="cf-role" name="role" autoComplete="organization-title" maxLength={120} className={input} />
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="cf-interest" className={label}>{t.fields.interest}</label>
@@ -115,16 +115,16 @@ export function ContactForm() {
           <select
             key={interest}
             id="cf-interest"
-            name="interest"
+            name="service"
             defaultValue={interest}
             className={input}
-            {...aria("interest")}
+            {...aria("service")}
           >
             {t.interestOptions.map((o) => (
               <option key={o.value} value={o.value}>{o.label}</option>
             ))}
           </select>
-          {err("interest")}
+          {err("service")}
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="cf-message" className={label}>{t.fields.message}</label>
