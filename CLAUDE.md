@@ -6,7 +6,7 @@ Proyecto de la web de StateX, startup de ciberseguridad. **Dirección elegida: C
 
 - **Marca:** únicamente **StateX**. Sin submarcas ni nombres comerciales alternativos.
 - **Qué es:** consultoría boutique de ciberseguridad (fase inicial): seguridad de aplicaciones, APIs y exposición externa, con criterio de ingeniería de software ("Seguridad que entiende cómo se construye el software"). Posibles productos propios en el futuro; **no** presentarla como financiada ni como SaaS operativo, y no mostrar funcionalidades futuras en la web pública.
-- **Tres servicios:** Auditoría de seguridad web y APIs · Evaluación de exposición externa · Ingeniería de software segura. Puerta de entrada: evaluación inicial de alcance limitado. Precios publicados por debajo de PentestingTeam (2026-10-25; cálculo en `research/services-pricing.md` §9).
+- **Tres servicios:** Auditoría de seguridad web y APIs · Evaluación de exposición externa · Ingeniería de software segura. Puertas de entrada: evaluación inicial (290 €) y pack para agencias (5 webs por 1.290 €). Precios publicados por debajo de PentestingTeam (2026-10-25; cálculo en `research/services-pricing.md` §9).
 - **Método (4 fases):** Entender → Evaluar → Priorizar → Corregir. Ninguna prueba activa sin autorización escrita y alcance acordado. La monitorización continua es roadmap, no capacidad actual.
 - **Origen (verificado):** blog InfoStateX (archivo 2012–2018) y DoubleReboot ("Un proyecto de State X", 2013 y 2016). Ver `docs/design-research.md`.
 - **Titular legal:** aún no hay sociedad; StateX es el nombre comercial de un fundador persona física (datos solo en páginas legales). No mostrar razón social.
@@ -56,6 +56,7 @@ Proyecto de la web de StateX, startup de ciberseguridad. **Dirección elegida: C
 app/
   _site/                  # Web pública: content.ts (copy único), Home, Shell, Hero, Services, Method, Report, ContactForm, validate
   servicios/[slug]/       # Una página estática por servicio
+  guias/[slug]/           # Guías de contenido real (lista en guides de app/_site/content.ts)
   actions/contact.ts      # Server Action del formulario (Resend)
   aviso-legal/ privacidad/ cookies/   # Legales (borradores)
   design-lab/

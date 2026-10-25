@@ -71,18 +71,25 @@ export function Services() {
         </ul>
       </div>
 
-      <aside aria-labelledby="h-empezar" className="mt-12 grid gap-6 bg-(--h-graphite) p-7 sm:p-10 lg:grid-cols-12 lg:items-center lg:gap-10">
-        <div className="lg:col-span-8">
-          <h3 id="h-empezar" className="m-0 text-[1.25rem] font-semibold">{t.start.title}</h3>
-          <p className={`m-0 mt-3 max-w-[64ch] leading-[1.6] ${muted}`}>{t.start.text}</p>
-          <p className="m-0 mt-4 text-[17px] font-medium tabular-nums">{t.start.price}</p>
-        </div>
-        <div className="lg:col-span-4 lg:justify-self-end">
-          <OfferLink interest={t.start.interest} className="bg-(--h-ivory) px-6 text-(--h-ink) hover:bg-white">
-            {t.start.cta}
-          </OfferLink>
-        </div>
-      </aside>
+      {/* Dos puertas de entrada: quien no sabe por dónde empezar y las agencias */}
+      <div className="mt-12 grid gap-px bg-(--h-line) lg:grid-cols-2">
+        {[
+          { id: "h-empezar", ...t.start, note: undefined as string | undefined },
+          { id: "h-agencias", ...t.agencies },
+        ].map((b) => (
+          <aside key={b.id} aria-labelledby={b.id} className="flex flex-col bg-(--h-graphite) p-7 sm:p-10">
+            <h3 id={b.id} className="m-0 text-[1.25rem] font-semibold">{b.title}</h3>
+            <p className={`m-0 mt-3 max-w-[56ch] leading-[1.6] ${muted}`}>{b.text}</p>
+            <p className="m-0 mt-4 text-[17px] font-medium tabular-nums">{b.price}</p>
+            {b.note && <p className={`m-0 mt-2 text-[14px] ${muted}`}>{b.note}</p>}
+            <div className="mt-auto pt-8">
+              <OfferLink interest={b.interest} className="bg-(--h-ivory) px-6 text-(--h-ink) hover:bg-white">
+                {b.cta}
+              </OfferLink>
+            </div>
+          </aside>
+        ))}
+      </div>
     </>
   );
 }
