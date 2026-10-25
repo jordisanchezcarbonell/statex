@@ -1,8 +1,8 @@
 "use client";
 
-import { Fragment, useRef } from "react";
+import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { about, brand, cta, hero } from "../content";
+import { cta, hero, services } from "./content";
 import { display, focus, wrap } from "./ui";
 
 // Escena: una nave de pórticos en perspectiva central (un solo punto de fuga), como un pasillo
@@ -88,7 +88,7 @@ export function Hero() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.14]);
   const dim = useTransform(scrollYProgress, [0, 1], [1, 0.35]);
-  const words = hero.title.split(" ");
+  let w = 0; // índice global de palabra, para escalonar la entrada entre líneas
 
   return (
     <section id="inicio" ref={ref} aria-labelledby="h-hero" className="relative isolate flex min-h-[max(100svh,640px)] flex-col overflow-hidden">
@@ -102,20 +102,28 @@ export function Hero() {
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,#0B0D10_6%,rgba(11,13,16,0.78)_34%,rgba(11,13,16,0)_62%)]" />
 
       <div className={`${wrap} mt-auto pb-10 pt-40 sm:pb-14`}>
-        <h1 id="h-hero" className={`${display} m-0 max-w-[17ch] text-[clamp(1.9rem,5.4vw,5.5rem)]`}>
-          {words.map((w, i) => (
-            <Fragment key={i}>
-              <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
-                <motion.span
-                  className="inline-block"
-                  initial={reduce ? false : { y: "105%" }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 0.9, delay: 0.35 + i * 0.045, ease }}
-                >
-                  {w}
-                </motion.span>
-              </span>{" "}
-            </Fragment>
+        {/* Dos frases: la primera en titanio, la afirmación en marfil */}
+        <h1 id="h-hero" className={`${display} m-0 max-w-[18ch] text-[clamp(2.1rem,5.6vw,5.75rem)]`}>
+          {hero.lines.map((line, l) => (
+            <span key={line} className={`block ${l === 0 ? "text-(--h-titanium)" : ""}`}>
+              {line.split(" ").map((word) => {
+                const i = w++;
+                return (
+                  <span key={i}>
+                    <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
+                      <motion.span
+                        className="inline-block"
+                        initial={reduce ? false : { y: "105%" }}
+                        animate={{ y: 0 }}
+                        transition={{ duration: 0.9, delay: 0.35 + i * 0.05, ease }}
+                      >
+                        {word}
+                      </motion.span>
+                    </span>{" "}
+                  </span>
+                );
+              })}
+            </span>
           ))}
         </h1>
 
@@ -125,7 +133,7 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 1.1, ease }}
           className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end"
         >
-          <p className="m-0 max-w-[52ch] text-[clamp(1.05rem,1.4vw,1.2rem)] leading-[1.6] text-(--h-titanium) lg:col-span-6">{hero.body}</p>
+          <p className="m-0 max-w-[54ch] text-[clamp(1.05rem,1.4vw,1.2rem)] leading-[1.6] text-(--h-ivory)/80 lg:col-span-6">{hero.body}</p>
           <div className="flex flex-wrap items-center gap-x-8 gap-y-4 lg:col-span-6 lg:justify-end">
             <a
               href="#contacto"
@@ -134,7 +142,7 @@ export function Hero() {
               {cta.primary}
             </a>
             <a
-              href="#soluciones"
+              href="#servicios"
               className={`inline-flex min-h-11 items-center border-b border-(--h-ivory)/40 font-medium transition-colors hover:border-(--h-red) motion-reduce:transition-none ${focus}`}
             >
               {cta.explore}
@@ -142,9 +150,13 @@ export function Hero() {
           </div>
         </motion.div>
 
-        <div className="mt-14 flex flex-wrap justify-between gap-3 border-t border-(--h-line) pt-5 text-[13px] text-(--h-titanium)">
-          <span>{brand.descriptor}</span>
-          <span>Firma nueva, con investigación propia desde {about.timeline[0].year}</span>
+        <div className="mt-14 flex flex-wrap justify-between gap-x-8 gap-y-3 border-t border-(--h-line) pt-5 text-[13px] text-(--h-titanium)">
+          <span>{hero.audience}</span>
+          <ul className="m-0 flex list-none flex-wrap gap-x-6 gap-y-1 p-0">
+            {services.map((s) => (
+              <li key={s.id}>{s.short}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

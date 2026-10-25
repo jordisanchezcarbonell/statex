@@ -1,13 +1,13 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { brand, company, footer, legalLinks } from "../design-lab/content";
-import { inter } from "../design-lab/h/font";
-import { Pending, Wordmark, display, focus, muted, tokens, wrap } from "../design-lab/h/ui";
+import { brand, company, footer, legalLinks } from "../_site/content";
+import { inter } from "../_site/font";
+import { Pending, Wordmark, display, focus, muted, tokens, wrap } from "../_site/ui";
 
 // Páginas legales con el sistema visual de H: misma paleta y tipografía, sin escena ni línea roja.
 
 /** Dato de la empresa o, si aún no existe, su [Pendiente] visible. */
-export function Company({ field, label }: { field: keyof typeof company; label: string }) {
+export function Company({ field, label }: { field: "legalName" | "taxId" | "address" | "registry" | "email"; label: string }) {
   const value = company[field];
   if (!value) return <Pending>[Pendiente: {label}]</Pending>;
   return field === "email" ? <a href={`mailto:${value}`}>{value}</a> : <>{value}</>;

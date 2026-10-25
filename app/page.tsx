@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { brand } from "./design-lab/content";
-import { StatexHome, homeOpenGraph } from "./design-lab/h/Home";
+import { seo } from "./_site/content";
+import { StatexHome, homeOpenGraph } from "./_site/Home";
 
-// Home de StateX: dirección H (Boutique Precision), elegida en el design lab.
-export const metadata: Metadata = { title: { absolute: `${brand.name} — ${brand.descriptor}` }, description: brand.tagline, openGraph: homeOpenGraph };
+// Home de StateX: dirección H (Boutique Precision).
+export const metadata: Metadata = {
+  title: { absolute: seo.title },
+  description: seo.description,
+  alternates: { canonical: "/" },
+  openGraph: { ...homeOpenGraph, url: "/" },
+};
 
 export default function Home() {
   return <StatexHome />;

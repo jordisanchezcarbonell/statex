@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { brand } from "../content";
 import { LabBar } from "../_shared/LabBar";
-import { StatexHome, homeOpenGraph } from "./Home";
+import { seo } from "../../_site/content";
+import { StatexHome, homeOpenGraph } from "../../_site/Home";
 
-export const metadata: Metadata = { title: "Concept H", description: brand.tagline, openGraph: homeOpenGraph };
+// Concept H es la dirección elegida: aquí se ve la web pública real con la barra del lab.
+export const metadata: Metadata = { title: "Concept H", description: seo.description, openGraph: homeOpenGraph };
 
 export default function ConceptH() {
   return (

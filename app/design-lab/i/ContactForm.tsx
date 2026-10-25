@@ -42,7 +42,7 @@ export function ContactForm() {
 
   useEffect(() => {
     if (state.status !== "idle") status.current?.focus();
-    if (state.values?.interest) setInterest(state.values.interest);
+    if (state.values?.service) setInterest(state.values.service);
   }, [state]);
 
   if (state.status === "ok") {
@@ -62,14 +62,14 @@ export function ContactForm() {
     <form action={action} noValidate className="relative">
       <h3 className="m-0 font-(family-name:--i-serif) text-[1.75rem] font-normal tracking-[-0.01em]">{t.title}</h3>
 
-      {(state.status === "error" || state.status === "not-configured") && (
+      {(state.status === "error" || state.status === "invalid" || state.status === "not-configured") && (
         <p
           ref={status}
           tabIndex={-1}
           role="alert"
-          className={`m-0 mt-6 border-l-2 py-1 pl-4 outline-none ${state.status === "error" ? "border-(--i-error-dark) text-(--i-error-dark)" : "border-(--i-sand) text-(--i-sand)"}`}
+          className={`m-0 mt-6 border-l-2 py-1 pl-4 outline-none ${state.status !== "not-configured" ? "border-(--i-error-dark) text-(--i-error-dark)" : "border-(--i-sand) text-(--i-sand)"}`}
         >
-          {state.status === "error" ? t.error : t.notConfigured}
+          {state.status !== "not-configured" ? t.error : t.notConfigured}
         </p>
       )}
 
@@ -91,17 +91,17 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="if-role" className={label}>{t.fields.role}</label>
-          <input id="if-role" name="role" defaultValue={v?.role} autoComplete="organization-title" maxLength={120} className={input} />
+          <input id="if-role" name="role" autoComplete="organization-title" maxLength={120} className={input} />
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="if-interest" className={label}>{t.fields.interest}</label>
           {/* No controlado: key fuerza el remontaje cuando una oferta cambia el interés. */}
-          <select key={interest} id="if-interest" name="interest" defaultValue={interest} className={`${input} cursor-pointer`} {...aria("interest")}>
+          <select key={interest} id="if-interest" name="service" defaultValue={interest} className={`${input} cursor-pointer`} {...aria("service")}>
             {t.interestOptions.map((o) => (
               <option key={o.value} value={o.value} className="bg-(--i-graphite)">{o.label}</option>
             ))}
           </select>
-          {err("interest")}
+          {err("service")}
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="if-message" className={label}>{t.fields.message}</label>
