@@ -283,3 +283,18 @@ Los fundadores piden ser más competitivos que PentestingTeam. Sus precios "desd
 - Los alcances mínimos son pequeños; hay que acotarlos bien en cada propuesta.
 - El retest de 6 meses consume días no facturados, así que conviene limitarlo a críticos y altos.
 - Revisar los precios tras 3–5 proyectos.
+
+---
+
+## 10. Pack para agencias (2026-10-25)
+
+**Alcance por web:** exposición externa del dominio y revisión de la web pública sin login. Es el mismo trabajo que la evaluación inicial, sin la llamada individual. Incluye un informe por web, un resumen consolidado para la agencia y, opcionalmente, el informe con la marca de la agencia (marca blanca).
+
+| Concepto | Días aprox. | Precio (sin IVA) |
+|---|---|---|
+| 5 webs | ≈0,35 por web en lote (mismas herramientas y plantilla) + 0,4 de consolidación ≈ 2,2 | **1.290 €** (258 €/web) |
+| Web adicional | ≈0,35 | **240 €** |
+
+El pack tiene que salir más barato que 5 evaluaciones iniciales sueltas (5 × 290 € = 1.450 €), porque la agencia es un canal que trae clientes. A unos 590 €/día efectivos, sigue cubriendo la tarifa.
+
+Cada cliente final firma la autorización de sus activos. Webs con zona privada o tiendas online se presupuestan como auditoría web.

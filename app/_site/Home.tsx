@@ -44,11 +44,19 @@ const jsonLd = {
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: servicesSection.label,
-    itemListElement: services.map((s) => ({
+    itemListElement: [
+      {
+        "@type": "Offer",
+        name: "Pack para agencias (5 webs)",
+        description: servicesSection.agencies.text,
+        priceSpecification: { "@type": "PriceSpecification", price: 1290, priceCurrency: "EUR", valueAddedTaxIncluded: false },
+      },
+      ...services.map((s) => ({
       "@type": "Offer",
       ...(s.priceFrom ? { priceSpecification: { "@type": "PriceSpecification", minPrice: s.priceFrom, priceCurrency: "EUR", valueAddedTaxIncluded: false } } : {}),
       itemOffered: { "@type": "Service", name: s.name, description: s.seoDescription, url: `${site.url}/servicios/${s.slug}` },
-    })),
+      })),
+    ],
   },
 };
 

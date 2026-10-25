@@ -34,12 +34,13 @@ Actualizado: 2026-10-25.
 ## Comerciales
 
 - **Precios publicados, por debajo de PentestingTeam** (2026-10-25, `research/services-pricing.md` §9): evaluación inicial 290 €, exposición desde 390 €, API desde 690 €, web desde 990 €, ingeniería segura desde 790 € (sin IVA). Revisar tras 3–5 proyectos.
-- **Confirmar que podéis cumplir lo publicado:** propuesta en 48 h laborables, aviso el mismo día ante hallazgos críticos y retest durante 6 meses.
-- **Oferta para agencias** (marca blanca o co-firmada, precio por lote): decidir si se presenta como línea propia.
+- **Compromisos publicados y confirmados** (2026-10-25): propuesta en 48 h laborables, aviso el mismo día ante hallazgos críticos, retest de críticos y altos durante 6 meses y NDA a petición.
+- **Pack para agencias publicado**: 5 webs por 1.290 €, web adicional a 240 €, marca blanca opcional (`services-pricing.md` §10). Preparad una plantilla de informe con la marca de la agencia.
 - **Seguro de responsabilidad civil profesional** y plantillas de autorización, reglas de intervención, NDA y acuerdo de encargo de tratamiento.
 
 ## Técnicos
 
 - **Límite de envíos global del formulario.** El actual es en memoria por instancia (orientativo en serverless). Uno global requiere un almacén (Upstash, Vercel KV…): dependencia y servicio externo a aprobar.
 - **Lint.** El proyecto no tiene ESLint configurado; añadirlo es una dependencia nueva (no hecho).
+- **Más guías**: "Qué incluye una auditoría de seguridad de APIs" y "Cómo preparar tu web antes de una auditoría". Cada una solo con contenido real (`guides` en `app/_site/content.ts`).
 - **Medición sin trackers**: contar envíos del formulario en servidor si se quiere medir conversión.

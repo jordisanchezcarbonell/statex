@@ -202,6 +202,15 @@ export const servicesSection = {
     interest: "evaluacion-inicial",
     price: "290 € + IVA, precio cerrado. Si después contratas una auditoría, te lo descontamos.",
   },
+  // Pack para agencias: varias webs de sus clientes en un solo encargo (cálculo en services-pricing.md §10).
+  agencies: {
+    title: "¿Eres una agencia?",
+    text: "Revisamos la exposición externa y la web pública (sin login) de 5 webs de tus clientes. Un informe por web, uno resumen para la agencia y, si lo prefieres, con tu marca.",
+    price: "5 webs por 1.290 € + IVA. Cada web adicional, 240 €.",
+    note: "Cada cliente final firma la autorización de sus activos.",
+    cta: "Pedir el pack para agencias",
+    interest: "pack-agencias",
+  },
 };
 
 // ─── Propuesta de valor ──────────────────────────────────────────────────────
@@ -397,7 +406,7 @@ export const faq = {
     },
     {
       q: "¿Cómo se contrata y cuánto cuesta?",
-      a: "La evaluación inicial cuesta 290 € + IVA, precio cerrado. Los demás servicios empiezan en 390 € (exposición externa), 690 € (API), 990 € (web) y 790 € (ingeniería segura), sin IVA. El precio final depende del número de aplicaciones, endpoints, roles y dominios. Tras una primera conversación te enviamos en 48 horas laborables una propuesta cerrada, sin sorpresas después.",
+      a: "La evaluación inicial cuesta 290 € + IVA, precio cerrado. Los demás servicios empiezan en 390 € (exposición externa), 690 € (API), 990 € (web) y 790 € (ingeniería segura), sin IVA. El precio final depende del número de aplicaciones, endpoints, roles y dominios. Tras una primera conversación te enviamos en 48 horas laborables una propuesta cerrada, sin sorpresas después. Lo explicamos en detalle en nuestra guía sobre qué incluye una auditoría de seguridad web.",
     },
     {
       q: "¿Qué necesitáis de nosotros?",
@@ -409,7 +418,7 @@ export const faq = {
     },
     {
       q: "¿Trabajáis con agencias?",
-      a: "Sí. Podemos auditar las plataformas que desarrolláis para vuestros clientes. Como los activos son del cliente final, la autorización también la firma él.",
+      a: "Sí. Tenemos un pack de 5 webs por 1.290 € + IVA (240 € cada web adicional), con un informe por web, uno resumen para la agencia y, si lo preferís, con vuestra marca. Para plataformas más complejas, auditoría a medida. Como los activos son del cliente final, la autorización también la firma él.",
     },
     {
       q: "¿Qué pasa si encontráis algo grave durante la auditoría?",
@@ -449,6 +458,7 @@ export const contactForm = {
   serviceOptions: [
     ...services.map((s) => ({ value: s.id, label: s.name })),
     { value: "evaluacion-inicial", label: "Evaluación inicial (no sé por dónde empezar)" },
+    { value: "pack-agencias", label: "Pack para agencias (5 webs)" },
     { value: "otra", label: "Otra consulta o colaboración" },
   ],
   consent: { before: "He leído la ", link: "política de privacidad", after: " y acepto que StateX use estos datos solo para responder a mi solicitud.", href: "/privacidad" },
@@ -463,7 +473,19 @@ export const contactForm = {
 
 // ─── Pie y datos de empresa ──────────────────────────────────────────────────
 
+export const guides = [
+  {
+    slug: "que-incluye-una-auditoria-de-seguridad-web",
+    title: "Qué incluye una auditoría de seguridad web y de qué depende el precio",
+    short: "Qué incluye una auditoría web",
+    description:
+      "Qué revisa una auditoría de seguridad web, qué entregables exigir, qué hay que preparar y qué factores mueven el precio, con ejemplos de alcance y precios orientativos.",
+    published: "2026-10-25",
+  },
+];
+
 export const footer = {
+  guidesLabel: "Guías",
   servicesLabel: "Servicios",
   siteLabel: "StateX",
   location: "Barcelona · Servicio en toda España",
