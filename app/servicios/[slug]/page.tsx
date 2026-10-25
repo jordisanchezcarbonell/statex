@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { brand, method, services, servicesSection, site } from "../../_site/content";
+import { brand, guides, method, services, servicesSection, site } from "../../_site/content";
 import { ContactSection } from "../../_site/Home";
 import { OfferLink } from "../../_site/ContactForm";
 import { JsonLd, Shell } from "../../_site/Shell";
@@ -152,7 +152,15 @@ export default async function ServicePage({ params }: Props) {
 
       <section aria-labelledby="h-otros" className={`${section} ${rule}`}>
         <div className={wrap}>
-          <h2 id="h-otros" className={`m-0 text-[14px] font-normal ${muted}`}>Otros servicios</h2>
+          <h2 id="h-guias" className={`m-0 text-[14px] font-normal ${muted}`}>Guías para leer antes</h2>
+          <ul className="m-0 mt-4 grid list-none gap-1 p-0">
+            {guides.map((g) => (
+              <li key={g.slug}>
+                <Link href={`/guias/${g.slug}`} className={`inline-flex min-h-11 items-center border-b border-(--h-ivory)/40 hover:border-(--h-red) ${focus}`}>{g.title}</Link>
+              </li>
+            ))}
+          </ul>
+          <h2 id="h-otros" className={`m-0 mt-14 text-[14px] font-normal ${muted}`}>Otros servicios</h2>
           <ul className="m-0 mt-6 grid list-none gap-px bg-(--h-line) p-0 md:grid-cols-2">
             {others.map((o) => (
               <li key={o.id} className="bg-(--h-ink)">
