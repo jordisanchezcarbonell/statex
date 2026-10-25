@@ -15,15 +15,15 @@
   @page { size: A4; margin: 0; }
   * { box-sizing: border-box; }
   html, body { margin: 0; background: #E9E7E1; }
-  body { font: 10.5pt/1.55 Inter, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .page { width: 210mm; min-height: 297mm; margin: 12mm auto; padding: 22mm 20mm 24mm; background: #fff; position: relative; }
+  body { font: 10pt/1.5 Inter, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; overflow: hidden; margin: 12mm auto; padding: 16mm 18mm 22mm; background: #fff; position: relative; }
   @media print { html, body { background: none; } .page { margin: 0; } }
   @media screen { .page { box-shadow: 0 10px 40px rgba(0,0,0,.12); } }
   .brand { font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--ink); }
-  .rule { height: 2px; background: var(--accent); margin: 6mm 0; }
+  .rule { height: 2px; background: var(--accent); margin: 5mm 0; }
   .label { font-size: 8pt; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 500; }
   h1 { font-size: 22pt; line-height: 1.05; text-transform: uppercase; letter-spacing: -.02em; color: var(--ink); margin: 2mm 0 0; }
-  h2 { font-size: 12pt; text-transform: uppercase; color: var(--ink); margin: 9mm 0 3mm; }
+  h2 { font-size: 11.5pt; text-transform: uppercase; color: var(--ink); margin: 7mm 0 2.5mm; }
   p { margin: 0 0 3mm; }
   table { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
   th, td { text-align: left; vertical-align: top; padding: 2.2mm 3mm 2.2mm 0; border-top: 1px solid var(--line); }
@@ -42,7 +42,7 @@
   <h1>[Nombre de la agencia]</h1>
   <p class="muted" style="margin-top:3mm">[5] webs revisadas · [del 3 al 7 de noviembre de 2026] · Confidencial</p>
 
-  <div class="callout" style="margin-top:8mm">
+  <div class="callout" style="margin-top:6mm">
     <p class="label">En una frase</p>
     <p style="margin:0">[Ejemplo: Dos de las cinco webs tienen un riesgo alto que conviene corregir esta semana; las demás necesitan ajustes de configuración que pueden planificarse.]</p>
   </div>
@@ -70,7 +70,7 @@
     <li>[Pedir el retest de los riesgos altos cuando estén corregidos (incluido durante 6 meses).]</li>
   </ol>
 
-  <p class="muted" style="margin-top:8mm">Cada web tiene su propio informe con evidencias y recomendaciones técnicas. La autorización de cada una la firmó su titular.</p>
+  <p class="muted" style="margin-top:6mm">Cada web tiene su propio informe con evidencias y recomendaciones técnicas. La autorización de cada una la firmó su titular.</p>
 
   <div class="foot"><span data-brand="footer">StateX · [web o correo]</span><span>Confidencial</span></div>
 </section>

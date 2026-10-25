@@ -40,7 +40,15 @@ export function Report() {
             </li>
           ))}
         </ul>
-        <p className={`m-0 mt-10 max-w-[34ch] text-[13px] leading-[1.6] ${muted}`}>{r.note}</p>
+        <div className="mt-10 grid justify-items-start gap-1">
+          <a href={r.full.href} className={`inline-flex min-h-11 items-center border-b border-(--h-ivory)/40 font-medium hover:border-(--h-red) ${focus}`}>
+            {r.full.label}
+          </a>
+          <a href={r.full.pdf} download className={`inline-flex min-h-11 items-center text-[15px] text-(--h-ivory)/75 hover:text-(--h-ivory) ${focus}`}>
+            {r.full.pdfLabel}<span className={`ml-2 text-[13px] ${muted}`}>({r.full.meta})</span>
+          </a>
+        </div>
+        <p className={`m-0 mt-8 max-w-[34ch] text-[13px] leading-[1.6] ${muted}`}>{r.note}</p>
       </div>
 
       <article

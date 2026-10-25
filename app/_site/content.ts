@@ -210,6 +210,7 @@ export const servicesSection = {
     note: "Cada cliente final firma la autorización de sus activos.",
     cta: "Pedir el pack para agencias",
     interest: "pack-agencias",
+    sample: { label: "Ver un resumen de ejemplo", href: "/resumen-agencia-de-ejemplo.html" },
   },
 };
 
@@ -273,6 +274,14 @@ export const report = {
     "Plan de remediación por fases",
   ],
   demo: "Demostración · datos ficticios",
+  // Informe de ejemplo completo (generado desde docs/plantillas; datos ficticios).
+  full: {
+    label: "Ver el informe de ejemplo completo",
+    href: "/informe-de-ejemplo.html",
+    pdfLabel: "Descargar en PDF",
+    pdf: "/informe-de-ejemplo.pdf",
+    meta: "8 páginas · datos ficticios",
+  },
   note: "Informe de demostración: ni el dominio, ni la aplicación, ni los hallazgos corresponden a un cliente real.",
   doc: {
     kind: "Auditoría de seguridad web y APIs",

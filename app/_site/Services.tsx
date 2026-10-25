@@ -74,7 +74,7 @@ export function Services() {
       {/* Dos puertas de entrada: quien no sabe por dónde empezar y las agencias */}
       <div className="mt-12 grid gap-px bg-(--h-line) lg:grid-cols-2">
         {[
-          { id: "h-empezar", ...t.start, note: undefined as string | undefined },
+          { id: "h-empezar", ...t.start, note: undefined as string | undefined, sample: undefined as { label: string; href: string } | undefined },
           { id: "h-agencias", ...t.agencies },
         ].map((b) => (
           <aside key={b.id} aria-labelledby={b.id} className="flex flex-col bg-(--h-graphite) p-7 sm:p-10">
@@ -82,10 +82,15 @@ export function Services() {
             <p className={`m-0 mt-3 max-w-[56ch] leading-[1.6] ${muted}`}>{b.text}</p>
             <p className="m-0 mt-4 text-[17px] font-medium tabular-nums">{b.price}</p>
             {b.note && <p className={`m-0 mt-2 text-[14px] ${muted}`}>{b.note}</p>}
-            <div className="mt-auto pt-8">
+            <div className="mt-auto flex flex-wrap items-center gap-x-8 gap-y-3 pt-8">
               <OfferLink interest={b.interest} className="bg-(--h-ivory) px-6 text-(--h-ink) hover:bg-white">
                 {b.cta}
               </OfferLink>
+              {b.sample && (
+                <a href={b.sample.href} className={`inline-flex min-h-11 items-center border-b border-(--h-ivory)/40 hover:border-(--h-red) ${focus}`}>
+                  {b.sample.label}
+                </a>
+              )}
             </div>
           </aside>
         ))}
