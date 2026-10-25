@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { brand, method, services, site } from "../../_site/content";
+import { brand, method, services, servicesSection, site } from "../../_site/content";
 import { ContactSection } from "../../_site/Home";
 import { OfferLink } from "../../_site/ContactForm";
 import { JsonLd, Shell } from "../../_site/Shell";
@@ -97,7 +97,9 @@ export default async function ServicePage({ params }: Props) {
               <OfferLink interest={s.id} className="bg-(--h-ivory) px-7 text-(--h-ink) hover:bg-white">Solicitar evaluación</OfferLink>
             </div>
           </div>
-          {s.price && <p className="m-0 mt-6 tabular-nums">{s.price}</p>}
+          {s.price && <p className="m-0 mt-8 text-[1.1rem] tabular-nums">{s.price}</p>}
+          <p className={`m-0 mt-2 max-w-[70ch] text-[14px] leading-[1.55] ${muted}`}>{s.priceScope}</p>
+          <p className={`m-0 mt-2 text-[14px] ${muted}`}>Referencia: {s.reference}</p>
         </div>
       </section>
 
@@ -112,6 +114,17 @@ export default async function ServicePage({ params }: Props) {
             <h2 className={`m-0 text-[14px] font-normal ${muted}`}>Cuándo tiene sentido</h2>
             <p className="m-0 mt-4 max-w-[60ch] text-[clamp(1.1rem,1.5vw,1.25rem)] leading-[1.55]">{s.when}</p>
             {s.note && <p className="m-0 mt-6 max-w-[60ch] border-l-2 border-(--h-ivory) pl-5 leading-[1.55]">{s.note}</p>}
+          </div>
+          <div className="lg:col-span-5">
+            <h2 className={`m-0 text-[14px] font-normal ${muted}`}>{servicesSection.commitmentsLabel}</h2>
+            <ul className="m-0 mt-4 grid list-none gap-4 p-0">
+              {servicesSection.commitments.map((c) => (
+                <li key={c.name} className="border-t border-(--h-line) pt-4">
+                  <p className="m-0 font-semibold">{c.name}</p>
+                  <p className={`m-0 mt-1 text-[15px] leading-[1.55] ${muted}`}>{c.text}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

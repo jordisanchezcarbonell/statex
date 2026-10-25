@@ -23,7 +23,8 @@ export function Services() {
                 {s.name}
               </h3>
               <p className="m-0 mt-5 max-w-[42ch] text-[17px] leading-[1.6] text-(--h-ivory)/85">{s.summary}</p>
-              {s.price && <p className="m-0 mt-5 text-[15px] tabular-nums">{s.price}</p>}
+              {s.price && <p className="m-0 mt-6 text-[17px] font-medium tabular-nums">{s.price}</p>}
+              <p className={`m-0 mt-2 text-[13px] ${muted}`}>Referencia: {s.reference}</p>
               <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
                 <Link
                   href={`/servicios/${s.slug}`}
@@ -58,11 +59,23 @@ export function Services() {
         ))}
       </ul>
 
+      <div className="mt-12 grid gap-6 lg:grid-cols-12 lg:gap-10">
+        <h3 className={`m-0 text-[14px] font-normal lg:col-span-3 ${muted}`}>{t.commitmentsLabel}</h3>
+        <ul className="m-0 grid list-none gap-x-10 gap-y-8 p-0 sm:grid-cols-2 lg:col-span-9 lg:grid-cols-4">
+          {t.commitments.map((c) => (
+            <li key={c.name} className="border-t border-(--h-line) pt-5">
+              <p className="m-0 font-semibold">{c.name}</p>
+              <p className={`m-0 mt-2 text-[15px] leading-[1.55] ${muted}`}>{c.text}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+
       <aside aria-labelledby="h-empezar" className="mt-12 grid gap-6 bg-(--h-graphite) p-7 sm:p-10 lg:grid-cols-12 lg:items-center lg:gap-10">
         <div className="lg:col-span-8">
           <h3 id="h-empezar" className="m-0 text-[1.25rem] font-semibold">{t.start.title}</h3>
           <p className={`m-0 mt-3 max-w-[64ch] leading-[1.6] ${muted}`}>{t.start.text}</p>
-          <p className="m-0 mt-4 text-[15px] tabular-nums">{t.start.price}</p>
+          <p className="m-0 mt-4 text-[17px] font-medium tabular-nums">{t.start.price}</p>
         </div>
         <div className="lg:col-span-4 lg:justify-self-end">
           <OfferLink interest={t.start.interest} className="bg-(--h-ivory) px-6 text-(--h-ink) hover:bg-white">

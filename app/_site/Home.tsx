@@ -46,7 +46,7 @@ const jsonLd = {
     name: servicesSection.label,
     itemListElement: services.map((s) => ({
       "@type": "Offer",
-      ...(s.price ? { priceSpecification: { "@type": "PriceSpecification", price: Number(s.price.replace(/\D/g, "")), priceCurrency: "EUR", valueAddedTaxIncluded: false } } : {}),
+      ...(s.priceFrom ? { priceSpecification: { "@type": "PriceSpecification", minPrice: s.priceFrom, priceCurrency: "EUR", valueAddedTaxIncluded: false } } : {}),
       itemOffered: { "@type": "Service", name: s.name, description: s.seoDescription, url: `${site.url}/servicios/${s.slug}` },
     })),
   },

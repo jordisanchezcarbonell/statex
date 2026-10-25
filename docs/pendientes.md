@@ -33,8 +33,8 @@ Actualizado: 2026-10-25.
 
 ## Comerciales
 
-- **Precios de lanzamiento publicados** (2026-10-25, `research/services-pricing.md` §8): evaluación inicial 900 €, exposición externa desde 1.500 €, auditoría web y APIs desde 2.900 €, ingeniería segura desde 1.800 € (sin IVA). Revisar tras 3–5 proyectos.
-- **Plazo de respuesta** que podéis comprometer (p. ej. "en 2 días hábiles"), para añadirlo a "Qué pasa después".
+- **Precios publicados, por debajo de PentestingTeam** (2026-10-25, `research/services-pricing.md` §9): evaluación inicial 290 €, exposición desde 390 €, API desde 690 €, web desde 990 €, ingeniería segura desde 790 € (sin IVA). Revisar tras 3–5 proyectos.
+- **Confirmar que podéis cumplir lo publicado:** propuesta en 48 h laborables, aviso el mismo día ante hallazgos críticos y retest durante 6 meses.
 - **Oferta para agencias** (marca blanca o co-firmada, precio por lote): decidir si se presenta como línea propia.
 - **Seguro de responsabilidad civil profesional** y plantillas de autorización, reglas de intervención, NDA y acuerdo de encargo de tratamiento.
 

@@ -255,3 +255,31 @@ Los fundadores piden ser competitivos por ser una firma pequeña. Estos precios 
 - Si el cliente contrata la auditoría en los 60 días siguientes, se le descuenta el importe de la evaluación inicial.
 - Revisar la tarifa al cerrar 3–5 proyectos (días reales frente a estimados) y subirla al acumular casos.
 - Lote para agencias (varias webs): pendiente de decidir; no se publica todavía.
+
+---
+
+## 9. Precios competitivos frente a PentestingTeam (2026-10-25, sustituye al §8)
+
+Los fundadores piden ser más competitivos que PentestingTeam. Sus precios "desde", consultados el 2026-10-25 en pentestingteam.com, no indican si llevan IVA: web 1.140 €, API 760 €, superficie externa 450 €, móvil 1.140 €, infraestructura interna 1.520 €, Active Directory 450 €.
+
+**Criterio:** la tarifa por día (~600 €) no baja. Lo que baja es el alcance mínimo del precio "desde", que se explica en cada página (`priceScope`). Lo que supere ese mínimo se presupuesta por días.
+
+| Servicio StateX | Alcance del precio "desde" | Días aprox. | StateX (sin IVA) | PentestingTeam |
+|---|---|---|---|---|
+| Evaluación inicial | 1 dominio + web principal sin login, informe breve y llamada | 0,5 | **290 € cerrado** (se descuenta si se contrata una auditoría) | — |
+| Exposición externa | 1 dominio y sus subdominios | 0,65 | **desde 390 €** | 450 € |
+| Auditoría de API | Hasta 15 endpoints | 1,15 | **desde 690 €** | 760 € |
+| Auditoría web | Hasta 10 pantallas, 1 rol | 1,65 | **desde 990 €** | 1.140 € |
+| Ingeniería segura | Diagnóstico de 1 aplicación + repositorio + pipeline | 1,3 | **desde 790 €** | — |
+
+**Compromisos publicados:** tomados como ideas del mercado y redactados por nosotros. Se han dejado fuera los logos, cifras, reseñas y certificaciones que StateX no tiene.
+- Retest de críticos y altos durante 6 meses.
+- Propuesta en 48 h laborables (ellos prometen 24 h; nosotros 48 h por capacidad, porque los dos fundadores trabajan a jornada completa).
+- Aviso el mismo día ante hallazgos críticos.
+- NDA a petición.
+- Plan de pruebas firmado, ventana horaria pactada y parada si algo se desvía.
+
+**Riesgos:**
+- Los alcances mínimos son pequeños; hay que acotarlos bien en cada propuesta.
+- El retest de 6 meses consume días no facturados, así que conviene limitarlo a críticos y altos.
+- Revisar los precios tras 3–5 proyectos.
