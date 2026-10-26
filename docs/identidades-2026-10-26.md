@@ -46,8 +46,8 @@ realizar ninguna prueba de seguridad…»; consentimiento con el nombre de la id
 error, límite y «no configurado» ya existían: sin `RESEND_API_KEY` el formulario dice que **no** se ha enviado.
 
 **Fuera de buscadores y protegidas.** `noindex, nofollow` en metadatos, cabecera `X-Robots-Tag` y `Disallow:
-/preview` en robots. `proxy.ts`: con `PREVIEW_USER`/`PREVIEW_PASSWORD`, autenticación básica; sin ellas, abiertas
-en local y **404 en Vercel** (para no publicar nombres de marca no registrados). Sin JSON-LD en las previews.
+/preview` en robots. `proxy.ts`: con `PREVIEW_USER`/`PREVIEW_PASSWORD`, autenticación básica; sin ellas (decisión del
+2026-10-26), públicas también en Vercel, siempre con noindex. Sin JSON-LD en las previews.
 
 **Decisiones tomadas por defecto** (reversibles): nombres de área en inglés, como en el brief, con descriptor en
 español; sin numeración 01/02/03 en las áreas (no son una secuencia; sí en el método); taglines en inglés como
