@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { useActionState, useEffect, useRef, useState, type ReactNode } from "react";
 import { sendContact, type ContactState } from "../actions/contact";
-import { contactForm as t } from "./content";
-import { focus } from "./ui";
+import { brand, contactForm as t } from "./content";
+import { caps, focus } from "./ui";
 import { readContact, validateContact, type FieldErrors } from "./validate";
 
 const INTEREST_EVENT = "statex:interest";
@@ -36,7 +36,7 @@ const messages: Partial<Record<ContactState["status"], { text: string; tone: "er
   "not-configured": { text: t.notConfigured, tone: "neutral" },
 };
 
-export function ContactForm({ defaultService = t.serviceOptions[0].value }: { defaultService?: string }) {
+export function ContactForm({ defaultService = t.serviceOptions[0].value, brandName = brand.name }: { defaultService?: string; brandName?: string }) {
   const [state, action, pending] = useActionState(sendContact, initial);
   const [service, setService] = useState(defaultService);
   // Marca de tiempo de cuando se pintó el formulario: el servidor descarta envíos instantáneos (bots).
@@ -95,7 +95,7 @@ export function ContactForm({ defaultService = t.serviceOptions[0].value }: { de
       }}
       className="relative"
     >
-      <h3 className="m-0 text-[1.35rem] font-semibold uppercase tracking-[-0.01em]">{t.title}</h3>
+      <h3 className={`m-0 text-[1.35rem] tracking-[-0.01em] ${caps}`}>{t.title}</h3>
 
       {notice && (
         <p
@@ -125,6 +125,11 @@ export function ContactForm({ defaultService = t.serviceOptions[0].value }: { de
           {err("company")}
         </div>
         <div>
+          <label htmlFor="hf-url" className={label}>{t.fields.url}</label>
+          <input id="hf-url" name="url" defaultValue={v?.url} type="text" inputMode="url" autoComplete="url" spellCheck={false} maxLength={200} placeholder="ejemplo.com" className={`${input} placeholder:text-(--h-titanium)/70`} {...aria("url")} />
+          {err("url")}
+        </div>
+        <div className="sm:col-span-2">
           <label htmlFor="hf-service" className={label}>{t.fields.service}</label>
           {/* No controlado: key fuerza el remontaje cuando un enlace de servicio cambia la selección. */}
           <select key={service} id="hf-service" name="service" defaultValue={service} className={`${input} cursor-pointer`} {...aria("service")}>
@@ -155,11 +160,16 @@ export function ContactForm({ defaultService = t.serviceOptions[0].value }: { de
           <label htmlFor="hf-consent">
             {t.consent.before}
             <Link href={t.consent.href} className={`underline underline-offset-4 hover:text-(--h-ivory) ${focus}`}>{t.consent.link}</Link>
-            {t.consent.after}
+            {t.consent.after.replace("{marca}", brandName)}
           </label>
         </div>
         {err("consent")}
       </div>
+
+      {/* Rellenar el formulario no equivale a autorizar pruebas: se dice antes de enviar. */}
+      <p className="m-0 mt-8 max-w-[62ch] border-l-2 border-(--h-titanium) pl-4 text-[14px] leading-[1.55] text-(--h-ivory)/80">
+        {t.authorization.replace("{marca}", brandName)}
+      </p>
 
       <button
         type="submit"

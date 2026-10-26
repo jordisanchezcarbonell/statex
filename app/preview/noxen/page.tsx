@@ -1,0 +1,13 @@
+import type { Metadata, Viewport } from "next";
+import { EvolvedHome } from "../../_site/EvolvedHome";
+import { noxen as identity } from "../../_site/identities/noxen";
+
+export const metadata: Metadata = {
+  title: { absolute: `${identity.name} · ${identity.direction} (preview)` },
+  description: `Preview interna de identidad: ${identity.name}, ${identity.tagline}`,
+};
+export const viewport: Viewport = { themeColor: identity.themeColor, colorScheme: "dark" };
+
+export default function Preview() {
+  return <EvolvedHome identity={identity} />;
+}

@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { cta, hero, services } from "./content";
 import { display, focus, wrap } from "./ui";
+import { HorizonScene, LedgerScene } from "./HeroScenes";
 
 // Escena: una nave de pórticos en perspectiva central (un solo punto de fuga), como un pasillo
 // de infraestructura visto de frente. Al fondo, la línea roja: el umbral que StateX vigila.
@@ -82,7 +83,23 @@ function Scene({ reduce }: { reduce: boolean }) {
   );
 }
 
-export function Hero() {
+type HeroProps = {
+  lines?: string[];
+  body?: string;
+  // Franja inferior: texto a la izquierda y lista breve a la derecha.
+  strip?: { lead: string; items: string[] };
+  scene?: "corridor" | "horizon" | "ledger";
+  size?: string; // tamaño del titular (clases de Tailwind)
+};
+
+/** Sin props es el hero de producción; las previews de identidad cambian copy, franja y escena. */
+export function Hero({
+  lines = hero.lines,
+  body = hero.body,
+  strip = { lead: hero.audience, items: services.map((s) => s.short) },
+  scene = "corridor",
+  size = "text-[clamp(2.1rem,5.6vw,5.75rem)]",
+}: HeroProps = {}) {
   const reduce = !!useReducedMotion();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -96,15 +113,15 @@ export function Hero() {
       <motion.div
         className="absolute inset-0 -z-10 max-sm:bottom-auto max-sm:h-[56svh] max-sm:[mask-image:linear-gradient(to_bottom,black_65%,transparent)]"
         style={reduce ? undefined : { scale, opacity: dim }}>
-        <Scene reduce={reduce} />
+        {scene === "horizon" ? <HorizonScene reduce={reduce} /> : scene === "ledger" ? <LedgerScene reduce={reduce} /> : <Scene reduce={reduce} />}
       </motion.div>
       {/* Velo inferior para que el texto se lea sobre la escena */}
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,#0B0D10_6%,rgba(11,13,16,0.78)_34%,rgba(11,13,16,0)_62%)]" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,var(--h-ink)_6%,color-mix(in_srgb,var(--h-ink)_78%,transparent)_34%,transparent_62%)]" />
 
       <div className={`${wrap} mt-auto pb-10 pt-40 sm:pb-14`}>
         {/* Dos frases: la primera en titanio, la afirmación en marfil */}
-        <h1 id="h-hero" className={`${display} m-0 max-w-[18ch] text-[clamp(2.1rem,5.6vw,5.75rem)]`}>
-          {hero.lines.map((line, l) => (
+        <h1 id="h-hero" className={`${display} m-0 max-w-[18ch] ${size}`}>
+          {lines.map((line, l) => (
             <span key={line} className={`block ${l === 0 ? "text-(--h-titanium)" : ""}`}>
               {line.split(" ").map((word) => {
                 const i = w++;
@@ -133,7 +150,7 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 1.1, ease }}
           className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end"
         >
-          <p className="m-0 max-w-[54ch] text-[clamp(1.05rem,1.4vw,1.2rem)] leading-[1.6] text-(--h-ivory)/80 lg:col-span-6">{hero.body}</p>
+          <p className="m-0 max-w-[54ch] text-[clamp(1.05rem,1.4vw,1.2rem)] leading-[1.6] text-(--h-ivory)/80 lg:col-span-6">{body}</p>
           <div className="flex flex-wrap items-center gap-x-8 gap-y-4 lg:col-span-6 lg:justify-end">
             <a
               href="#contacto"
@@ -151,10 +168,10 @@ export function Hero() {
         </motion.div>
 
         <div className="mt-14 flex flex-wrap justify-between gap-x-8 gap-y-3 border-t border-(--h-line) pt-5 text-[13px] text-(--h-titanium)">
-          <span>{hero.audience}</span>
+          <span>{strip.lead}</span>
           <ul className="m-0 flex list-none flex-wrap gap-x-6 gap-y-1 p-0">
-            {services.map((s) => (
-              <li key={s.id}>{s.short}</li>
+            {strip.items.map((x) => (
+              <li key={x}>{x}</li>
             ))}
           </ul>
         </div>
