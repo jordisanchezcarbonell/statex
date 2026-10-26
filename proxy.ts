@@ -1,12 +1,12 @@
 import { NextResponse, type NextRequest } from "next/server";
 
-// Protección de las previews de identidad (/preview/*), que muestran nombres de marca aún no registrados.
-// - Con PREVIEW_USER y PREVIEW_PASSWORD definidas: autenticación básica (HTTP Basic sobre HTTPS).
-// - Sin ellas: abiertas en local (dev o `next start`) y cerradas (404) en cualquier despliegue de Vercel.
+// Protección opcional de las previews de identidad (/preview/*). Siempre son noindex.
+// - Sin PREVIEW_USER ni PREVIEW_PASSWORD (decisión 2026-10-26): abiertas, también en Vercel.
+// - Con ambas definidas: autenticación básica (HTTP Basic sobre HTTPS).
 export function proxy(request: NextRequest) {
   const user = process.env.PREVIEW_USER;
   const pass = process.env.PREVIEW_PASSWORD;
-  if (!user || !pass) return process.env.VERCEL ? new NextResponse(null, { status: 404 }) : NextResponse.next();
+  if (!user || !pass) return NextResponse.next();
 
   const auth = request.headers.get("authorization") ?? "";
   const [scheme, encoded] = auth.split(" ");
