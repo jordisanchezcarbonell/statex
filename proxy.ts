@@ -1,8 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
 
-// Protección opcional de las previews de identidad (/preview/*). Siempre son noindex.
-// - Sin PREVIEW_USER ni PREVIEW_PASSWORD (decisión 2026-10-26): abiertas, también en Vercel.
-// - Con ambas definidas: autenticación básica (HTTP Basic sobre HTTPS).
+// Protección opcional de las rutas internas (/preview/* y /demo/*). Siempre son noindex.
+// - Sin PREVIEW_USER ni PREVIEW_PASSWORD (decisión 2026-10-26): previews abiertas, también en Vercel.
+//   El comprobador de exposición (/demo/exposicion) se desactiva solo si no hay credenciales (ver scan.ts).
+// - Con ambas definidas: autenticación básica (HTTP Basic sobre HTTPS) en /preview y /demo.
 export function proxy(request: NextRequest) {
   const user = process.env.PREVIEW_USER;
   const pass = process.env.PREVIEW_PASSWORD;
@@ -31,4 +32,6 @@ function safeEqual(a: string, b: string) {
   return diff === 0;
 }
 
-export const config = { matcher: ["/preview", "/preview/:path*"] };
+// /demo incluye el comprobador de exposición, que hace peticiones salientes: protegerlo evita que quede
+// como proxy anónimo. Si PREVIEW_USER/PREVIEW_PASSWORD no están definidas, la propia acción se desactiva.
+export const config = { matcher: ["/preview", "/preview/:path*", "/demo", "/demo/:path*"] };
