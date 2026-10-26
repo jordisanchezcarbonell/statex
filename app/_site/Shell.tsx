@@ -88,8 +88,8 @@ export function Shell({
 }) {
   return (
     <div
-      style={identity ? { ...tokens, ...identity.tokens } : tokens}
-      className={`${inter.variable} ${identity?.fontClass ?? ""} min-h-dvh overflow-x-clip bg-(--h-ink) font-(family-name:--h-sans) text-(--h-ivory) antialiased selection:bg-(--h-red) selection:text-(--h-ivory)`}
+      style={tokens}
+      className={`${inter.variable} min-h-dvh overflow-x-clip bg-(--h-ink) font-(family-name:--h-sans) text-(--h-ivory) antialiased selection:bg-(--h-red) selection:text-(--h-ivory)`}
     >
       <a href="#contenido" className="sr-only z-[60] bg-(--h-ivory) px-4 py-3 text-(--h-ink) focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
         Saltar al contenido
@@ -97,7 +97,7 @@ export function Shell({
       <Header
         base={base}
         items={navItems}
-        brand={identity ? { logo: <BrandMark identity={identity.key} />, name: identity.name, tagline: identity.tagline, layout: identity.header } : undefined}
+        brand={identity ? { logo: <BrandMark identity={identity.key} />, name: identity.name } : undefined}
       />
       <main id="contenido">{children}</main>
       <Footer base={base} identity={identity} items={navItems} />
