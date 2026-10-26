@@ -36,7 +36,7 @@ Actualizado: 2026-10-26.
   - Autoría de InfoStateX: confirmada: InfoStateX es de Albert y DoubleReboot de Jordi; ya en Trayectoria.
 - **Primeras publicaciones de investigación** (2–3 notas fechadas y firmadas). Cuando existan, crear `/investigacion` y enlazarla desde la sección Trayectoria.
 - **Informe de ejemplo publicado** (2026-10-25): `/informe-de-ejemplo.html` y PDF, y resumen de agencia de ejemplo. Generados desde `docs/plantillas` con `scripts/muestras-informe.py`.
-- **`/.well-known/security.txt`** y política de divulgación: necesitan el correo corporativo.
+- **`/.well-known/security.txt`**: ruta lista (`app/.well-known/security.txt/route.ts`, RFC 9116); se publica sola al rellenar `company.email` (hasta entonces, 404). Falta la **política de divulgación** (página propia) para añadir el campo `Policy`.
 - **Clave PGP** o canal seguro para enviar detalles sensibles.
 
 ## Comerciales
