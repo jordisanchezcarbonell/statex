@@ -1,6 +1,6 @@
 # StateX — Web corporativa
 
-Proyecto de la web de StateX, startup de ciberseguridad. **Dirección elegida: Concept H — Boutique Precision** (2026-10-24). **Rediseño estratégico 2026-10-25** (ver `docs/auditoria-y-estrategia-2026-10-25.md`): la web pública vive en `app/_site/` (contenido en `app/_site/content.ts`), con home en `/` y páginas en `/servicios/[slug]`. `/design-lab/h` muestra la misma home con la barra del lab. El resto de conceptos y `app/design-lab/content.ts` quedan como archivo de exploración: no iterarlos salvo petición expresa.
+Proyecto de la web de StateX, startup de ciberseguridad. **Dirección elegida: Concept H — Boutique Precision** (2026-10-24). **Rediseño estratégico 2026-10-25** (ver `docs/auditoria-y-estrategia-2026-10-25.md`): la web pública vive en `app/_site/` (contenido en `app/_site/content.ts`), con home en `/` y páginas en `/servicios/[slug]`. `/design-lab/h` muestra la misma home con la barra del lab. El resto de conceptos y `app/design-lab/content.ts` quedan como archivo de exploración: no iterarlos salvo petición expresa. **Previews de identidad 2026-10-26** (ver `docs/identidades-2026-10-26.md`): `/preview/statex|noxen|vantis` comparan nombres (Noxen y Vantis solo existen ahí, nunca en producción) con la evolución comercial común (`app/_site/EvolvedHome.tsx`, `evolution.ts`, `identities/`); noindex y protegidas por `proxy.ts`.
 
 ## Posicionamiento
 
@@ -58,6 +58,7 @@ app/
   servicios/[slug]/       # Una página estática por servicio
   guias/[slug]/           # Guías de contenido real (lista en guides de app/_site/content.ts)
   actions/contact.ts      # Server Action del formulario (Resend)
+  preview/<identidad>/    # Previews de identidad (statex, noxen, vantis): noindex, protegidas por proxy.ts
   aviso-legal/ privacidad/ cookies/   # Legales (borradores)
   design-lab/
     page.tsx              # Comparador (pestañas/teclas 1–7, homepage/identidad, escritorio/móvil, tabla)

@@ -15,13 +15,22 @@ export const tokens = {
   // Texto secundario sobre papel marfil (informe): 6,2:1 sobre #F2F0EA; el titanio no llega a AA ahí.
   "--h-stone": "#5C5850",
   "--h-paper-line": "rgba(11,13,16,0.14)",
+  // Tipografía de titulares. Las identidades de /preview la sustituyen; estos valores son los de StateX.
+  "--h-display": "var(--h-sans)",
+  "--h-display-weight": "600",
+  "--h-title-weight": "600",
+  "--h-display-case": "uppercase",
+  "--h-display-tracking": "-0.025em",
 } as CSSProperties;
 
 export const wrap = "mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-14";
 export const focus = "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--h-ivory)";
 export const section = "scroll-mt-20 py-[clamp(5.5rem,11vw,10rem)]";
+/** Familia, peso y caja de los títulos (h3, nombres): en StateX, Inter 600 en mayúsculas. */
+export const caps = "[font-family:var(--h-display)] [font-weight:var(--h-title-weight)] [text-transform:var(--h-display-case)]";
 /** Titulares: mayúsculas, peso 600, interletrado ajustado. Las frases vienen de content.ts en minúsculas. */
-export const display = "font-semibold uppercase leading-[0.98] tracking-[-0.025em] [font-variation-settings:'opsz'_32] text-balance";
+export const display =
+  "[font-family:var(--h-display)] [font-weight:var(--h-display-weight)] [text-transform:var(--h-display-case)] leading-[0.98] tracking-(--h-display-tracking) [font-variation-settings:'opsz'_32] text-balance";
 export const h2 = `${display} m-0 text-[clamp(1.75rem,4.6vw,4.25rem)]`;
 export const muted = "text-(--h-titanium)";
 export const pendingCls = "inline-block border border-dashed border-(--h-titanium)/60 px-2 py-1 text-[13px] text-(--h-titanium)";
@@ -30,7 +39,9 @@ export function Pending({ children, className = "" }: { children: ReactNode; cla
   return <span className={`${pendingCls} ${className}`}>{children}</span>;
 }
 
-/** Logotipo provisional: STATEX con interletrado amplio; la línea roja subraya solo la X. */
+export type IdentityKey = "statex" | "noxen" | "vantis";
+
+/** Logotipo provisional: STATEX con interletrado amplio; la línea roja subraya solo la X. (Los de las previews, en identities/BrandMark.tsx.) */
 export function Wordmark({ className = "" }: { className?: string }) {
   return (
     <span className={`inline-flex items-baseline font-semibold uppercase leading-none tracking-[0.32em] ${className}`}>

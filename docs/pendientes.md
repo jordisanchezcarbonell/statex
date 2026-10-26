@@ -4,7 +4,7 @@ Lista viva de datos y decisiones que faltan. La web pública **no** muestra plac
 vale `null` en `app/_site/content.ts`, simplemente no aparece. Las páginas legales sí enseñan
 `[Pendiente]` porque son borradores que no deben publicarse así.
 
-Actualizado: 2026-10-25.
+Actualizado: 2026-10-26.
 
 ## Bloquean el lanzamiento
 
@@ -18,6 +18,14 @@ Actualizado: 2026-10-25.
 | Garantías de transferencia internacional de Resend (o elegir un proveedor de envío en la UE) | `app/privacidad/page.tsx` | [Por confirmar] visible en privacidad |
 | Dominio definitivo | `NEXT_PUBLIC_SITE_URL` | Canonicals, sitemap y Open Graph apuntan a statex-two.vercel.app |
 | Activar indexación | `SITE_INDEXABLE=true` (solo con aprobación expresa) | `noindex` global y `robots.txt` con `Disallow: /` |
+
+## Marca (2026-10-26)
+
+- **Elegir identidad** tras ver `/preview/statex`, `/preview/noxen` y `/preview/vantis` (recomendación: StateX; ver `docs/identidades-2026-10-26.md`).
+- **Registrar `statexsecurity.com`**: el whois del 2026-10-26 indica que no está registrado aunque `.env.example` lo da como elegido.
+- **Búsqueda formal de marcas** en EUIPO y OEPM (clases 9, 42, 35, 45): no se pudo consultar automáticamente.
+- Para enseñar las previews en Vercel: definir `PREVIEW_USER` y `PREVIEW_PASSWORD` (sin ellas devuelven 404).
+- Integrar la evolución comercial en `/` cuando se apruebe.
 
 ## Mejoran la credibilidad
 

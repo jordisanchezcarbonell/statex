@@ -68,6 +68,7 @@ export async function sendContact(_prev: ContactState, data: FormData): Promise<
     `Nombre: ${oneLine(values.name)}`,
     `Empresa: ${oneLine(values.company)}`,
     `Email: ${oneLine(values.email)}`,
+    `Web: ${values.url ? oneLine(values.url) : "(no indicada)"}`,
     `Servicio: ${service}`,
     "",
     values.message,

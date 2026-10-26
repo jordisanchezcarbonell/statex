@@ -1,5 +1,6 @@
 import { report as r, type Severity } from "./content";
-import { Wordmark, focus, muted } from "./ui";
+import { BrandMark } from "./identities/BrandMark";
+import { focus, muted, type IdentityKey } from "./ui";
 
 // Informe de demostración: una hoja de papel marfil sobre la obsidiana. Es contenido real (texto
 // legible y accesible), no una imagen. Todos los datos son ficticios y así se indica dos veces.
@@ -24,7 +25,7 @@ function SeverityMark({ level }: { level: Severity }) {
 
 const label = "m-0 text-[13px] font-medium uppercase tracking-[0.08em] text-(--h-stone)";
 
-export function Report() {
+export function Report({ identity }: { identity?: IdentityKey } = {}) {
   const [lead, ...rest] = r.findings;
   const counts = LEVELS.map((l) => ({ l, n: r.findings.filter((f) => f.severity === l).length }));
 
@@ -57,7 +58,7 @@ export function Report() {
       >
         {/* Cabecera del documento */}
         <header className="flex flex-wrap items-center justify-between gap-3 pb-5">
-          <span className="text-[13px]"><Wordmark /></span>
+          <span className="text-[13px]"><BrandMark identity={identity} /></span>
           <span className="border border-(--h-ink) px-2 py-1 text-[13px] font-medium uppercase tracking-[0.08em]">{r.demo}</span>
         </header>
         <span aria-hidden="true" className="block h-0.5 w-full bg-(--h-red)" />

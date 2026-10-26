@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { services, servicesSection as t } from "./content";
 import { OfferLink } from "./ContactForm";
-import { focus, muted } from "./ui";
+import { caps, focus, muted } from "./ui";
 
 const listItem = "grid grid-cols-[1rem_1fr] gap-3 leading-[1.5]";
 const dash = <span aria-hidden="true" className="mt-[0.75em] h-px w-full bg-(--h-titanium)" />;
@@ -19,7 +19,7 @@ export function Services() {
             />
             <div className="lg:col-span-5">
               <p className={`m-0 text-[13px] ${muted}`}>{s.short}</p>
-              <h3 className="m-0 mt-4 max-w-[16ch] text-[clamp(1.6rem,2.6vw,2.4rem)] font-semibold uppercase leading-[1.02] tracking-[-0.02em] text-balance">
+              <h3 className={`m-0 mt-4 max-w-[16ch] text-[clamp(1.6rem,2.6vw,2.4rem)] leading-[1.02] tracking-[-0.02em] text-balance ${caps}`}>
                 {s.name}
               </h3>
               <p className="m-0 mt-5 max-w-[42ch] text-[17px] leading-[1.6] text-(--h-ivory)/85">{s.summary}</p>
@@ -58,7 +58,15 @@ export function Services() {
           </li>
         ))}
       </ul>
+      <ServiceExtras />
+    </>
+  );
+}
 
+/** Compromisos comunes y las dos puertas de entrada (evaluación inicial y pack para agencias). */
+export function ServiceExtras() {
+  return (
+    <>
       <div className="mt-12 grid gap-6 lg:grid-cols-12 lg:gap-10">
         <h3 className={`m-0 text-[14px] font-normal lg:col-span-3 ${muted}`}>{t.commitmentsLabel}</h3>
         <ul className="m-0 grid list-none gap-x-10 gap-y-8 p-0 sm:grid-cols-2 lg:col-span-9 lg:grid-cols-4">
