@@ -2,7 +2,7 @@
 
 Previews: `/preview/statex`, `/preview/noxen`, `/preview/vantis` (barra inferior para saltar entre ellas y volver a la web actual).
 La home de producción (`/`) **no cambia**. Investigación de nombres completa: `docs/investigacion-nombres-2026-10-26.md`.
-Capturas (escritorio 1440, tablet 820 y móvil 390): `docs/capturas/identidades/`.
+Capturas (escritorio 1440 y móvil 390): `docs/capturas/identidades/`.
 
 ## 1. Diagnóstico de la web existente
 
@@ -23,15 +23,12 @@ ya existía. Por eso esto es una evolución y no un rediseño.
 ## 2. Qué se ha implementado
 
 **Arquitectura (sin duplicar la app).** Una única home evolucionada (`app/_site/EvolvedHome.tsx`) y un único
-contenido (`app/_site/evolution.ts`, función del nombre de marca) sirven a las tres previews. Cada identidad
-(`app/_site/identities/*.ts`) solo define nombre, tagline, tokens CSS, fuente, escena del hero y tipo de cabecera.
-Los componentes de producción aceptan esas variantes por props con valores por defecto iguales a producción:
-
-- `ui.tsx`: tokens de tipografía (`--h-display`, peso, caja, interletrado) y `Wordmark` por identidad.
-- `Shell`/`Header`: identidad y navegación opcionales; cabecera `standard`, `centered` (Noxen) o `ledger` (Vantis, con franja superior).
-- `Hero`: copy, franja y escena por props; escenas nuevas en `HeroScenes.tsx` (solo SVG con tokens; sin librerías).
-- `Method` acepta sus datos; `Services` expone `ServiceExtras`; Trayectoria, Equipo y FAQ son componentes reutilizables.
-- Cada preview carga solo su fuente (Manrope para Noxen, Newsreader para Vantis) con `next/font` auto-hospedado.
+contenido (`app/_site/evolution.ts`, función del nombre de marca) sirven a las tres previews. **Las tres usan el
+diseño de StateX tal cual** (decisión del 2026-10-26: comparar solo el nombre). Cada identidad
+(`app/_site/identities/*.ts`) define nombre, tagline e idea; el logotipo (`identities/BrandMark.tsx`) aplica a cada
+nombre el tratamiento de STATEX (mayúsculas espaciadas y la línea roja bajo la última letra). Cambian también los
+textos que nombran la marca: consentimiento y aviso del formulario, «Por qué», «Quiénes somos», trayectoria y pie.
+Una primera versión con colores, fuentes, cabecera y escena propios por marca se descartó ese mismo día.
 
 **Secciones nuevas (en las previews).** Hero «La seguridad no termina cuando encuentras una vulnerabilidad.» ·
 tres áreas con «qué incluye» y «por dónde empezar» (enlazan los servicios con precio publicado y la evaluación
@@ -56,19 +53,15 @@ contrata» para no prometer monitorización continua (roadmap).
 
 ## 3. Comparativa de identidades
 
-| | **A · StateX** — Executive Minimal | **B · Noxen** — Dark Precision | **C · Vantis** — Corporate Intelligence |
-|---|---|---|---|
-| Visual | La web actual: obsidiana, Inter 600 en mayúsculas, línea roja, pasillo de pórticos | Negro más profundo, Manrope ligera en mayúsculas, acento bronce, horizonte nocturno, logo centrado | Azul noche, serifa editorial (Newsreader) en caja baja, acento azul, retícula y línea escalonada |
-| Profesionalidad | Alta | Alta | Alta |
-| Elegancia | Alta, sobria | La más «lujo» (Porsche/Massimo Dutti) | Editorial, de consultora estratégica |
-| Confianza | Alta: historia verificable desde 2012 | Media: nombre nuevo y connotación «noxa/noxious» (daño) | Media: genérico, recuerda a fintech/aseguradora |
-| Diferenciación | Media (la X es habitual en tecnología) | Alta en lo visual | Baja: Vanta, VANTIS (escáner), «Vantis Security» |
-| Claridad comercial | Igual en las tres: mismo contenido, mismos CTA | Igual | Igual |
-| Captar empresas | Buena: CTO y dirección | Buena con CTO; algo fría para dirección no técnica | La más «board-friendly» por tono |
-| Escalabilidad | Buena (productos futuros «StateX …») | Buena | Buena |
-| **Riesgo de naming** | **Bajo-medio**: inmobiliaria Statex (Madrid) en otro sector; .com de un tercero; statexsecurity.com aparentemente libre | **Alto**: Noxen Technologies (OSINT/ofensiva), European Noxen (Madrid); .com en venta | **Muy alto**: vantissecurity.com en uso, escáner VANTIS, marca AU en clase 42 |
+Mismo diseño, mismo contenido y mismos CTA: la comparación es solo de nombre.
 
-Contraste (WCAG AA) verificado para las tres: texto 16,5–17,1:1; secundario 7,1–7,8:1 sobre fondo y ≥6,2:1 sobre grafito; acentos solo en líneas (≥3:1).
+| | **A · StateX** — *Secure by Design.* | **B · Noxen** — *Find the Risk. Fix the Weakness.* | **C · Vantis** — *Security Beyond Detection.* |
+|---|---|---|---|
+| Confianza | Alta: historia verificable desde 2012 | Media: nombre nuevo; «noxa/noxious» = daño | Media: genérico, suena a fintech/aseguradora |
+| Diferenciación | Media (la X es habitual en tecnología) | Media | Baja: Vanta, VANTIS (escáner), «Vantis Security» |
+| Pronunciación (ES) | Ambigua («es-teit-ex» / «sta-tex») | Clara («nók-sen») | Clara («ván-tis») |
+| Escalabilidad | Buena (productos «StateX …») | Buena | Buena |
+| **Riesgo de naming** | **Bajo-medio**: inmobiliaria Statex (Madrid) en otro sector; .com de un tercero; statexsecurity.com aparentemente libre | **Alto**: Noxen Technologies (OSINT/ofensiva), European Noxen (Madrid); .com en venta | **Muy alto**: vantissecurity.com en uso, escáner VANTIS, marca AU en clase 42 |
 
 ## 4. Recomendación
 
@@ -79,8 +72,6 @@ Contraste (WCAG AA) verificado para las tres: texto 16,5–17,1:1; secundario 7,
    empiezan de cero y además cargan con conflictos en el mismo sector, el de Vantis casi idéntico.
 2. La evolución comercial (hero, tres áreas, método con Verificar, por qué elegirnos, quiénes somos) funciona igual
    con cualquier nombre: es lo que más mejora la conversión y no depende de la marca.
-3. Opcional: probar en StateX la tipografía ligera de Noxen solo en el hero, o la franja superior de Vantis. Son
-   un cambio de tokens.
 
 **Antes de decidir:** registrar `statexsecurity.com` (el `.env.example` ya lo da como elegido, pero el whois indica
 que **no está registrado**) y encargar una búsqueda formal en EUIPO y OEPM (clases 9, 42, 35, 45). Ninguna base

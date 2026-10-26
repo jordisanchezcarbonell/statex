@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { cta, hero, services } from "./content";
 import { display, focus, wrap } from "./ui";
-import { HorizonScene, LedgerScene } from "./HeroScenes";
 
 // Escena: una nave de pórticos en perspectiva central (un solo punto de fuga), como un pasillo
 // de infraestructura visto de frente. Al fondo, la línea roja: el umbral que StateX vigila.
@@ -88,16 +87,14 @@ type HeroProps = {
   body?: string;
   // Franja inferior: texto a la izquierda y lista breve a la derecha.
   strip?: { lead: string; items: string[] };
-  scene?: "corridor" | "horizon" | "ledger";
   size?: string; // tamaño del titular (clases de Tailwind)
 };
 
-/** Sin props es el hero de producción; las previews de identidad cambian copy, franja y escena. */
+/** Sin props es el hero de producción; las previews de identidad cambian el copy y la franja. */
 export function Hero({
   lines = hero.lines,
   body = hero.body,
   strip = { lead: hero.audience, items: services.map((s) => s.short) },
-  scene = "corridor",
   size = "text-[clamp(2.1rem,5.6vw,5.75rem)]",
 }: HeroProps = {}) {
   const reduce = !!useReducedMotion();
@@ -113,7 +110,7 @@ export function Hero({
       <motion.div
         className="absolute inset-0 -z-10 max-sm:bottom-auto max-sm:h-[56svh] max-sm:[mask-image:linear-gradient(to_bottom,black_65%,transparent)]"
         style={reduce ? undefined : { scale, opacity: dim }}>
-        {scene === "horizon" ? <HorizonScene reduce={reduce} /> : scene === "ledger" ? <LedgerScene reduce={reduce} /> : <Scene reduce={reduce} />}
+        <Scene reduce={reduce} />
       </motion.div>
       {/* Velo inferior para que el texto se lea sobre la escena */}
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,var(--h-ink)_6%,color-mix(in_srgb,var(--h-ink)_78%,transparent)_34%,transparent_62%)]" />

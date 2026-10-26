@@ -86,7 +86,6 @@ export function EvolvedHome({ identity }: { identity: Identity }) {
         lines={e.hero.lines}
         body={e.hero.body}
         strip={{ lead: `${identity.tagline} · Barcelona`, items: e.hero.claim }}
-        scene={identity.hero}
         size="text-[clamp(1.75rem,5vw,5.25rem)]"
       />
 
