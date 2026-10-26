@@ -267,7 +267,7 @@ export const areas = {
         "Evaluación de riesgos",
         "Priorización de medidas de protección",
         "Asesoramiento de seguridad técnica",
-        "Seguimiento periódico y mejora continua, si se contrata", // no es monitorización continua (roadmap)
+        "Revisiones de seguimiento puntuales, si se contratan", // no es monitorización continua (roadmap)
       ],
       entries: [] as Service[], // sin servicio propio: se entra por la evaluación inicial
     },
@@ -277,14 +277,14 @@ export const areas = {
 // ─── Por qué elegirnos ───────────────────────────────────────────────────────
 
 export const whyIntro = (brandName: string) =>
-  `Muchas consultoras entregan una lista de vulnerabilidades. En ${brandName} la seguridad y la ingeniería trabajan juntas, así que el encargo termina cuando el problema está resuelto y comprobado.`;
+  `Muchas consultoras entregan una lista de vulnerabilidades. En ${brandName} la seguridad y la ingeniería trabajan juntas, así que, si lo contratas, el encargo termina cuando el problema está resuelto y comprobado.`;
 
 export const why = {
   label: "Por qué elegirnos",
   title: "Encontrar el fallo es solo la mitad del trabajo.",
   intro: whyIntro(brand.name),
   points: [
-    { name: "Seguridad e ingeniería, juntas", text: "Un especialista en seguridad y un ingeniero de software en el mismo encargo, desde la primera conversación." },
+    { name: "Seguridad e ingeniería, juntas", text: "Un especialista en seguridad y un ingeniero de software en la misma firma, desde la primera conversación." },
     { name: "No nos quedamos en el informe", text: "Si lo contratas, aplicamos la corrección: código, configuración o arquitectura." },
     { name: "Soluciones técnicas reales", text: "Correcciones pensadas para tu stack y tu forma de desplegar, no enlaces a una guía genérica." },
     { name: "Prioridad por riesgo e impacto", text: "Primero lo que puede costarte datos, dinero o clientes. Después, el resto, con un plan." },
@@ -304,7 +304,7 @@ export const method = {
     { name: "Evaluamos", text: "Comprendemos el contexto, la aplicación y los activos, e identificamos los riesgos dentro de un alcance autorizado.", record: "Alcance, autorización y registro de pruebas" },
     { name: "Priorizamos", text: "Clasificamos cada vulnerabilidad por impacto, probabilidad y contexto de negocio. Primero, lo que más te puede costar.", record: "Informe técnico y resumen ejecutivo" },
     { name: "Corregimos", text: "Implementamos las medidas necesarias con tu equipo, o te entregamos la corrección lista para tu stack.", record: "Plan de corrección y cambios aplicados" },
-    { name: "Verificamos", text: "Volvemos a probar las correcciones para confirmar que el fallo está cerrado y que no abre otro problema.", record: "Retest de críticos y altos durante 6 meses" },
+    { name: "Verificamos", text: "Volvemos a probar las correcciones de los fallos críticos y altos para confirmar que están cerrados y que no abren otro problema.", record: "Retest de críticos y altos durante 6 meses" },
   ],
   rule: "Ninguna prueba activa empieza sin un plan de pruebas firmado. Las que puedan afectar al servicio se hacen en la ventana horaria que acordemos y, si algo se desvía de lo previsto, paramos y te llamamos.",
 };
