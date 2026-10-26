@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 
 export function GET() {
   if (!company.email) return new Response("Not found", { status: 404 });
-  const expires = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(); // se renueva en cada despliegue
+  const expires = new Date(Date.now() + 180 * 24 * 60 * 60 * 1000).toISOString(); // RFC 9116: menos de un año; se renueva en cada despliegue
   const body = [
     `Contact: mailto:${company.email}`,
     `Expires: ${expires}`,
