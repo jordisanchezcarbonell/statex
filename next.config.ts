@@ -37,8 +37,9 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       { source: "/:path*", headers: securityHeaders },
-      // Previews de identidad: fuera de buscadores aunque la web pase a ser indexable.
+      // Rutas internas (previews de identidad y demos): fuera de buscadores aunque la web pase a ser indexable.
       { source: "/preview/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }] },
+      { source: "/demo/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }] },
     ];
   },
 };

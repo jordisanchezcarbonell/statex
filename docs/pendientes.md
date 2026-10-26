@@ -56,3 +56,4 @@ Actualizado: 2026-10-26.
 ## Servicio con agentes de IA (diseño 2026-10-26)
 
 - **Diseño del servicio** en `docs/servicio-agentes-vulnerabilidades-2026-10-26.md` (interno, no publicar): pipeline de agentes para ampliar la cobertura de la evaluación, con revisión humana y autorización firmada como puerta. Para que exista de verdad: validarlo en un objetivo propio/laboratorio, elegir herramientas y aislamiento, plantillas legales que contemplen agentes de IA, seguro RC profesional y medir falsos positivos/negativos.
+- **Demo interna del pipeline** en `/demo/agentes` (noindex, no en sitemap): muestra el flujo de 5 etapas con los hallazgos reales de auditar la propia web (2026-10-26). Para enseñar en reuniones; no es capacidad anunciada en la web pública. Scaffold de agentes ejecutable: pendiente (hoy el pipeline se ejecuta con el agente `security-reviewer`).
