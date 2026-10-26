@@ -52,3 +52,7 @@ Actualizado: 2026-10-26.
 - **Lint.** El proyecto no tiene ESLint configurado; añadirlo es una dependencia nueva (no hecho).
 - **Guías publicadas** (2026-10-25): auditoría web, auditoría de APIs y cómo preparar la web. Siguientes candidatas, solo con contenido real: exposición externa explicada para no técnicos, seguridad en Next.js.
 - **Medición sin trackers**: contar envíos del formulario en servidor si se quiere medir conversión.
+
+## Servicio con agentes de IA (diseño 2026-10-26)
+
+- **Diseño del servicio** en `docs/servicio-agentes-vulnerabilidades-2026-10-26.md` (interno, no publicar): pipeline de agentes para ampliar la cobertura de la evaluación, con revisión humana y autorización firmada como puerta. Para que exista de verdad: validarlo en un objetivo propio/laboratorio, elegir herramientas y aislamiento, plantillas legales que contemplen agentes de IA, seguro RC profesional y medir falsos positivos/negativos.
