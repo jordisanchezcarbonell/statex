@@ -77,7 +77,18 @@ Mismo diseño, mismo contenido y mismos CTA: la comparación es solo de nombre.
 que **no está registrado**) y encargar una búsqueda formal en EUIPO y OEPM (clases 9, 42, 35, 45). Ninguna base
 de marcas pudo consultarse automáticamente.
 
-## 5. Para pasar a producción (pendiente de aprobación)
+## 5. Paso a producción (rama `evolucion-home`, sin publicar)
 
-Integrar `evolution.ts` en `content.ts` y hacer que `/` use `EvolvedHome` con la identidad StateX (o sus secciones
-en `Home.tsx`); actualizar el JSON-LD (áreas) y la FAQ. No se ha hecho push ni deploy.
+Hecho en local, en la rama `evolucion-home` (no en `main`, para que un push no lo publique sin aprobación):
+
+- El copy de la evolución vive ahora en `content.ts` (`nav`, `hero`, `areas`, `why`, `method`, `team`);
+  `evolution.ts` solo sustituye el nombre de la marca para las previews. Sale `value` («Por qué StateX»).
+- `/` usa las mismas secciones que las previews (`HomeSections` en `Home.tsx`), con JSON-LD; las previews son
+  `HomeSections` + identidad + barra. Las áreas están en `Services.tsx` (sustituyen a la lista antigua).
+- Las páginas de servicio heredan el método nuevo. La franja del hero y el título del método dicen
+  «Evaluamos» (antes «Detectamos» en la franja y «Evaluamos» en la fase 1). «Verificamos» se ajusta al
+  compromiso real: retest de críticos y altos durante 6 meses.
+- La responsabilidad de cada fundador (`duty`) ya se muestra (antes estaba en los datos pero no se pintaba).
+- FAQ: nueva pregunta «¿Podéis corregir vosotros lo que encontréis?».
+
+Para publicar: aprobar, fusionar `evolucion-home` en `main` y hacer push.

@@ -27,10 +27,10 @@ export const seo = {
 
 export const nav = [
   { href: "#servicios", label: "Servicios" },
-  { href: "#enfoque", label: "Enfoque" },
   { href: "#metodo", label: "Método" },
+  { href: "#por-que", label: "Por qué" },
   { href: "#entregables", label: "Entregables" },
-  { href: "#trayectoria", label: "Trayectoria" },
+  { href: "#equipo", label: "Equipo" },
 ];
 
 export const cta = {
@@ -40,10 +40,11 @@ export const cta = {
 
 export const hero = {
   // Dos frases, dos líneas: la primera atenuada, la segunda en marfil.
-  lines: ["La seguridad no se presupone.", "Se demuestra."],
-  body:
-    "Auditamos aplicaciones web, APIs y la infraestructura que tu empresa expone en internet. Verificamos cada hallazgo, lo priorizamos según tu negocio y te explicamos cómo corregirlo.",
-  audience: "Desde Barcelona, para empresas SaaS, agencias digitales y equipos tecnológicos de toda España",
+  lines: ["La seguridad no termina", "cuando encuentras una vulnerabilidad."],
+  body: "Identificamos riesgos, corregimos vulnerabilidades y reforzamos tus sistemas. De la evaluación técnica a la solución.",
+  // Franja inferior: firma y las cuatro fases del método.
+  lead: "Secure by Design. · Barcelona",
+  claim: ["Evaluamos", "Priorizamos", "Corregimos", "Verificamos"],
 };
 
 // ─── Servicios ───────────────────────────────────────────────────────────────
@@ -214,41 +215,96 @@ export const servicesSection = {
   },
 };
 
-// ─── Propuesta de valor ──────────────────────────────────────────────────────
+// ─── Áreas de oferta ─────────────────────────────────────────────────────────
+// Tres áreas que agrupan los servicios con precio publicado. Son líneas de servicio, no capacidades
+// certificadas: cada encargo se define con alcance y autorización por escrito.
 
-export const value = {
-  label: "Por qué StateX",
-  title: "Seguridad que entiende cómo se construye el software.",
+const serviceById = (id: string) => {
+  const s = services.find((x) => x.id === id);
+  if (!s) throw new Error(`Servicio desconocido: ${id}`);
+  return s;
+};
+
+export const areas = {
+  label: "Servicios",
+  title: "Tres áreas. Del hallazgo a la solución.",
   intro:
-    "Venimos del desarrollo: aplicaciones, integraciones, autenticación, despliegues. Por eso no nos quedamos en la lista de vulnerabilidades. Te ayudamos a entenderlas, priorizarlas y corregirlas.",
+    "Evaluamos como un atacante, corregimos como un equipo de ingeniería y te ayudamos a decidir qué hacer primero. Puedes contratar un área o las tres.",
+  includesLabel: "Qué incluye",
+  entryLabel: "Por dónde empezar",
+  note: "Líneas de servicio propuestas. Cada encargo se define con un alcance técnico cerrado y una autorización firmada antes de empezar.",
+  items: [
+    {
+      id: "offensive",
+      name: "Offensive Security",
+      descriptor: "Evaluación ofensiva autorizada",
+      summary: "Buscamos lo que encontraría un atacante en tu aplicación, tus APIs y lo que tu empresa expone en internet, siempre dentro del alcance firmado.",
+      lines: ["Evaluaciones de seguridad", "Pentesting autorizado", "Análisis de vulnerabilidades", "Revisiones de seguridad web y APIs"],
+      entries: [serviceById("auditoria-web-api"), serviceById("exposicion-externa")],
+    },
+    {
+      id: "engineering",
+      name: "Secure Engineering",
+      descriptor: "Ingeniería segura y corrección",
+      summary: "Corregimos lo encontrado en tu código, tu configuración o tu arquitectura, y dejamos a tu equipo con un sistema más difícil de romper.",
+      lines: [
+        "Corrección de vulnerabilidades",
+        "Desarrollo seguro",
+        "Hardening de aplicaciones",
+        "Revisión de autenticación",
+        "Seguridad de APIs",
+        "Mejora de arquitecturas existentes",
+      ],
+      entries: [serviceById("ingenieria-segura")],
+    },
+    {
+      id: "advisory",
+      name: "Security Advisory",
+      descriptor: "Asesoramiento técnico",
+      summary: "Te ayudamos a decidir con criterio: qué riesgos importan, qué proteger primero y cómo mejorar con el tiempo sin frenar al equipo.",
+      lines: [
+        "Consultoría de seguridad",
+        "Evaluación de riesgos",
+        "Priorización de medidas de protección",
+        "Asesoramiento de seguridad técnica",
+        "Seguimiento periódico y mejora continua, si se contrata", // no es monitorización continua (roadmap)
+      ],
+      entries: [] as Service[], // sin servicio propio: se entra por la evaluación inicial
+    },
+  ],
+};
+
+// ─── Por qué elegirnos ───────────────────────────────────────────────────────
+
+export const whyIntro = (brandName: string) =>
+  `Muchas consultoras entregan una lista de vulnerabilidades. En ${brandName} la seguridad y la ingeniería trabajan juntas, así que el encargo termina cuando el problema está resuelto y comprobado.`;
+
+export const why = {
+  label: "Por qué elegirnos",
+  title: "Encontrar el fallo es solo la mitad del trabajo.",
+  intro: whyIntro(brand.name),
   points: [
-    {
-      name: "Arquitecturas reales",
-      text: "Evaluamos tu aplicación sabiendo cómo está hecha: frameworks, integraciones, autenticación, colas y despliegues. Por eso encontramos lo que solo ve quien ha construido software parecido.",
-    },
-    {
-      name: "Correcciones que tu equipo puede aplicar",
-      text: "Hablamos el idioma de tu stack. La recomendación llega pensada para vuestro código y vuestra forma de desplegar, no como un enlace genérico a una guía.",
-    },
-    {
-      name: "Un puente entre seguridad y desarrollo",
-      text: "Explicamos cada riesgo a tu equipo técnico en su lenguaje y a dirección en el suyo. Nadie se queda sin saber qué hay que hacer ni por qué.",
-    },
+    { name: "Seguridad e ingeniería, juntas", text: "Un especialista en seguridad y un ingeniero de software en el mismo encargo, desde la primera conversación." },
+    { name: "No nos quedamos en el informe", text: "Si lo contratas, aplicamos la corrección: código, configuración o arquitectura." },
+    { name: "Soluciones técnicas reales", text: "Correcciones pensadas para tu stack y tu forma de desplegar, no enlaces a una guía genérica." },
+    { name: "Prioridad por riesgo e impacto", text: "Primero lo que puede costarte datos, dinero o clientes. Después, el resto, con un plan." },
+    { name: "Resultados que se entienden", text: "Un resumen para dirección, que decide, y el detalle técnico para el equipo que corrige." },
+    { name: "Alcance definido y autorizado", text: "Ninguna prueba activa sin autorización escrita, alcance firmado y ventana horaria acordada." },
   ],
 };
 
 // ─── Metodología ─────────────────────────────────────────────────────────────
 
 export const method = {
-  label: "Metodología",
-  title: "Cuatro fases. Todo por escrito.",
-  intro: "Un proceso acotado y trazable: sabes qué se va a probar, cuándo y qué recibirás al terminar.",
+  label: "Nuestro método",
+  title: "Evaluamos. Priorizamos. Corregimos. Verificamos.",
+  intro: "Cuatro fases acotadas y trazables. Sabes qué se va a probar, cuándo, qué recibirás y cómo comprobamos que el problema ya no existe.",
   recordLabel: "Queda por escrito",
   steps: [
-    { name: "Entender", text: "Comprendemos la aplicación, el negocio, los activos y los riesgos que importan.", record: "Alcance y autorización firmados" },
-    { name: "Evaluar", text: "Hacemos el análisis técnico dentro de un alcance definido y autorizado.", record: "Registro de pruebas y evidencias" },
-    { name: "Priorizar", text: "Clasificamos los hallazgos según impacto, probabilidad y contexto de negocio.", record: "Informe técnico y resumen ejecutivo" },
-    { name: "Corregir", text: "Entregamos recomendaciones concretas y, cuando se contrata, acompañamos la corrección y la validamos.", record: "Plan de corrección y revisión posterior" },
+    { name: "Evaluamos", text: "Comprendemos el contexto, la aplicación y los activos, e identificamos los riesgos dentro de un alcance autorizado.", record: "Alcance, autorización y registro de pruebas" },
+    { name: "Priorizamos", text: "Clasificamos cada vulnerabilidad por impacto, probabilidad y contexto de negocio. Primero, lo que más te puede costar.", record: "Informe técnico y resumen ejecutivo" },
+    { name: "Corregimos", text: "Implementamos las medidas necesarias con tu equipo, o te entregamos la corrección lista para tu stack.", record: "Plan de corrección y cambios aplicados" },
+    { name: "Verificamos", text: "Volvemos a probar las correcciones para confirmar que el fallo está cerrado y que no abre otro problema.", record: "Retest de críticos y altos durante 6 meses" },
   ],
   rule: "Ninguna prueba activa empieza sin un plan de pruebas firmado. Las que puedan afectar al servicio se hacen en la ventana horaria que acordemos y, si algo se desvía de lo previsto, paramos y te llamamos.",
 };
@@ -361,11 +417,13 @@ export const trajectory = {
 
 // ─── Equipo ──────────────────────────────────────────────────────────────────
 
+export const teamIntro = (brandName: string) =>
+  `${brandName} la forman dos hermanos de Barcelona: uno viene de la ciberseguridad y el otro de la ingeniería de software. Quien te propone el alcance es quien hace el trabajo y te presenta los resultados.`;
+
 export const team = {
-  label: "Equipo",
-  title: "Una firma pequeña. Hablas con quien hace el trabajo.",
-  intro:
-    "StateX la dirigen sus dos fundadores: un consultor de seguridad con más de diez años de oficio y un desarrollador full stack. Son las dos mitades de nuestro enfoque. Quien te propone el alcance es quien hace la auditoría y te presenta los resultados.",
+  label: "Quiénes somos",
+  title: "Dos perfiles complementarios. Un mismo encargo.",
+  intro: teamIntro(brand.name),
   // Bios redactadas a partir de sus perfiles de LinkedIn (consultados el 2026-10-25). Sin empleadores
   // actuales, sin titulaciones en curso y sin certificaciones de vigencia no confirmada.
   founders: [
@@ -373,15 +431,15 @@ export const team = {
       name: "Albert Sánchez",
       role: "Cofundador · Seguridad",
       bio: "Consultor de seguridad desde 2014 y jefe de proyectos de ciberseguridad desde 2017. Antes, pentester, responsable de seguridad web y formador en seguridad en internet y hacking." as string | null,
-      // Responsabilidad en la firma (solo la muestran las previews de identidad).
-      duty: null as string | null,
+      // Responsabilidad en la firma
+      duty: "Responsable de las evaluaciones técnicas de seguridad, el análisis de riesgos y la consultoría." as string | null,
       links: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/albert-sanchez-carbonell-a13b585b/" }],
     },
     {
       name: "Jordi Sánchez",
       role: "Cofundador · Ingeniería",
       bio: "Desarrollador full stack desde 2020, con React, Next.js y NestJS. Antes, asesor en seguridad web. Aporta la mirada de quien construye y mantiene las aplicaciones que auditamos." as string | null,
-      duty: null as string | null,
+      duty: "Responsable del desarrollo seguro, la corrección de vulnerabilidades y las soluciones técnicas." as string | null,
       links: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/jordi-s%C3%A1nchez-carbonell-baa83797/" }],
     },
   ],
@@ -389,12 +447,13 @@ export const team = {
   experience: [
     "Consultoría y gestión de proyectos de ciberseguridad",
     "Pentesting y seguridad web",
-    "Desarrollo web y de aplicaciones",
-    "APIs e integraciones",
-    "Autenticación y autorización",
-    "Next.js, React, Node.js y NestJS",
-    "Kubernetes y despliegue",
-    "Arquitectura de software",
+    "React, Next.js y TypeScript",
+    "APIs REST e integraciones empresariales",
+    "Autenticación y control de acceso",
+    "Arquitectura de aplicaciones",
+    "Infraestructura y despliegues",
+    "Corrección de vulnerabilidades en aplicaciones",
+    "Automatización e inteligencia artificial",
   ],
 };
 
@@ -423,6 +482,10 @@ export const faq = {
     {
       q: "¿Qué necesitáis de nosotros?",
       a: "Una persona de contacto técnica, el alcance (dominios, aplicaciones o APIs), cuentas de prueba si hacen falta y la autorización firmada. Nunca te pediremos credenciales por el formulario ni por correo sin cifrar.",
+    },
+    {
+      q: "¿Podéis corregir vosotros lo que encontréis?",
+      a: "Sí, si lo contratas. Aplicamos la corrección en vuestro código, configuración o arquitectura, o la dejamos lista para que la aplique vuestro equipo. Se presupuesta aparte, con el alcance claro desde el principio.",
     },
     {
       q: "¿Revisáis las correcciones?",

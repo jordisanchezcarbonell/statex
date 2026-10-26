@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { cta, hero, services } from "./content";
+import { cta, hero } from "./content";
 import { display, focus, wrap } from "./ui";
 
 // Escena: una nave de pórticos en perspectiva central (un solo punto de fuga), como un pasillo
@@ -90,12 +90,12 @@ type HeroProps = {
   size?: string; // tamaño del titular (clases de Tailwind)
 };
 
-/** Sin props es el hero de producción; las previews de identidad cambian el copy y la franja. */
+/** Sin props es el hero de producción; las previews de identidad cambian la firma de la franja. */
 export function Hero({
   lines = hero.lines,
   body = hero.body,
-  strip = { lead: hero.audience, items: services.map((s) => s.short) },
-  size = "text-[clamp(2.1rem,5.6vw,5.75rem)]",
+  strip = { lead: hero.lead, items: hero.claim },
+  size = "text-[clamp(1.75rem,5vw,5.25rem)]",
 }: HeroProps = {}) {
   const reduce = !!useReducedMotion();
   const ref = useRef<HTMLElement>(null);

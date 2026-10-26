@@ -25,7 +25,7 @@ Actualizado: 2026-10-26.
 - **Registrar `statexsecurity.com`**: el whois del 2026-10-26 indica que no está registrado aunque `.env.example` lo da como elegido.
 - **Búsqueda formal de marcas** en EUIPO y OEPM (clases 9, 42, 35, 45): no se pudo consultar automáticamente.
 - Previews públicas en Vercel (noindex) por decisión del 2026-10-26: Noxen y Vantis quedan visibles para quien tenga el enlace. Para cerrarlas, definir `PREVIEW_USER` y `PREVIEW_PASSWORD`.
-- Integrar la evolución comercial en `/` cuando se apruebe.
+- Evolución comercial integrada en `/` en la rama local `evolucion-home` (2026-10-26). Falta aprobarla, fusionarla en `main` y publicarla.
 
 ## Mejoran la credibilidad
 

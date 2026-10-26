@@ -1,25 +1,26 @@
 /*
- * Home de StateX — dirección H (Boutique Precision)
+ * Home de StateX — dirección H (Boutique Precision), con la evolución comercial del 2026-10-26
+ * (docs/identidades-2026-10-26.md).
  *
  * Tesis: firma boutique de ciberseguridad con criterio de ingeniería de software. Sobriedad y
  * precisión de la ingeniería de alta gama, sin copiar a nadie.
  * A quién habla: CTO y responsables técnicos de SaaS, agencias digitales y empresas tecnológicas,
  * y la dirección que firma la propuesta.
  *
- * Orden (cada bloque tiene una función comercial distinta):
- *   hero (qué y para quién) · servicios (qué contratar) · enfoque (por qué StateX) ·
- *   método (cómo, con trazabilidad) · entregables (el valor antes de pagar) ·
- *   trayectoria (origen honesto) · equipo (quién hace el trabajo) · preguntas (objeciones) · contacto
+ * Orden: hero · servicios (qué contratar) · método (cómo) · por qué (diferencia) · entregables (prueba
+ * antes de pagar) · equipo (quién) · trayectoria (origen) · preguntas · contacto.
  *
  * Elemento memorable: la línea roja. Es el único uso del rojo en toda la página.
  */
 import type { ReactNode } from "react";
-import { brand, contact, faq, seo, services, site, team, trajectory, value, method, report, servicesSection } from "./content";
+import { brand, contact, faq, report, seo, services, servicesSection, site, team, trajectory } from "./content";
 import { ContactForm } from "./ContactForm";
+import { evolution } from "./evolution";
 import { Hero } from "./Hero";
+import type { Identity } from "./identities/types";
 import { Method } from "./Method";
 import { Report } from "./Report";
-import { Services } from "./Services";
+import { Areas, ServiceExtras } from "./Services";
 import { JsonLd, Shell } from "./Shell";
 import { SectionHead, caps, display, focus, muted, section, wrap } from "./ui";
 
@@ -27,6 +28,8 @@ export const homeOpenGraph = { title: seo.title, description: seo.description, t
 
 const rule = "border-t border-(--h-line)";
 const indent = "lg:ml-[calc(25%+0.625rem)]";
+const listItem = "grid grid-cols-[1rem_1fr] gap-3 leading-[1.5]";
+const dash = <span aria-hidden="true" className="mt-[0.75em] h-px w-full bg-(--h-titanium)" />;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -40,7 +43,7 @@ const jsonLd = {
     { "@type": "Country", name: "España" },
   ],
   founder: team.founders.map((f) => ({ "@type": "Person", name: f.name, sameAs: f.links.map((l) => l.url) })),
-  knowsAbout: ["Seguridad de aplicaciones web", "Seguridad de APIs", "Pentesting web", "Superficie de ataque externa", "Desarrollo seguro"],
+  knowsAbout: ["Seguridad de aplicaciones web", "Seguridad de APIs", "Pentesting web", "Superficie de ataque externa", "Desarrollo seguro", "Corrección de vulnerabilidades"],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: servicesSection.label,
@@ -60,26 +63,46 @@ const jsonLd = {
   },
 };
 
+/** Home pública de StateX. `children` se pinta tras el pie (la barra del design lab). */
 export function StatexHome({ children }: { children?: ReactNode }) {
   return (
     <Shell after={children}>
       <JsonLd data={jsonLd} />
-      <Hero />
+      <HomeSections />
+    </Shell>
+  );
+}
 
-      {/* Servicios */}
+/** Secciones de la home. Las previews de /preview/<identidad> pasan su identidad para cambiar el nombre. */
+export function HomeSections({ identity }: { identity?: Identity }) {
+  const e = evolution(identity?.name);
+
+  return (
+    <>
+      <Hero strip={identity ? { lead: `${identity.tagline} · Barcelona`, items: e.hero.claim } : undefined} />
+
       <section id="servicios" aria-labelledby="h-servicios" className={section}>
         <div className={wrap}>
-          <SectionHead id="h-servicios" label={servicesSection.label} title={servicesSection.title} intro={servicesSection.intro} />
-          <Services />
+          <SectionHead id="h-servicios" label={e.areas.label} title={e.areas.title} intro={e.areas.intro} />
+          <Areas data={e.areas} />
+          <p className={`m-0 mt-6 max-w-[70ch] text-[14px] leading-[1.6] ${muted}`}>{e.areas.note}</p>
+          <ServiceExtras />
         </div>
       </section>
 
-      {/* Por qué StateX: la banda grafito, de borde a borde */}
-      <section id="enfoque" aria-labelledby="h-enfoque" className={`${section} bg-(--h-graphite)`}>
+      <section id="metodo" aria-labelledby="h-metodo" className={`${section} ${rule}`}>
         <div className={wrap}>
-          <SectionHead id="h-enfoque" label={value.label} title={value.title} intro={value.intro} />
+          <SectionHead id="h-metodo" label={e.method.label} title={e.method.title} intro={e.method.intro} />
+          <Method data={e.method} />
+        </div>
+      </section>
+
+      {/* Por qué elegirnos: la banda grafito, de borde a borde */}
+      <section id="por-que" aria-labelledby="h-por-que" className={`${section} bg-(--h-graphite)`}>
+        <div className={wrap}>
+          <SectionHead id="h-por-que" label={e.why.label} title={e.why.title} intro={e.why.intro} />
           <ul className="m-0 mt-16 grid list-none gap-x-10 gap-y-12 p-0 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
-            {value.points.map((p) => (
+            {e.why.points.map((p) => (
               <li key={p.name} className="border-t border-(--h-ivory)/20 pt-7">
                 <h3 className="m-0 text-[1.1rem] font-semibold">{p.name}</h3>
                 <p className={`m-0 mt-3 leading-[1.6] ${muted}`}>{p.text}</p>
@@ -89,28 +112,18 @@ export function StatexHome({ children }: { children?: ReactNode }) {
         </div>
       </section>
 
-      {/* Metodología */}
-      <section id="metodo" aria-labelledby="h-metodo" className={section}>
-        <div className={wrap}>
-          <SectionHead id="h-metodo" label={method.label} title={method.title} intro={method.intro} />
-          <Method />
-        </div>
-      </section>
-
-      {/* Entregables */}
-      <section id="entregables" aria-labelledby="h-entregables" className={`${section} ${rule}`}>
+      <section id="entregables" aria-labelledby="h-entregables" className={section}>
         <div className={wrap}>
           <SectionHead id="h-entregables" label={report.label} title={report.title} intro={report.intro} />
-          <Report />
+          <Report identity={identity?.key} />
         </div>
       </section>
 
-      <TrajectorySection />
-      <TeamSection />
+      <TeamSection data={e.team} />
+      <TrajectorySection data={e.trajectory} />
       <FaqSection />
-
-      <ContactSection />
-    </Shell>
+      <ContactSection brandName={identity?.name} />
+    </>
   );
 }
 
@@ -177,6 +190,7 @@ export function TeamSection({ data = team }: { data?: typeof team }) {
                 <h3 className={`m-0 text-[clamp(1.3rem,2vw,1.6rem)] tracking-[-0.015em] ${caps}`}>{f.name}</h3>
                 <p className={`m-0 mt-1 ${muted}`}>{f.role}</p>
                 {f.bio && <p className="m-0 mt-4 max-w-[40ch] leading-[1.6]">{f.bio}</p>}
+                {f.duty && <p className={`m-0 mt-3 max-w-[40ch] leading-[1.6] ${muted}`}>{f.duty}</p>}
                 {f.links.length > 0 && (
                   <ul className="m-0 mt-4 flex list-none flex-wrap gap-x-5 p-0">
                     {f.links.map((l) => (
@@ -195,10 +209,7 @@ export function TeamSection({ data = team }: { data?: typeof team }) {
             <h3 className={`m-0 text-[14px] font-normal ${muted}`}>{data.experienceLabel}</h3>
             <ul className="m-0 mt-5 grid list-none gap-x-8 gap-y-3 p-0 sm:grid-cols-2 lg:grid-cols-1">
               {data.experience.map((x) => (
-                <li key={x} className="grid grid-cols-[1rem_1fr] gap-3 leading-[1.5]">
-                  <span aria-hidden="true" className="mt-[0.75em] h-px w-full bg-(--h-titanium)" />
-                  {x}
-                </li>
+                <li key={x} className={listItem}>{dash}{x}</li>
               ))}
             </ul>
           </div>
