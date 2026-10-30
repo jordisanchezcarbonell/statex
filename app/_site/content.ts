@@ -546,6 +546,10 @@ export const contactForm = {
   invalid: "Revisa los campos marcados.",
   error: "No hemos podido enviar tu solicitud. Inténtalo de nuevo en unos minutos.",
   notConfigured: "El formulario todavía no está activo y tu solicitud no se ha enviado. Inténtalo más tarde.",
+  // Sustituye al formulario mientras el envío no esté configurado (CONTACT_FORM_ENABLED). El correo
+  // solo aparece si company.email tiene valor.
+  unavailable: "El formulario de contacto todavía no está activo.",
+  unavailableEmail: "Mientras tanto, escríbenos a",
   rateLimited: "Has enviado varias solicitudes seguidas. Espera unos minutos y vuelve a intentarlo.",
 };
 

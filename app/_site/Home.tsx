@@ -13,13 +13,14 @@
  * Elemento memorable: la línea roja. Es el único uso del rojo en toda la página.
  */
 import type { ReactNode } from "react";
-import { brand, contact, faq, report, seo, services, servicesSection, site, team, trajectory } from "./content";
+import { brand, company, contact, contactForm, faq, report, seo, services, servicesSection, site, team, trajectory } from "./content";
 import { ContactForm } from "./ContactForm";
 import { evolution } from "./evolution";
 import { Hero } from "./Hero";
 import type { Identity } from "./identities/types";
 import { Method } from "./Method";
 import { Report } from "./Report";
+import { contactFormEnabled } from "./runtime";
 import { Areas, ServiceExtras } from "./Services";
 import { JsonLd, Shell } from "./Shell";
 import { SectionHead, caps, display, focus, muted, section, wrap } from "./ui";
@@ -272,7 +273,20 @@ export function ContactSection({ defaultService, brandName }: { defaultService?:
             </ol>
           </div>
           <div className="lg:col-span-7 lg:col-start-6">
-            <ContactForm defaultService={defaultService} brandName={brandName} />
+            {contactFormEnabled() ? (
+              <ContactForm defaultService={defaultService} brandName={brandName} />
+            ) : (
+              <div className="border-l-2 border-(--h-titanium) pl-5">
+                <h3 className={`m-0 text-[1.35rem] tracking-[-0.01em] ${caps}`}>{contactForm.title}</h3>
+                <p className="m-0 mt-6 max-w-[48ch] text-[17px] leading-[1.55]">{contactForm.unavailable}</p>
+                {company.email && (
+                  <p className="m-0 mt-3 max-w-[48ch] text-[17px] leading-[1.55]">
+                    {contactForm.unavailableEmail}{" "}
+                    <a href={`mailto:${company.email}`} className={`underline underline-offset-4 ${focus}`}>{company.email}</a>.
+                  </p>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>
