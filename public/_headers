@@ -1,0 +1,9 @@
+# Cabeceras de los assets estáticos en Cloudflare Workers (no pasan por next.config.ts).
+# Vercel no usa este archivo.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable

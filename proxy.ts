@@ -1,10 +1,16 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { onCloudflare } from "./app/_site/runtime";
 
 // Protección opcional de las rutas internas (/preview/* y /demo/*). Siempre son noindex.
 // - Sin PREVIEW_USER ni PREVIEW_PASSWORD (decisión 2026-10-26): previews abiertas, también en Vercel.
 //   El comprobador de exposición (/demo/exposicion) se desactiva solo si no hay credenciales (ver scan.ts).
 // - Con ambas definidas: autenticación básica (HTTP Basic sobre HTTPS) en /preview y /demo.
+// - En Cloudflare Workers (docs/cloudflare-workers.md) solo se publica la web corporativa: /preview,
+//   /demo y /design-lab responden 404 sin depender de credenciales.
 export function proxy(request: NextRequest) {
+  if (onCloudflare()) return new NextResponse("Not found", { status: 404, headers: { "Cache-Control": "no-store" } });
+  if (request.nextUrl.pathname.startsWith("/design-lab")) return NextResponse.next();
+
   const user = process.env.PREVIEW_USER;
   const pass = process.env.PREVIEW_PASSWORD;
   if (!user || !pass) return NextResponse.next();
@@ -34,4 +40,6 @@ function safeEqual(a: string, b: string) {
 
 // /demo incluye el comprobador de exposición, que hace peticiones salientes: protegerlo evita que quede
 // como proxy anónimo. Si PREVIEW_USER/PREVIEW_PASSWORD no están definidas, la propia acción se desactiva.
-export const config = { matcher: ["/preview", "/preview/:path*", "/demo", "/demo/:path*"] };
+export const config = {
+  matcher: ["/preview", "/preview/:path*", "/demo", "/demo/:path*", "/design-lab", "/design-lab/:path*"],
+};

@@ -4,6 +4,7 @@ import http from "node:http";
 import https from "node:https";
 import { lookup as dnsLookup } from "node:dns/promises";
 import { headers } from "next/headers";
+import { onCloudflare } from "../_site/runtime";
 
 // Comprobador PASIVO de exposición (demo interna /demo/exposicion).
 // Hace una petición GET a la URL indicada —lo mismo que ve cualquier visitante— y evalúa lo que la web
@@ -318,6 +319,9 @@ function assess(res: Resp, finalUrl: URL): Check[] {
 }
 
 export async function scan(_prev: ScanState, formData: FormData): Promise<ScanState> {
+  // En Cloudflare Workers, node:http no admite el lookup propio que fija la IP validada (anti DNS rebinding):
+  // allí el comprobador no se ofrece (docs/cloudflare-workers.md).
+  if (onCloudflare()) return { status: "disabled", message: "El comprobador no está disponible en este despliegue." };
   if (!process.env.PREVIEW_USER || !process.env.PREVIEW_PASSWORD)
     return { status: "disabled", message: "El comprobador está desactivado. Se habilita protegiendo /demo con PREVIEW_USER y PREVIEW_PASSWORD." };
 

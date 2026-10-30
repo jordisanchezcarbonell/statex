@@ -10,7 +10,7 @@ Actualizado: 2026-10-26.
 
 | Pendiente | Dónde se rellena | Efecto mientras falte |
 |---|---|---|
-| Buzón real del formulario (`RESEND_API_KEY`, `CONTACT_TO`, `CONTACT_FROM` con dominio verificado) | Variables de entorno en Vercel (ver `.env.example`) | El formulario dice "todavía no está activo" y no envía nada |
+| Buzón real del formulario (`RESEND_API_KEY`, `CONTACT_TO`, `CONTACT_FROM` con dominio verificado) y después `CONTACT_FORM_ENABLED=true` | Variables de entorno en Vercel o secretos del Worker (ver `.env.example` y `docs/cloudflare-workers.md`) | No se muestra el formulario: la sección de contacto dice que aún no está activo (y da `company.email` si existe) |
 | Correo corporativo | `company.email` en `app/_site/content.ts` | No aparece en el pie; las páginas legales muestran [Pendiente] |
 | Titular persona física (nombre, NIF, domicilio en Barcelona): decidir cuál de los dos hermanos es el titular hasta crear sociedad | `company` en `app/_site/content.ts` (`kind: "persona-fisica"`) | Aviso legal y privacidad incompletos (obligatorio LSSI art. 10 y RGPD art. 13). No se muestra en la home, solo en las páginas legales |
 | Revisión de una gestoría o un abogado de las páginas legales (ya adaptadas a persona física, fuero en Barcelona y conservación de 12 meses) | `app/aviso-legal`, `app/privacidad`, `app/cookies` | Borradores razonables, no revisados por un profesional |

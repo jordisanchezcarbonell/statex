@@ -1,0 +1,19 @@
+// Despliegue de prueba en Cloudflare Workers (plan gratuito) con OpenNext. No sustituye a Vercel.
+// Guía: docs/cloudflare-workers.md. Sin dominios propios ni rutas: solo el subdominio workers.dev.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "statex",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-30",
+  // nodejs_compat: APIs de Node (Server Actions, proxy.ts). global_fetch_strictly_public: fetch no alcanza redes internas.
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  // Marca explícita del despliegue: proxy.ts y scan.ts fallan cerrado aunque cambie el user agent del runtime.
+  "vars": { "DEPLOY_TARGET": "cloudflare" },
+  "workers_dev": true,
+  "preview_urls": false,
+  "observability": { "enabled": true }
+}
