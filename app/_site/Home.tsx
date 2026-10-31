@@ -17,6 +17,7 @@ import { brand, contact, faq, report, seo, services, servicesSection, site, team
 import { ContactForm } from "./ContactForm";
 import { evolution } from "./evolution";
 import { Hero } from "./Hero";
+import { FounderTeam } from "./FounderTeam";
 import type { Identity } from "./identities/types";
 import { Method } from "./Method";
 import { Report } from "./Report";
@@ -119,7 +120,7 @@ export function HomeSections({ identity }: { identity?: Identity }) {
         </div>
       </section>
 
-      <TeamSection data={e.team} />
+      <TeamSection data={e.team} interactive={!identity || identity.key === "statex"} />
       <TrajectorySection data={e.trajectory} />
       <FaqSection />
       <ContactSection brandName={identity?.name} />
@@ -178,12 +179,12 @@ export function TrajectorySection({ data = trajectory }: { data?: typeof traject
 }
 
 /** Equipo: fundadores con bio verificada y experiencia conjunta. */
-export function TeamSection({ data = team }: { data?: typeof team }) {
+export function TeamSection({ data = team, interactive = true }: { data?: typeof team; interactive?: boolean }) {
   return (
     <section id="equipo" aria-labelledby="h-equipo" className={`${section} ${rule}`}>
       <div className={wrap}>
         <SectionHead id="h-equipo" label={data.label} title={data.title} intro={data.intro} />
-        <div className={`mt-16 grid gap-12 lg:mt-20 lg:grid-cols-9 lg:gap-10 ${indent}`}>
+        {interactive ? <FounderTeam data={data} /> : <div className={`mt-16 grid gap-12 lg:mt-20 lg:grid-cols-9 lg:gap-10 ${indent}`}>
           <ul className="m-0 grid list-none gap-8 p-0 sm:grid-cols-2 lg:col-span-5">
             {data.founders.map((f) => (
               <li key={f.name} className={`${rule} pt-6`}>
@@ -213,7 +214,7 @@ export function TeamSection({ data = team }: { data?: typeof team }) {
               ))}
             </ul>
           </div>
-        </div>
+        </div>}
       </div>
     </section>
   );
