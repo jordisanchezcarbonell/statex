@@ -32,10 +32,22 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
+      # Caché de Next.js: guarda las fuentes de next/font/google ya descargadas (el design lab usa
+      # muchas familias) y acelera el build.
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .next/cache
+          key: next-${{ hashFiles('package-lock.json') }}-${{ hashFiles('app/**/*.ts', 'app/**/*.tsx', 'app/**/*.css') }}
+          restore-keys: next-${{ hashFiles('package-lock.json') }}-
+
       - run: npm ci
       - run: npm audit --audit-level=moderate
       - run: npm run typecheck
-      - run: npm run build
+
+      # next/font descarga las fuentes de Google en el build; un fallo puntual de red tumbaba el job
+      # (run 41234365646). Un único reintento tras 20 s; si vuelve a fallar, es un error real.
+      - name: Build
+        run: npm run build || { echo "::warning::Build fallido; reintento en 20 s"; sleep 20; npm run build; }
 
       # Umbrales en lighthouserc.json: rendimiento avisa (<90); accesibilidad, buenas prácticas y SEO fallan (<95).
       - name: Lighthouse
