@@ -31,9 +31,8 @@ Actualizado: 2026-10-26.
 
 - **Bios de los fundadores**: redactadas a partir de LinkedIn (2026-10-25). Revisar redacción. Decisiones abiertas:
   - ¿Nombrar empleadores (actuales o anteriores)? Hoy no se nombran por posibles conflictos con contratos vigentes.
-  - CEH de Albert (emitida 10/2016): no se muestra hasta confirmar que está vigente (requiere renovación).
   - Titulaciones universitarias marcadas "en curso" en LinkedIn: no se mencionan.
-  - Autoría de InfoStateX: confirmada: InfoStateX es de Albert y DoubleReboot de Jordi; ya en Trayectoria.
+  - Exclusividad (2026-10-31): Albert e InfoStateX retirados de la web; la Trayectoria arranca en 2013 con DoubleReboot.
 - **Primeras publicaciones de investigación** (2–3 notas fechadas y firmadas). Cuando existan, crear `/investigacion` y enlazarla desde la sección Trayectoria.
 - **Informe de ejemplo publicado** (2026-10-25): `/informe-de-ejemplo.html` y PDF, y resumen de agencia de ejemplo. Generados desde `docs/plantillas` con `scripts/muestras-informe.py`.
 - **`/.well-known/security.txt`**: ruta lista (`app/.well-known/security.txt/route.ts`, RFC 9116); se publica sola al rellenar `company.email` (hasta entonces, 404). Falta la **política de divulgación** (página propia) para añadir el campo `Policy`.
