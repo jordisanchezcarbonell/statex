@@ -119,7 +119,7 @@ export const findings: Finding[] = [
     title: "robots.txt no anuncia las rutas internas",
     severity: "Correcto",
     location: "app/robots.ts:7 · app/design-lab/layout.tsx",
-    what: "El Disallow no lista /design-lab, /preview ni /demo; el design lab devuelve 404 en producción.",
+    what: "El Disallow no lista /design-lab, /preview ni /demo; el design lab redirige a la home en producción.",
     evidence: "/preview y /demo llevan noindex por metadatos y X-Robots-Tag, que es el control real.",
     fix: "—",
   },

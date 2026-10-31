@@ -32,8 +32,18 @@ const securityHeaders = [
   { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
 ];
 
+// El design lab no existe en producción: sus URLs llevan a la home (temporal, por si vuelve a publicarse).
+const production = process.env.VERCEL_ENV === "production";
+
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  async redirects() {
+    if (!production) return [];
+    return [
+      { source: "/design-lab", destination: "/", permanent: false },
+      { source: "/design-lab/:path*", destination: "/", permanent: false },
+    ];
+  },
   async headers() {
     return [
       { source: "/:path*", headers: securityHeaders },
