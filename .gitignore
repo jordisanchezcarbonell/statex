@@ -9,3 +9,6 @@ next-env.d.ts
 
 # Informes de Lighthouse CI
 .lighthouseci/
+
+# Estudio de agencias: resultados por dominio (no se publican)
+research/estudio-agencias/datos/
