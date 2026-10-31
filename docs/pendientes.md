@@ -11,7 +11,7 @@ Actualizado: 2026-10-26.
 | Pendiente | Dónde se rellena | Efecto mientras falte |
 |---|---|---|
 | Buzón real del formulario (`RESEND_API_KEY`, `CONTACT_TO`, `CONTACT_FROM` con dominio verificado) | Variables de entorno en Vercel (ver `.env.example`) | El formulario dice "todavía no está activo" y no envía nada |
-| Correo corporativo | `company.email` en `app/_site/content.ts` | No aparece en el pie; las páginas legales muestran [Pendiente] |
+| ~~Correo corporativo~~ | Hecho (2026-10-31): `jordigw@gmail.com` en `company.email`. Activa el pie, las páginas legales y `/.well-known/security.txt`. Cambiar por uno con dominio propio cuando exista | — |
 | Titular persona física (nombre, NIF, domicilio en Barcelona): decidir cuál de los dos hermanos es el titular hasta crear sociedad | `company` en `app/_site/content.ts` (`kind: "persona-fisica"`) | Aviso legal y privacidad incompletos (obligatorio LSSI art. 10 y RGPD art. 13). No se muestra en la home, solo en las páginas legales |
 | Revisión de una gestoría o un abogado de las páginas legales (ya adaptadas a persona física, fuero en Barcelona y conservación de 12 meses) | `app/aviso-legal`, `app/privacidad`, `app/cookies` | Borradores razonables, no revisados por un profesional |
 | Alta como autónomo del titular antes de la primera factura, y revisar las cláusulas de exclusividad o no competencia de los contratos laborales actuales (sobre todo si el empleador presta servicios de seguridad) | Fuera de la web | Riesgo laboral y fiscal |

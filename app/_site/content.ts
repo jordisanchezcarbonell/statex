@@ -601,7 +601,7 @@ export const company: Record<"legalName" | "taxId" | "address" | "registry" | "e
   taxId: null, // NIF del titular (o CIF de la sociedad)
   address: null, // Domicilio en Barcelona donde recibir notificaciones (puede ser un coworking o una domiciliación)
   registry: null, // Solo si es sociedad: datos del Registro Mercantil
-  email: null, // Correo de contacto y para ejercer derechos de protección de datos
+  email: "jordigw@gmail.com", // Correo de contacto y para ejercer derechos de protección de datos (2026-10-31)
 };
 
 export const legalLinks = [

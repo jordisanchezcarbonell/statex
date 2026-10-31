@@ -43,7 +43,7 @@ export default function Privacidad() {
       <ul>
         <li>Vercel, alojamiento de la web.</li>
         <li>Resend, envío del formulario por correo electrónico.</li>
-        <li><Pending>[Pendiente: proveedor del buzón de correo corporativo]</Pending></li>
+        <li>Google (Gmail), buzón donde recibimos y respondemos las solicitudes.</li>
       </ul>
       <p>Algunos de estos proveedores pueden tratar datos fuera del Espacio Económico Europeo, con las garantías que exige el RGPD. <Pending>[Por confirmar: garantías de transferencia de cada proveedor]</Pending></p>
 
