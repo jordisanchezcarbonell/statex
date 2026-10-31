@@ -79,7 +79,7 @@ docs/
 
 Regla del design lab: los conceptos comparan **diseño**, no negocios. Todos consumen `content.ts` y tienen las mismas secciones y ids: hero, `#problema`, `#enfoque`, `#soluciones`, `#tecnologia` (Hoy vs Visión, siempre separados), `#investigacion`, `#sobre`, `#contacto` (vía empresas + vía inversores/socios). Los nombres "Concept A–G" son internos; la marca visible es siempre StateX.
 
-Aviso: el repositorio está conectado a Vercel; **un push a `main` publica la web**. El design lab devuelve 404 en producción (`VERCEL_ENV=production`, ver `app/design-lab/layout.tsx`); se ve en local y en los despliegues de preview. No hacer push sin aprobación explícita.
+Aviso: el repositorio está conectado a Vercel; **un push a `main` publica la web**. El design lab redirige a la home en producción (`VERCEL_ENV=production`, ver `next.config.ts` y `app/design-lab/layout.tsx`); se ve en local y en los despliegues de preview. No hacer push sin aprobación explícita.
 
 ## Flujo de trabajo con agentes y skills
 
