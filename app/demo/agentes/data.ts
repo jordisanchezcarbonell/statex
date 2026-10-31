@@ -116,13 +116,12 @@ export const findings: Finding[] = [
   },
   {
     stage: 1,
-    title: "robots.txt revelaría las rutas internas al indexar",
-    severity: "Informativa",
-    location: "app/robots.ts:8",
-    what: "Con SITE_INDEXABLE=true, el Disallow lista /design-lab, /preview y /demo.",
-    evidence: "El control real es el noindex (cabecera y metadatos), no el Disallow. No revela contenido.",
-    fix: "Sin cambio necesario si las rutas están protegidas por noindex.",
-    needsManual: true,
+    title: "robots.txt no anuncia las rutas internas",
+    severity: "Correcto",
+    location: "app/robots.ts:7 · app/design-lab/layout.tsx",
+    what: "El Disallow no lista /design-lab, /preview ni /demo; el design lab devuelve 404 en producción.",
+    evidence: "/preview y /demo llevan noindex por metadatos y X-Robots-Tag, que es el control real.",
+    fix: "—",
   },
   // Etapa 2 — Análisis
   {
