@@ -56,15 +56,15 @@ export function FounderTeam({ data }: { data: typeof team }) {
   const [selected, setSelected] = useState(0);
   const panelId = useId();
   const founder = data.founders[selected];
-  const front = founder.name.startsWith("[retirado]") ? "/lanyard/retirado.svg" : "/lanyard/front.svg";
+  const front = "/lanyard/front.svg";
 
   return (
     <div className={styles.team}>
-      <div className={styles.selector} role="group" aria-label="Conoce a los fundadores">
+      {data.founders.length > 1 && <div className={styles.selector} role="group" aria-label="Conoce al equipo">
         {data.founders.map((person, index) => <button key={person.name} type="button" aria-pressed={selected === index} aria-controls={panelId} onClick={() => setSelected(index)} className={focus}>
           <span className={styles.index}>0{index + 1}</span>{person.name}<span className={styles.selectedMark} aria-hidden="true">↗</span>
         </button>)}
-      </div>
+      </div>}
       <div className={styles.bio} id={panelId}>
         {data.founders.map((person, index) => <article key={person.name} hidden={selected !== index} aria-label={person.name}>
           <h3 className={`${caps} ${styles.name}`}>{person.name}</h3>

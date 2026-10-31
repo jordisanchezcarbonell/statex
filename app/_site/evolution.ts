@@ -18,7 +18,7 @@ export function evolution(brandName: string = brand.name) {
         ? trajectory
         : {
             ...trajectory,
-            intro: `Todo empezó en 2012 con InfoStateX, el blog de [retirado] sobre seguridad informática, y en 2013 Jordi sumó DoubleReboot. No era una empresa: era curiosidad, herramientas y muchas horas de pruebas. Hoy esa curiosidad trabaja con método, alcance y contrato, y se llama ${brandName}.`,
+            intro: `Todo empezó en 2013 con DoubleReboot, el proyecto personal de Jordi sobre seguridad ofensiva. No era una empresa: era curiosidad, herramientas y muchas horas de pruebas. Hoy esa curiosidad trabaja con método, alcance y contrato, y se llama ${brandName}.`,
             today: { ...trajectory.today, text: `${brandName} nace como consultoría especializada en seguridad de aplicaciones, APIs, exposición externa y desarrollo seguro.` },
           },
   };

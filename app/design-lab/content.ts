@@ -192,8 +192,7 @@ export const about = {
   pending: "[Pendiente: equipo y datos de la empresa]",
   // Fundadores reales (confirmado por ellos). Las bios quedan pendientes hasta tener datos verificables.
   founders: [
-    { name: "Jordi Sánchez", role: "Cofundador", bio: "[Pendiente: experiencia verificable]" },
-    { name: "[retirado]", role: "Cofundador", bio: "[Pendiente: experiencia verificable]" },
+    { name: "Jordi Sánchez", role: "Fundador", bio: "[Pendiente: experiencia verificable]" },
   ],
   foundersNote: "Una firma pequeña, dirigida por sus fundadores. Hablas con quien hace el trabajo.",
 };

@@ -378,23 +378,17 @@ export const report = {
 
 // ─── Trayectoria e investigación ─────────────────────────────────────────────
 // Hechos verificados en los blogs originales (docs/design-research.md, ronda 3).
-// Autoría confirmada por los fundadores el 2026-10-25: InfoStateX ([retirado]) y DoubleReboot (Jordi).
+// Autoría confirmada por el fundador el 2026-10-25: DoubleReboot (Jordi).
 
 export const trajectory = {
   label: "Trayectoria",
   title: "La curiosidad nos trajo hasta aquí. El rigor define lo que hacemos ahora.",
   intro:
-    "StateX nació en 2012 como el blog personal de [retirado] sobre seguridad informática, y en 2013 Jordi sumó DoubleReboot. No era una empresa: era curiosidad, herramientas y muchas horas de pruebas. Hoy esa curiosidad trabaja con método, alcance y contrato.",
+    "StateX nació en 2013 con DoubleReboot, el proyecto personal de Jordi sobre seguridad ofensiva. No era una empresa: era curiosidad, herramientas y muchas horas de pruebas. Hoy esa curiosidad trabaja con método, alcance y contrato.",
   origins: {
-    label: "Proyectos originales",
-    period: "2012 – 2018",
+    label: "Proyecto original",
+    period: "2013 – 2016",
     items: [
-      {
-        name: "InfoStateX",
-        url: "https://infostatex.blogspot.com/",
-        years: "2012 – 2018",
-        text: "El blog de [retirado] sobre hacking, curiosidades y seguridad informática, con más de 1.300 entradas.",
-      },
       {
         name: "DoubleReboot",
         url: "https://doublereboot.blogspot.com/",
@@ -402,7 +396,7 @@ export const trajectory = {
         text: "El proyecto de Jordi: tutoriales y herramientas de seguridad ofensiva, bajo el paraguas de State X.",
       },
     ],
-    disclaimer: "Fueron proyectos personales de divulgación, no actividad empresarial.",
+    disclaimer: "Fue un proyecto personal de divulgación, no actividad empresarial.",
   },
   research: {
     label: "Investigación",
@@ -418,26 +412,18 @@ export const trajectory = {
 // ─── Equipo ──────────────────────────────────────────────────────────────────
 
 export const teamIntro = (brandName: string) =>
-  `${brandName} la forman [retirado]: uno viene de la ciberseguridad y el otro de la ingeniería de software. Quien te propone el alcance es quien hace el trabajo y te presenta los resultados.`;
+  `${brandName} es un estudio de Barcelona que une seguridad de aplicaciones e ingeniería de software. Quien te propone el alcance es quien hace el trabajo y te presenta los resultados.`;
 
 export const team = {
   label: "Quiénes somos",
-  title: "Dos perfiles complementarios. Un mismo encargo.",
+  title: "Seguridad revisada por quien construye software.",
   intro: teamIntro(brand.name),
   // Bios redactadas a partir de sus perfiles de LinkedIn (consultados el 2026-10-25). Sin empleadores
   // actuales, sin titulaciones en curso y sin certificaciones de vigencia no confirmada.
   founders: [
     {
-      name: "[retirado]",
-      role: "Cofundador · Seguridad",
-      bio: "[retirado]" as string | null,
-      // Responsabilidad en la firma
-      duty: "[retirado]" as string | null,
-      links: [{ label: "LinkedIn", url: "[retirado]" }],
-    },
-    {
       name: "Jordi Sánchez",
-      role: "Cofundador · Ingeniería",
+      role: "Fundador",
       bio: "Desarrollador full stack desde 2020, con React, Next.js y NestJS. Antes, asesor en seguridad web. Aporta la mirada de quien construye y mantiene las aplicaciones que auditamos." as string | null,
       duty: "Responsable del desarrollo seguro, la corrección de vulnerabilidades y las soluciones técnicas." as string | null,
       links: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/jordi-s%C3%A1nchez-carbonell-baa83797/" }],
@@ -445,8 +431,7 @@ export const team = {
   ],
   experienceLabel: "Experiencia del equipo",
   experience: [
-    "Consultoría y gestión de proyectos de ciberseguridad",
-    "Pentesting y seguridad web",
+    "Seguridad web",
     "React, Next.js y TypeScript",
     "APIs REST e integraciones empresariales",
     "Autenticación y control de acceso",

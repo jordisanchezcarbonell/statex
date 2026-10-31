@@ -2,7 +2,7 @@
 
 Web de **StateX**, startup de ciberseguridad en fase inicial especializada en detectar, comprender y reducir riesgos de seguridad en entornos digitales: External Attack Surface Assessment, Web Application Security, Vulnerability Assessment, Security Engineering y AI-Assisted Security Research. Como capacidad complementaria ofrece ingeniería de software y automatización.
 
-StateX recupera el legado de [InfoStateX](https://infostatex.blogspot.com/) (2012–2018) y [DoubleReboot](https://doublereboot.blogspot.com/).
+StateX recupera el legado de [DoubleReboot](https://doublereboot.blogspot.com/) (2013–2016).
 
 > **Estado:** fase de exploración de marca. La web definitiva aún no está construida. El repositorio contiene un *design lab* con siete direcciones de marca y homepage para elegir una.
 
@@ -101,7 +101,7 @@ Las reglas completas están en [`CLAUDE.md`](CLAUDE.md).
 
 ## Decisiones tomadas
 
-- Año de origen: **2012** (primer año del archivo de InfoStateX).
+- Año de origen: **2013** (DoubleReboot).
 - Idioma: **español**, incluido el menú.
 - Certificaciones del blog (CEH, perito telemático forense): **no se muestran** hasta confirmar su vigencia.
 - Botón de contacto: **pendiente** hasta definir email o formulario.

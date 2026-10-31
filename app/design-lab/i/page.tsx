@@ -14,7 +14,7 @@
  *   │ Titular serif grande               ┌──────────┐       │
  *   │ entradilla                         │ INFORME  │╲ hojas│
  *   │ [Solicitar evaluación]  Ver informe│ ejemplo  │ │     │
- *   │ descriptor · desde 2012 · Jordi y [retirado]      │
+ *   │ descriptor · desde 2013 · Jordi Sánchez              │
  *   └───────────────────────────────────────────────────────┘
  *   rail | titular (asimétrico en todas las secciones) · método como tabla editorial con entregables ·
  *   ofertas en tres bloques amplios · informe de ejemplo en tres páginas · la firma con sus fundadores ·

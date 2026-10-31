@@ -14,7 +14,6 @@ export default function Demo() {
   const [version, setVersion] = useState(0);
   const [flipSignal, setFlipSignal] = useState(0);
   const [finish, setFinish] = useState<"glossy" | "matte">("matte");
-  const [member, setMember] = useState("jordi");
   const [compact, setCompact] = useState(false);
   const [reduce, setReduce] = useState(false);
 
@@ -45,11 +44,11 @@ export default function Demo() {
         </div>
         <div className={styles.experiment}>
           <div className={styles.stage} role="group" aria-label="Credencial 3D de StateX" aria-describedby="lanyard-help">
-            <div className={styles.stageTop}><span>OBJECT — 001</span><label className={styles.memberLabel}><span className={styles.srOnly}>Tarjeta de</span><select aria-label="Titular de la tarjeta" value={member} onChange={(event) => setMember(event.target.value)}><option value="jordi">Jordi Sánchez</option><option value="retirado">[retirado]</option></select></label></div>
+            <div className={styles.stageTop}><span>OBJECT — 001</span></div>
             <span className={styles.verticalLabel} aria-hidden="true">SECURITY WITH CHARACTER</span>
             <div className={styles.halo} aria-hidden="true" />
             <div className={styles.canvas}>
-              <Lanyard key={`${version}-${reduce}`} frontImage={member === "jordi" ? "/lanyard/front.svg" : "/lanyard/retirado.svg"} backImage="/lanyard/back.svg" strapImage="/lanyard/strap.svg" orientation="landscape" cardColor="#101112" cornerRadius={0} finish={finish} size={compact ? 0.44 : 0.42} strapLength={compact ? 0.30 : 0.35} breeze={0} damping={0.72} intro={false} interactive={!reduce} flipSignal={flipSignal} pixelRatioCap={compact ? 1.5 : 2} />
+              <Lanyard key={`${version}-${reduce}`} frontImage="/lanyard/front.svg" backImage="/lanyard/back.svg" strapImage="/lanyard/strap.svg" orientation="landscape" cardColor="#101112" cornerRadius={0} finish={finish} size={compact ? 0.44 : 0.42} strapLength={compact ? 0.30 : 0.35} breeze={0} damping={0.72} intro={false} interactive={!reduce} flipSignal={flipSignal} pixelRatioCap={compact ? 1.5 : 2} />
             </div>
             <p id="lanyard-help" className={styles.hint}><span className={styles.hintDot} />{reduce ? "Movimiento reducido · Usa el botón para ver el reverso" : <><span className={styles.desktopHint}>Arrastra para explorar · Haz clic para girar</span><span className={styles.mobileHint}>Mueve la tarjeta con el dedo · Toca para girar</span></>}</p>
           </div>
