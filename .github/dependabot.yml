@@ -10,6 +10,10 @@ updates:
       timezone: Europe/Madrid
     open-pull-requests-limit: 5
     versioning-strategy: increase
+    ignore:
+      # Los tipos de Node deben seguir la versión de .nvmrc (22); se suben a mano al cambiar de Node.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
     groups:
       menores:
         update-types: [minor, patch]

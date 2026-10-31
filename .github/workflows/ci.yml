@@ -35,7 +35,7 @@ jobs:
         run: ./gitleaks git --redact --no-banner --exit-code 1 .
 
   calidad:
-    name: Tipos, build y Lighthouse
+    name: Tipos, build, cabeceras y Lighthouse
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
