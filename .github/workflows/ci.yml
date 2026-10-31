@@ -1,4 +1,4 @@
-# Comprobaciones de calidad en cada push y pull request: tipos, build y Lighthouse.
+# Comprobaciones en cada push y pull request: secretos, dependencias, tipos, build, cabeceras y Lighthouse.
 # Acciones fijadas por SHA (con la versión en comentario) para no depender de etiquetas mutables.
 name: CI
 
@@ -15,6 +15,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  secretos:
+    name: Secretos (gitleaks)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # todo el historial: una clave borrada sigue filtrada si está en un commit
+
+      # Binario oficial verificado por SHA-256 (sin acciones de terceros).
+      - name: Instalar gitleaks 8.30.1
+        run: |
+          curl -sSfL -o gitleaks.tgz https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz
+          echo "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb  gitleaks.tgz" | sha256sum -c -
+          tar xzf gitleaks.tgz gitleaks
+
+      - name: Buscar secretos en el historial
+        run: ./gitleaks git --redact --no-banner --exit-code 1 .
+
   calidad:
     name: Tipos, build y Lighthouse
     runs-on: ubuntu-latest
@@ -49,7 +68,15 @@ jobs:
       - name: Build
         run: npm run build || { echo "::warning::Build fallido; reintento en 20 s"; sleep 20; npm run build; }
 
-      # Umbrales en lighthouserc.json: rendimiento avisa (<90); accesibilidad, buenas prácticas y SEO fallan (<95).
+      # Cabeceras de seguridad de next.config.ts (CSP, nosniff, X-Frame-Options...) y noindex en rutas internas.
+      - name: Cabeceras de seguridad
+        run: |
+          npm run start -- -p 3200 > /dev/null 2>&1 &
+          for i in $(seq 1 30); do curl -s -o /dev/null http://localhost:3200/ && break; sleep 1; done
+          node scripts/check-headers.mjs http://localhost:3200
+          kill %1
+
+      # Umbrales en lighthouserc.json: rendimiento, accesibilidad, buenas prácticas y SEO fallan por debajo de 90/95/95/95.
       - name: Lighthouse
         run: npx --yes @lhci/cli@0.15.1 autorun
 
