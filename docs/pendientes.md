@@ -22,7 +22,7 @@ Actualizado: 2026-10-26.
 ## Marca (2026-10-26)
 
 - **Elegir identidad** tras ver `/preview/statex`, `/preview/noxen` y `/preview/vantis` (recomendación: StateX; ver `docs/identidades-2026-10-26.md`).
-- **Registrar `statexsecurity.com`**: el whois del 2026-10-26 indica que no está registrado aunque `.env.example` lo da como elegido.
+- **Dominio (2026-10-31):** sin gasto por ahora; la web va en `statex.jordisanchezweb.es` (DNS en DonDominio, CNAME a Vercel) y el formulario envía con Resend desde ese subdominio. `statexsecurity.com` sigue libre (whois) y se puede registrar más adelante (≈ 19,30 €/año con IVA).
 - **Búsqueda formal de marcas** en EUIPO y OEPM (clases 9, 42, 35, 45): no se pudo consultar automáticamente.
 - Previews públicas en Vercel (noindex) por decisión del 2026-10-26: Noxen y Vantis quedan visibles para quien tenga el enlace. Para cerrarlas, definir `PREVIEW_USER` y `PREVIEW_PASSWORD`.
 - Evolución comercial integrada en `/` en la rama local `evolucion-home` (2026-10-26). Falta aprobarla, fusionarla en `main` y publicarla.
