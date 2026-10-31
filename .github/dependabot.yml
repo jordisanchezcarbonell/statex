@@ -1,0 +1,29 @@
+# Actualizaciones de dependencias. Las versiones van fijadas (exactas en package.json y por SHA en
+# las acciones), así que sin esto nunca se actualizarían. Cada PR pasa por el CI antes de fusionarse.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      timezone: Europe/Madrid
+    open-pull-requests-limit: 5
+    versioning-strategy: increase
+    groups:
+      menores:
+        update-types: [minor, patch]
+    commit-message:
+      prefix: "deps"
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      timezone: Europe/Madrid
+    groups:
+      acciones:
+        patterns: ["*"]
+    commit-message:
+      prefix: "ci"
