@@ -7,10 +7,12 @@ import { JsonLd, Shell } from "../../_site/Shell";
 import { display, focus, muted, wrap } from "../../_site/ui";
 import { ApiAuditGuide } from "../_content/auditoria-api";
 import { WebAuditGuide } from "../_content/auditoria-web";
+import { HeadersStudy } from "../_content/estudio-cabeceras";
 import { PrepareGuide } from "../_content/preparar";
 
 // Contenido de cada guía (su metadato vive en guides de app/_site/content.ts).
 const bodies: Record<string, ComponentType> = {
+  "estudio-cabeceras-seguridad-agencias-2026": HeadersStudy,
   "que-incluye-una-auditoria-de-seguridad-web": WebAuditGuide,
   "que-incluye-una-auditoria-de-seguridad-de-apis": ApiAuditGuide,
   "como-preparar-tu-web-para-una-auditoria-de-seguridad": PrepareGuide,

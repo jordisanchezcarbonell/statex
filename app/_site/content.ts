@@ -538,6 +538,14 @@ export const contactForm = {
 
 export const guides = [
   {
+    slug: "estudio-cabeceras-seguridad-agencias-2026",
+    title: "La seguridad que no se ve: cabeceras de seguridad en 381 webs de agencias y empresas digitales",
+    short: "Estudio de cabeceras de seguridad 2026",
+    description:
+      "Estudio propio: una de cada dos webs de agencias y empresas digitales en España no tiene ninguna de las seis cabeceras de seguridad básicas. Resultados, metodología y cinco correcciones de bajo coste.",
+    published: "2026-10-31",
+  },
+  {
     slug: "que-incluye-una-auditoria-de-seguridad-web",
     title: "Qué incluye una auditoría de seguridad web y de qué depende el precio",
     short: "Qué incluye una auditoría web",
