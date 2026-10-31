@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { brand, company, footer, guides, legalLinks, nav, services } from "./content";
+import { brand, company, footer, guides, legalLinks, nav, services, studies } from "./content";
 import { inter } from "./font";
 import { Header } from "./Header";
 import { BrandMark } from "./identities/BrandMark";
@@ -34,6 +34,14 @@ function Footer({ base, identity, items }: { base: "" | "/"; identity?: Identity
             {guides.map((g) => (
               <li key={g.slug}>
                 <Link href={`/guias/${g.slug}`} className={footLink}>{g.short}</Link>
+              </li>
+            ))}
+          </ul>
+          <p className={`m-0 mt-6 text-[14px] ${muted}`}>{footer.studiesLabel}</p>
+          <ul className="m-0 mt-3 grid list-none gap-1 p-0">
+            {studies.map((s) => (
+              <li key={s.slug}>
+                <Link href={`/investigacion/${s.slug}`} className={footLink}>{s.short}</Link>
               </li>
             ))}
           </ul>

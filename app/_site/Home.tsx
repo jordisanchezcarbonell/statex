@@ -12,6 +12,7 @@
  *
  * Elemento memorable: la línea roja. Es el único uso del rojo en toda la página.
  */
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { brand, contact, faq, report, seo, services, servicesSection, site, team, trajectory } from "./content";
 import { ContactForm } from "./ContactForm";
@@ -162,6 +163,11 @@ export function TrajectorySection({ data = trajectory }: { data?: typeof traject
             <div className="bg-(--h-ink) py-8 lg:pl-10">
               <h3 className={`m-0 text-[14px] font-normal ${muted}`}>{data.research.label}</h3>
               <p className="m-0 mt-4 max-w-[44ch] leading-[1.6]">{data.research.text}</p>
+              {data.research.link && (
+                <Link href={data.research.link.href} className={`mt-4 inline-flex min-h-11 items-center border-b border-(--h-ivory)/40 hover:border-(--h-red) ${focus}`}>
+                  {data.research.link.label}
+                </Link>
+              )}
             </div>
             <div className="relative bg-(--h-ink) py-8 lg:pl-10">
               <span aria-hidden="true" className="absolute left-0 top-0 h-0.5 w-12 bg-(--h-red) lg:left-10" />

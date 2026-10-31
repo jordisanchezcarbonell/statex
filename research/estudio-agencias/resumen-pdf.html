@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>La seguridad que no se ve · StateX · 2026</title>
+<!--
+  Resumen de una página del estudio. Se exporta a public/estudio-cabeceras-de-seguridad-2026.pdf:
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --no-pdf-header-footer \
+    --print-to-pdf=public/estudio-cabeceras-de-seguridad-2026.pdf research/estudio-agencias/resumen-pdf.html
+  Cifras de research/estudio-agencias/resumen.md. Sin datos por web.
+-->
+<style>
+  :root { --accent: #A83A35; --ink: #0B0D10; --text: #20242A; --muted: #5C5850; --line: #D9D6CF; --soft: #F2F0EA; }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { font: 10pt/1.5 Inter, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; overflow: hidden; padding: 16mm 18mm 22mm; position: relative; background: #fff; }
+  .brand { font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--ink); font-size: 10pt; }
+  .label { font-size: 8pt; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 500; }
+  h1 { font-size: 23pt; line-height: 1.04; text-transform: uppercase; letter-spacing: -.02em; color: var(--ink); margin: 9mm 0 0; }
+  .rule { height: 2px; width: 22mm; background: var(--accent); margin: 6mm 0; }
+  .lead { font-size: 11.5pt; line-height: 1.5; color: var(--ink); max-width: 150mm; margin: 0; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 9mm 0 2mm; border-top: 1px solid var(--line); }
+  .stat { padding: 5mm 5mm 5mm 0; border-bottom: 1px solid var(--line); }
+  .stat b { display: block; font-size: 26pt; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+  .stat span { display: block; margin-top: 2mm; font-size: 9pt; line-height: 1.4; }
+  h2 { font-size: 10.5pt; text-transform: uppercase; color: var(--ink); margin: 7mm 0 2.5mm; }
+  table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+  th, td { text-align: left; padding: 1.6mm 3mm 1.6mm 0; border-top: 1px solid var(--line); }
+  thead th { font-size: 7.5pt; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 500; border-top: 0; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+  ol { margin: 0; padding-left: 5mm; } li { margin: 0 0 1.2mm; }
+  .cols { display: grid; grid-template-columns: 1.15fr 1fr; gap: 9mm; }
+  .note { font-size: 7.8pt; line-height: 1.45; color: var(--muted); }
+  .foot { position: absolute; left: 18mm; right: 18mm; bottom: 11mm; display: flex; justify-content: space-between; font-size: 8pt; color: var(--muted); border-top: 1px solid var(--line); padding-top: 3mm; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div style="display:flex;justify-content:space-between;align-items:baseline">
+    <span class="brand">StateX</span><span class="label">Estudio · Octubre 2026</span>
+  </div>
+
+  <h1>La seguridad que no se ve</h1>
+  <div class="rule"></div>
+  <p class="lead">Cabeceras de seguridad en 381 webs de agencias y empresas digitales en España. El HTTPS ya es la norma. Casi todo lo demás, no.</p>
+
+  <div class="stats">
+    <div class="stat"><b>57 %</b><span>de las agencias no tiene <strong>ninguna</strong> de las seis cabeceras básicas (52 % en el total)</span></div>
+    <div class="stat"><b>5 %</b><span>de las agencias las tiene <strong>todas</strong> (8 % en el total)</span></div>
+    <div class="stat"><b>0 de 6</b><span>cabeceras clave en la web mediana</span></div>
+    <div class="stat"><b>96 %</b><span>usa HTTPS, pero solo el 30 % lo fuerza siempre (HSTS)</span></div>
+    <div class="stat"><b>61 %</b><span>de las agencias usa WordPress; más de la mitad muestra su versión</span></div>
+    <div class="stat"><b>1 %</b><span>de las agencias publica un contacto para avisar de fallos (security.txt)</span></div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h2>Resultados</h2>
+      <table>
+        <thead><tr><th>Indicador</th><th class="n">Agencias</th><th class="n">IT</th></tr></thead>
+        <tbody>
+          <tr><td>HSTS (sobre HTTPS)</td><td class="n">24 %</td><td class="n">34 %</td></tr>
+          <tr><td>Content-Security-Policy</td><td class="n">19 %</td><td class="n">23 %</td></tr>
+          <tr><td>Protección contra clickjacking</td><td class="n">20 %</td><td class="n">34 %</td></tr>
+          <tr><td>X-Content-Type-Options</td><td class="n">20 %</td><td class="n">31 %</td></tr>
+          <tr><td>Referrer-Policy</td><td class="n">16 %</td><td class="n">23 %</td></tr>
+          <tr><td>Permissions-Policy</td><td class="n">14 %</td><td class="n">18 %</td></tr>
+          <tr><td>Revela versión de servidor</td><td class="n">29 %</td><td class="n">29 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h2>Cinco correcciones de bajo coste</h2>
+      <ol>
+        <li>Añadir las seis cabeceras en el servidor o el CDN: una vez, para todas las webs.</li>
+        <li>Activar HSTS cuando el HTTPS ya funciona en todo el dominio.</li>
+        <li>Ocultar las versiones de servidor, PHP y WordPress.</li>
+        <li>Empezar la CSP en modo informe y endurecerla después.</li>
+        <li>Publicar /.well-known/security.txt con un contacto.</li>
+      </ol>
+      <h2>Por qué importa a una agencia</h2>
+      <p style="margin:0">Lo que falta en la web de la agencia suele faltar en las de sus clientes. Y se corrige en la configuración, para todas a la vez.</p>
+    </div>
+  </div>
+
+  <h2>Metodología</h2>
+  <p class="note" style="margin:0">Muestra de OpenStreetMap (453 entradas en España con web y etiqueta de agencia de publicidad, marketing o diseño, o de empresa IT), consultada el 31/10/2026: 381 webs analizadas (148 agencias, 233 IT) tras excluir duplicados, webs sin respuesta y las que prohíben el acceso en robots.txt. Análisis pasivo: una visita a la página de inicio, como cualquier navegador, sin pruebas de ningún tipo. No mide vulnerabilidades. La muestra no es aleatoria: las cifras son orientativas. Solo se publican datos agregados; no se nombra a ninguna empresa. Datos de la muestra © colaboradores de OpenStreetMap, ODbL.</p>
+
+  <div class="foot"><span>StateX · Barcelona</span><span>statex.jordisanchezweb.es/investigacion/cabeceras-de-seguridad-2026</span></div>
+</div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { focus, muted } from "../../_site/ui";
-import { Section, prose } from "./shared";
+import { Section, prose } from "../../guias/_content/shared";
 
 // Estudio propio (2026-10-31): análisis pasivo de 381 webs de una muestra de OpenStreetMap.
 // Cifras de research/estudio-agencias/resumen.md; los resultados por web no se publican.

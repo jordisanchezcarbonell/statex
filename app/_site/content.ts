@@ -400,7 +400,8 @@ export const trajectory = {
   },
   research: {
     label: "Investigación",
-    text: "Publicaremos aquí notas técnicas, laboratorios, análisis de vulnerabilidades y recursos para desarrolladores, siempre con fecha y autor.",
+    text: "Notas técnicas, estudios y recursos para desarrolladores, siempre con fecha, autor y metodología.",
+    link: { href: "/investigacion/cabeceras-de-seguridad-2026", label: "Primer estudio: cabeceras de seguridad en 381 webs" },
   },
   today: {
     label: "Hoy",
@@ -538,14 +539,6 @@ export const contactForm = {
 
 export const guides = [
   {
-    slug: "estudio-cabeceras-seguridad-agencias-2026",
-    title: "La seguridad que no se ve: cabeceras de seguridad en 381 webs de agencias y empresas digitales",
-    short: "Estudio de cabeceras de seguridad 2026",
-    description:
-      "Estudio propio: una de cada dos webs de agencias y empresas digitales en España no tiene ninguna de las seis cabeceras de seguridad básicas. Resultados, metodología y cinco correcciones de bajo coste.",
-    published: "2026-10-31",
-  },
-  {
     slug: "que-incluye-una-auditoria-de-seguridad-web",
     title: "Qué incluye una auditoría de seguridad web y de qué depende el precio",
     short: "Qué incluye una auditoría web",
@@ -571,8 +564,22 @@ export const guides = [
   },
 ];
 
+// Investigación propia: estudios con datos reales y metodología publicada (/investigacion/<slug>).
+export const studies = [
+  {
+    slug: "cabeceras-de-seguridad-2026",
+    title: "La seguridad que no se ve: cabeceras de seguridad en 381 webs de agencias y empresas digitales",
+    short: "Cabeceras de seguridad en 381 webs (2026)",
+    description:
+      "Estudio propio: una de cada dos webs de agencias y empresas digitales en España no tiene ninguna de las seis cabeceras de seguridad básicas. Resultados, metodología y cinco correcciones de bajo coste.",
+    published: "2026-10-31",
+    pdf: "/estudio-cabeceras-de-seguridad-2026.pdf",
+  },
+];
+
 export const footer = {
   guidesLabel: "Guías",
+  studiesLabel: "Investigación",
   servicesLabel: "Servicios",
   siteLabel: "StateX",
   location: "Barcelona · Servicio en toda España",
