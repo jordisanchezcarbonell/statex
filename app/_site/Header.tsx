@@ -43,7 +43,7 @@ export function Header({ base = "", items = nav, brand }: { base?: "" | "/"; ite
   }, [open]);
 
   const filled = solid || open;
-  const href = (h: string) => `${base}${h}`;
+  const href = (h: string) => h.startsWith("#") ? `${base}${h}` : h;
   const link = `relative inline-flex min-h-11 items-center px-3 text-[14px] text-(--h-ivory)/80 transition-colors hover:text-(--h-ivory) after:absolute after:inset-x-3 after:bottom-2.5 after:h-px after:origin-left after:scale-x-0 after:bg-(--h-red) after:transition-transform hover:after:scale-x-100 motion-reduce:after:transition-none ${focus}`;
 
   const logo = (

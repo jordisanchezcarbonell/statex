@@ -51,7 +51,7 @@ function Footer({ base, identity, items }: { base: "" | "/"; identity?: Identity
           <ul className="m-0 mt-3 grid list-none gap-1 p-0">
             {[...items, { href: "#preguntas", label: "Preguntas" }, { href: "#contacto", label: "Contacto" }].map((n) => (
               <li key={n.href}>
-                <a href={`${base}${n.href}`} className={footLink}>{n.label}</a>
+                <a href={n.href.startsWith("#") ? `${base}${n.href}` : n.href} className={footLink}>{n.label}</a>
               </li>
             ))}
           </ul>

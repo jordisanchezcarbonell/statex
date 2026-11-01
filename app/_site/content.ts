@@ -31,6 +31,7 @@ export const nav = [
   { href: "#por-que", label: "Por qué" },
   { href: "#entregables", label: "Entregables" },
   { href: "#equipo", label: "Equipo" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export const cta = {

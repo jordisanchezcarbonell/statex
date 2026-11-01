@@ -1,0 +1,143 @@
+{
+  "viewports": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "headerOverflow": [],
+      "diagramColumns": 1
+    },
+    {
+      "width": 375,
+      "scrollWidth": 375,
+      "headerOverflow": [],
+      "diagramColumns": 1
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "headerOverflow": [],
+      "diagramColumns": 3
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "headerOverflow": [],
+      "diagramColumns": 3
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "headerOverflow": [],
+      "diagramColumns": 3
+    }
+  ],
+  "errors": [],
+  "links": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "/blog",
+      "status": 200
+    },
+    {
+      "route": "/servicios/auditoria-seguridad-web-api",
+      "status": 200
+    },
+    {
+      "route": "/servicios/evaluacion-exposicion-externa",
+      "status": 200
+    },
+    {
+      "route": "/servicios/ingenieria-software-segura",
+      "status": 200
+    },
+    {
+      "route": "/guias/que-incluye-una-auditoria-de-seguridad-web",
+      "status": 200
+    },
+    {
+      "route": "/guias/que-incluye-una-auditoria-de-seguridad-de-apis",
+      "status": 200
+    },
+    {
+      "route": "/guias/como-preparar-tu-web-para-una-auditoria-de-seguridad",
+      "status": 200
+    },
+    {
+      "route": "/investigacion/cabeceras-de-seguridad-2026",
+      "status": 200
+    },
+    {
+      "route": "/aviso-legal",
+      "status": 200
+    },
+    {
+      "route": "/privacidad",
+      "status": 200
+    },
+    {
+      "route": "/cookies",
+      "status": 200
+    }
+  ],
+  "anchors": [
+    {
+      "href": "#contenido",
+      "exists": true
+    },
+    {
+      "href": "/#servicios",
+      "exists": true
+    },
+    {
+      "href": "/#metodo",
+      "exists": true
+    },
+    {
+      "href": "/#por-que",
+      "exists": true
+    },
+    {
+      "href": "/#entregables",
+      "exists": true
+    },
+    {
+      "href": "/#equipo",
+      "exists": true
+    },
+    {
+      "href": "/#contacto",
+      "exists": true
+    },
+    {
+      "href": "/#preguntas",
+      "exists": true
+    }
+  ],
+  "privacy": [
+    {
+      "route": "/statex-ai-remediation-lab/reports/observed.md",
+      "status": 404
+    },
+    {
+      "route": "/reports/evidence/local-model-9f2372e1b77448169ac43baca9b75744/report.json",
+      "status": 404
+    },
+    {
+      "route": "/blog/evidence",
+      "status": 404
+    },
+    {
+      "route": "/blog/ia-local-actualizar-dependencia/response.raw.txt",
+      "status": 404
+    }
+  ],
+  "words": 1149,
+  "socialImage": {
+    "status": 200,
+    "contentType": "image/png"
+  },
+  "passed": true
+}
