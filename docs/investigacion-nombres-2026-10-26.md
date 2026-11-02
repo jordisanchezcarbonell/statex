@@ -39,14 +39,13 @@ Fecha: 2026-10-26. **Orientativo, no es asesoramiento legal.** Antes de decidir,
 | statexsec.com | aparentemente libre (solo DNS) | sin NS |
 
 ### Redes
-- **GitHub `StateX`**: cuenta de usuario de **[retirado]**, creada el 2013-05-21, con 20 repositorios y blog [retirado]. Ya es de un fundador: refuerza la herencia del nombre. [retirado]
 - `statexsecurity` en GitHub: libre (404).
 - LinkedIn, X e Instagram: no verificado.
 
 ### Lingüística y riesgos
 - ES: "es-teit-ex" o, leído a la española, "sta-tex". La pronunciación es ambigua y la grafía puede salir como "Statex", "State X" o "StateX".
 - EN: "state-ex". "State" suena a estado o Estado (gubernamental) y a "state of the art"; la X, a cliché tech (SpaceX, X).
-- Ventaja clara: **historia verificable** (InfoStateX 2012–2018, DoubleReboot, GitHub de 2013). Riesgos: comparte nombre con una startup española (inmobiliaria), aunque sea de otro sector, y el .com está en manos de terceros. Poco distintivo para registrar como marca solo, pero no se observó ningún conflicto en el sector.
+- Ventaja clara: **historia verificable** (DoubleReboot desde 2013). Riesgos: comparte nombre con una startup española (inmobiliaria), aunque sea de otro sector, y el .com está en manos de terceros. Poco distintivo para registrar como marca solo, pero no se observó ningún conflicto en el sector.
 
 ---
 
@@ -127,7 +126,7 @@ Fecha: 2026-10-26. **Orientativo, no es asesoramiento legal.** Antes de decidir,
 | Mismo nombre en España | inmobiliaria Statex (Madrid) | European Noxen (Madrid) | Vantis Academy (.es) |
 | .com exacto | ocupado (¿en venta?) | ocupado (en venta, premium) | ocupado |
 | Variante "-security.com" | **aparentemente libre** | aparentemente libre | **ocupada** |
-| Herencia o credibilidad | sí (2012–, GitHub de [retirado] desde 2013) | no | no |
+| Herencia o credibilidad | sí (DoubleReboot, desde 2013) | no | no |
 | Connotación | neutra/tech; "Estado" | noche/daño/tóxico | ventaja, pero genérico |
 
 Lectura orientativa: **Vantis** sale como el nombre más arriesgado (ya hay usos en el mismo sector y en la clase 42). **Noxen** tiene un conflicto sectorial directo y connotaciones de daño. **StateX** es el que menos conflicto sectorial muestra, conserva una historia verificable y tiene statexsecurity.com aparentemente libre; su principal punto débil es la homonimia con la inmobiliaria Statex en España y que el .com lo tiene un tercero. En cualquier caso, hay que confirmarlo con una búsqueda formal en EUIPO y OEPM (clases 9, 42, 35 y 45) antes de registrar el dominio o solicitar la marca.

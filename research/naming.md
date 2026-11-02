@@ -6,10 +6,9 @@ Fecha: 2026-10-24. Comprobaciones hechas desde terminal (`dig`, `whois`, `curl`,
 
 Un brief nuevo pide 10 nombres alternativos. No se proponen. La decisión del proyecto (`CLAUDE.md`) es que la marca es únicamente **StateX**, por continuidad verificada:
 
-- **InfoStateX** (infostatex.blogspot.com), cabecera "State X". Archivo 2012–2018, con al menos 1.380 entradas solo entre 2014 y 2018.
 - **DoubleReboot** (doublereboot.blogspot.com), con la firma "Un proyecto de: State X". Entradas de 2013 y 2016.
 
-Fuente: `docs/design-research.md`, ronda 3. Cambiar de nombre rompería la única prueba de trayectoria que StateX puede enseñar sin inventarse nada: más de seis años de publicaciones técnicas en seguridad con ese nombre.
+Fuente: `docs/design-research.md`, ronda 3. Cambiar de nombre rompería la única prueba de trayectoria que StateX puede enseñar sin inventarse nada: publicaciones técnicas en seguridad con ese nombre desde 2013.
 
 ## 2. StateX como nombre
 
@@ -84,7 +83,7 @@ Ninguna de estas acciones implica comprar ni registrar nada sin aprobación.
 
 No es la recomendación actual. Si en algún momento apareciera un conflicto de marca bloqueante, cualquier alternativa debería cumplir:
 
-- Mantener el vínculo con el archivo 2012–2018 (por ejemplo, "antes InfoStateX / State X"), o el cambio borra la trayectoria.
+- Mantener el vínculo con el archivo desde 2013 (por ejemplo, "antes State X"), o el cambio borra la trayectoria.
 - Una sola pronunciación en español e inglés, y fácil de deletrear por teléfono.
 - Dominio .com o .eu disponible a precio razonable, y libre en las clases de Niza 9, 42 y 45 en la UE y España.
 - Sin clichés del sector (shield, lock, cyber-, sec- como prefijo, guardian) ni connotaciones militares o gubernamentales.
@@ -101,4 +100,4 @@ No es la recomendación actual. Si en algún momento apareciera un conflicto de 
 - https://ch.kompass.com/c/statex/bgc32777046/
 - https://trademarks.justia.com/714/43/statex-71443022.html
 - https://readme.hex.pm/statex/0.1.0 · https://www.ctan.org/ctan-ann/pkg/statex
-- `docs/design-research.md` (origen InfoStateX / DoubleReboot)
+- `docs/design-research.md` (origen DoubleReboot)

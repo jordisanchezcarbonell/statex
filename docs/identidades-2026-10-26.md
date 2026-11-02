@@ -35,7 +35,7 @@ tres áreas con «qué incluye» y «por dónde empezar» (enlazan los servicios
 inicial), presentadas como líneas propuestas · método Evaluamos → Priorizamos → Corregimos → Verificamos, con lo
 que queda por escrito en cada fase · «Por qué elegirnos» (seis razones) · «Quiénes somos» con bios verificadas
 y responsabilidad de cada fundador (sin fotos: no hay imágenes autorizadas en el proyecto) · trayectoria contada
-según la marca (con Noxen o Vantis, InfoStateX pasa a ser antecedente).
+según la marca (con Noxen o Vantis, DoubleReboot pasa a ser antecedente).
 
 **Formulario (también en producción, por ser una mejora no visual de marca).** Campo opcional «Web corporativa»
 validado en cliente y servidor e incluido en el correo; aviso «Enviar este formulario no autoriza a {marca} a
@@ -67,7 +67,7 @@ Mismo diseño, mismo contenido y mismos CTA: la comparación es solo de nombre.
 
 **Quedarse con StateX**, adoptar la evolución comercial de las previews y tomar prestados dos rasgos de las otras:
 
-1. El nombre: es el único con historia verificable (InfoStateX 2012, DoubleReboot, GitHub de [retirado] desde 2013),
+1. El nombre: es el único con historia verificable (DoubleReboot desde 2013),
    sin conflicto observado en ciberseguridad y con una variante de dominio aparentemente libre. Noxen y Vantis
    empiezan de cero y además cargan con conflictos en el mismo sector, el de Vantis casi idéntico.
 2. La evolución comercial (hero, tres áreas, método con Verificar, por qué elegirnos, quiénes somos) funciona igual

@@ -210,7 +210,7 @@ Fuentes: https://leica-camera.com/en-int (extracción parcial, sobre todo navega
 3. **Dos niveles de jerarquía por bloque y un par de CTAs constante** ("Solicitar evaluación" / "Ver método"), como Apple y Porsche. *No tomar:* el mega-menú de Aston Martin.
 4. **Monocromo y un solo acento**, como Polestar. *No tomar:* rojos que recuerden a Ferrari, Leica o Porsche, ni dorados.
 5. **Lo legal y técnico como parte de la marca**, como el lock-up de origen de Polestar. *Tomar:* alcance, autorización, fecha y versión en los ejemplos de informe, con datos ilustrativos (`ejemplo.com`, `192.0.2.0/24`). *No tomar:* sellos o certificados decorativos.
-6. **La obra como credencial**, como Leica. *Tomar:* investigación publicada (el archivo InfoStateX desde 2012) y un informe de ejemplo. *No tomar:* galerías aspiracionales ni lifestyle.
+6. **La obra como credencial**, como Leica. *Tomar:* investigación publicada (el archivo DoubleReboot desde 2013) y un informe de ejemplo. *No tomar:* galerías aspiracionales ni lifestyle.
 7. **Afirmación con respaldo**, como las notas al pie de Apple. *Tomar:* cada promesa con su método o su límite ("Hoy" frente a "Visión"). *No tomar:* cifras de impacto sin fuente.
 8. **Frío técnico con calidez humana**, como B&O. *Tomar:* personas reales, voz en primera persona del plural y lenguaje claro. *No tomar:* escenas domésticas ni fotografía de estilo de vida.
 9. **Exclusividad por acceso y trato, no por precio**, como Loro Piana y el "Enquire" de Aston Martin. *Tomar:* conversación directa con quien hace el trabajo y alcance acotado. *No tomar:* listas de espera falsas ni "solo para unos pocos".

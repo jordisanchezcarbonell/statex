@@ -7,10 +7,10 @@ Fuentes: `brand-benchmark.md`, `cybersecurity-competitors.md`, `spanish-market.m
 
 | Decisión | Opciones | Recomendación |
 |---|---|---|
-| Nombre | Mantener StateX / Sánchez & Sánchez / nombre nuevo | Mantener **StateX** con descriptor fijo "StateX · Ciberseguridad" y los fundadores visibles (`naming.md`: statex.es lo usa una inmobiliaria) |
+| Nombre | Mantener StateX / Sánchez & Sánchez / nombre nuevo | Mantener **StateX** con descriptor fijo "StateX · Ciberseguridad" y el fundador visible (`naming.md`: statex.es lo usa una inmobiliaria) |
 | Segmento prioritario | Mediana empresa y scaleups (actual `CLAUDE.md`) / empresas que desarrollan apps web y APIs | **Empresas de producto con Next.js/React y APIs** como prioridad 1; la mediana empresa, cuando haya 3–5 casos (`spanish-market.md` §8) |
 | Paquetes y precios | Publicar rangos / "desde" / solo bajo propuesta | **No publicar precios** todavía: validar con 8–10 conversaciones y 2–3 pilotos (`services-pricing.md` §7) |
-| Fundadores | Nombres y foto / solo nombres / anónimo | **Nombres, rol y una línea real de experiencia de cada uno** `[Pendiente: bios verificables]` |
+| Fundadores | Nombres y foto / solo nombres / anónimo | **Nombre, rol y una línea real de experiencia** `[Pendiente: bios verificables]` |
 
 Si se cambia el segmento, hay que actualizar `CLAUDE.md` ("Para quién") y `app/design-lab/content.ts`.
 
@@ -30,7 +30,7 @@ Sin analítica de terceros (`CLAUDE.md`). Se mide contando en el servidor los en
 | `/servicios/evaluacion-inicial`, `/servicios/auditoria`, `/servicios/acompanamiento` | Un paquete por página: para quién, alcance, exclusiones, entregables, plazo y CTA | Lanzamiento |
 | `/metodo` | Las cinco fases con lo que se entrega en cada una, autorización y reglas de intervención | Lanzamiento |
 | `/informe-de-ejemplo` | Informe navegable sobre `ejemplo.com` con datos ilustrativos, más PDF | Lanzamiento (es la prueba clave) |
-| `/firma` | Jordi y [retirado], archivo InfoStateX y DoubleReboot 2012–2018, forma de trabajar | Lanzamiento |
+| `/firma` | Jordi Sánchez, archivo DoubleReboot desde 2013, forma de trabajar | Lanzamiento |
 | `/investigacion` | Notas técnicas fechadas y firmadas | Cuando haya 2–3 notas |
 | `/contacto` | Formulario de alcance, email con PGP `[Pendiente]` | Lanzamiento |
 | `/legal`, `/privacidad`, `/.well-known/security.txt` | Aviso legal, privacidad (sin cookies), política de divulgación | Lanzamiento |
@@ -46,7 +46,7 @@ Navegación: StateX · Servicios · Método · Informe de ejemplo · La firma ·
 | 3 | **Servicios** | Tres bloques amplios con filetes finos. **Evaluación inicial de exposición**, **Auditoría de aplicación web y API** y **Acompañamiento de seguridad**, cada uno con para quién, qué incluye y "Pedir esta evaluación". Las áreas de `content.ts` (EASM, AppSec, VA, Security Engineering e IA) van dentro como capacidades, no como cinco productos | Tres paquetes se entienden; cinco áreas en inglés no |
 | 4 | **Método** | "Un método. Cada detalle importa." Cinco fases (Alcance, Descubrimiento, Verificación, Priorización y Reducción) con el **entregable** de cada una. Línea fija: "Ninguna prueba empieza sin autorización por escrito." | Ningún competidor consultado explica fases y entregables en la home (`cybersecurity-competitors.md`, patrón 5). Se mantienen las 5 fases de `CLAUDE.md`, no las 4 del brief |
 | 5 | **Informe de ejemplo** | Tres páginas del informe en miniatura (resumen ejecutivo, hallazgo con evidencia y plan de corrección) con datos ilustrativos. CTA "Ver el informe completo" | La mejor prueba disponible sin clientes, al estilo del informe navegable de Trail of Bits |
-| 6 | **La firma** | "Una firma independiente, dirigida por sus fundadores." Jordi y [retirado] `[Pendiente: bios]`, el archivo 2012–2018 como línea temporal honesta y "Hablas con quien hace el trabajo." | Exclusividad por acceso (Loro Piana, Aston Martin); el tamaño pequeño como argumento |
+| 6 | **La firma** | "Una firma independiente, dirigida por su fundador." Jordi Sánchez `[Pendiente: bio]`, el archivo desde 2013 como línea temporal honesta y "Hablas con quien hace el trabajo." | Exclusividad por acceso (Loro Piana, Aston Martin); el tamaño pequeño como argumento |
 | 7 | **Hoy y visión** | Lo que hacéis hoy frente a lo que es roadmap (monitorización continua) | Honestidad diferencial (oportunidad 7 de los competidores) |
 | 8 | **Preguntas** | Legalidad y autorización, impacto en producción, qué necesitáis del cliente, precio ("propuesta cerrada tras la primera conversación") y confidencialidad | Responde las objeciones antes del formulario |
 | 9 | **Contacto** (fondo grafito) | "La seguridad comienza con una conversación." Qué pasa después: respuesta en `[Pendiente: X días hábiles]`, llamada de 30 minutos y propuesta cerrada. Formulario de alcance | CTA que dice exactamente qué pasa (oportunidad 3) |

@@ -1,7 +1,7 @@
 # Direcciones creativas — StateX
 
 Fecha: 2026-10-24. Basado en `brand-benchmark.md`, `cybersecurity-competitors.md`, `spanish-market.md` y `services-pricing.md`.
-Marca: **StateX** (ver `naming.md`; nombre en revisión a petición de los fundadores, Jordi y [retirado]).
+Marca: **StateX** (ver `naming.md`; nombre en revisión a petición del fundador, Jordi Sánchez).
 
 ## Restricciones que comparten las tres direcciones
 
@@ -104,21 +104,21 @@ Marca: **StateX** (ver `naming.md`; nombre en revisión a petición de los funda
 
 **Hero de ejemplo.** Composición asimétrica. A la izquierda, el titular en serif grande ("La confianza se construye con precisión."), el subtítulo y dos CTA. A la derecha, una **lámina**: la portada del informe de ejemplo de StateX sobre papel, con alcance `ejemplo.com · 203.0.113.0/24`, fecha, versión y "Confidencial". Se gira levemente al pasar el cursor. Cuando exista, la fotografía de arquitectura entra como fondo de la sección "Filosofía", no del hero.
 
-**Estilo fotográfico.** Arquitectura y materia (piedra, hormigón, luz lateral), solo propia o con licencia. Retrato documental de Jordi y [retirado], sin pose de "hacker" `[Pendiente: sesión de fotos]`.
+**Estilo fotográfico.** Arquitectura y materia (piedra, hormigón, luz lateral), solo propia o con licencia. Retrato documental de Jordi, sin pose de "hacker" `[Pendiente: sesión de fotos]`.
 
 **Navegación.** Logotipo a la izquierda y cinco enlaces (Servicios, Método, Informe de ejemplo, La firma, Contacto), con el CTA "Solicitar una consulta" siempre visible. Cabecera que se vuelve sólida al hacer scroll. En móvil, panel completo.
 
-**Tono.** Seguro sin arrogancia, concreto y en primera persona del plural, con los nombres de los fundadores. Cada promesa con su método o su límite ("Hoy" frente a "Visión").
+**Tono.** Seguro sin arrogancia, concreto y en primera persona del plural, con el nombre del fundador. Cada promesa con su método o su límite ("Hoy" frente a "Visión").
 
 **Ventajas B2B.**
 - La percepción de calidad de B sin perder la claridad de A.
 - El informe de ejemplo es a la vez imagen, prueba y conversión secundaria.
-- El trato directo con dos fundadores convierte el tamaño pequeño en argumento.
+- El trato directo con el fundador convierte el tamaño pequeño en argumento.
 
 **Limitaciones.**
 - Exige un informe de ejemplo bien hecho antes de lanzar.
 - La serif necesita buen cuidado tipográfico para no caer en el cliché.
-- Necesita la fotografía de los fundadores para cerrar la promesa de trato personal.
+- Necesita la fotografía del fundador para cerrar la promesa de trato personal.
 
 ## Recomendación
 

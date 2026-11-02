@@ -29,10 +29,10 @@ Actualizado: 2026-10-26.
 
 ## Mejoran la credibilidad
 
-- **Bios de los fundadores**: redactadas a partir de LinkedIn (2026-10-25). Revisar redacción. Decisiones abiertas:
+- **Bio del fundador**: redactadas a partir de LinkedIn (2026-10-25). Revisar redacción. Decisiones abiertas:
   - ¿Nombrar empleadores (actuales o anteriores)? Hoy no se nombran por posibles conflictos con contratos vigentes.
   - Titulaciones universitarias marcadas "en curso" en LinkedIn: no se mencionan.
-  - Exclusividad (2026-10-31): [retirado] e InfoStateX retirados de la web; la Trayectoria arranca en 2013 con DoubleReboot.
+  - Exclusividad (2026-10-31): el equipo visible es solo Jordi; la Trayectoria arranca en 2013 con DoubleReboot.
 - **Investigación** (2026-10-31): `/investigacion` creada con el primer estudio (cabeceras de seguridad en 381 webs, `research/estudio-agencias/`) y su PDF de una página. Enlazada desde Trayectoria y el pie. Revisar el texto antes de publicar.
 - **Informe de ejemplo publicado** (2026-10-25): `/informe-de-ejemplo.html` y PDF, y resumen de agencia de ejemplo. Generados desde `docs/plantillas` con `scripts/muestras-informe.py`.
 - **`/.well-known/security.txt`**: ruta lista (`app/.well-known/security.txt/route.ts`, RFC 9116); se publica sola al rellenar `company.email` (hasta entonces, 404). Falta la **política de divulgación** (página propia) para añadir el campo `Policy`.

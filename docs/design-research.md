@@ -140,14 +140,6 @@ Cuatro conceptos, cada uno construido alrededor de un momento interactivo real (
 
 ## Fuentes originales de la marca (verificadas)
 
-### InfoStateX — infostatex.blogspot.com
-- Cabecera "State X" y subtítulo: "Hacking, Curiosidades y Opiniones En Mi Viaje Por La Seguridad Informática". Fondo negro, tipografía sans blanca.
-- Menú: Aprende, Papers, Mis Herramientas, Erratas, StateList (SecList), SecGoog.
-- **Archivo del blog:** años 2012 a 2018. Recuentos visibles: 2018 (112), 2017 (288), 2016 (300), 2015 (332), 2014 (348). Solo 2014–2018 suman **1.380 entradas**; 2012 y 2013 no se contaron.
-- Última entrada: 14 de junio de 2018, "El fin de este blog", anunciando el paso a Medium. Es de contenido político, así que **no se usa** en la web.
-- La barra lateral muestra insignias de "Certified Ethical Hacking" y "Titulado como perito telemático forense". **No se usan**: no están verificadas como vigentes y la web no debe mostrar certificaciones sin confirmación.
-- **Discrepancia:** el brief dice "desde 2013", pero el archivo empieza en 2012. La web usa 2012 para InfoStateX y 2013 para DoubleReboot. Pendiente de confirmar.
-
 ### DoubleReboot — doublereboot.blogspot.com
 - Tutoriales de herramientas de seguridad; en la barra lateral: "Un proyecto de: State X".
 - Archivo: 2013 (19 entradas) y 2016 (5 entradas).
