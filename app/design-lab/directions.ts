@@ -171,7 +171,7 @@ export const DIRECTIONS: Direction[] = [
     slug: "g",
     letter: "G",
     name: "Editorial Tech / Underground",
-    intent: "Recupera la personalidad de InfoStateX y DoubleReboot: editorial, expresivo, con guiños sutiles a la terminal.",
+    intent: "Recupera la personalidad de DoubleReboot: editorial, expresivo, con guiños sutiles a la terminal.",
     memorable: "Texto que aparece al retirarse barras de censura y un archivo de investigación tratado como una publicación.",
     fonts: [
       { family: "Instrument Serif", role: "Titulares enormes" },
@@ -186,12 +186,11 @@ export const DIRECTIONS: Direction[] = [
       { name: "Blanco ficha", hex: "#F7F7F4" },
     ],
     references: [
-      { name: "InfoStateX", url: "https://infostatex.blogspot.com/", takeaway: "La voz y el archivo originales de la marca." },
       { name: "DoubleReboot", url: "https://doublereboot.blogspot.com/", takeaway: "Tutoriales y cultura de herramientas." },
       { name: "Material Security", url: "https://material.security/", takeaway: "Tipografía grande sobre retícula." },
     ],
     motion: "Barras de censura que se retiran, fichas apiladas con el scroll, cursor de terminal.",
-    pros: ["Usa el archivo real de InfoStateX y DoubleReboot como argumento de credibilidad.", "Personalidad editorial única entre las webs de ciberseguridad.", "Los guiños de terminal informan (hoy frente a visión como código comentado)."],
+    pros: ["Usa el archivo real de DoubleReboot como argumento de credibilidad.", "Personalidad editorial única entre las webs de ciberseguridad.", "Los guiños de terminal informan (hoy frente a visión como código comentado)."],
     cons: ["Puede leerse como poco corporativo para empresas medianas conservadoras.", "Titulares serif enormes alargan la página, sobre todo en móvil.", "Depende del peso que quieras dar al pasado bloguero en el pitch."],
   },
   {

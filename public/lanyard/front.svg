@@ -8,7 +8,7 @@
 <rect width="1350" height="960" fill="url(#paper)"/><rect width="1350" height="960" fill="url(#grain)"/>
 <text x="730" y="870" fill="#000" stroke="#000" stroke-width="5" font-family="Georgia,Times New Roman,serif" font-size="950">X</text>
 <text x="720" y="858" fill="url(#silver)" stroke="url(#rim)" stroke-width="1.8" font-family="Georgia,Times New Roman,serif" font-size="950">X</text>
-<g fill="#eeeDE7" font-family="Georgia,Times New Roman,serif"><text x="105" y="230" font-size="83" letter-spacing="-3">StateX</text><text x="105" y="480" font-size="51">Jordi Sánchez Carbonell</text><text x="108" y="540" font-size="32" fill="#c6c7c7">Cofundador</text><path d="M108 625h94" stroke="#dbdbd4" stroke-width="2"/><text x="143" y="735" font-size="29">Barcelona, España</text></g>
+<g fill="#eeeDE7" font-family="Georgia,Times New Roman,serif"><text x="105" y="230" font-size="83" letter-spacing="-3">StateX</text><text x="105" y="480" font-size="51">Jordi Sánchez Carbonell</text><text x="108" y="540" font-size="32" fill="#c6c7c7">Fundador</text><path d="M108 625h94" stroke="#dbdbd4" stroke-width="2"/><text x="143" y="735" font-size="29">Barcelona, España</text></g>
 <g transform="translate(106 711)" fill="none" stroke="#deded8" stroke-width="2"><path d="M0 9a10 10 0 0 1 20 0c0 8-10 18-10 18S0 17 0 9z"/><circle cx="10" cy="9" r="3"/></g>
 <path d="M105 843h240" stroke="#ffffff" stroke-opacity=".13"/><text x="105" y="880" fill="#909399" font-family="Arial,sans-serif" font-size="15" letter-spacing="5">INDEPENDENT SECURITY</text>
 </svg>

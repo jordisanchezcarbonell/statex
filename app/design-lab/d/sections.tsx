@@ -222,7 +222,7 @@ export function Research() {
             <CornerMarks size={8} className="border-[rgba(255,176,0,0.5)]" />
           </div>
           <figcaption className={`${mono} mt-4 text-[11px] leading-5 text-[color:var(--muted)]`}>
-            <Fig n={4}>Archivo público de InfoStateX y DoubleReboot.</Fig>
+            <Fig n={4}>Archivo público de DoubleReboot.</Fig>
           </figcaption>
         </figure>
       </div>

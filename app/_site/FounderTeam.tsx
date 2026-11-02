@@ -38,7 +38,7 @@ function FounderCard({ name, front }: { name: string; front: string }) {
       <div ref={scene} className={styles.scene} role="group" aria-label={`Tarjeta de ${name}`} aria-describedby={helpId}>
         {(!live || !ready) && <div className={styles.staticCard}>
           <span className={styles.staticStrap} aria-hidden="true" />
-          <img src={back ? "/lanyard/back.svg" : front} width={1350} height={960} alt={back ? "Reverso de StateX: La seguridad no se presupone. Se demuestra." : `Tarjeta de ${name}, cofundador de StateX, Barcelona`} />
+          <img src={back ? "/lanyard/back.svg" : front} width={1350} height={960} alt={back ? "Reverso de StateX: La seguridad no se presupone. Se demuestra." : `Tarjeta de ${name}, fundador de StateX, Barcelona`} />
         </div>}
         {live && <div className={styles.canvas} style={{ opacity: ready ? 1 : 0 }}>
           <Lanyard frontImage={front} backImage="/lanyard/back.svg" strapImage="/lanyard/strap.svg" orientation="landscape" cardColor="#101112" cornerRadius={0} finish="matte" size={compact ? 0.44 : 0.46} strapLength={0.3} breeze={0} damping={0.72} intro={false} flipSignal={flipSignal} pixelRatioCap={compact ? 1.5 : 2} onReady={() => setReady(true)} />

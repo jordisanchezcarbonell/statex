@@ -150,14 +150,8 @@ export const technology = {
 export const research = {
   title: "Investigar es el origen de StateX.",
   intro:
-    "Antes de ofrecer servicios, StateX fue un proyecto abierto: de 2012 a 2018, publicaciones sobre hacking, herramientas y seguridad ofensiva.",
+    "Antes de ofrecer servicios, StateX fue un proyecto abierto: desde 2013, tutoriales y herramientas de seguridad ofensiva.",
   archive: [
-    {
-      name: "InfoStateX",
-      url: "https://infostatex.blogspot.com/",
-      years: "2012 – 2018",
-      text: "Blog de hacking, curiosidades y opiniones sobre seguridad informática, con más de 1.300 entradas publicadas.",
-    },
     {
       name: "DoubleReboot",
       url: "https://doublereboot.blogspot.com/",
@@ -165,7 +159,7 @@ export const research = {
       text: "Tutoriales y herramientas de seguridad ofensiva. Un proyecto de State X.",
     },
   ],
-  topicsLabel: "Del archivo 2012–2018",
+  topicsLabel: "Del archivo",
   topics: [
     "Reconocimiento con Google Dorks",
     "Parrot Security OS",
@@ -180,13 +174,11 @@ export const research = {
 };
 
 export const about = {
-  title: "Investigando seguridad ofensiva desde 2012.",
+  title: "Investigando seguridad ofensiva desde 2013.",
   text:
-    "StateX nació como un blog personal de seguridad informática y creció con DoubleReboot, un espacio de tutoriales y herramientas. Hoy aplica ese método de investigación a evaluar la exposición externa de empresas, con la vista puesta en construir un producto propio.",
+    "StateX nació con DoubleReboot, un espacio de tutoriales y herramientas de seguridad ofensiva. Hoy aplica ese método de investigación a evaluar la exposición externa de empresas, con la vista puesta en construir un producto propio.",
   timeline: [
-    { year: "2012", text: "Primeras publicaciones en InfoStateX." },
     { year: "2013", text: "Nace DoubleReboot, un proyecto de State X." },
-    { year: "2018", text: "Cierre de la etapa del blog tras más de 1.300 entradas." },
     { year: "2026", text: "StateX se relanza como firma de ciberseguridad." },
   ],
   pending: "[Pendiente: equipo y datos de la empresa]",
