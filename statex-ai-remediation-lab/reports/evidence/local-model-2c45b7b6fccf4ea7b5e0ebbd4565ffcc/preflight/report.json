@@ -1,0 +1,171 @@
+{
+  "label": "preflight",
+  "seed": 42,
+  "model_connected": false,
+  "resources": [
+    {
+      "name": "statexlab-938143de4b584218a38625e4aa69fa9b",
+      "image": "sha256:daf72e2fc9e22c4a259b5183af1a0515256d0a3a1b564dd0e9bbe07aff3e4a40",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/control": "rw,noexec,nosuid,size=2m,uid=1000,gid=1000,mode=0755",
+        "/input": "rw,noexec,nosuid,size=2m,uid=1000,gid=1000,mode=0755",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-1f98854cfc7f4ff4b90ea1b814275c89",
+          "destination": "/weights",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "name": "statexlab-00469aa8f3e54a34933407bde7843da5",
+      "image": "sha256:daf72e2fc9e22c4a259b5183af1a0515256d0a3a1b564dd0e9bbe07aff3e4a40",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": [
+        "CAP_SYS_PTRACE"
+      ],
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "container:ea5f76b1ef1433bd3866c0af9c9b39021d14dfba87c4757b18886b25b5fe09d8",
+      "tmpfs": {
+        "/evidence": "rw,noexec,nosuid,size=128m,mode=0700",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    }
+  ],
+  "cleanup": [
+    {
+      "kind": "container",
+      "name": "statexlab-00469aa8f3e54a34933407bde7843da5",
+      "exit": 0,
+      "absent": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-938143de4b584218a38625e4aa69fa9b",
+      "exit": 0,
+      "absent": true
+    }
+  ],
+  "tests": {
+    "isolation_probes": true
+  },
+  "observations": {},
+  "ledger": [],
+  "proposal_origin": "local_model",
+  "functional_remediation": false,
+  "security_observation": "inconclusive",
+  "created_utc": "2026-11-01T20:28:54.309601+00:00",
+  "inference": {
+    "mode": "probe",
+    "observation": "inconclusive_native_threaded_profile",
+    "health": [
+      {
+        "age_ms": 32,
+        "phase": "complete",
+        "exit": null
+      },
+      {
+        "age_ms": 121,
+        "phase": "complete",
+        "exit": {
+          "code": 0,
+          "signal": null
+        }
+      }
+    ],
+    "started": true,
+    "prompt_sha256": "79c3b09e8d8d782ebfd55d515dccf59f513b7d9225724853eb5c7dba12977916",
+    "grammar_sha256": "1a3e3469892957861029adcd24ad0c886b778a942dd4a18cc146238ad56474dd",
+    "parameters": {
+      "context_tokens": 8192,
+      "max_generated_tokens": 1536,
+      "threads": 4,
+      "batch_threads": 4,
+      "gpu_layers": 0,
+      "temperature": 0.2,
+      "top_k": 40,
+      "top_p": 0.95,
+      "grammar": "generic JSON object grammar; no action/value forced by grammar",
+      "chat_template": "manual Qwen ChatML; conversation mode off",
+      "memory_bytes": 3221225472,
+      "cpu_quota": 4,
+      "timeout_seconds": 360,
+      "seed": 42
+    },
+    "target": "statexlab-938143de4b584218a38625e4aa69fa9b",
+    "applied_policy": {
+      "Memory": 3221225472,
+      "NanoCpus": 4000000000,
+      "PidsLimit": 48,
+      "NetworkMode": "none",
+      "ReadonlyRootfs": true,
+      "Privileged": false,
+      "CapAdd": null,
+      "CapDrop": [
+        "ALL"
+      ],
+      "PidMode": "",
+      "IpcMode": "private",
+      "SecurityOpt": [
+        "no-new-privileges"
+      ],
+      "DeviceRequests": null
+    },
+    "observer": "statexlab-00469aa8f3e54a34933407bde7843da5",
+    "attached_before_exec": true,
+    "duration_seconds": 0.376792,
+    "raw_response_sha256": "cdff23b0a38dd2412a0366a7717cde07da54722088b3b8ab3c784734b53e588e",
+    "raw_response_bytes": 194,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bootstrap_completion": {
+      "phase": "complete",
+      "reaped": 1,
+      "bad_exits": 0,
+      "child_pid": 7
+    },
+    "health_failures": [],
+    "exit_records": {
+      "trace.7": true
+    },
+    "observation_reasons": [
+      "native_mmap_thread_and_shared_fd_semantics_not_fully_accounted"
+    ],
+    "docker_oom_killed": false
+  },
+  "preflight_result": {
+    "weights_readable": true,
+    "context_readable": true,
+    "domain_paths_absent": true,
+    "protected_paths_denied": true,
+    "fork_denied": true,
+    "network_socket_denied": true,
+    "shell_exec_denied": true,
+    "passed": true
+  },
+  "daemon_alive_after_cleanup": true,
+  "suite_passed": false
+}

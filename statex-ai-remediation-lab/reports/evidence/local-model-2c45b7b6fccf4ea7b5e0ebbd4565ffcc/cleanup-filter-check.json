@@ -1,0 +1,9 @@
+{
+  "verified_utc": "2026-11-01T20:41:29.430793+00:00",
+  "endpoint": "unix:///Users/jsanchez/.docker/run/docker.sock",
+  "filtered_container_names": [],
+  "filtered_volume_names": [],
+  "server_version": "29.9.2",
+  "filters": "name=statexlab- only; no unrelated resources modified",
+  "downloaded_host_weights_retained": true
+}

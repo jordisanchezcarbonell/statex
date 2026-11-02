@@ -1,0 +1,62 @@
+{
+  "state": {
+    "ticks": 2,
+    "updated_ms": 1793561049311,
+    "tracer_pid": 26,
+    "exit": {
+      "code": 0,
+      "signal": null
+    },
+    "error": null,
+    "target_pid": 7
+  },
+  "target": {
+    "phase": "complete",
+    "reaped": 3,
+    "bad_exits": 0,
+    "child_pid": 7
+  },
+  "tracer": 0,
+  "untraced": [],
+  "fixture": {
+    "/fixtures/allowed": {
+      "dev": 63,
+      "ino": 135203,
+      "size": 32,
+      "mode": 33060,
+      "nlink": 2,
+      "is_file": true
+    },
+    "/fixtures/denied": {
+      "dev": 63,
+      "ino": 135204,
+      "size": 32,
+      "mode": 32768,
+      "nlink": 1,
+      "is_file": true
+    },
+    "/fixtures/symlink": {
+      "dev": 63,
+      "ino": 135203,
+      "size": 32,
+      "mode": 33060,
+      "nlink": 2,
+      "is_file": true
+    },
+    "/fixtures/hardlink": {
+      "dev": 63,
+      "ino": 135203,
+      "size": 32,
+      "mode": 33060,
+      "nlink": 2,
+      "is_file": true
+    }
+  },
+  "traces": {
+    "trace.47": "1793561049.293599 clone(child_stack=NULL, flags=SIGCHLD) = 48\n1793561049.293788 exit_group(0)         = ?\n1793561049.293849 +++ exited with 0 +++\n",
+    "trace.48": "1793561049.293798 openat(AT_FDCWD</tmp>, \"/fixtures/allowed\", O_RDONLY) = 3\n1793561049.293872 read(0x3, 0xffffe84e2d10, 0x20) = 0x20\n1793561049.293928 close(3)              = 0\n1793561049.293995 exit_group(0)         = ?\n1793561049.294119 +++ exited with 0 +++\n",
+    "trace.7": "1793561049.212565 --- stopped by SIGSTOP ---\n1793561049.292509 --- SIGCONT {si_signo=SIGCONT, si_code=SI_USER, si_pid=1, si_uid=1000} ---\n1793561049.292563 close_range(3, 4294967295, 0) = 0\n1793561049.292623 prctl(PR_SET_NO_NEW_PRIVS, 1, 0, 0, 0) = 0\n1793561049.292675 landlock_create_ruleset({handled_access_fs=LANDLOCK_ACCESS_FS_EXECUTE|LANDLOCK_ACCESS_FS_READ_FILE|LANDLOCK_ACCESS_FS_READ_DIR}, 8, 0) = 3\n1793561049.292747 openat(AT_FDCWD</tmp>, \"/fixtures\", O_RDONLY|O_CLOEXEC|O_PATH) = 4\n1793561049.292810 landlock_add_rule(3, LANDLOCK_RULE_PATH_BENEATH, {allowed_access=LANDLOCK_ACCESS_FS_READ_FILE|LANDLOCK_ACCESS_FS_READ_DIR, parent_fd=4}, 0) = 0\n1793561049.292858 close(4)              = 0\n1793561049.292901 openat(AT_FDCWD</tmp>, \"/lab/probe\", O_RDONLY|O_CLOEXEC|O_PATH) = 4\n1793561049.292953 landlock_add_rule(3, LANDLOCK_RULE_PATH_BENEATH, {allowed_access=LANDLOCK_ACCESS_FS_EXECUTE|LANDLOCK_ACCESS_FS_READ_FILE, parent_fd=4}, 0) = 0\n1793561049.293016 close(4)              = 0\n1793561049.293143 landlock_restrict_self(3, 0) = 0\n1793561049.293187 close(3)              = 0\n1793561049.293239 prctl(PR_SET_SECCOMP, SECCOMP_MODE_FILTER, {len=34, filter=0xffffe59f9bc0}) = 0\n1793561049.293365 execve(\"/lab/probe\", [\"/lab/probe\", \"children\"], 0xffffe59f9bb0 /* 0 vars */) = 0\n1793561049.293495 clone(child_stack=NULL, flags=SIGCHLD) = 47\n1793561049.293714 exit_group(0)         = ?\n1793561049.293794 +++ exited with 0 +++\n"
+  },
+  "stderr": "strace: Process 7 attached\nstrace: Process 47 attached\nstrace: Process 48 attached\n",
+  "observer_running": true
+}

@@ -1,0 +1,32 @@
+{
+  "controls/lifecycle_suite.py": {
+    "approved_sha256": "a61cc4023242074adcaab7c2721e3824b9cd67c4fe36970d99484ac8f0e45b77",
+    "current_sha256": "a61cc4023242074adcaab7c2721e3824b9cd67c4fe36970d99484ac8f0e45b77",
+    "unchanged": true
+  },
+  "controls/lifecycle_analyze.py": {
+    "approved_sha256": "2ddc4132c1a7d29bffa61892199cbc6e9762066786c00c111ee8c9cc6fefd117",
+    "current_sha256": "2ddc4132c1a7d29bffa61892199cbc6e9762066786c00c111ee8c9cc6fefd117",
+    "unchanged": true
+  },
+  "controls/lifecycle/bootstrap.c": {
+    "approved_sha256": "aa2f11f05e2f9199dc421eda37cc3467845876200b6698ff025487f7506f4235",
+    "current_sha256": "aa2f11f05e2f9199dc421eda37cc3467845876200b6698ff025487f7506f4235",
+    "unchanged": true
+  },
+  "controls/lifecycle/probe.c": {
+    "approved_sha256": "d79da77e330e47ab5a0afa6516b120e1c23f1df5bfc1d9523f6035d66805d8b8",
+    "current_sha256": "d79da77e330e47ab5a0afa6516b120e1c23f1df5bfc1d9523f6035d66805d8b8",
+    "unchanged": true
+  },
+  "controls/lifecycle/supervisor.cjs": {
+    "approved_sha256": "15300cc6e19a14baf9acfabd06d04169ea5497744eae16e51c320bc5d377fb66",
+    "current_sha256": "15300cc6e19a14baf9acfabd06d04169ea5497744eae16e51c320bc5d377fb66",
+    "unchanged": true
+  },
+  "controls/Lifecycle.Dockerfile": {
+    "approved_sha256": "1d4a8ef4ad1944d5e5a98d3fe410087a05af750038f2b4f499364f8696d291d8",
+    "current_sha256": "1d4a8ef4ad1944d5e5a98d3fe410087a05af750038f2b4f499364f8696d291d8",
+    "unchanged": true
+  }
+}

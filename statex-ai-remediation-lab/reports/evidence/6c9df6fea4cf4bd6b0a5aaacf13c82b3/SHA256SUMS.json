@@ -1,0 +1,16 @@
+{
+  "baseline-report.json": "6695b6bbbf23fda1c904e3e5fe58f698b2cabcec58233e4ac43c9db725bc24c1",
+  "cleanup-verification.json": "ca46e4d9c685ef1b4dceebb9bef8f0b11df0ce91cfef2b11c718eff35b71c0fa",
+  "images.json": "80464ee0c27ae9f9649179a50326f5ffa9db4cabbc84952e4b58338666ae49c5",
+  "observer-report.json": "98ad9e6769421be98a827c467e7ef0e82c5c9f9439f91e02f831893413ea2dcc",
+  "patch/baseline/package-lock.json": "8e5f4b09cfbf058cbd9c766697c8a1021c257ec4fe9d7056ff5d9cffffacfe0b",
+  "patch/baseline/package.json": "9b1c0bb41362712440277cd949d81354e81e95286625ec87476c59691fc93460",
+  "patch/hashes.json": "cc9af552ee53a1e575d744effac481867a5e0cbc337ed63c499234754950895d",
+  "patch/package-lock.json": "8e5f4b09cfbf058cbd9c766697c8a1021c257ec4fe9d7056ff5d9cffffacfe0b",
+  "patch/package.json": "9b1c0bb41362712440277cd949d81354e81e95286625ec87476c59691fc93460",
+  "patch/repair.patch": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "traces/allowed-trace.json": "b33f2f90e619e586a805e4d01b4a0eb4100d20ff4df600cdccfd436030bad3a6",
+  "traces/denied-trace.json": "d7702c16750ef6f5453d93ec6fc949527cd5c9cc93196cf8d0e15789934e9862",
+  "traces/missing_production-trace.json": "b7ab3ffa55a51daff527f29efcf0b759be18acfeb69288b0e3a1fc33177a2779",
+  "traces/none-trace.json": "7fec440057484324ea356d33f62ef0d5ee43528870fcfd940338aba592393cec"
+}

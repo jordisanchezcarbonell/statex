@@ -1,0 +1,12 @@
+{
+  "name": "statex-fictional-app",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node --check app.cjs",
+    "test": "node app.cjs hello"
+  },
+  "dependencies": {
+    "cross-spawn": "7.0.3"
+  }
+}

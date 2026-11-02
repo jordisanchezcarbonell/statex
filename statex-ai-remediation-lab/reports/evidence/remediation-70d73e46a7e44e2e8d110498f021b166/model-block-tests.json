@@ -1,0 +1,32 @@
+[
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/Users/jsanchez/Desktop/statex/statex-ai-remediation-lab/controls/remediation_suite.py",
+      "--image",
+      "sha256:95db10a7539668d814e207e170279cda32b89576ce6cc1675e183796f29b48c3",
+      "--socket",
+      "/Users/jsanchez/.docker/run/docker.sock",
+      "--regression-run",
+      "lifecycle-644c938e91884a8680475ba060e4a27d",
+      "--model",
+      "blocked"
+    ],
+    "exit": 2,
+    "stderr": "usage: remediation_suite.py [-h] --image IMAGE --socket SOCKET\n                            --regression-run REGRESSION_RUN [--model MODEL]\nremediation_suite.py: error: Models prohibited in this phase\n"
+  },
+  {
+    "command": [
+      "python3",
+      "-B",
+      "/Users/jsanchez/Desktop/statex/statex-ai-remediation-lab/controls/lab.py",
+      "--image",
+      "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "--agent-image",
+      "blocked"
+    ],
+    "exit": 2,
+    "stderr": "usage: lab.py [-h] --image IMAGE [--socket SOCKET] [--agent-image AGENT_IMAGE]\nlab.py: error: Model execution prohibited in this phase; no models authorized\n"
+  }
+]

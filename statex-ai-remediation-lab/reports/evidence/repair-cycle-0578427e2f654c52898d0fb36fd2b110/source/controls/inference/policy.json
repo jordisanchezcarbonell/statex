@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "runtime": "llama.cpp b5046 CPU, one native process with pthreads",
+  "memory_bytes": 3221225472,
+  "cpus": 4,
+  "threads": 4,
+  "pids_limit": 48,
+  "network": "none",
+  "root_filesystem": "read_only",
+  "user": "1000:1000",
+  "capabilities": [],
+  "no_new_privileges": true,
+  "read_only_inputs": ["/weights/model.gguf", "/input/prompt.txt", "/input/json.gbnf"],
+  "runtime_read_only_roots": ["/usr", "/lib", "/lib64", "/opt/llama"],
+  "executable_files": ["/opt/llama/llama-cli", "/opt/llama/probe", "/lib/ld-linux-aarch64.so.1", "/lib64/ld-linux-x86-64.so.2"],
+  "write_channels": ["inherited stdout to /control/response.txt", "inherited stderr to /control/runtime.stderr"],
+  "denied_domains": ["workspace", "production", "Docker socket", "host filesystem", "host tools"],
+  "clone": "only glibc pthread flags 0x3d0f00; clone3 returns ENOSYS; forks rejected",
+  "permission_fallback": "none; failures stop the experiment",
+  "observation": "native capture only; semantic I/O accounting inconclusive"
+}

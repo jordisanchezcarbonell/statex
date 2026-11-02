@@ -1,0 +1,21 @@
+{
+  "original_records_unchanged": true,
+  "actual_model_generations": 1,
+  "native_isolation_preflight_passed": true,
+  "pilot_duration_seconds": 26.270674,
+  "pilot_accepted": false,
+  "repetitions_executed": 0,
+  "repetitions_not_executed_reason": "pilot_not_accepted_no_fallback_no_prompt_retry",
+  "model_content_json_valid_in_postmortem": true,
+  "model_actions_generated": 2,
+  "model_generated_actions_dispatched": 0,
+  "controller_baseline_jobs": 1,
+  "functional_patch_acceptance": "not_evaluated_no_model_actions_dispatched",
+  "patch_from_model_exists": false,
+  "security_observation": "inconclusive",
+  "deterministic_comparison_functional": true,
+  "deterministic_comparison_report_sha256": "783c0d896a2b9cff65a380a7a0a228f3569bba5dbef00ca0d5b52270069680e6",
+  "postmortem_code_change": "explicit pinned CLI marker framing only; no second model generation and no JSON/value/plan correction",
+  "pilot_cleanup_verified": true,
+  "preflight_cleanup_verified": true
+}

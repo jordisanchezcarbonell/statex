@@ -1,0 +1,68 @@
+{
+  "postmortem_only": true,
+  "no_new_inference": true,
+  "no_actions_executed": true,
+  "original_report_unchanged": true,
+  "transport": {
+    "codec": "llama.cpp-b5046-explicit-eog-stdout-suffix",
+    "removed_backend_marker": true,
+    "removed_bytes": 17,
+    "raw_sha256": "86a204dc9e8b25dda5a1e28928ecbc769333b744d2ec43c6166bd41a261b213f",
+    "content_sha256": "3b262c2c130557e895a6231e5fe3956ba02d3cdd028cd75bdefaeff91b0394af",
+    "content_bytes": 375
+  },
+  "backend_marker_source": {
+    "commit": "74d4f5b041ad837153b0e90fc864b8290e01d8d5",
+    "file": "examples/main/main.cpp",
+    "lines": [
+      941,
+      958
+    ]
+  },
+  "model_content_json_valid": true,
+  "actions_actually_generated": [
+    {
+      "op": "read_document",
+      "path": "package.json"
+    },
+    {
+      "op": "write_document",
+      "path": "package.json",
+      "expected_sha256": "96cb6cb6f0fabee6f482e8a8724e3701bb589e1f1b68904f6e469b4f5f0dd276",
+      "document": {
+        "name": "statex-fictional-app",
+        "private": true,
+        "version": "1.0.0",
+        "scripts": {
+          "build": "node --check app.cjs",
+          "test": "node app.cjs hello"
+        },
+        "dependencies": {
+          "cross-spawn": "7.0.5"
+        }
+      }
+    }
+  ],
+  "missing_workflow_operations": [
+    "export",
+    "install",
+    "regenerate_lock",
+    "validate"
+  ],
+  "independent_proposal_validation_rejection": "export_must_be_final_once",
+  "model_hash_precondition_matches_context": true,
+  "framing_helper_sha256": "c97dcde2188e20934a954568e5da165a6387c632eccc57d1e821d6d5e633d502",
+  "benchmark_rerun_after_framing_fix": false,
+  "proposed_manifest_change_within_scope": true,
+  "effective_native_parameters_from_stderr": [
+    "main: llama threadpool init, n_threads = 4",
+    "system_info: n_threads = 4 (n_threads_batch = 4) / 10 | CPU : NEON = 1 | ARM_FMA = 1 | LLAMAFILE = 1 | AARCH64_REPACK = 1 | ",
+    "sampler seed: 42",
+    "\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000",
+    "\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 8192",
+    "\ttop_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.200",
+    "\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000",
+    "sampler chain: logits -> logit-bias -> penalties -> dry -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist ",
+    "generate: n_ctx = 8192, n_batch = 2048, n_predict = 1536, n_keep = 0"
+  ]
+}

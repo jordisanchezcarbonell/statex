@@ -1,0 +1,50 @@
+{
+  "previous_pilot": "reports/evidence/local-model-2c45b7b6fccf4ea7b5e0ebbd4565ffcc",
+  "model": {
+    "repository": "Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF",
+    "revision": "f86cb2c1fa58255f8052cc32aeede1b7482d4361",
+    "file": "qwen2.5-coder-1.5b-instruct-q4_k_m.gguf",
+    "bytes": 1117320768,
+    "sha256": "cc324af070c2ecbfd324a30884d2f951a7ff756aba85cb811a6ec436933bb046",
+    "license": "Apache-2.0"
+  },
+  "runtime_source": {
+    "repository": "https://github.com/ggml-org/llama.cpp",
+    "tag": "b5046",
+    "commit": "74d4f5b041ad837153b0e90fc864b8290e01d8d5",
+    "source_tar_sha256": "8dd9fcc7c17f972673960ffdcc7521f52de5a9ec594aa6acebd9dfd8c17c0a5c"
+  },
+  "parameters": {
+    "context_tokens": 8192,
+    "max_generated_tokens": 1536,
+    "threads": 4,
+    "batch_threads": 4,
+    "gpu_layers": 0,
+    "temperature": 0.2,
+    "top_k": 40,
+    "top_p": 0.95,
+    "grammar": "generic JSON object grammar; no action/value forced by grammar",
+    "chat_template": "manual Qwen ChatML; conversation mode off",
+    "memory_bytes": 3221225472,
+    "cpu_quota": 4,
+    "timeout_seconds": 360
+  },
+  "seed": 42,
+  "generation_budget": 1,
+  "security_observation": "inconclusive",
+  "retained_preparation": [
+    "statexlab-be009b2b9e144a2f88ebda0e188b03eb"
+  ],
+  "deterministic_comparison": "reports/evidence/remediation-70d73e46a7e44e2e8d110498f021b166",
+  "comparison_report_sha256": "783c0d896a2b9cff65a380a7a0a228f3569bba5dbef00ca0d5b52270069680e6",
+  "docker_version": "29.9.2",
+  "images": {
+    "sha256:daf72e2fc9e22c4a259b5183af1a0515256d0a3a1b564dd0e9bbe07aff3e4a40": "sha256:daf72e2fc9e22c4a259b5183af1a0515256d0a3a1b564dd0e9bbe07aff3e4a40",
+    "sha256:95db10a7539668d814e207e170279cda32b89576ce6cc1675e183796f29b48c3": "sha256:95db10a7539668d814e207e170279cda32b89576ce6cc1675e183796f29b48c3",
+    "sha256:6e793a80b20b789b357f60125f535009927337cb8d0e6b4423e4ab3e3196dc75": "sha256:6e793a80b20b789b357f60125f535009927337cb8d0e6b4423e4ab3e3196dc75"
+  },
+  "weights_volume": "statexlab-8d907bba14ce4d03bc5187ea95e85ec7",
+  "guest_weights_sha256": "cc324af070c2ecbfd324a30884d2f951a7ff756aba85cb811a6ec436933bb046",
+  "frozen_inputs_verified": true,
+  "previous_pilot_unchanged": true
+}

@@ -1,0 +1,9 @@
+{
+  "trace.1": "openat(AT_FDCWD, \"/secret/canary\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)\nopenat(AT_FDCWD, \"/tmp/done\", O_WRONLY|O_CREAT|O_TRUNC|O_CLOEXEC, 0666) = 17\nclose(17)                               = 0\n",
+  "trace.10": "",
+  "trace.11": "",
+  "trace.12": "",
+  "trace.13": "",
+  "trace.8": "",
+  "trace.9": ""
+}

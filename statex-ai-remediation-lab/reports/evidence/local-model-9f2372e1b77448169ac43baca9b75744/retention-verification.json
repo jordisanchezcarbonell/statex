@@ -1,0 +1,69 @@
+{
+  "containers": [
+    {
+      "name": "statexlab-be009b2b9e144a2f88ebda0e188b03eb",
+      "running": false,
+      "status": "exited"
+    },
+    {
+      "name": "statexlab-c1f12d23ce7d4679aafd79feabc47be6",
+      "running": false,
+      "status": "exited"
+    },
+    {
+      "name": "statexlab-541241605593470ba841a63451b09905",
+      "running": false,
+      "status": "exited"
+    },
+    {
+      "name": "statexlab-60d1481b230b415cbacb5ba0b2915c3d",
+      "running": false,
+      "status": "exited"
+    },
+    {
+      "name": "statexlab-59a5337a675944d7800ae85c9a70608e",
+      "running": false,
+      "status": "exited"
+    },
+    {
+      "name": "statexlab-21373d01f5134c428b26db19badf48b5",
+      "running": false,
+      "status": "exited"
+    },
+    {
+      "name": "statexlab-381da53f4ee84a62a22a6db56bc852a7",
+      "running": false,
+      "status": "exited"
+    },
+    {
+      "name": "statexlab-6447f5894fbd4e70934dfe51cbc22699",
+      "running": false,
+      "status": "exited"
+    },
+    {
+      "name": "statexlab-d1d3349991df4051963e71ff23b73479",
+      "running": false,
+      "status": "exited"
+    },
+    {
+      "name": "statexlab-b83b5d9a0b2a4faeb998d6a3d82e5285",
+      "running": false,
+      "status": "exited"
+    },
+    {
+      "name": "statexlab-2878f96bfe784e6e986e7e6b585cb610",
+      "running": false,
+      "status": "exited"
+    }
+  ],
+  "volumes": [
+    {
+      "name": "statexlab-8d907bba14ce4d03bc5187ea95e85ec7",
+      "exists": true
+    },
+    {
+      "name": "statexlab-218ea4a5ddcd49a0a9e1e772c0ad2691",
+      "exists": true
+    }
+  ]
+}

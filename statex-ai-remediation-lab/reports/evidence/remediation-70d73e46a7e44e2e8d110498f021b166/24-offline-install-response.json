@@ -1,0 +1,17 @@
+{
+  "actor": "npm_worker",
+  "job": "install",
+  "commands": [
+    {
+      "exit": 0,
+      "stdout": "\nadded 6 packages in 662ms\n",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": ""
+    }
+  ],
+  "persistent_source_unchanged": {
+    "package.json": true,
+    "package-lock.json": true,
+    "app.cjs": true
+  }
+}

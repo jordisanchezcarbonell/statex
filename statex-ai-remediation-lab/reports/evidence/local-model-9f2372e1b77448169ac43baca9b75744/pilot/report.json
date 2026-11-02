@@ -1,0 +1,3169 @@
+{
+  "label": "pilot",
+  "seed": 42,
+  "model_connected": true,
+  "resources": [
+    {
+      "name": "statexlab-6447f5894fbd4e70934dfe51cbc22699",
+      "image": "sha256:95db10a7539668d814e207e170279cda32b89576ce6cc1675e183796f29b48c3",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": [
+        "CAP_CHOWN"
+      ],
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-218ea4a5ddcd49a0a9e1e772c0ad2691",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-d1d3349991df4051963e71ff23b73479",
+      "image": "sha256:95db10a7539668d814e207e170279cda32b89576ce6cc1675e183796f29b48c3",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-218ea4a5ddcd49a0a9e1e772c0ad2691",
+          "destination": "/work",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "name": "statexlab-b83b5d9a0b2a4faeb998d6a3d82e5285",
+      "image": "sha256:95db10a7539668d814e207e170279cda32b89576ce6cc1675e183796f29b48c3",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/secret": "rw,noexec,nosuid,size=1m,uid=1000,gid=1000,mode=0700",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-541241605593470ba841a63451b09905",
+      "image": "sha256:95db10a7539668d814e207e170279cda32b89576ce6cc1675e183796f29b48c3",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/control": "rw,noexec,nosuid,size=2m,uid=1000,gid=1000,mode=0755",
+        "/run": "rw,noexec,nosuid,size=2m,uid=1000,gid=1000,mode=0755",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-218ea4a5ddcd49a0a9e1e772c0ad2691",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-c1f12d23ce7d4679aafd79feabc47be6",
+      "image": "sha256:95db10a7539668d814e207e170279cda32b89576ce6cc1675e183796f29b48c3",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": [
+        "CAP_SYS_PTRACE"
+      ],
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "container:1784716465e418ee611b1425aa0888e52a86d6dca67549bf20aea1f49b601bf0",
+      "tmpfs": {
+        "/evidence": "rw,noexec,nosuid,size=128m,mode=0700",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-59a5337a675944d7800ae85c9a70608e",
+      "image": "sha256:95db10a7539668d814e207e170279cda32b89576ce6cc1675e183796f29b48c3",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/control": "rw,noexec,nosuid,size=2m,uid=1000,gid=1000,mode=0755",
+        "/run": "rw,noexec,nosuid,size=2m,uid=1000,gid=1000,mode=0755",
+        "/tmp": "rw,noexec,nosuid,size=32m",
+        "/work": "rw,nosuid,size=64m,uid=1000,gid=1000,mode=0700"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-218ea4a5ddcd49a0a9e1e772c0ad2691",
+          "destination": "/input",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "name": "statexlab-60d1481b230b415cbacb5ba0b2915c3d",
+      "image": "sha256:95db10a7539668d814e207e170279cda32b89576ce6cc1675e183796f29b48c3",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": [
+        "CAP_SYS_PTRACE"
+      ],
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "container:afb4ae63957404097426a97216db30aee3c1d547fe637bc7884e16b3119863ed",
+      "tmpfs": {
+        "/evidence": "rw,noexec,nosuid,size=128m,mode=0700",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-381da53f4ee84a62a22a6db56bc852a7",
+      "image": "sha256:daf72e2fc9e22c4a259b5183af1a0515256d0a3a1b564dd0e9bbe07aff3e4a40",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/control": "rw,noexec,nosuid,size=2m,uid=1000,gid=1000,mode=0755",
+        "/input": "rw,noexec,nosuid,size=2m,uid=1000,gid=1000,mode=0755",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-8d907bba14ce4d03bc5187ea95e85ec7",
+          "destination": "/weights",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "name": "statexlab-21373d01f5134c428b26db19badf48b5",
+      "image": "sha256:daf72e2fc9e22c4a259b5183af1a0515256d0a3a1b564dd0e9bbe07aff3e4a40",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": [
+        "CAP_SYS_PTRACE"
+      ],
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "container:25992652b87b48cdc9762ea739392631fbbbb79feb696d56415b71c473477dab",
+      "tmpfs": {
+        "/evidence": "rw,noexec,nosuid,size=128m,mode=0700",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-2878f96bfe784e6e986e7e6b585cb610",
+      "image": "sha256:95db10a7539668d814e207e170279cda32b89576ce6cc1675e183796f29b48c3",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-218ea4a5ddcd49a0a9e1e772c0ad2691",
+          "destination": "/work",
+          "rw": false
+        }
+      ]
+    }
+  ],
+  "cleanup": [],
+  "tests": {
+    "secret_initialized_outside_inference": true,
+    "baseline_behavior": true,
+    "model_json_valid": false
+  },
+  "observations": {
+    "01-controller-baseline-authorize": {
+      "role": "handler",
+      "status": "conclusive_python_document_profile",
+      "health": [
+        {
+          "age_ms": 54,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 60,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "untraced": [],
+          "phase": "complete"
+        }
+      ],
+      "target_container": "statexlab-541241605593470ba841a63451b09905",
+      "observer_container": "statexlab-c1f12d23ce7d4679aafd79feabc47be6",
+      "attached_before_exec": true,
+      "analysis": {
+        "status": "conclusive_python_document_profile",
+        "reasons": [],
+        "profile": "python3.11_synchronous_document_io",
+        "trace_tasks_closed": true,
+        "lifetimes_closed": true,
+        "processes": [
+          7
+        ],
+        "exits": {
+          "7": 0
+        },
+        "document_path_calls": [
+          {
+            "pid": 7,
+            "call": "openat(AT_FDCWD</work>, \"/work/package.json\", O_RDONLY|O_CLOEXEC|O_PATH) = 4"
+          },
+          {
+            "pid": 7,
+            "call": "openat(AT_FDCWD</work>, \"/work/package-lock.json\", O_RDONLY|O_CLOEXEC|O_PATH) = 4"
+          }
+        ],
+        "execs": [
+          {
+            "pid": 7,
+            "call": "execve(\"/usr/bin/python3.11\", [\"/usr/bin/python3.11\", \"-I\", \"-S\", \"-B\", \"/tooling/handler.py\"], 0xffffdcc6a030 /* 3 vars */) = 0"
+          }
+        ],
+        "syscall_census": {
+          "close_range": 1,
+          "openat": 65,
+          "dup3": 2,
+          "close": 57,
+          "prctl": 3,
+          "landlock_create_ruleset": 1,
+          "landlock_add_rule": 10,
+          "faccessat": 4,
+          "landlock_restrict_self": 1,
+          "execve": 1,
+          "brk": 11,
+          "mmap": 35,
+          "newfstatat": 191,
+          "read": 66,
+          "munmap": 18,
+          "mprotect": 16,
+          "set_tid_address": 1,
+          "set_robust_list": 1,
+          "rseq": 1,
+          "prlimit64": 1,
+          "getrandom": 2,
+          "futex": 14,
+          "gettid": 1,
+          "readlinkat": 1,
+          "sysinfo": 1,
+          "lseek": 66,
+          "getdents64": 10,
+          "fcntl": 4,
+          "ioctl": 34,
+          "rt_sigaction": 68,
+          "rt_sigprocmask": 2,
+          "mremap": 1,
+          "write": 1,
+          "exit_group": 1
+        },
+        "denials": [],
+        "document_io": [],
+        "runtime_file_mmaps": [
+          "/etc/ld.so.cache",
+          "/lib/aarch64-linux-gnu/libm.so.6",
+          "/lib/aarch64-linux-gnu/libm.so.6",
+          "/lib/aarch64-linux-gnu/libz.so.1",
+          "/lib/aarch64-linux-gnu/libz.so.1",
+          "/lib/aarch64-linux-gnu/libexpat.so.1",
+          "/lib/aarch64-linux-gnu/libexpat.so.1",
+          "/lib/aarch64-linux-gnu/libc.so.6",
+          "/lib/aarch64-linux-gnu/libc.so.6",
+          "/usr/lib/locale/C.utf8/LC_CTYPE",
+          "/usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache",
+          "/usr/lib/python3.11/lib-dynload/_hashlib.cpython-311-aarch64-linux-gnu.so",
+          "/usr/lib/python3.11/lib-dynload/_hashlib.cpython-311-aarch64-linux-gnu.so",
+          "/etc/ld.so.cache",
+          "/lib/aarch64-linux-gnu/libcrypto.so.3",
+          "/lib/aarch64-linux-gnu/libcrypto.so.3",
+          "/usr/lib/python3.11/lib-dynload/_json.cpython-311-aarch64-linux-gnu.so",
+          "/usr/lib/python3.11/lib-dynload/_json.cpython-311-aarch64-linux-gnu.so"
+        ]
+      },
+      "health_failures": [],
+      "bootstrap_completion": {
+        "phase": "complete",
+        "reaped": 1,
+        "bad_exits": 0,
+        "child_pid": 7
+      },
+      "runtime_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "02-controller-baseline": {
+      "role": "worker",
+      "status": "inconclusive",
+      "health": [
+        {
+          "age_ms": 49,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 58,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 65,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 76,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 77,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 84,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 97,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 101,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 109,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 120,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 131,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 41,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 44,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 51,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 65,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "age_ms": 91,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "untraced": [],
+          "phase": "complete"
+        }
+      ],
+      "target_container": "statexlab-59a5337a675944d7800ae85c9a70608e",
+      "observer_container": "statexlab-60d1481b230b415cbacb5ba0b2915c3d",
+      "attached_before_exec": true,
+      "analysis": {
+        "status": "inconclusive",
+        "reasons": [
+          "incomplete_lifetimes",
+          "node_npm_shared_fd_and_async_io_not_semantically_accounted"
+        ],
+        "profile": "node_npm_capture_only",
+        "trace_tasks_closed": true,
+        "lifetimes_closed": false,
+        "processes": [
+          7,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          102,
+          103,
+          104,
+          105,
+          130,
+          191,
+          203,
+          204,
+          205,
+          206,
+          207,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          234,
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          260,
+          262,
+          263,
+          264,
+          265,
+          266,
+          267,
+          268,
+          269,
+          271,
+          277,
+          278,
+          279,
+          280,
+          287,
+          288,
+          289,
+          290,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          297,
+          298,
+          299,
+          300,
+          312
+        ],
+        "exits": {
+          "130": 0,
+          "105": 0,
+          "104": 0,
+          "102": 0,
+          "103": 0,
+          "87": 0,
+          "86": 0,
+          "85": 0,
+          "88": 0,
+          "84": 0,
+          "89": 0,
+          "83": 0,
+          "207": 0,
+          "206": 0,
+          "204": 0,
+          "205": 0,
+          "203": 0,
+          "209": 0,
+          "191": 0,
+          "222": 0,
+          "219": 0,
+          "221": 0,
+          "220": 0,
+          "218": 0,
+          "234": 0,
+          "217": 0,
+          "215": 0,
+          "214": 0,
+          "213": 0,
+          "212": 0,
+          "211": 0,
+          "216": 0,
+          "210": 0,
+          "248": 0,
+          "246": 0,
+          "247": 0,
+          "245": 0,
+          "244": 0,
+          "260": 0,
+          "243": 0,
+          "241": 0,
+          "239": 0,
+          "240": 0,
+          "238": 0,
+          "237": 0,
+          "242": 0,
+          "236": 0,
+          "277": 0,
+          "280": 0,
+          "278": 0,
+          "279": 0,
+          "271": 0,
+          "287": 0,
+          "269": 0,
+          "267": 0,
+          "264": 0,
+          "266": 0,
+          "265": 0,
+          "263": 0,
+          "268": 0,
+          "262": 0,
+          "300": 0,
+          "299": 0,
+          "297": 0,
+          "298": 0,
+          "296": 0,
+          "312": 0,
+          "295": 0,
+          "291": 0,
+          "290": 0,
+          "292": 0,
+          "293": 0,
+          "289": 0,
+          "294": 0,
+          "288": 0,
+          "7": 0
+        },
+        "document_path_calls": [
+          {
+            "pid": 7,
+            "call": "newfstatat(AT_FDCWD</work>, \"/input/package.json\", {st_mode=S_IFREG|0644, st_size=220, ...}, 0) = 0"
+          },
+          {
+            "pid": 7,
+            "call": "newfstatat(AT_FDCWD</work>, \"/work/package.json\", 0xffffc6e80630, 0) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 7,
+            "call": "newfstatat(AT_FDCWD</work>, \"/input/package.json\", {st_mode=S_IFREG|0644, st_size=220, ...}, 0) = 0"
+          },
+          {
+            "pid": 7,
+            "call": "newfstatat(AT_FDCWD</work>, \"/work/package.json\", 0xffffc6e80630, 0) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 7,
+            "call": "openat(AT_FDCWD</work>, \"/input/package.json\", O_RDONLY|O_CLOEXEC) = 3"
+          },
+          {
+            "pid": 7,
+            "call": "openat(AT_FDCWD</work>, \"/work/package.json\", O_WRONLY|O_CREAT|O_TRUNC|O_CLOEXEC, 0666) = 4"
+          },
+          {
+            "pid": 7,
+            "call": "newfstatat(AT_FDCWD</work>, \"/input/package-lock.json\", {st_mode=S_IFREG|0644, st_size=2559, ...}, 0) = 0"
+          },
+          {
+            "pid": 7,
+            "call": "newfstatat(AT_FDCWD</work>, \"/work/package-lock.json\", 0xffffc6e80630, 0) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 7,
+            "call": "newfstatat(AT_FDCWD</work>, \"/input/package-lock.json\", {st_mode=S_IFREG|0644, st_size=2559, ...}, 0) = 0"
+          },
+          {
+            "pid": 7,
+            "call": "newfstatat(AT_FDCWD</work>, \"/work/package-lock.json\", 0xffffc6e80630, 0) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 7,
+            "call": "openat(AT_FDCWD</work>, \"/input/package-lock.json\", O_RDONLY|O_CLOEXEC) = 3"
+          },
+          {
+            "pid": 7,
+            "call": "openat(AT_FDCWD</work>, \"/work/package-lock.json\", O_WRONLY|O_CREAT|O_TRUNC|O_CLOEXEC, 0666) = 4"
+          },
+          {
+            "pid": 7,
+            "call": "openat(AT_FDCWD</work>, \"/work/package.json\", O_RDONLY|O_CLOEXEC) = 3"
+          },
+          {
+            "pid": 7,
+            "call": "openat(AT_FDCWD</work>, \"/work/package-lock.json\", O_RDONLY|O_CLOEXEC) = 3"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/bin/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/lib/cli/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/package.json\", AT_STATX_SYNC_AS_STAT, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=6597, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/package.json\", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=6597, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/graceful-fs/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/semver/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/semver/functions/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/semver/classes/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/semver/internal/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/proc-log/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/proc-log/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/lib/utils/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/redact/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/redact/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/config/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/config/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/walk-up-path/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/walk-up-path/dist/commonjs/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/ini/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/ini/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/nopt/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/nopt/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/abbrev/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/abbrev/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/which/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/which/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/isexe/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/isexe/dist/commonjs/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/config/lib/definitions/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/ci-info/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/node-gyp/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/fs-minipass/package.json\", O_RDONLY|O_CLOEXEC) = 18"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/fs-minipass/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minipass/package.json\", O_RDONLY|O_CLOEXEC) = 18"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minipass/dist/commonjs/package.json\", O_RDONLY|O_CLOEXEC) = 18"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/package.json\", AT_STATX_SYNC_AS_STAT, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=6597, ...}) = 0"
+          },
+          {
+            "pid": 104,
+            "call": "statx(AT_FDCWD</work>, \"/work/package.json\", AT_STATX_SYNC_AS_STAT, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=220, ...}) = 0"
+          },
+          {
+            "pid": 105,
+            "call": "statx(AT_FDCWD</work>, \"/package.json\", AT_STATX_SYNC_AS_STAT, STATX_ALL, 0xffff6b7ee4d0) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/chalk/package.json\", O_RDONLY|O_CLOEXEC) = 18"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/chalk/source/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/chalk/source/vendor/ansi-styles/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/chalk/source/vendor/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/chalk/source/vendor/supports-color/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/supports-color/package.json\", O_RDONLY|O_CLOEXEC) = 18"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/lib/commands/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/treeverse/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/treeverse/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/ms/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-audit-report/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-audit-report/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-audit-report/lib/reporters/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/libnpmfund/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/libnpmfund/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/arborist/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/map-workspaces/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/map-workspaces/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/name-from-folder/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/name-from-folder/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minimatch/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minimatch/dist/commonjs/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/brace-expansion/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/brace-expansion/dist/commonjs/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/balanced-match/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/balanced-match/dist/commonjs/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/package-json/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/package-json/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/json-parse-even-better-errors/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/json-parse-even-better-errors/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/glob/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/glob/dist/commonjs/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@isaacs/string-locale-compare/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-package-arg/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-package-arg/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/hosted-git-info/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/hosted-git-info/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/lru-cache/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/lru-cache/dist/commonjs/node/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/lru-cache/dist/commonjs/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/semver/ranges/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/validate-npm-package-name/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/validate-npm-package-name/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-pick-manifest/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-pick-manifest/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-install-checks/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-install-checks/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-normalize-package-bin/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-normalize-package-bin/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/metavuln-calculator/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/metavuln-calculator/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/pacote/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/pacote/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/cacache/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/cacache/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minipass-collect/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minipass-pipeline/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minipass-pipeline/node_modules/minipass/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/ssri/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/ssri/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/cacache/lib/util/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/fs/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/fs/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/fs/lib/cp/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/fs/lib/common/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/cacache/lib/content/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/cacache/package.json\", AT_STATX_SYNC_AS_STAT, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=1965, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/cacache/package.json\", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=1965, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/cacache/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/cacache/package.json\", AT_STATX_SYNC_AS_STAT, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=1965, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minipass-flush/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/installed-package-contents/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/installed-package-contents/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-bundled/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-bundled/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@gar/promise-retry/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@gar/promise-retry/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/tar/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/tar/dist/commonjs/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/pacote/lib/util/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/git/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/git/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/promise-spawn/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/promise-spawn/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-packlist/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-packlist/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/ignore-walk/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/ignore-walk/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/node-gyp/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/node-gyp/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-registry-fetch/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-registry-fetch/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minipass-fetch/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minipass-fetch/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minizlib/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minizlib/dist/commonjs/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minipass-sized/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minipass-sized/dist/commonjs/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/iconv-lite/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/iconv-lite/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/safer-buffer/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/iconv-lite/lib/helpers/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minipass-fetch/package.json\", AT_STATX_SYNC_AS_STAT, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=1747, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minipass-fetch/package.json\", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=1747, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/minipass-fetch/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-registry-fetch/package.json\", AT_STATX_SYNC_AS_STAT, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=1684, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-registry-fetch/package.json\", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=1684, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/npm-registry-fetch/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/make-fetch-happen/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/make-fetch-happen/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/make-fetch-happen/lib/cache/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/http-cache-semantics/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/negotiator/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/negotiator/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/agent/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/agent/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/http-proxy-agent/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/http-proxy-agent/dist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/debug/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/debug/src/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/agent-base/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/agent-base/dist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/https-proxy-agent/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/https-proxy-agent/dist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/socks-proxy-agent/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/socks-proxy-agent/dist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/socks/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/socks/build/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/socks/build/client/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/smart-buffer/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/smart-buffer/build/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/socks/build/common/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/ip-address/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/ip-address/dist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/ip-address/dist/v4/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/ip-address/dist/v6/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/make-fetch-happen/package.json\", AT_STATX_SYNC_AS_STAT, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=1800, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/make-fetch-happen/package.json\", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=1800, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/make-fetch-happen/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/jsonparse/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/pacote/package.json\", AT_STATX_SYNC_AS_STAT, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=1956, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/pacote/package.json\", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=1956, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/pacote/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/sigstore/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/sigstore/dist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/bundle/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/bundle/dist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/protobuf-specs/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/protobuf-specs/dist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/protobuf-specs/dist/__generated__/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/protobuf-specs/dist/__generated__/google/protobuf/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/protobuf-specs/dist/__generated__/google/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/sign/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/sign/dist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/sign/dist/bundler/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/sign/dist/util/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/core/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/core/dist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/core/dist/asn1/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/core/dist/rfc3161/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/core/dist/x509/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/sign/dist/signer/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/sign/dist/signer/fulcio/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/sign/dist/external/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/sign/dist/witness/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/sign/dist/witness/tlog/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/protobuf-specs/dist/rekor/v2/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/protobuf-specs/dist/rekor/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/protobuf-specs/dist/__generated__/rekor/v2/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/protobuf-specs/dist/__generated__/rekor/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/sign/dist/witness/tsa/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/sign/dist/identity/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/tuf/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/tuf/dist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/tuf-js/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/tuf-js/dist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@tufjs/models/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@tufjs/models/dist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@tufjs/models/dist/utils/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@tufjs/canonical-json/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@tufjs/canonical-json/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/tuf-js/dist/utils/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/tuf-js/package.json\", AT_STATX_SYNC_AS_STAT, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=1058, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/tuf-js/package.json\", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=1058, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/tuf-js/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/tuf/package.json\", AT_STATX_SYNC_AS_STAT, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=987, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "statx(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/tuf/package.json\", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, {stx_mask=STATX_ALL|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFREG|0644, stx_size=987, ...}) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/tuf/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/verify/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/verify/dist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/verify/dist/bundle/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/verify/dist/trust/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/verify/dist/key/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/verify/dist/timestamp/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@sigstore/verify/dist/tlog/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/proggy/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/proggy/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/promise-call-limit/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/promise-call-limit/dist/commonjs/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/bin-links/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/bin-links/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/write-file-atomic/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/write-file-atomic/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/signal-exit/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/signal-exit/dist/cjs/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/cmd-shim/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/cmd-shim/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/read-cmd-shim/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/read-cmd-shim/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/query/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/@npmcli/query/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/postcss-selector-parser/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/postcss-selector-parser/dist/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/postcss-selector-parser/dist/selectors/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/postcss-selector-parser/dist/util/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/cssesc/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/util-deprecate/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/parse-conflict-json/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/parse-conflict-json/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/just-diff/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/just-diff-apply/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/json-stringify-nice/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/common-ancestor-path/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/common-ancestor-path/dist/commonjs/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/usr/local/lib/node_modules/npm/node_modules/promise-all-reject-late/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 104,
+            "call": "openat(AT_FDCWD</work>, \"/work/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 104,
+            "call": "openat(AT_FDCWD</work>, \"/work/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 105,
+            "call": "openat(AT_FDCWD</work>, \"/work/package-lock.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 102,
+            "call": "openat(AT_FDCWD</work>, \"/work/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 102,
+            "call": "openat(AT_FDCWD</work>, \"/work/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 103,
+            "call": "openat(AT_FDCWD</work>, \"/work/package-lock.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 102,
+            "call": "openat(AT_FDCWD</work>, \"/work/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 102,
+            "call": "openat(AT_FDCWD</work>, \"/work/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 102,
+            "call": "openat(AT_FDCWD</work>, \"/work/package.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 102,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/.package-lock.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 104,
+            "call": "openat(AT_FDCWD</work>, \"/work/package-lock.json\", O_RDONLY|O_CLOEXEC) = 19"
+          },
+          {
+            "pid": 103,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/which/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 105,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/shebang-regex/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 104,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/shebang-command/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 102,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/path-key/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 103,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/isexe/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 105,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/cross-spawn/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 105,
+            "call": "statx(AT_FDCWD</work>, \"/work/node_modules/shebang-regex/package.json\", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, 0xffff6b7ee4d0) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 102,
+            "call": "statx(AT_FDCWD</work>, \"/work/node_modules/isexe/package.json\", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, 0xffffa943b4d0) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 102,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/shebang-regex/package.json\", O_WRONLY|O_CREAT|O_TRUNC|O_NOFOLLOW|O_CLOEXEC, 0666) = 20"
+          },
+          {
+            "pid": 105,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/isexe/package.json\", O_WRONLY|O_CREAT|O_TRUNC|O_NOFOLLOW|O_CLOEXEC, 0666) = 22"
+          },
+          {
+            "pid": 104,
+            "call": "statx(AT_FDCWD</work>, \"/work/node_modules/shebang-command/package.json\", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, 0xffff6bffe4d0) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 105,
+            "call": "statx(AT_FDCWD</work>, \"/work/node_modules/path-key/package.json\", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, 0xffff6b7ee4d0) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 105,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/shebang-command/package.json\", O_WRONLY|O_CREAT|O_TRUNC|O_NOFOLLOW|O_CLOEXEC, 0666) = 21"
+          },
+          {
+            "pid": 104,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/path-key/package.json\", O_WRONLY|O_CREAT|O_TRUNC|O_NOFOLLOW|O_CLOEXEC, 0666) = 23"
+          },
+          {
+            "pid": 105,
+            "call": "statx(AT_FDCWD</work>, \"/work/node_modules/which/package.json\", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, 0xffff6b7ee4d0) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 105,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/which/package.json\", O_WRONLY|O_CREAT|O_TRUNC|O_NOFOLLOW|O_CLOEXEC, 0666) = 19"
+          },
+          {
+            "pid": 104,
+            "call": "statx(AT_FDCWD</work>, \"/work/node_modules/cross-spawn/package.json\", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW, STATX_ALL, 0xffff6bffe4d0) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 105,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/cross-spawn/package.json\", O_WRONLY|O_CREAT|O_TRUNC|O_NOFOLLOW|O_CLOEXEC, 0666) = 20"
+          },
+          {
+            "pid": 104,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/.package-lock.json\", O_WRONLY|O_CREAT|O_TRUNC|O_CLOEXEC, 0666) = 19"
+          },
+          {
+            "pid": 210,
+            "call": "openat(AT_FDCWD</work>, \"/work/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 210,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/cross-spawn/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 210,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/cross-spawn/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 210,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/cross-spawn/lib/util/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 210,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/which/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 210,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/isexe/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 210,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/path-key/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 210,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/shebang-command/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 210,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/shebang-regex/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 236,
+            "call": "openat(AT_FDCWD</work>, \"/work/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 236,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/cross-spawn/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 236,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/cross-spawn/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 236,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/cross-spawn/lib/util/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 236,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/which/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 236,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/isexe/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 236,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/path-key/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 236,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/shebang-command/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 236,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/shebang-regex/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 262,
+            "call": "openat(AT_FDCWD</work>, \"/work/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 262,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/cross-spawn/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 262,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/cross-spawn/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 262,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/cross-spawn/lib/util/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 262,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/which/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 262,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/isexe/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 262,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/path-key/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 262,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/shebang-command/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 262,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/shebang-regex/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 288,
+            "call": "openat(AT_FDCWD</work>, \"/work/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 288,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/cross-spawn/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 288,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/cross-spawn/lib/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 288,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/cross-spawn/lib/util/package.json\", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)"
+          },
+          {
+            "pid": 288,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/which/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 288,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/isexe/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 288,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/path-key/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 288,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/shebang-command/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 288,
+            "call": "openat(AT_FDCWD</work>, \"/work/node_modules/shebang-regex/package.json\", O_RDONLY|O_CLOEXEC) = 17"
+          },
+          {
+            "pid": 7,
+            "call": "openat(AT_FDCWD</work>, \"/work/package.json\", O_RDONLY|O_CLOEXEC) = 3"
+          },
+          {
+            "pid": 7,
+            "call": "openat(AT_FDCWD</work>, \"/work/package-lock.json\", O_RDONLY|O_CLOEXEC) = 3"
+          }
+        ],
+        "execs": [
+          {
+            "pid": 7,
+            "call": "execve(\"/usr/bin/python3.11\", [\"/usr/bin/python3.11\", \"-I\", \"-S\", \"-B\", \"/tooling/worker.py\"], 0xfffffb2e9fe0 /* 3 vars */) = 0"
+          },
+          {
+            "pid": 83,
+            "call": "execve(\"/usr/local/bin/node\", [\"/usr/local/bin/node\", \"/usr/local/lib/node_modules/npm/bin/npm-cli.js\", \"ci\", \"--offline\", \"--ignore-scripts\", \"--no-audit\", \"--no-fund\"], 0xffff88b08f30 /* 10 vars */) = 0"
+          },
+          {
+            "pid": 191,
+            "call": "execve(\"/usr/local/bin/node\", [\"/usr/local/bin/node\", \"--check\", \"app.cjs\"], 0xffff88b08f30 /* 10 vars */) = 0"
+          },
+          {
+            "pid": 210,
+            "call": "execve(\"/usr/local/bin/node\", [\"/usr/local/bin/node\", \"app.cjs\", \"hello\"], 0xffff88b08f30 /* 10 vars */) = 0"
+          },
+          {
+            "pid": 217,
+            "call": "execve(\"/usr/local/bin/node\", [\"/usr/local/bin/node\", \"-e\", \"process.stdout.write(JSON.stringify({message:process.argv[1]}))\", \"hello\"], 0x32d690b0 /* 10 vars */) = 0"
+          },
+          {
+            "pid": 236,
+            "call": "execve(\"/usr/local/bin/node\", [\"/usr/local/bin/node\", \"app.cjs\", \"StateX ficticio\"], 0xffff88b08f30 /* 10 vars */) = 0"
+          },
+          {
+            "pid": 243,
+            "call": "execve(\"/usr/local/bin/node\", [\"/usr/local/bin/node\", \"-e\", \"process.stdout.write(JSON.stringify({message:process.argv[1]}))\", \"StateX ficticio\"], 0x2dc562a0 /* 10 vars */) = 0"
+          },
+          {
+            "pid": 262,
+            "call": "execve(\"/usr/local/bin/node\", [\"/usr/local/bin/node\", \"app.cjs\", \"spaces & quotes \\\"\"], 0xffff88b08f30 /* 10 vars */) = 0"
+          },
+          {
+            "pid": 269,
+            "call": "execve(\"/usr/local/bin/node\", [\"/usr/local/bin/node\", \"-e\", \"process.stdout.write(JSON.stringify({message:process.argv[1]}))\", \"spaces & quotes \\\"\"], 0x3ecb5bf0 /* 10 vars */) = 0"
+          },
+          {
+            "pid": 288,
+            "call": "execve(\"/usr/local/bin/node\", [\"/usr/local/bin/node\", \"app.cjs\", \"\\303\\241\\303\\251\\351\\233\\252\"], 0xffff88b09ef0 /* 10 vars */) = 0"
+          },
+          {
+            "pid": 295,
+            "call": "execve(\"/usr/local/bin/node\", [\"/usr/local/bin/node\", \"-e\", \"process.stdout.write(JSON.stringify({message:process.argv[1]}))\", \"\\303\\241\\303\\251\\351\\233\\252\"], 0xe6da7b0 /* 10 vars */) = 0"
+          }
+        ],
+        "syscall_census": {
+          "close_range": 13,
+          "openat": 2421,
+          "dup3": 26,
+          "close": 1871,
+          "prctl": 78,
+          "landlock_create_ruleset": 1,
+          "landlock_add_rule": 12,
+          "faccessat": 16,
+          "landlock_restrict_self": 1,
+          "execve": 11,
+          "brk": 281,
+          "mmap": 900,
+          "newfstatat": 814,
+          "read": 1707,
+          "munmap": 935,
+          "mprotect": 612,
+          "set_tid_address": 11,
+          "set_robust_list": 80,
+          "rseq": 76,
+          "prlimit64": 102,
+          "getrandom": 53,
+          "futex": 3914,
+          "gettid": 42,
+          "readlinkat": 18,
+          "sysinfo": 21,
+          "lseek": 186,
+          "getdents64": 146,
+          "fcntl": 293,
+          "ioctl": 224,
+          "rt_sigaction": 1201,
+          "rt_sigprocmask": 442,
+          "epoll_create1": 35,
+          "sendfile": 63,
+          "chdir": 1,
+          "mkdirat": 100,
+          "utimensat": 88,
+          "listxattr": 88,
+          "fchmodat": 89,
+          "pipe2": 70,
+          "clone": 75,
+          "ppoll": 11,
+          "getpid": 284,
+          "capget": 154,
+          "getuid": 156,
+          "geteuid": 154,
+          "getgid": 155,
+          "getegid": 155,
+          "fstat": 148,
+          "uname": 12,
+          "io_uring_setup": 34,
+          "write": 276,
+          "eventfd2": 34,
+          "epoll_ctl": 104,
+          "epoll_pwait": 240,
+          "madvise": 488,
+          "statx": 4737,
+          "pread64": 296,
+          "getcwd": 12,
+          "sched_getaffinity": 7,
+          "socket": 1,
+          "getgroups": 2,
+          "getppid": 1,
+          "exit": 55,
+          "umask": 2,
+          "sched_getparam": 2,
+          "sched_getscheduler": 2,
+          "symlinkat": 1,
+          "pwritev": 543,
+          "renameat": 543,
+          "exit_group": 11,
+          "wait4": 10,
+          "socketpair": 12,
+          "setsockopt": 48,
+          "shutdown": 4,
+          "getsockname": 20,
+          "getsockopt": 20,
+          "rt_sigreturn": 4
+        },
+        "denials": [
+          {
+            "pid": 83,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 84,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 83,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/maps\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/cgroup\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/proc/meminfo\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/sys/devices/system/cpu/online\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/proc/stat\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/proc/sys/vm/overcommit_memory\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 83,
+            "call": "socket(AF_NETLINK, SOCK_RAW|SOCK_CLOEXEC, NETLINK_ROUTE) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/etc/resolv.conf\", O_RDONLY) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 83,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/cgroup\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 105,
+            "call": "openat(AT_FDCWD</work>, \"/sys/devices/system/cpu/online\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 105,
+            "call": "openat(AT_FDCWD</work>, \"/proc/stat\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 191,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 203,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 191,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 191,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/maps\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 191,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/cgroup\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 191,
+            "call": "openat(AT_FDCWD</work>, \"/proc/meminfo\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 210,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 211,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 210,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 210,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/maps\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 210,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/cgroup\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 210,
+            "call": "openat(AT_FDCWD</work>, \"/proc/meminfo\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 210,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 217,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 218,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 217,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 217,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/maps\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 217,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/cgroup\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 217,
+            "call": "openat(AT_FDCWD</work>, \"/proc/meminfo\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 236,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 237,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 236,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 236,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/maps\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 236,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/cgroup\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 236,
+            "call": "openat(AT_FDCWD</work>, \"/proc/meminfo\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 236,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 243,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 244,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 243,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 243,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/maps\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 243,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/cgroup\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 243,
+            "call": "openat(AT_FDCWD</work>, \"/proc/meminfo\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 243,
+            "call": "openat(AT_FDCWD</work>, \"/sys/devices/system/cpu/online\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 243,
+            "call": "openat(AT_FDCWD</work>, \"/proc/stat\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 262,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 263,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 262,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 262,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/maps\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 262,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/cgroup\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 262,
+            "call": "openat(AT_FDCWD</work>, \"/proc/meminfo\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 262,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 269,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 271,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 269,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 269,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/maps\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 269,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/cgroup\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 269,
+            "call": "openat(AT_FDCWD</work>, \"/proc/meminfo\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 288,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 289,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 288,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 288,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/maps\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 288,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/cgroup\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 288,
+            "call": "openat(AT_FDCWD</work>, \"/proc/meminfo\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 288,
+            "call": "openat(AT_FDCWD</work>, \"/sys/devices/system/cpu/online\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 288,
+            "call": "openat(AT_FDCWD</work>, \"/proc/stat\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 288,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 295,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 296,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 295,
+            "call": "io_uring_setup(256, {flags=0x10000 /* IORING_SETUP_??? */, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)"
+          },
+          {
+            "pid": 295,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/maps\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 295,
+            "call": "openat(AT_FDCWD</work>, \"/proc/self/cgroup\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          },
+          {
+            "pid": 295,
+            "call": "openat(AT_FDCWD</work>, \"/proc/meminfo\", O_RDONLY|O_CLOEXEC) = -1 EACCES (Permission denied)"
+          }
+        ],
+        "document_io": [],
+        "runtime_file_mmaps": []
+      },
+      "health_failures": [],
+      "bootstrap_completion": {
+        "phase": "complete",
+        "reaped": 1,
+        "bad_exits": 0,
+        "child_pid": 7
+      },
+      "runtime_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "ledger": [
+    {
+      "proposal_origin": "controller_comparison_not_model",
+      "request": {
+        "op": "validate"
+      },
+      "executor_response": {
+        "ok": true,
+        "actor": "file_executor",
+        "dispatch": "validate"
+      },
+      "effect_actor": "file_executor",
+      "controller_role": "schedule_isolated_handler_only"
+    },
+    {
+      "proposal_origin": "controller_comparison_not_model",
+      "request": {
+        "op": "validate"
+      },
+      "effect_actor": "validation_worker",
+      "controller_role": "fixed_job_dispatch_not_authorship",
+      "commands_fixed_in": "worker.py"
+    }
+  ],
+  "proposal_origin": "local_model",
+  "functional_remediation": false,
+  "security_observation": "inconclusive",
+  "created_utc": "2026-11-01T20:55:32.109454+00:00",
+  "workspace": "statexlab-218ea4a5ddcd49a0a9e1e772c0ad2691",
+  "baseline_hashes": {
+    "package.json": "96cb6cb6f0fabee6f482e8a8724e3701bb589e1f1b68904f6e469b4f5f0dd276",
+    "package-lock.json": "cf058e02e4d5d73ec2557af648a1b9df39acd32409212984193f27ccdb1b5b1c"
+  },
+  "retained_containers": [
+    {
+      "name": "statexlab-c1f12d23ce7d4679aafd79feabc47be6",
+      "stop_exit": 0,
+      "running": false
+    },
+    {
+      "name": "statexlab-541241605593470ba841a63451b09905",
+      "stop_exit": 0,
+      "running": false
+    },
+    {
+      "name": "statexlab-60d1481b230b415cbacb5ba0b2915c3d",
+      "stop_exit": 0,
+      "running": false
+    },
+    {
+      "name": "statexlab-59a5337a675944d7800ae85c9a70608e",
+      "stop_exit": 0,
+      "running": false
+    },
+    {
+      "name": "statexlab-21373d01f5134c428b26db19badf48b5",
+      "stop_exit": 0,
+      "running": false
+    },
+    {
+      "name": "statexlab-381da53f4ee84a62a22a6db56bc852a7",
+      "stop_exit": 0,
+      "running": false
+    },
+    {
+      "name": "statexlab-6447f5894fbd4e70934dfe51cbc22699",
+      "stop_exit": 0,
+      "running": false
+    },
+    {
+      "name": "statexlab-d1d3349991df4051963e71ff23b73479",
+      "stop_exit": 0,
+      "running": false
+    },
+    {
+      "name": "statexlab-b83b5d9a0b2a4faeb998d6a3d82e5285",
+      "stop_exit": 0,
+      "running": false
+    },
+    {
+      "name": "statexlab-2878f96bfe784e6e986e7e6b585cb610",
+      "stop_exit": 0,
+      "running": false
+    }
+  ],
+  "inference": {
+    "mode": "generate",
+    "observation": "inconclusive_native_threaded_profile",
+    "health": [
+      {
+        "age_ms": 137,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 195,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 85,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 53,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 136,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 110,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 84,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 60,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 150,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 147,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 131,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 117,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 93,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 66,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 145,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 110,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 75,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 137,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 120,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 126,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 112,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 119,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 93,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 72,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 49,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 133,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 129,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 112,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 101,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 86,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 67,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 139,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 106,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 79,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 51,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 136,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 110,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 89,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 69,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 46,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 139,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 128,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 107,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 97,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 83,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 64,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 53,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 140,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 115,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 90,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 70,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 105,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 85,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 62,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 31,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 118,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 50,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 130,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 102,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 91,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 65,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 41,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 116,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 95,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 67,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 66,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 50,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 123,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 97,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 66,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 41,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 118,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 89,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 64,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 39,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 119,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 44,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 146,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 65,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 37,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 137,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 63,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 51,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 45,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 129,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 120,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 113,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 105,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 102,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 99,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 92,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 85,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 73,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 54,
+        "phase": "waiting",
+        "exit": null
+      },
+      {
+        "age_ms": 58,
+        "phase": "complete",
+        "exit": {
+          "code": 0,
+          "signal": null
+        }
+      }
+    ],
+    "started": true,
+    "prompt_sha256": "cae6f64867149dd4b8948c9f781202941d35e07cd537bd148df5fc8cc88427ee",
+    "grammar_sha256": "1a3e3469892957861029adcd24ad0c886b778a942dd4a18cc146238ad56474dd",
+    "parameters": {
+      "context_tokens": 8192,
+      "max_generated_tokens": 1536,
+      "threads": 4,
+      "batch_threads": 4,
+      "gpu_layers": 0,
+      "temperature": 0.2,
+      "top_k": 40,
+      "top_p": 0.95,
+      "grammar": "generic JSON object grammar; no action/value forced by grammar",
+      "chat_template": "manual Qwen ChatML; conversation mode off",
+      "memory_bytes": 3221225472,
+      "cpu_quota": 4,
+      "timeout_seconds": 360,
+      "seed": 42
+    },
+    "target": "statexlab-381da53f4ee84a62a22a6db56bc852a7",
+    "applied_policy": {
+      "Memory": 3221225472,
+      "NanoCpus": 4000000000,
+      "PidsLimit": 48,
+      "NetworkMode": "none",
+      "ReadonlyRootfs": true,
+      "Privileged": false,
+      "CapAdd": null,
+      "CapDrop": [
+        "ALL"
+      ],
+      "PidMode": "",
+      "IpcMode": "private",
+      "SecurityOpt": [
+        "no-new-privileges"
+      ],
+      "DeviceRequests": null
+    },
+    "observer": "statexlab-21373d01f5134c428b26db19badf48b5",
+    "attached_before_exec": true,
+    "duration_seconds": 27.600052,
+    "raw_response_sha256": "86a204dc9e8b25dda5a1e28928ecbc769333b744d2ec43c6166bd41a261b213f",
+    "raw_response_bytes": 392,
+    "stderr_sha256": "ca26cced7bdb2edbd9ed49648fb642dc5761d636bb7971e5feb4188d545c57e0",
+    "bootstrap_completion": {
+      "phase": "complete",
+      "reaped": 1,
+      "bad_exits": 0,
+      "child_pid": 7
+    },
+    "health_failures": [],
+    "exit_records": {
+      "trace.7": true,
+      "trace.77": true,
+      "trace.96": true,
+      "trace.97": true,
+      "trace.98": true
+    },
+    "observation_reasons": [
+      "native_mmap_thread_and_shared_fd_semantics_not_fully_accounted"
+    ],
+    "docker_oom_killed": false
+  },
+  "stdout_framing": {
+    "codec": "llama.cpp-b5046-explicit-eog-stdout-suffix",
+    "removed_backend_marker": true,
+    "removed_bytes": 17,
+    "raw_sha256": "86a204dc9e8b25dda5a1e28928ecbc769333b744d2ec43c6166bd41a261b213f",
+    "content_sha256": "3b262c2c130557e895a6231e5fe3956ba02d3cdd028cd75bdefaeff91b0394af",
+    "content_bytes": 375
+  },
+  "proposal_rejection": "export_must_be_final_once",
+  "final_hashes": {
+    "package.json": "96cb6cb6f0fabee6f482e8a8724e3701bb589e1f1b68904f6e469b4f5f0dd276",
+    "package-lock.json": "cf058e02e4d5d73ec2557af648a1b9df39acd32409212984193f27ccdb1b5b1c"
+  },
+  "workspace_unchanged": true,
+  "retained_volumes": [
+    "statexlab-218ea4a5ddcd49a0a9e1e772c0ad2691"
+  ],
+  "retention": "Stopped containers and volumes retained by user instruction; no removal"
+}

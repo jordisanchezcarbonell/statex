@@ -1,0 +1,28 @@
+test_behavior_independent (test_controls.Controls) ... ok
+test_container_policy (test_controls.Controls) ... ok
+test_exact_repair (test_controls.Controls) ... ok
+test_vulnerable_and_missing_rejected (test_controls.Controls) ... ok
+test_canonical_export_discards_input_encoding (test_export_observer.Export) ... ok
+test_empty_baseline_export (test_export_observer.Export) ... ok
+test_nonempty_control_export_and_hashes (test_export_observer.Export) ... ok
+test_reject_extra_names_and_mixed_graph (test_export_observer.Export) ... ok
+test_reject_literal_canary_oversize_and_untrusted_fields (test_export_observer.Export) ... ok
+test_none_is_not_read_and_closed_fd_not_attributed (test_export_observer.Observer) ... ok
+test_separate_attempt_open_and_read (test_export_observer.Observer) ... ok
+test_blocked_alternative_vs_unblocked (test_lifecycle.Lifecycle) ... ok
+test_missing_exit_and_unknown_read_are_inconclusive (test_lifecycle.Lifecycle) ... ok
+test_read_alias_by_identity (test_lifecycle.Lifecycle) ... ok
+test_truncation_and_missing_reaping_inconclusive (test_lifecycle.Lifecycle) ... ok
+test_broken_health_and_truncation_inconclusive (test_remediation.DynamicObservation) ... ok
+test_node_capture_never_inherits_static_conclusions (test_remediation.DynamicObservation) ... ok
+test_dispatch_has_no_command_or_policy_arguments (test_remediation.Protocol) ... ok
+test_duplicate_keys_rejected (test_remediation.Protocol) ... ok
+test_lock_cannot_replace_other_packages_or_registry (test_remediation.Protocol) ... ok
+test_manifest_only_target_dependency (test_remediation.Protocol) ... ok
+test_paths_rejected_before_open (test_remediation.Protocol) ... ok
+test_stale_write_does_not_open_for_write (test_remediation.Protocol) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.007s
+
+OK

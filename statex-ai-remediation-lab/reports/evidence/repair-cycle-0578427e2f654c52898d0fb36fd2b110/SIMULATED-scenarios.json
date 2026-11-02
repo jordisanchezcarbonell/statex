@@ -1,0 +1,363 @@
+{
+  "invalid_proposal_then_success": {
+    "origin": "SIMULATED_RESPONSE_NOT_MODEL",
+    "max_attempts": 3,
+    "attempts": [
+      {
+        "attempt": 1,
+        "stages": [
+          "hallazgo",
+          "propuesta",
+          "validaci\u00f3n del cambio",
+          "resultado"
+        ],
+        "actions": [
+          {
+            "action": "proposal",
+            "actor": "SIMULATED_RESPONSE_NOT_MODEL"
+          }
+        ],
+        "origin": "SIMULATED_RESPONSE_NOT_MODEL",
+        "baseline_hashes": {
+          "package.json": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "diagnostic": {
+          "attempt": 1,
+          "code": "contract_rejected",
+          "retry_from": "clean_baseline",
+          "required_change": "only package.json dependencies.cross-spawn to 7.0.5"
+        }
+      },
+      {
+        "attempt": 2,
+        "stages": [
+          "hallazgo",
+          "propuesta",
+          "validaci\u00f3n del cambio",
+          "aplicaci\u00f3n aislada",
+          "pruebas independientes",
+          "revisi\u00f3n",
+          "resultado"
+        ],
+        "actions": [
+          {
+            "action": "proposal",
+            "actor": "SIMULATED_RESPONSE_NOT_MODEL"
+          },
+          {
+            "action": "contract_validation",
+            "actor": "controller"
+          },
+          {
+            "action": "manifest_write",
+            "actor": "isolated_file_executor"
+          },
+          {
+            "action": "lock_regeneration",
+            "actor": "offline_npm"
+          },
+          {
+            "action": "lock_commit",
+            "actor": "controller_and_file_executor"
+          },
+          {
+            "action": "install",
+            "actor": "offline_npm"
+          },
+          {
+            "action": "build_and_behavior",
+            "actor": "independent_validator"
+          },
+          {
+            "action": "review_and_export",
+            "actor": "controller"
+          }
+        ],
+        "origin": "SIMULATED_RESPONSE_NOT_MODEL",
+        "baseline_hashes": {
+          "package.json": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "review": {
+          "immutable_tests_and_policy": true,
+          "exact_graph": true
+        },
+        "patch": {
+          "simulation": true
+        },
+        "functional_remediation": true
+      }
+    ],
+    "functional_remediation": true,
+    "security_observation": "inconclusive",
+    "automatic_promotion": false,
+    "result": "inconcluso"
+  },
+  "functional_failure_then_success": {
+    "origin": "SIMULATED_RESPONSE_NOT_MODEL",
+    "max_attempts": 3,
+    "attempts": [
+      {
+        "attempt": 1,
+        "stages": [
+          "hallazgo",
+          "propuesta",
+          "validaci\u00f3n del cambio",
+          "aplicaci\u00f3n aislada",
+          "pruebas independientes",
+          "resultado"
+        ],
+        "actions": [
+          {
+            "action": "proposal",
+            "actor": "SIMULATED_RESPONSE_NOT_MODEL"
+          },
+          {
+            "action": "contract_validation",
+            "actor": "controller"
+          },
+          {
+            "action": "manifest_write",
+            "actor": "isolated_file_executor"
+          },
+          {
+            "action": "lock_regeneration",
+            "actor": "offline_npm"
+          },
+          {
+            "action": "lock_commit",
+            "actor": "controller_and_file_executor"
+          },
+          {
+            "action": "install",
+            "actor": "offline_npm"
+          }
+        ],
+        "origin": "SIMULATED_RESPONSE_NOT_MODEL",
+        "baseline_hashes": {
+          "package.json": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "diagnostic": {
+          "attempt": 1,
+          "code": "functional_failed",
+          "retry_from": "clean_baseline",
+          "required_change": "only package.json dependencies.cross-spawn to 7.0.5"
+        }
+      },
+      {
+        "attempt": 2,
+        "stages": [
+          "hallazgo",
+          "propuesta",
+          "validaci\u00f3n del cambio",
+          "aplicaci\u00f3n aislada",
+          "pruebas independientes",
+          "revisi\u00f3n",
+          "resultado"
+        ],
+        "actions": [
+          {
+            "action": "proposal",
+            "actor": "SIMULATED_RESPONSE_NOT_MODEL"
+          },
+          {
+            "action": "contract_validation",
+            "actor": "controller"
+          },
+          {
+            "action": "manifest_write",
+            "actor": "isolated_file_executor"
+          },
+          {
+            "action": "lock_regeneration",
+            "actor": "offline_npm"
+          },
+          {
+            "action": "lock_commit",
+            "actor": "controller_and_file_executor"
+          },
+          {
+            "action": "install",
+            "actor": "offline_npm"
+          },
+          {
+            "action": "build_and_behavior",
+            "actor": "independent_validator"
+          },
+          {
+            "action": "review_and_export",
+            "actor": "controller"
+          }
+        ],
+        "origin": "SIMULATED_RESPONSE_NOT_MODEL",
+        "baseline_hashes": {
+          "package.json": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "review": {
+          "immutable_tests_and_policy": true,
+          "exact_graph": true
+        },
+        "patch": {
+          "simulation": true
+        },
+        "functional_remediation": true
+      }
+    ],
+    "functional_remediation": true,
+    "security_observation": "inconclusive",
+    "automatic_promotion": false,
+    "result": "inconcluso"
+  },
+  "attempt_exhaustion": {
+    "origin": "SIMULATED_RESPONSE_NOT_MODEL",
+    "max_attempts": 3,
+    "attempts": [
+      {
+        "attempt": 1,
+        "stages": [
+          "hallazgo",
+          "propuesta",
+          "validaci\u00f3n del cambio",
+          "resultado"
+        ],
+        "actions": [
+          {
+            "action": "proposal",
+            "actor": "SIMULATED_RESPONSE_NOT_MODEL"
+          }
+        ],
+        "origin": "SIMULATED_RESPONSE_NOT_MODEL",
+        "baseline_hashes": {
+          "package.json": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "diagnostic": {
+          "attempt": 1,
+          "code": "contract_rejected",
+          "retry_from": "clean_baseline",
+          "required_change": "only package.json dependencies.cross-spawn to 7.0.5"
+        }
+      },
+      {
+        "attempt": 2,
+        "stages": [
+          "hallazgo",
+          "propuesta",
+          "validaci\u00f3n del cambio",
+          "resultado"
+        ],
+        "actions": [
+          {
+            "action": "proposal",
+            "actor": "SIMULATED_RESPONSE_NOT_MODEL"
+          }
+        ],
+        "origin": "SIMULATED_RESPONSE_NOT_MODEL",
+        "baseline_hashes": {
+          "package.json": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "diagnostic": {
+          "attempt": 2,
+          "code": "contract_rejected",
+          "retry_from": "clean_baseline",
+          "required_change": "only package.json dependencies.cross-spawn to 7.0.5"
+        }
+      },
+      {
+        "attempt": 3,
+        "stages": [
+          "hallazgo",
+          "propuesta",
+          "validaci\u00f3n del cambio",
+          "resultado"
+        ],
+        "actions": [
+          {
+            "action": "proposal",
+            "actor": "SIMULATED_RESPONSE_NOT_MODEL"
+          }
+        ],
+        "origin": "SIMULATED_RESPONSE_NOT_MODEL",
+        "baseline_hashes": {
+          "package.json": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "diagnostic": {
+          "attempt": 3,
+          "code": "contract_rejected",
+          "retry_from": "clean_baseline",
+          "required_change": "only package.json dependencies.cross-spawn to 7.0.5"
+        }
+      }
+    ],
+    "functional_remediation": false,
+    "security_observation": "inconclusive",
+    "automatic_promotion": false,
+    "result": "bloqueado"
+  },
+  "success": {
+    "origin": "SIMULATED_RESPONSE_NOT_MODEL",
+    "max_attempts": 3,
+    "attempts": [
+      {
+        "attempt": 1,
+        "stages": [
+          "hallazgo",
+          "propuesta",
+          "validaci\u00f3n del cambio",
+          "aplicaci\u00f3n aislada",
+          "pruebas independientes",
+          "revisi\u00f3n",
+          "resultado"
+        ],
+        "actions": [
+          {
+            "action": "proposal",
+            "actor": "SIMULATED_RESPONSE_NOT_MODEL"
+          },
+          {
+            "action": "contract_validation",
+            "actor": "controller"
+          },
+          {
+            "action": "manifest_write",
+            "actor": "isolated_file_executor"
+          },
+          {
+            "action": "lock_regeneration",
+            "actor": "offline_npm"
+          },
+          {
+            "action": "lock_commit",
+            "actor": "controller_and_file_executor"
+          },
+          {
+            "action": "install",
+            "actor": "offline_npm"
+          },
+          {
+            "action": "build_and_behavior",
+            "actor": "independent_validator"
+          },
+          {
+            "action": "review_and_export",
+            "actor": "controller"
+          }
+        ],
+        "origin": "SIMULATED_RESPONSE_NOT_MODEL",
+        "baseline_hashes": {
+          "package.json": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "review": {
+          "immutable_tests_and_policy": true,
+          "exact_graph": true
+        },
+        "patch": {
+          "simulation": true
+        },
+        "functional_remediation": true
+      }
+    ],
+    "functional_remediation": true,
+    "security_observation": "inconclusive",
+    "automatic_promotion": false,
+    "result": "inconcluso"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "actor": "validation_worker",
+  "job": "validate",
+  "commands": [
+    {
+      "exit": 0,
+      "stdout": "\nadded 6 packages in 691ms\n",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": ""
+    }
+  ],
+  "build": {
+    "exit": 0,
+    "stdout": "",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr": ""
+  },
+  "cases": {
+    "hello": {
+      "exit": 0,
+      "stdout": "{\"message\":\"hello\"}",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": ""
+    },
+    "StateX ficticio": {
+      "exit": 0,
+      "stdout": "{\"message\":\"StateX ficticio\"}",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": ""
+    },
+    "spaces & quotes \"": {
+      "exit": 0,
+      "stdout": "{\"message\":\"spaces & quotes \\\"\"}",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": ""
+    },
+    "\u00e1\u00e9\u96ea": {
+      "exit": 0,
+      "stdout": "{\"message\":\"\u00e1\u00e9\u96ea\"}",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": ""
+    }
+  },
+  "persistent_source_unchanged": {
+    "package.json": true,
+    "package-lock.json": true,
+    "app.cjs": true
+  }
+}

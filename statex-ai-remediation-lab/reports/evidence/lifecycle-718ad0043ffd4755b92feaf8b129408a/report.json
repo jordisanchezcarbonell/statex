@@ -1,0 +1,2327 @@
+{
+  "created_utc": "2026-11-01T19:06:27.057348+00:00",
+  "model_connected": false,
+  "models_blocked": true,
+  "coverage": "static fork-only payloads, immutable fixtures, openat/read/close, seccomp+Landlock before exec",
+  "controls": {
+    "allowed": {
+      "expected": "conclusive_bounded",
+      "health": [
+        {
+          "ticks": 2,
+          "age_ms": 36,
+          "running": true,
+          "tracer": 0,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "untraced": [],
+          "phase": "complete"
+        }
+      ],
+      "control_passed": true,
+      "analysis": {
+        "status": "conclusive_bounded",
+        "reasons": [],
+        "root_pid": 7,
+        "processes": [
+          7
+        ],
+        "parents": {},
+        "exits": {
+          "7": 0
+        },
+        "attempts": [
+          {
+            "pid": 7,
+            "path": "/fixtures/allowed",
+            "identity": "63:135203",
+            "result": 3,
+            "denied": false
+          }
+        ],
+        "reads": [
+          {
+            "pid": 7,
+            "identity": "63:135203",
+            "bytes": 32
+          }
+        ],
+        "read_bytes": 32,
+        "blocked": []
+      },
+      "attached_before_first_untrusted_exec": true,
+      "pre_release_status": {
+        "ticks": 1,
+        "updated_ms": 1793559987632,
+        "tracer_pid": 26,
+        "exit": null,
+        "error": null,
+        "target_pid": 7
+      },
+      "fixture_identity": {
+        "/fixtures/allowed": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/denied": {
+          "dev": 63,
+          "ino": 135204,
+          "size": 32,
+          "mode": 32768,
+          "nlink": 1,
+          "is_file": true
+        },
+        "/fixtures/symlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/hardlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        }
+      },
+      "bootstrap_completion": {
+        "phase": "complete",
+        "reaped": 1,
+        "bad_exits": 0,
+        "child_pid": 7
+      },
+      "final_observer_status": {
+        "ticks": 2,
+        "updated_ms": 1793559987732,
+        "tracer_pid": 26,
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "error": null,
+        "target_pid": 7
+      },
+      "bootstrap_exit": 0
+    },
+    "denied": {
+      "expected": "conclusive_bounded",
+      "health": [
+        {
+          "ticks": 2,
+          "age_ms": 28,
+          "running": true,
+          "tracer": 0,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "untraced": [],
+          "phase": "complete"
+        }
+      ],
+      "control_passed": true,
+      "analysis": {
+        "status": "conclusive_bounded",
+        "reasons": [],
+        "root_pid": 7,
+        "processes": [
+          7
+        ],
+        "parents": {},
+        "exits": {
+          "7": 0
+        },
+        "attempts": [
+          {
+            "pid": 7,
+            "path": "/fixtures/denied",
+            "identity": "63:135204",
+            "result": -1,
+            "denied": true
+          }
+        ],
+        "reads": [],
+        "read_bytes": 0,
+        "blocked": []
+      },
+      "attached_before_first_untrusted_exec": true,
+      "pre_release_status": {
+        "ticks": 1,
+        "updated_ms": 1793559988148,
+        "tracer_pid": 26,
+        "exit": null,
+        "error": null,
+        "target_pid": 7
+      },
+      "fixture_identity": {
+        "/fixtures/allowed": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/denied": {
+          "dev": 63,
+          "ino": 135204,
+          "size": 32,
+          "mode": 32768,
+          "nlink": 1,
+          "is_file": true
+        },
+        "/fixtures/symlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/hardlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        }
+      },
+      "bootstrap_completion": {
+        "phase": "complete",
+        "reaped": 1,
+        "bad_exits": 0,
+        "child_pid": 7
+      },
+      "final_observer_status": {
+        "ticks": 2,
+        "updated_ms": 1793559988249,
+        "tracer_pid": 26,
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "error": null,
+        "target_pid": 7
+      },
+      "bootstrap_exit": 0
+    },
+    "none": {
+      "expected": "conclusive_bounded",
+      "health": [
+        {
+          "ticks": 1,
+          "age_ms": 115,
+          "running": true,
+          "tracer": 0,
+          "exit": null,
+          "untraced": [],
+          "phase": "complete"
+        }
+      ],
+      "control_passed": true,
+      "analysis": {
+        "status": "conclusive_bounded",
+        "reasons": [],
+        "root_pid": 7,
+        "processes": [
+          7
+        ],
+        "parents": {},
+        "exits": {
+          "7": 0
+        },
+        "attempts": [],
+        "reads": [],
+        "read_bytes": 0,
+        "blocked": []
+      },
+      "attached_before_first_untrusted_exec": true,
+      "pre_release_status": {
+        "ticks": 1,
+        "updated_ms": 1793559988627,
+        "tracer_pid": 26,
+        "exit": null,
+        "error": null,
+        "target_pid": 7
+      },
+      "fixture_identity": {
+        "/fixtures/allowed": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/denied": {
+          "dev": 63,
+          "ino": 135204,
+          "size": 32,
+          "mode": 32768,
+          "nlink": 1,
+          "is_file": true
+        },
+        "/fixtures/symlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/hardlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        }
+      },
+      "bootstrap_completion": {
+        "phase": "complete",
+        "reaped": 1,
+        "bad_exits": 0,
+        "child_pid": 7
+      },
+      "final_observer_status": {
+        "ticks": 3,
+        "updated_ms": 1793559988828,
+        "tracer_pid": 26,
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "error": null,
+        "target_pid": 7
+      },
+      "bootstrap_exit": 0
+    },
+    "children": {
+      "expected": "conclusive_bounded",
+      "health": [
+        {
+          "ticks": 2,
+          "age_ms": 25,
+          "running": true,
+          "tracer": 0,
+          "exit": {
+            "code": 0,
+            "signal": null
+          },
+          "untraced": [],
+          "phase": "complete"
+        }
+      ],
+      "control_passed": true,
+      "analysis": {
+        "status": "conclusive_bounded",
+        "reasons": [],
+        "root_pid": 6,
+        "processes": [
+          6,
+          47,
+          48
+        ],
+        "parents": {
+          "47": 6,
+          "48": 47
+        },
+        "exits": {
+          "6": 0,
+          "47": 0,
+          "48": 0
+        },
+        "attempts": [
+          {
+            "pid": 48,
+            "path": "/fixtures/allowed",
+            "identity": "63:135203",
+            "result": 3,
+            "denied": false
+          }
+        ],
+        "reads": [
+          {
+            "pid": 48,
+            "identity": "63:135203",
+            "bytes": 32
+          }
+        ],
+        "read_bytes": 32,
+        "blocked": []
+      },
+      "attached_before_first_untrusted_exec": true,
+      "pre_release_status": {
+        "ticks": 1,
+        "updated_ms": 1793559989212,
+        "tracer_pid": 26,
+        "exit": null,
+        "error": null,
+        "target_pid": 6
+      },
+      "fixture_identity": {
+        "/fixtures/allowed": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/denied": {
+          "dev": 63,
+          "ino": 135204,
+          "size": 32,
+          "mode": 32768,
+          "nlink": 1,
+          "is_file": true
+        },
+        "/fixtures/symlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/hardlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        }
+      },
+      "bootstrap_completion": {
+        "phase": "complete",
+        "reaped": 3,
+        "bad_exits": 0,
+        "child_pid": 6
+      },
+      "final_observer_status": {
+        "ticks": 2,
+        "updated_ms": 1793559989313,
+        "tracer_pid": 26,
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "error": null,
+        "target_pid": 6
+      },
+      "bootstrap_exit": 0
+    },
+    "symlink": {
+      "expected": "conclusive_bounded",
+      "health": [
+        {
+          "ticks": 1,
+          "age_ms": 119,
+          "running": true,
+          "tracer": 0,
+          "exit": null,
+          "untraced": [],
+          "phase": "complete"
+        }
+      ],
+      "control_passed": true,
+      "analysis": {
+        "status": "conclusive_bounded",
+        "reasons": [],
+        "root_pid": 7,
+        "processes": [
+          7
+        ],
+        "parents": {},
+        "exits": {
+          "7": 0
+        },
+        "attempts": [
+          {
+            "pid": 7,
+            "path": "/fixtures/symlink",
+            "identity": "63:135203",
+            "result": 3,
+            "denied": false
+          }
+        ],
+        "reads": [
+          {
+            "pid": 7,
+            "identity": "63:135203",
+            "bytes": 32
+          }
+        ],
+        "read_bytes": 32,
+        "blocked": []
+      },
+      "attached_before_first_untrusted_exec": true,
+      "pre_release_status": {
+        "ticks": 1,
+        "updated_ms": 1793559989684,
+        "tracer_pid": 26,
+        "exit": null,
+        "error": null,
+        "target_pid": 7
+      },
+      "fixture_identity": {
+        "/fixtures/allowed": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/denied": {
+          "dev": 63,
+          "ino": 135204,
+          "size": 32,
+          "mode": 32768,
+          "nlink": 1,
+          "is_file": true
+        },
+        "/fixtures/symlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/hardlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        }
+      },
+      "bootstrap_completion": {
+        "phase": "complete",
+        "reaped": 1,
+        "bad_exits": 0,
+        "child_pid": 7
+      },
+      "final_observer_status": {
+        "ticks": 3,
+        "updated_ms": 1793559989886,
+        "tracer_pid": 26,
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "error": null,
+        "target_pid": 7
+      },
+      "bootstrap_exit": 0
+    },
+    "hardlink": {
+      "expected": "conclusive_bounded",
+      "health": [
+        {
+          "ticks": 1,
+          "age_ms": 118,
+          "running": true,
+          "tracer": 0,
+          "exit": null,
+          "untraced": [],
+          "phase": "complete"
+        }
+      ],
+      "control_passed": true,
+      "analysis": {
+        "status": "conclusive_bounded",
+        "reasons": [],
+        "root_pid": 7,
+        "processes": [
+          7
+        ],
+        "parents": {},
+        "exits": {
+          "7": 0
+        },
+        "attempts": [
+          {
+            "pid": 7,
+            "path": "/fixtures/hardlink",
+            "identity": "63:135203",
+            "result": 3,
+            "denied": false
+          }
+        ],
+        "reads": [
+          {
+            "pid": 7,
+            "identity": "63:135203",
+            "bytes": 32
+          }
+        ],
+        "read_bytes": 32,
+        "blocked": []
+      },
+      "attached_before_first_untrusted_exec": true,
+      "pre_release_status": {
+        "ticks": 1,
+        "updated_ms": 1793559990248,
+        "tracer_pid": 26,
+        "exit": null,
+        "error": null,
+        "target_pid": 7
+      },
+      "fixture_identity": {
+        "/fixtures/allowed": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/denied": {
+          "dev": 63,
+          "ino": 135204,
+          "size": 32,
+          "mode": 32768,
+          "nlink": 1,
+          "is_file": true
+        },
+        "/fixtures/symlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/hardlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        }
+      },
+      "bootstrap_completion": {
+        "phase": "complete",
+        "reaped": 1,
+        "bad_exits": 0,
+        "child_pid": 7
+      },
+      "final_observer_status": {
+        "ticks": 3,
+        "updated_ms": 1793559990449,
+        "tracer_pid": 26,
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "error": null,
+        "target_pid": 7
+      },
+      "bootstrap_exit": 0
+    },
+    "interrupted": {
+      "expected": "inconclusive",
+      "health": [
+        {
+          "ticks": 2,
+          "age_ms": 19,
+          "running": true,
+          "tracer": 26,
+          "exit": null,
+          "untraced": [],
+          "phase": "waiting"
+        },
+        {
+          "ticks": 2,
+          "age_ms": 106,
+          "running": true,
+          "tracer": 0,
+          "exit": null,
+          "untraced": [
+            7
+          ],
+          "phase": "waiting"
+        }
+      ],
+      "control_passed": true,
+      "analysis": {
+        "status": "inconclusive",
+        "reasons": [
+          "missing_reap_closure",
+          "truncated_or_oversized_trace",
+          "unclosed_process_tree",
+          "observer_interrupted_or_stale"
+        ],
+        "root_pid": 7,
+        "processes": [
+          7
+        ],
+        "parents": {},
+        "exits": {},
+        "attempts": [],
+        "reads": [],
+        "read_bytes": 0,
+        "blocked": []
+      },
+      "attached_before_first_untrusted_exec": true,
+      "pre_release_status": {
+        "ticks": 1,
+        "updated_ms": 1793559990816,
+        "tracer_pid": 26,
+        "exit": null,
+        "error": null,
+        "target_pid": 7
+      },
+      "fixture_identity": {
+        "/fixtures/allowed": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/denied": {
+          "dev": 63,
+          "ino": 135204,
+          "size": 32,
+          "mode": 32768,
+          "nlink": 1,
+          "is_file": true
+        },
+        "/fixtures/symlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/hardlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        }
+      },
+      "fault_injected": "SIGKILL_tracer",
+      "fault_before_completion": true,
+      "final_observer_status": {
+        "ticks": 3,
+        "updated_ms": 1793559991017,
+        "tracer_pid": 26,
+        "exit": {
+          "code": null,
+          "signal": "SIGKILL"
+        },
+        "error": null,
+        "target_pid": 7
+      }
+    },
+    "blocked": {
+      "expected": "conclusive_bounded",
+      "health": [
+        {
+          "ticks": 2,
+          "age_ms": 44,
+          "running": true,
+          "tracer": 0,
+          "exit": null,
+          "untraced": [],
+          "phase": "complete"
+        }
+      ],
+      "control_passed": true,
+      "analysis": {
+        "status": "conclusive_bounded",
+        "reasons": [],
+        "root_pid": 7,
+        "processes": [
+          7
+        ],
+        "parents": {},
+        "exits": {
+          "7": 0
+        },
+        "attempts": [
+          {
+            "pid": 7,
+            "path": "/fixtures/allowed",
+            "identity": "63:135203",
+            "result": 3,
+            "denied": false
+          },
+          {
+            "pid": 7,
+            "path": "/fixtures/allowed",
+            "identity": "63:135203",
+            "result": -1,
+            "denied": true
+          },
+          {
+            "pid": 7,
+            "path": "/etc/passwd",
+            "identity": null,
+            "result": -1,
+            "denied": true
+          }
+        ],
+        "reads": [],
+        "read_bytes": 0,
+        "blocked": [
+          "pread64",
+          "readv",
+          "mmap",
+          "io_uring_setup",
+          "dup",
+          "socket",
+          "openat2",
+          "sendfile",
+          "splice",
+          "process_vm_readv",
+          "clone_shared",
+          "openat_write",
+          "landlock_exec"
+        ]
+      },
+      "attached_before_first_untrusted_exec": true,
+      "pre_release_status": {
+        "ticks": 1,
+        "updated_ms": 1793559991359,
+        "tracer_pid": 26,
+        "exit": null,
+        "error": null,
+        "target_pid": 7
+      },
+      "fixture_identity": {
+        "/fixtures/allowed": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/denied": {
+          "dev": 63,
+          "ino": 135204,
+          "size": 32,
+          "mode": 32768,
+          "nlink": 1,
+          "is_file": true
+        },
+        "/fixtures/symlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        },
+        "/fixtures/hardlink": {
+          "dev": 63,
+          "ino": 135203,
+          "size": 32,
+          "mode": 33060,
+          "nlink": 2,
+          "is_file": true
+        }
+      },
+      "bootstrap_completion": {
+        "phase": "complete",
+        "reaped": 1,
+        "bad_exits": 0,
+        "child_pid": 7
+      },
+      "final_observer_status": {
+        "ticks": 3,
+        "updated_ms": 1793559991561,
+        "tracer_pid": 26,
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "error": null,
+        "target_pid": 7
+      },
+      "bootstrap_exit": 0
+    }
+  },
+  "exports": {
+    "regular-package.json": {
+      "exit": 0,
+      "seconds": 0.129,
+      "stdout_bytes": 126,
+      "control_passed": true,
+      "export": {
+        "kind": "baseline_unchanged",
+        "original_sha256": {
+          "package.json": "4f89b2b58b0a4764fca6e2e5318fa2dfcd5a123626e46ae2016a90dcf4a5c87f",
+          "package-lock.json": "2086223f909ecaf4b063cfc7e8187ab73e8e8a24ec7029d54e0403dee55a3265"
+        },
+        "canonical_sha256": {
+          "package.json": "2d986a84655bf8b7687333bcc299011ee1afba1db9c44c5d9b43a34b9cbad6d6",
+          "package-lock.json": "e9ce8921579ead737c68c3c1025d71d433350255100f96293f5accc0e204871e"
+        },
+        "baseline_sha256": {
+          "package.json": "2d986a84655bf8b7687333bcc299011ee1afba1db9c44c5d9b43a34b9cbad6d6",
+          "package-lock.json": "e9ce8921579ead737c68c3c1025d71d433350255100f96293f5accc0e204871e"
+        },
+        "serialization": "canonical JSON; review patch applies to canonical baseline",
+        "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "symlink-package.json": {
+      "exit": 64,
+      "seconds": 0.131,
+      "stdout_bytes": 0,
+      "rejection": {
+        "export_rejected": "symlink"
+      },
+      "control_passed": true
+    },
+    "symlink-package-lock.json": {
+      "exit": 64,
+      "seconds": 0.125,
+      "stdout_bytes": 0,
+      "rejection": {
+        "export_rejected": "symlink"
+      },
+      "control_passed": true
+    },
+    "hardlink-package.json": {
+      "exit": 64,
+      "seconds": 0.124,
+      "stdout_bytes": 0,
+      "rejection": {
+        "export_rejected": "hardlink"
+      },
+      "control_passed": true
+    },
+    "hardlink-package-lock.json": {
+      "exit": 64,
+      "seconds": 0.126,
+      "stdout_bytes": 0,
+      "rejection": {
+        "export_rejected": "hardlink"
+      },
+      "control_passed": true
+    },
+    "fifo-package.json": {
+      "exit": 64,
+      "seconds": 0.13,
+      "stdout_bytes": 0,
+      "rejection": {
+        "export_rejected": "non_regular"
+      },
+      "control_passed": true
+    },
+    "fifo-package-lock.json": {
+      "exit": 64,
+      "seconds": 0.128,
+      "stdout_bytes": 0,
+      "rejection": {
+        "export_rejected": "non_regular"
+      },
+      "control_passed": true
+    },
+    "directory-package.json": {
+      "exit": 64,
+      "seconds": 0.13,
+      "stdout_bytes": 0,
+      "rejection": {
+        "export_rejected": "non_regular"
+      },
+      "control_passed": true
+    },
+    "directory-package-lock.json": {
+      "exit": 64,
+      "seconds": 0.138,
+      "stdout_bytes": 0,
+      "rejection": {
+        "export_rejected": "non_regular"
+      },
+      "control_passed": true
+    },
+    "socket-package.json": {
+      "exit": 64,
+      "seconds": 0.137,
+      "stdout_bytes": 0,
+      "rejection": {
+        "export_rejected": "non_regular"
+      },
+      "control_passed": true
+    },
+    "socket-package-lock.json": {
+      "exit": 64,
+      "seconds": 0.131,
+      "stdout_bytes": 0,
+      "rejection": {
+        "export_rejected": "non_regular"
+      },
+      "control_passed": true
+    }
+  },
+  "resources": [
+    {
+      "name": "statexlab-d1869c424faa41859b61f2c886870144",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-10e9c14ee2a34e918d10cc10fe3a17b7",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/control": "rw,noexec,nosuid,size=1m,uid=1000,gid=1000,mode=0755",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-ff8c6042f2094f48939aab86added62e",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": [
+        "CAP_SYS_PTRACE"
+      ],
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "container:8c26b692135a53351d737c060ccdc90529f29aef2c4f4c809e90e25090c9906f",
+      "tmpfs": {
+        "/evidence": "rw,noexec,nosuid,size=8m,mode=0700",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-fc6bb101ffa54c6b803f8b2c7f7f0f76",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/control": "rw,noexec,nosuid,size=1m,uid=1000,gid=1000,mode=0755",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-64c851170f32436da0d913d689a94930",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": [
+        "CAP_SYS_PTRACE"
+      ],
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "container:16f8fa933f61fef483c182986fe0702ff51afa7c89df52830125c7dd2499b89c",
+      "tmpfs": {
+        "/evidence": "rw,noexec,nosuid,size=8m,mode=0700",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-45843734fff841a195ab2699be11c191",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/control": "rw,noexec,nosuid,size=1m,uid=1000,gid=1000,mode=0755",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-4e7ecc162b414cd3b1238e76ae064eee",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": [
+        "CAP_SYS_PTRACE"
+      ],
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "container:ee3088e6909b50280ad390605e00baca69da7e512695fdd6813b33163e9ff9c9",
+      "tmpfs": {
+        "/evidence": "rw,noexec,nosuid,size=8m,mode=0700",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-eaafdb985da44fd5b6a79326abb5367e",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/control": "rw,noexec,nosuid,size=1m,uid=1000,gid=1000,mode=0755",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-ad8179ffe32d49d7aee7d3cccf181cfd",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": [
+        "CAP_SYS_PTRACE"
+      ],
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "container:e51f304515b9bd4fa2bdd6662ffe98392601adcc03db173a347474d825798060",
+      "tmpfs": {
+        "/evidence": "rw,noexec,nosuid,size=8m,mode=0700",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-487715fdc920492caf7299eeb1dcb1f8",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/control": "rw,noexec,nosuid,size=1m,uid=1000,gid=1000,mode=0755",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-81fe353dc08f4147a592ff18ab97d47b",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": [
+        "CAP_SYS_PTRACE"
+      ],
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "container:2d393eaa377b709404cb4554f3aadb31a508bd4624f855e99d88c212a8d90f04",
+      "tmpfs": {
+        "/evidence": "rw,noexec,nosuid,size=8m,mode=0700",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-f1e3ad04871e424b99de04b25324a20e",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/control": "rw,noexec,nosuid,size=1m,uid=1000,gid=1000,mode=0755",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-095a91b660154cda9a0af03f3d21090c",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": [
+        "CAP_SYS_PTRACE"
+      ],
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "container:5bdff9d63df32397ac20fbe8714ff1dffe05a076e8c0265517e91c54e2e759b7",
+      "tmpfs": {
+        "/evidence": "rw,noexec,nosuid,size=8m,mode=0700",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-d4884d3f3d4945e5996482ca9c7c9d73",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/control": "rw,noexec,nosuid,size=1m,uid=1000,gid=1000,mode=0755",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-7fa2c2881a4e410bb0e84013dc36b669",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": [
+        "CAP_SYS_PTRACE"
+      ],
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "container:0bd570fcaf7cb9207462d96e81e854a17057b8b2c84cd3f9fa7f92af6e60b42d",
+      "tmpfs": {
+        "/evidence": "rw,noexec,nosuid,size=8m,mode=0700",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-08f3a64d1ee24baab36d5c3c207acb7c",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/control": "rw,noexec,nosuid,size=1m,uid=1000,gid=1000,mode=0755",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-edca2492aeec4d0d9856244ab2412ad5",
+      "image": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": [
+        "CAP_SYS_PTRACE"
+      ],
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "container:80ce08f77ff117cb69b3ba6528864091dfca311df7855e6245fe2ce4189b73ea",
+      "tmpfs": {
+        "/evidence": "rw,noexec,nosuid,size=8m,mode=0700",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-999b1364315d40efa59bc9fd44f613df",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-996b57649e944d73811e14c38c13dd34",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-527a1bd6272d497bac63fd671e72b4d6",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-996b57649e944d73811e14c38c13dd34",
+          "destination": "/work",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "name": "statexlab-6e1bea50369c49db984108f5e4b14dd3",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-d491bfba1c4f405981406d3b3abf442c",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-b2cc1f7aef4b4579ba40f036d729069a",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-d491bfba1c4f405981406d3b3abf442c",
+          "destination": "/work",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "name": "statexlab-01676fc307b34bfb8e942aee446e9ff4",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-51c0a87832a844d18a1d19eb4037d447",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-a32ff2c52a924d7eb2cdff9709174b9e",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-51c0a87832a844d18a1d19eb4037d447",
+          "destination": "/work",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "name": "statexlab-fe56590af4f04a71a72f41bf7e42c28e",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-3ed324d670ec4bd2b871a63d12cda8e1",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-23707f3094b94cbda574ecb480797c2a",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-3ed324d670ec4bd2b871a63d12cda8e1",
+          "destination": "/work",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "name": "statexlab-a44216d86839468ab39d669c4b692318",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-711523df98bd4ab9b7f0d86b037c84f6",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-18ae2d2bb8c54136ab88de6767403cad",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-711523df98bd4ab9b7f0d86b037c84f6",
+          "destination": "/work",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "name": "statexlab-16761b4cc06e414db04b10924ae5e5f5",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-a79a8c88dbe64de1b4500682c54fa94b",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-6007e96d924e47d2be324ebb440b3c7c",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-a79a8c88dbe64de1b4500682c54fa94b",
+          "destination": "/work",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "name": "statexlab-a1a52e1c6516413f87a5597e9069aa85",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-cb403edfc26c467c8bd58a74dd42abab",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-d6b178c7eef34c91b938326486602309",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-cb403edfc26c467c8bd58a74dd42abab",
+          "destination": "/work",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "name": "statexlab-b69d953766fa4d6ca2ee09141b7328b7",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-c637543c3fde42d19ac0d2c0daacce9d",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-883c614d37ff4c7e9babb39b553fbf9f",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-c637543c3fde42d19ac0d2c0daacce9d",
+          "destination": "/work",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "name": "statexlab-c172a0f667014a388fab3c92c24e4246",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-168fd0521145444dac3dedccf227c5b6",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-31c05921afe145a6be1a939be71df04f",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-168fd0521145444dac3dedccf227c5b6",
+          "destination": "/work",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "name": "statexlab-679868717d4547179a021a3d0e77c872",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-0163c4f1a6fa47c7b1592b28defa625d",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-b093be8a87944ba9b23fd78c2fadac06",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-0163c4f1a6fa47c7b1592b28defa625d",
+          "destination": "/work",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "name": "statexlab-df1460f34ecf4bc38078ecea096f5094",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-641fe08a8f33469c88b5655d953e992e",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-5f5ff659b9e045568b06f0add390d90e",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "cap_drop": [
+        "ALL"
+      ],
+      "cap_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-641fe08a8f33469c88b5655d953e992e",
+          "destination": "/work",
+          "rw": false
+        }
+      ]
+    }
+  ],
+  "cleanup": [
+    {
+      "kind": "container",
+      "name": "statexlab-ff8c6042f2094f48939aab86added62e",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-10e9c14ee2a34e918d10cc10fe3a17b7",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-64c851170f32436da0d913d689a94930",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-fc6bb101ffa54c6b803f8b2c7f7f0f76",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-4e7ecc162b414cd3b1238e76ae064eee",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-45843734fff841a195ab2699be11c191",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-ad8179ffe32d49d7aee7d3cccf181cfd",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-eaafdb985da44fd5b6a79326abb5367e",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-81fe353dc08f4147a592ff18ab97d47b",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-487715fdc920492caf7299eeb1dcb1f8",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-095a91b660154cda9a0af03f3d21090c",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-f1e3ad04871e424b99de04b25324a20e",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-7fa2c2881a4e410bb0e84013dc36b669",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-d4884d3f3d4945e5996482ca9c7c9d73",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-edca2492aeec4d0d9856244ab2412ad5",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-08f3a64d1ee24baab36d5c3c207acb7c",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-5f5ff659b9e045568b06f0add390d90e",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-df1460f34ecf4bc38078ecea096f5094",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-b093be8a87944ba9b23fd78c2fadac06",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-679868717d4547179a021a3d0e77c872",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-31c05921afe145a6be1a939be71df04f",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-c172a0f667014a388fab3c92c24e4246",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-883c614d37ff4c7e9babb39b553fbf9f",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-b69d953766fa4d6ca2ee09141b7328b7",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-d6b178c7eef34c91b938326486602309",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-a1a52e1c6516413f87a5597e9069aa85",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-6007e96d924e47d2be324ebb440b3c7c",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-16761b4cc06e414db04b10924ae5e5f5",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-18ae2d2bb8c54136ab88de6767403cad",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-a44216d86839468ab39d669c4b692318",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-23707f3094b94cbda574ecb480797c2a",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-fe56590af4f04a71a72f41bf7e42c28e",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-a32ff2c52a924d7eb2cdff9709174b9e",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-01676fc307b34bfb8e942aee446e9ff4",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-b2cc1f7aef4b4579ba40f036d729069a",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-6e1bea50369c49db984108f5e4b14dd3",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-527a1bd6272d497bac63fd671e72b4d6",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-999b1364315d40efa59bc9fd44f613df",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "container",
+      "name": "statexlab-d1869c424faa41859b61f2c886870144",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "name": "statexlab-996b57649e944d73811e14c38c13dd34",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "name": "statexlab-d491bfba1c4f405981406d3b3abf442c",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "name": "statexlab-51c0a87832a844d18a1d19eb4037d447",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "name": "statexlab-3ed324d670ec4bd2b871a63d12cda8e1",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "name": "statexlab-711523df98bd4ab9b7f0d86b037c84f6",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "name": "statexlab-a79a8c88dbe64de1b4500682c54fa94b",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "name": "statexlab-cb403edfc26c467c8bd58a74dd42abab",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "name": "statexlab-c637543c3fde42d19ac0d2c0daacce9d",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "name": "statexlab-168fd0521145444dac3dedccf227c5b6",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "name": "statexlab-0163c4f1a6fa47c7b1592b28defa625d",
+      "exit": 0,
+      "absent_after_cleanup": true
+    },
+    {
+      "kind": "volume",
+      "name": "statexlab-641fe08a8f33469c88b5655d953e992e",
+      "exit": 0,
+      "absent_after_cleanup": true
+    }
+  ],
+  "source_sha256": {
+    ".dockerignore": "ab9c3763816583a65942dddab67cbd09eff9f8c7e54e347d7fef16e2f5ff29d2",
+    "controls/Dockerfile": "2fae4ef72256f6796d7dd33ae4a31837ea3c267c6ad9ec9a00d1b42bc171bd0a",
+    "controls/Lifecycle.Dockerfile": "1d4a8ef4ad1944d5e5a98d3fe410087a05af750038f2b4f499364f8696d291d8",
+    "controls/Observer.Dockerfile": "36969181212b572e727207e67bf58b0610b912db8e7d21445138fa270b412a42",
+    "controls/accept.py": "9c5e8daa463b3ef4d9db258fc0a54a8e0963983fa7f3842fd9b8f70fa060beac",
+    "controls/archive_lifecycle.py": "ef7b073264e39333760b9fb641db835dca07541b9104ff4fd437223caf05ca54",
+    "controls/export_patch.py": "bbcc9588a0d06f513be1c65918cca8017e57f7dc8128e38b1592f0dd5198abe7",
+    "controls/lab.py": "a76b256e25f6553e287ef7504bcdb28aa15f204146117282f7befa6e25a0a7f2",
+    "controls/lifecycle/bootstrap.c": "aa2f11f05e2f9199dc421eda37cc3467845876200b6698ff025487f7506f4235",
+    "controls/lifecycle/probe.c": "d79da77e330e47ab5a0afa6516b120e1c23f1df5bfc1d9523f6035d66805d8b8",
+    "controls/lifecycle/supervisor.cjs": "15300cc6e19a14baf9acfabd06d04169ea5497744eae16e51c320bc5d377fb66",
+    "controls/lifecycle_analyze.py": "2ddc4132c1a7d29bffa61892199cbc6e9762066786c00c111ee8c9cc6fefd117",
+    "controls/lifecycle_suite.py": "a61cc4023242074adcaab7c2721e3824b9cd67c4fe36970d99484ac8f0e45b77",
+    "controls/observe.py": "d3048b1cdb48f7722a2cbc30a8154035b2883ba0fdc500d3ba805737ea0b85da",
+    "controls/record_evidence.py": "c12e3e4176b223220c79544c5579837d21aad2b2c5498bc041eadee4e8a0c026",
+    "fixture/app.cjs": "ae7c29f8615e22894d5d64faacf8c783e7e6d33fffbfac5df23c69d67ed355a5",
+    "tests/test_controls.py": "71a673c70f18598637c212b1d7461d0b3fbcb4cbf99d5d40544c6aa734dedcb7",
+    "tests/test_export_observer.py": "f52ededf5b5853474a4a72a81b13207ccaacaf96974e1c13e489e3ab59d813f8",
+    "tests/test_lifecycle.py": "8fa5789738f5edda6b8e0c401c38d4562d39f8912d74f0b6121a1c103656270c"
+  },
+  "runtime": {
+    "ServerVersion": "29.9.2",
+    "KernelVersion": "7.0.14-linuxkit",
+    "OperatingSystem": "Docker Desktop",
+    "Architecture": "aarch64"
+  },
+  "images": {
+    "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b": {
+      "Id": "sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b",
+      "RepoDigests": [
+        "statex-lab-lifecycle@sha256:96c225dbe6bbe32da29ebd6b6006832d5744feb8b70a5587caee8585362c326b"
+      ],
+      "Architecture": "arm64",
+      "Created": "2026-11-01T19:01:39.932987052Z"
+    },
+    "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47": {
+      "Id": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "RepoDigests": [
+        "statex-lab-runtime@sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47"
+      ],
+      "Architecture": "arm64",
+      "Created": "2026-11-01T18:37:09.135160137Z"
+    }
+  },
+  "fixture_identity": {
+    "/fixtures/allowed": {
+      "dev": 63,
+      "ino": 135203,
+      "size": 32,
+      "nlink": 2
+    },
+    "/fixtures/denied": {
+      "dev": 63,
+      "ino": 135204,
+      "size": 32,
+      "nlink": 1
+    },
+    "/fixtures/symlink": {
+      "dev": 63,
+      "ino": 135203,
+      "size": 32,
+      "nlink": 2
+    },
+    "/fixtures/hardlink": {
+      "dev": 63,
+      "ino": 135203,
+      "size": 32,
+      "nlink": 2
+    }
+  },
+  "daemon_alive_after_cleanup": true,
+  "suite_passed": true
+}

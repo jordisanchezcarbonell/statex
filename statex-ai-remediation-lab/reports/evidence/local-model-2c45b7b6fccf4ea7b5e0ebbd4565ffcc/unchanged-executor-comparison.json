@@ -1,0 +1,37 @@
+{
+  "controls/remediation_suite.py": {
+    "comparison_sha256": "42c88abbdb5ce51cfbb4800fd038f94edcd97c218cddc6076ebd19428e3473bc",
+    "current_sha256": "42c88abbdb5ce51cfbb4800fd038f94edcd97c218cddc6076ebd19428e3473bc",
+    "unchanged": true
+  },
+  "controls/remediation/bootstrap.c": {
+    "comparison_sha256": "10fe3be640e2113e66ff6425da7bf751501b55b8caf78adebd1250b23fc3d6a6",
+    "current_sha256": "10fe3be640e2113e66ff6425da7bf751501b55b8caf78adebd1250b23fc3d6a6",
+    "unchanged": true
+  },
+  "controls/remediation/handler.py": {
+    "comparison_sha256": "e80e338bd7e1b19e3bc08b7ece33f7bd3351b276daf9447405ee8451520d6a5a",
+    "current_sha256": "e80e338bd7e1b19e3bc08b7ece33f7bd3351b276daf9447405ee8451520d6a5a",
+    "unchanged": true
+  },
+  "controls/remediation/worker.py": {
+    "comparison_sha256": "f98f73445c09891a0e9796671dfd8198abbb51ddbc1aac566acf9235a5a2ff20",
+    "current_sha256": "f98f73445c09891a0e9796671dfd8198abbb51ddbc1aac566acf9235a5a2ff20",
+    "unchanged": true
+  },
+  "controls/remediation/proposer.py": {
+    "comparison_sha256": "69b19a1a079cdc20a9898814a0179bb4ca14d3f8b2e3d6a2722876f3dc15a620",
+    "current_sha256": "69b19a1a079cdc20a9898814a0179bb4ca14d3f8b2e3d6a2722876f3dc15a620",
+    "unchanged": true
+  },
+  "controls/accept.py": {
+    "comparison_sha256": "9c5e8daa463b3ef4d9db258fc0a54a8e0963983fa7f3842fd9b8f70fa060beac",
+    "current_sha256": "9c5e8daa463b3ef4d9db258fc0a54a8e0963983fa7f3842fd9b8f70fa060beac",
+    "unchanged": true
+  },
+  "controls/export_patch.py": {
+    "comparison_sha256": "bbcc9588a0d06f513be1c65918cca8017e57f7dc8128e38b1592f0dd5198abe7",
+    "current_sha256": "bbcc9588a0d06f513be1c65918cca8017e57f7dc8128e38b1592f0dd5198abe7",
+    "unchanged": true
+  }
+}

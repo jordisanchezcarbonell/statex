@@ -1,0 +1,35 @@
+--- a/package.json
++++ b/package.json
+@@ -1,6 +1,6 @@
+ {
+   "dependencies": {
+-    "cross-spawn": "7.0.3"
++    "cross-spawn": "7.0.5"
+   },
+   "name": "statex-fictional-app",
+   "private": true,
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -4,7 +4,7 @@
+   "packages": {
+     "": {
+       "dependencies": {
+-        "cross-spawn": "7.0.3"
++        "cross-spawn": "7.0.5"
+       },
+       "name": "statex-fictional-app",
+       "version": "1.0.0"
+@@ -18,10 +18,10 @@
+       "engines": {
+         "node": ">= 8"
+       },
+-      "integrity": "sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==",
++      "integrity": "sha512-ZVJrKKYunU38/76t0RMOulHOnUcbU9GbpWKAOZ0mhjr7CX6FVrH+4FrAapSOekrgFQ3f/8gwMEuIft0aKq6Hug==",
+       "license": "MIT",
+-      "resolved": "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz",
+-      "version": "7.0.3"
++      "resolved": "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.5.tgz",
++      "version": "7.0.5"
+     },
+     "node_modules/isexe": {
+       "integrity": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==",

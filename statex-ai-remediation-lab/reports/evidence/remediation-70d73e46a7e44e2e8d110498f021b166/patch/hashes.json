@@ -1,0 +1,17 @@
+{
+  "kind": "candidate_reference_graph",
+  "original_sha256": {
+    "package.json": "667ea65c0a24ce294187323377b3ad68d38f40b70c3260e591fc24b3aebb4b83",
+    "package-lock.json": "9a05cbea52f78154db5b48f8aebe2368ece2e5e36f6d4c4bbedb60fbdc749ceb"
+  },
+  "canonical_sha256": {
+    "package.json": "0d429a844605ce0a312df7a4129d4b78e47d0201dbc78d2d8e067dfd8dfd781f",
+    "package-lock.json": "4b5b1a41d1711df350c76f2a8671896350721278eff8675002e088bb91814539"
+  },
+  "baseline_sha256": {
+    "package.json": "9b1c0bb41362712440277cd949d81354e81e95286625ec87476c59691fc93460",
+    "package-lock.json": "8e5f4b09cfbf058cbd9c766697c8a1021c257ec4fe9d7056ff5d9cffffacfe0b"
+  },
+  "serialization": "canonical JSON; review patch applies to canonical baseline",
+  "patch_sha256": "112bb7a5448176cb150b6d8a07a62d986ffe025c7ac71e9ca35ef1c7824b74af"
+}

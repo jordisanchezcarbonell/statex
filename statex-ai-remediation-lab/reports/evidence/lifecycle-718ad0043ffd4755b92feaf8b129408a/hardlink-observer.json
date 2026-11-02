@@ -1,0 +1,60 @@
+{
+  "state": {
+    "ticks": 3,
+    "updated_ms": 1793559990449,
+    "tracer_pid": 26,
+    "exit": {
+      "code": 0,
+      "signal": null
+    },
+    "error": null,
+    "target_pid": 7
+  },
+  "target": {
+    "phase": "complete",
+    "reaped": 1,
+    "bad_exits": 0,
+    "child_pid": 7
+  },
+  "tracer": 0,
+  "untraced": [],
+  "fixture": {
+    "/fixtures/allowed": {
+      "dev": 63,
+      "ino": 135203,
+      "size": 32,
+      "mode": 33060,
+      "nlink": 2,
+      "is_file": true
+    },
+    "/fixtures/denied": {
+      "dev": 63,
+      "ino": 135204,
+      "size": 32,
+      "mode": 32768,
+      "nlink": 1,
+      "is_file": true
+    },
+    "/fixtures/symlink": {
+      "dev": 63,
+      "ino": 135203,
+      "size": 32,
+      "mode": 33060,
+      "nlink": 2,
+      "is_file": true
+    },
+    "/fixtures/hardlink": {
+      "dev": 63,
+      "ino": 135203,
+      "size": 32,
+      "mode": 33060,
+      "nlink": 2,
+      "is_file": true
+    }
+  },
+  "traces": {
+    "trace.7": "1793559990.249565 --- stopped by SIGSTOP ---\n1793559990.332832 --- SIGCONT {si_signo=SIGCONT, si_code=SI_USER, si_pid=1, si_uid=1000} ---\n1793559990.332894 close_range(3, 4294967295, 0) = 0\n1793559990.332981 prctl(PR_SET_NO_NEW_PRIVS, 1, 0, 0, 0) = 0\n1793559990.333060 landlock_create_ruleset({handled_access_fs=LANDLOCK_ACCESS_FS_EXECUTE|LANDLOCK_ACCESS_FS_READ_FILE|LANDLOCK_ACCESS_FS_READ_DIR}, 8, 0) = 3\n1793559990.333132 openat(AT_FDCWD</tmp>, \"/fixtures\", O_RDONLY|O_CLOEXEC|O_PATH) = 4\n1793559990.333216 landlock_add_rule(3, LANDLOCK_RULE_PATH_BENEATH, {allowed_access=LANDLOCK_ACCESS_FS_READ_FILE|LANDLOCK_ACCESS_FS_READ_DIR, parent_fd=4}, 0) = 0\n1793559990.333346 close(4)              = 0\n1793559990.333423 openat(AT_FDCWD</tmp>, \"/lab/probe\", O_RDONLY|O_CLOEXEC|O_PATH) = 4\n1793559990.333583 landlock_add_rule(3, LANDLOCK_RULE_PATH_BENEATH, {allowed_access=LANDLOCK_ACCESS_FS_EXECUTE|LANDLOCK_ACCESS_FS_READ_FILE, parent_fd=4}, 0) = 0\n1793559990.333694 close(4)              = 0\n1793559990.333748 landlock_restrict_self(3, 0) = 0\n1793559990.333805 close(3)              = 0\n1793559990.333891 prctl(PR_SET_SECCOMP, SECCOMP_MODE_FILTER, {len=34, filter=0xffffd558e2b0}) = 0\n1793559990.334030 execve(\"/lab/probe\", [\"/lab/probe\", \"hardlink\"], 0xffffd558e2a0 /* 0 vars */) = 0\n1793559990.334149 openat(AT_FDCWD</tmp>, \"/fixtures/hardlink\", O_RDONLY) = 3\n1793559990.334202 read(0x3, 0xffffcfa7e140, 0x20) = 0x20\n1793559990.334249 close(3)              = 0\n1793559990.334307 exit_group(0)         = ?\n1793559990.334406 +++ exited with 0 +++\n"
+  },
+  "stderr": "strace: Process 7 attached\n",
+  "observer_running": true
+}

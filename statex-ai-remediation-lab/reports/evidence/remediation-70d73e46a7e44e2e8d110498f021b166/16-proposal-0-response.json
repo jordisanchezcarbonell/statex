@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "actor": "file_executor",
+  "document": {
+    "name": "statex-fictional-app",
+    "private": true,
+    "version": "1.0.0",
+    "scripts": {
+      "build": "node --check app.cjs",
+      "test": "node app.cjs hello"
+    },
+    "dependencies": {
+      "cross-spawn": "7.0.3"
+    }
+  },
+  "sha256": "96cb6cb6f0fabee6f482e8a8724e3701bb589e1f1b68904f6e469b4f5f0dd276"
+}

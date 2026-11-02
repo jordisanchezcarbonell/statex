@@ -1,0 +1,8 @@
+{
+  "policy_hash_before": "8a5cd52a6988d40fa6c3a6976899d388a32202efa16cbc9beefd435c3fd3ced0",
+  "policy_hash_executed": "8a5cd52a6988d40fa6c3a6976899d388a32202efa16cbc9beefd435c3fd3ced0",
+  "unchanged": true,
+  "inference_image_unchanged": true,
+  "preparation_failure_had_zero_trials": true,
+  "permission_expansion_after_runtime_failure": false
+}

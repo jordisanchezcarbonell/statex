@@ -1,0 +1,17 @@
+{
+  "kind": "baseline_unchanged",
+  "original_sha256": {
+    "package.json": "4f89b2b58b0a4764fca6e2e5318fa2dfcd5a123626e46ae2016a90dcf4a5c87f",
+    "package-lock.json": "2086223f909ecaf4b063cfc7e8187ab73e8e8a24ec7029d54e0403dee55a3265"
+  },
+  "canonical_sha256": {
+    "package.json": "2d986a84655bf8b7687333bcc299011ee1afba1db9c44c5d9b43a34b9cbad6d6",
+    "package-lock.json": "e9ce8921579ead737c68c3c1025d71d433350255100f96293f5accc0e204871e"
+  },
+  "baseline_sha256": {
+    "package.json": "2d986a84655bf8b7687333bcc299011ee1afba1db9c44c5d9b43a34b9cbad6d6",
+    "package-lock.json": "e9ce8921579ead737c68c3c1025d71d433350255100f96293f5accc0e204871e"
+  },
+  "serialization": "canonical JSON; review patch applies to canonical baseline",
+  "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

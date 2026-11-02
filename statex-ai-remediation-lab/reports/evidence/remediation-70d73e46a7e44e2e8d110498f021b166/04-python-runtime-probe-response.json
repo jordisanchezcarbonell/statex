@@ -1,0 +1,25 @@
+{
+  "actor": "python_runtime_probe",
+  "checks": {
+    "/work/package.json": {
+      "read_bytes": 16
+    },
+    "/work/package-lock.json": {
+      "read_bytes": 16
+    },
+    "/denied/probe": {
+      "error": "EACCES"
+    },
+    "/secret/canary": {
+      "error": "ENOENT"
+    },
+    "/controller/accept.py": {
+      "error": "ENOENT"
+    },
+    "/var/run/docker.sock": {
+      "error": "ENOENT"
+    },
+    "spawn": "EPERM",
+    "socket": "EPERM"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "result": "bloqueado",
+  "security_observation": "inconclusive",
+  "automatic_promotion": false,
+  "attempts": [],
+  "model_generation_calls": 0,
+  "functional_remediation": false,
+  "resource_failure": {
+    "code": "required_local_image_unavailable",
+    "image": "sha256:daf72e2fc9e22c4a259b5183af1a0515256d0a3a1b564dd0e9bbe07aff3e4a40"
+  },
+  "blocker": "preflight_or_controller_failure_no_permission_expansion",
+  "blocked_stage": "local_images_available",
+  "model": {
+    "repository": "Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF",
+    "revision": "f86cb2c1fa58255f8052cc32aeede1b7482d4361",
+    "file": "qwen2.5-coder-1.5b-instruct-q4_k_m.gguf",
+    "bytes": 1117320768,
+    "sha256": "cc324af070c2ecbfd324a30884d2f951a7ff756aba85cb811a6ec436933bb046",
+    "license": "Apache-2.0"
+  },
+  "parameters": {
+    "context_tokens": 8192,
+    "max_generated_tokens": 1536,
+    "threads": 4,
+    "batch_threads": 4,
+    "gpu_layers": 0,
+    "temperature": 0.2,
+    "top_k": 40,
+    "top_p": 0.95,
+    "grammar": "generic JSON object grammar; no action/value forced by grammar",
+    "chat_template": "manual Qwen ChatML; conversation mode off",
+    "memory_bytes": 3221225472,
+    "cpu_quota": 4,
+    "timeout_seconds": 360
+  },
+  "images": [
+    "sha256:daf72e2fc9e22c4a259b5183af1a0515256d0a3a1b564dd0e9bbe07aff3e4a40",
+    "sha256:95db10a7539668d814e207e170279cda32b89576ce6cc1675e183796f29b48c3",
+    "sha256:6e793a80b20b789b357f60125f535009927337cb8d0e6b4423e4ab3e3196dc75"
+  ],
+  "weights_volume_readonly": "statexlab-8d907bba14ce4d03bc5187ea95e85ec7",
+  "deterministic_control": "reports/evidence/remediation-70d73e46a7e44e2e8d110498f021b166",
+  "deterministic_control_sha256": "783c0d896a2b9cff65a380a7a0a228f3569bba5dbef00ca0d5b52270069680e6",
+  "previous_evidence_unchanged": true,
+  "security_reason": "native_inference_and_Node_npm_FD_async_coverage_incomplete"
+}

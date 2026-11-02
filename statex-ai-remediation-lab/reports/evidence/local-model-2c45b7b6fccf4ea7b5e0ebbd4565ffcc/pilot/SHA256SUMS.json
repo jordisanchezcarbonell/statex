@@ -1,0 +1,17 @@
+{
+  "01-controller-baseline-authorize-request.json": "121832666e6c5dc7f8c8b447abaeb44caba85fe27ee08a98e2e4c25333cc3cb8",
+  "01-controller-baseline-authorize-response.json": "4e63311afde8a1f519a59d2c2b6bb31b87420099b4c4515fae5760c5865662d9",
+  "01-controller-baseline-authorize-runtime-stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "01-controller-baseline-authorize-traces.json.gz": "bd7504628bb5c7374484031502fc3920c3cfe5e44ddced722a91fee1fa114101",
+  "02-controller-baseline-request.json": "121832666e6c5dc7f8c8b447abaeb44caba85fe27ee08a98e2e4c25333cc3cb8",
+  "02-controller-baseline-response.json": "cf724e7ea050b3f69a6a96f842a44d5dab784470f0aa0f0f9815210f76a223bc",
+  "02-controller-baseline-runtime-stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "02-controller-baseline-traces.json.gz": "141901c68827f7736ef8e016bcaa66cf0b7572828bc38c8f81f574ed60386dc4",
+  "authorized-context.json": "be9d021688926712d2ca2b47d31ee687b0e2cb8b04358237ddae10cb51399348",
+  "inference-traces.json.gz": "0993dada3cdff29791c19ab6c8a71e617372d72f47f5c08d04109734991b4223",
+  "inference.stderr.txt": "87a55cc9f986c9c33c7afe16b268e4b914958d850a737e16e6ab9db572839a38",
+  "json.gbnf": "1a3e3469892957861029adcd24ad0c886b778a942dd4a18cc146238ad56474dd",
+  "prompt.txt": "cae6f64867149dd4b8948c9f781202941d35e07cd537bd148df5fc8cc88427ee",
+  "report.json": "5a976773716f5b099bd9ebaf24910477159babc0c880bce2628d009c150709b1",
+  "response.raw.txt": "86a204dc9e8b25dda5a1e28928ecbc769333b744d2ec43c6166bd41a261b213f"
+}

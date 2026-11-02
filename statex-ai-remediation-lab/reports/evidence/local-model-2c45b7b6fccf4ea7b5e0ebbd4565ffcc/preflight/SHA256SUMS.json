@@ -1,0 +1,9 @@
+{
+  "authorized-context.json": "0ac262273f4604c2f8cbb5d7ff9fce4bd89c93eb87620c33e6d963e55deae209",
+  "inference-traces.json.gz": "95bbb984ffb546c3f6cefde54aa42de2c65c0468a4b49cc8a924015c2a467aa3",
+  "inference.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "json.gbnf": "1a3e3469892957861029adcd24ad0c886b778a942dd4a18cc146238ad56474dd",
+  "prompt.txt": "79c3b09e8d8d782ebfd55d515dccf59f513b7d9225724853eb5c7dba12977916",
+  "report.json": "4afab1807c06364fa1d292a87b7bcf3425449901a7c0e30e0d16a9bc46a1bb54",
+  "response.raw.txt": "cdff23b0a38dd2412a0366a7717cde07da54722088b3b8ab3c784734b53e588e"
+}

@@ -1,0 +1,169 @@
+{
+  "created_utc": "2026-11-01T20:24:21.916520+00:00",
+  "model": {
+    "repository": "Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF",
+    "revision": "f86cb2c1fa58255f8052cc32aeede1b7482d4361",
+    "file": "qwen2.5-coder-1.5b-instruct-q4_k_m.gguf",
+    "bytes": 1117320768,
+    "sha256": "cc324af070c2ecbfd324a30884d2f951a7ff756aba85cb811a6ec436933bb046",
+    "license": "Apache-2.0"
+  },
+  "runtime_source": {
+    "repository": "https://github.com/ggml-org/llama.cpp",
+    "tag": "b5046",
+    "commit": "74d4f5b041ad837153b0e90fc864b8290e01d8d5",
+    "source_tar_sha256": "8dd9fcc7c17f972673960ffdcc7521f52de5a9ec594aa6acebd9dfd8c17c0a5c"
+  },
+  "parameters": {
+    "context_tokens": 8192,
+    "max_generated_tokens": 1536,
+    "threads": 4,
+    "batch_threads": 4,
+    "gpu_layers": 0,
+    "temperature": 0.2,
+    "top_k": 40,
+    "top_p": 0.95,
+    "grammar": "generic JSON object grammar; no action/value forced by grammar",
+    "chat_template": "manual Qwen ChatML; conversation mode off",
+    "memory_bytes": 3221225472,
+    "cpu_quota": 4,
+    "timeout_seconds": 360
+  },
+  "policy": {
+    "version": 1,
+    "runtime": "llama.cpp b5046 CPU, one native process with pthreads",
+    "memory_bytes": 3221225472,
+    "cpus": 4,
+    "threads": 4,
+    "pids_limit": 48,
+    "network": "none",
+    "root_filesystem": "read_only",
+    "user": "1000:1000",
+    "capabilities": [],
+    "no_new_privileges": true,
+    "read_only_inputs": [
+      "/weights/model.gguf",
+      "/input/prompt.txt",
+      "/input/json.gbnf"
+    ],
+    "runtime_read_only_roots": [
+      "/usr",
+      "/lib",
+      "/lib64",
+      "/opt/llama"
+    ],
+    "executable_files": [
+      "/opt/llama/llama-cli",
+      "/opt/llama/probe",
+      "/lib/ld-linux-aarch64.so.1",
+      "/lib64/ld-linux-x86-64.so.2"
+    ],
+    "write_channels": [
+      "inherited stdout to /control/response.txt",
+      "inherited stderr to /control/runtime.stderr"
+    ],
+    "denied_domains": [
+      "workspace",
+      "production",
+      "Docker socket",
+      "host filesystem",
+      "host tools"
+    ],
+    "clone": "only glibc pthread flags 0x3d0f00; clone3 returns ENOSYS; forks rejected",
+    "permission_fallback": "none; failures stop the experiment",
+    "observation": "native capture only; semantic I/O accounting inconclusive"
+  },
+  "trials": [],
+  "authorization": "User explicitly authorized isolated local inference; no automatic permission expansion",
+  "deterministic_comparison": "reports/evidence/remediation-70d73e46a7e44e2e8d110498f021b166",
+  "comparison_report_sha256": "783c0d896a2b9cff65a380a7a0a228f3569bba5dbef00ca0d5b52270069680e6",
+  "security_observation": "inconclusive",
+  "weights_download_is_not_external_inference": true,
+  "source_sha256": {
+    "fixture/app.cjs": "ae7c29f8615e22894d5d64faacf8c783e7e6d33fffbfac5df23c69d67ed355a5",
+    "tests/test_lifecycle.py": "8fa5789738f5edda6b8e0c401c38d4562d39f8912d74f0b6121a1c103656270c",
+    "tests/test_controls.py": "71a673c70f18598637c212b1d7461d0b3fbcb4cbf99d5d40544c6aa734dedcb7",
+    "tests/test_remediation.py": "338df57f27e35621dc62f4577a16e874a1f019d20514be24320845e2397ad579",
+    "tests/test_export_observer.py": "f52ededf5b5853474a4a72a81b13207ccaacaf96974e1c13e489e3ab59d813f8",
+    "tests/test_local_inference.py": "2038bd5d61e5203ad79142941491de6ba1d8e7a5393e19cb1afd9a91f3bf1abe",
+    "controls/Lifecycle.Dockerfile": "1d4a8ef4ad1944d5e5a98d3fe410087a05af750038f2b4f499364f8696d291d8",
+    "controls/local_model_bench.py": "5f3fabf08189892c0d686ba917998a4dfd37cfb1ab3cbfa7963010933a5efbbc",
+    "controls/archive_remediation.py": "4723702b625eed9b580528b77810ffb9b4f1dda25e52f348b50a0ed2270fa59c",
+    "controls/archive_lifecycle.py": "ef7b073264e39333760b9fb641db835dca07541b9104ff4fd437223caf05ca54",
+    "controls/Dockerfile": "2fae4ef72256f6796d7dd33ae4a31837ea3c267c6ad9ec9a00d1b42bc171bd0a",
+    "controls/lifecycle_suite.py": "a61cc4023242074adcaab7c2721e3824b9cd67c4fe36970d99484ac8f0e45b77",
+    "controls/runtime_observation.py": "a895e425bda0243e6b1e1c5be8e8fa69131d0b6017495b4d3973d9fd59a02335",
+    "controls/local_inference.py": "5e2d614c240c948a4fe47eb6d37e527c071debafe8a86d19da45a1476a104758",
+    "controls/lifecycle_analyze.py": "2ddc4132c1a7d29bffa61892199cbc6e9762066786c00c111ee8c9cc6fefd117",
+    "controls/export_patch.py": "bbcc9588a0d06f513be1c65918cca8017e57f7dc8128e38b1592f0dd5198abe7",
+    "controls/accept.py": "9c5e8daa463b3ef4d9db258fc0a54a8e0963983fa7f3842fd9b8f70fa060beac",
+    "controls/observe.py": "d3048b1cdb48f7722a2cbc30a8154035b2883ba0fdc500d3ba805737ea0b85da",
+    "controls/remediation_suite.py": "42c88abbdb5ce51cfbb4800fd038f94edcd97c218cddc6076ebd19428e3473bc",
+    "controls/Remediation.Dockerfile": "3561b91d90ab1aee10ecfb250670463cef7be809b48e18e3e546210fd17088ec",
+    "controls/Observer.Dockerfile": "36969181212b572e727207e67bf58b0610b912db8e7d21445138fa270b412a42",
+    "controls/record_evidence.py": "c12e3e4176b223220c79544c5579837d21aad2b2c5498bc041eadee4e8a0c026",
+    "controls/lab.py": "a76b256e25f6553e287ef7504bcdb28aa15f204146117282f7befa6e25a0a7f2",
+    "controls/Inference.Dockerfile": "cc58cd291514f1679f13ed68221b5424c1ea31eca5342a29af836267b0319074",
+    "controls/lifecycle/probe.c": "d79da77e330e47ab5a0afa6516b120e1c23f1df5bfc1d9523f6035d66805d8b8",
+    "controls/lifecycle/supervisor.cjs": "15300cc6e19a14baf9acfabd06d04169ea5497744eae16e51c320bc5d377fb66",
+    "controls/lifecycle/bootstrap.c": "aa2f11f05e2f9199dc421eda37cc3467845876200b6698ff025487f7506f4235",
+    "controls/inference/policy.json": "8a5cd52a6988d40fa6c3a6976899d388a32202efa16cbc9beefd435c3fd3ced0",
+    "controls/inference/json.gbnf": "1a3e3469892957861029adcd24ad0c886b778a942dd4a18cc146238ad56474dd",
+    "controls/inference/probe.c": "ce018048a28accdb6f2931aefd39e70ce79585f98b37ff60ba8496bb5c4deb47",
+    "controls/inference/supervisor.cjs": "bcdb4e03a4a17bfa9783865a8ce520930679ab49ca9ab8f6a60c8fc2a63df464",
+    "controls/inference/bootstrap.c": "0853bae9bcb48956ed55773eedbaa173b36fdc2473b947082c00c1b293c1cce4",
+    "controls/remediation/worker.py": "f98f73445c09891a0e9796671dfd8198abbb51ddbc1aac566acf9235a5a2ff20",
+    "controls/remediation/handler.py": "e80e338bd7e1b19e3bc08b7ece33f7bd3351b276daf9447405ee8451520d6a5a",
+    "controls/remediation/proposer.py": "69b19a1a079cdc20a9898814a0179bb4ca14d3f8b2e3d6a2722876f3dc15a620",
+    "controls/remediation/probe.py": "166c4cafa0a51859bc42963eb46704c8aeabd0aa3166f3731a3dd4d9bd7be8de",
+    "controls/remediation/supervisor.cjs": "97f5da9832d5a998decb640e7122c2670902a260022207f88a6e800f5e25b97e",
+    "controls/remediation/bootstrap.c": "10fe3be640e2113e66ff6425da7bf751501b55b8caf78adebd1250b23fc3d6a6"
+  },
+  "adapter_sha256": "5e2d614c240c948a4fe47eb6d37e527c071debafe8a86d19da45a1476a104758",
+  "policy_sha256": "8a5cd52a6988d40fa6c3a6976899d388a32202efa16cbc9beefd435c3fd3ced0",
+  "docker_resources": {
+    "MemTotal": 8319504384,
+    "NCPU": 10,
+    "KernelVersion": "7.0.14-linuxkit",
+    "ServerVersion": "29.9.2",
+    "Architecture": "aarch64"
+  },
+  "images": {
+    "sha256:daf72e2fc9e22c4a259b5183af1a0515256d0a3a1b564dd0e9bbe07aff3e4a40": {
+      "Id": "sha256:daf72e2fc9e22c4a259b5183af1a0515256d0a3a1b564dd0e9bbe07aff3e4a40",
+      "RepoDigests": [
+        "statex-lab-inference@sha256:daf72e2fc9e22c4a259b5183af1a0515256d0a3a1b564dd0e9bbe07aff3e4a40"
+      ],
+      "Architecture": "arm64",
+      "Created": "2026-11-01T20:20:14.296541917Z"
+    },
+    "sha256:95db10a7539668d814e207e170279cda32b89576ce6cc1675e183796f29b48c3": {
+      "Id": "sha256:95db10a7539668d814e207e170279cda32b89576ce6cc1675e183796f29b48c3",
+      "RepoDigests": [
+        "statex-lab-remediation@sha256:95db10a7539668d814e207e170279cda32b89576ce6cc1675e183796f29b48c3"
+      ],
+      "Architecture": "arm64",
+      "Created": "2026-11-01T19:41:32.897752752Z"
+    },
+    "sha256:6e793a80b20b789b357f60125f535009927337cb8d0e6b4423e4ab3e3196dc75": {
+      "Id": "sha256:6e793a80b20b789b357f60125f535009927337cb8d0e6b4423e4ab3e3196dc75",
+      "RepoDigests": [
+        "statex-lab-observer@sha256:6e793a80b20b789b357f60125f535009927337cb8d0e6b4423e4ab3e3196dc75"
+      ],
+      "Architecture": "arm64",
+      "Created": "2026-11-01T18:40:15.207995292Z"
+    }
+  },
+  "blocker": "Docker operation failed (raw output withheld)",
+  "preparation_cleanup": [
+    {
+      "container": "statexlab-2614fbb3a9e1442891660a9d96aeda21",
+      "exit": 0
+    },
+    {
+      "weights_volume": "statexlab-7dd518fdcdcd467395e39ba11dc6be1d",
+      "exit": 0,
+      "absent": true
+    }
+  ]
+}

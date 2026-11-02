@@ -1,0 +1,1 @@
+{"weights_readable":true,"context_readable":true,"domain_paths_absent":true,"protected_paths_denied":true,"fork_denied":true,"network_socket_denied":true,"shell_exec_denied":true,"passed":true}

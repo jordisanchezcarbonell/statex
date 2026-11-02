@@ -1,0 +1,18 @@
+{
+  "test_command": "python3 -B -m unittest discover -s statex-ai-remediation-lab/tests -v",
+  "tests_passed": 42,
+  "tests_failed": 0,
+  "simulation_only": true,
+  "docker_integrated_model_cycle": "blocked_before_generation_required_local_image_unavailable",
+  "real_model_generation_calls": 0,
+  "archived_checksums_verified": true,
+  "archive": "reports/evidence/repair-cycle-82894da3b8e44d17b7a75e049bccf7de",
+  "sha256": {
+    "controls/repair_cycle.py": "35b44c430077c1d7658688210778a6a768e885e26ab8a0fe544e05f0ec3693f3",
+    "controls/run_repair_cycle.py": "8f2e8b02a6fefb90d4a4af5e78d5d1625d72c2d6ff5d1b339dfb283afecc0527",
+    "tests/test_repair_cycle.py": "169dbce03df14677298bf561c848a5d014a54abeda9c6b33a1e060945bad48fa",
+    "tests/test_repair_backend.py": "837180d4778dcd984da920364a16ac6a188ecb26953f3c9fc473b580a9cd0ff3",
+    "README.md": "dc26944725c90432b50c347421a8be3fc5ab04fddc4108598587515a344a4b4c",
+    "reports/phase-two-observed.md": "c9e8f2dc82cdc30a4603f35d64a858ab3abe97dafe8b2968a32dc8cc5d90d78e"
+  }
+}

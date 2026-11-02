@@ -1,0 +1,158 @@
+[
+  {
+    "kind": "container",
+    "name": "statexlab-e0eb8b8789c64ffa9276c2b41401b07f",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-c69c0a0d4dbc4a47838154713247129a",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-c0e882463e7c42eda17941076bc16461",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-4f73b5a0737e4ee0916f88aab6dc40f9",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-5324165e986d4be9837f0f20d097dec4",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-80d1921467bb4194b3c550e853bd9dff",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-be39f6c88c6342cc90992a5bd1369189",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-f3c3f600fa384f5d9961f693e22e948c",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-ced7d99d286548b99035177c10be0dd7",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-dfbee78371284ed4905622430a18ef19",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-1d7110f29cdd466e877c8f111a9f5262",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-44df090d5f1c454b96af76cd52aa7658",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-5adefe5765f64457885309fa22e267ae",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-d26aed29624d4f03ae81555d5825aee9",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-94d3fce2230148ebbb2fefad674ff4aa",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-6c92aaa3d6e24615af6f3f300be567bf",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "volume",
+    "name": "statexlab-7e298164bb14441487ef460283a39813",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-cf58d5509a0c4b71b29bf62afa2d72be",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-0202722b707546da9ffd9e2b4a6cff3a",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-ed6b207d332541828ce6df678a041ee9",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-3e6c6e183c114757beceb966fe00404a",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-a6a58a8e559548338e8ba2b4550da37b",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-aae6b9b6a1ee42329c094fd4fd1d2a54",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-cc848589288f40d6bc4578acb0f4be1f",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-ee977562268249229f88d6c23ee105fd",
+    "inspect_exit": 1,
+    "absent": true
+  },
+  {
+    "kind": "container",
+    "name": "statexlab-9389628fca62467d9f887d5de5192616",
+    "inspect_exit": 1,
+    "absent": true
+  }
+]

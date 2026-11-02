@@ -1,0 +1,13 @@
+[
+  {
+    "label": "pilot",
+    "seed": 42,
+    "report": "pilot/report.json",
+    "model_generated": true,
+    "proposal_valid": false,
+    "functional_acceptance": false,
+    "pilot_or_repetition_passed": false,
+    "security_observation": "inconclusive",
+    "error": "Model proposal invalid; no fallback"
+  }
+]

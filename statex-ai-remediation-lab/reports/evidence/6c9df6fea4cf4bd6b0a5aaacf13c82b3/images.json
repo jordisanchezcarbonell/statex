@@ -1,0 +1,29 @@
+{
+  "node@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c": {
+    "Id": "sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c",
+    "RepoDigests": [
+      "node@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c"
+    ],
+    "Created": "2026-10-28T20:56:36.569312412Z",
+    "Architecture": "arm64",
+    "Os": "linux"
+  },
+  "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47": {
+    "Id": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+    "RepoDigests": [
+      "statex-lab-runtime@sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47"
+    ],
+    "Created": "2026-11-01T18:37:09.135160137Z",
+    "Architecture": "arm64",
+    "Os": "linux"
+  },
+  "sha256:6e793a80b20b789b357f60125f535009927337cb8d0e6b4423e4ab3e3196dc75": {
+    "Id": "sha256:6e793a80b20b789b357f60125f535009927337cb8d0e6b4423e4ab3e3196dc75",
+    "RepoDigests": [
+      "statex-lab-observer@sha256:6e793a80b20b789b357f60125f535009927337cb8d0e6b4423e4ab3e3196dc75"
+    ],
+    "Created": "2026-11-01T18:40:15.207995292Z",
+    "Architecture": "arm64",
+    "Os": "linux"
+  }
+}

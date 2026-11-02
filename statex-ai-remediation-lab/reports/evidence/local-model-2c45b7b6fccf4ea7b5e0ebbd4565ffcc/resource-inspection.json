@@ -1,0 +1,42 @@
+{
+  "inspection_order": "before downloading weights; recorded after the experiment from observed command results",
+  "host": {
+    "architecture": "arm64",
+    "model": "Mac17,2",
+    "memory_bytes": 17179869184,
+    "logical_cpus": 10,
+    "available_disk_df_h": "831 GiB"
+  },
+  "docker": {
+    "endpoint": "unix:///Users/jsanchez/.docker/run/docker.sock",
+    "memory_bytes": 8319504384,
+    "cpus": 10,
+    "architecture": "aarch64"
+  },
+  "local_runtime_commands_found": {
+    "ollama": false,
+    "llama-cli": false,
+    "llama-server": false,
+    "mlx_lm.generate": false
+  },
+  "existing_weights_found_in_checked_locations": 0,
+  "inspection_not_exhaustive": true,
+  "checked_locations": [
+    "~/.ollama/models",
+    "~/.cache/huggingface/hub",
+    "~/.lmstudio/models",
+    "~/.cache/lm-studio/models",
+    "~/models",
+    "~/.cache/llama.cpp",
+    "~/Library/Application Support/LM Studio/models",
+    "~/Library/Application Support/Jan/data/models",
+    "~/.local/share/Jan/data/models",
+    "/private/tmp",
+    "~/Downloads"
+  ],
+  "skipped_protected_directories": 1,
+  "credentials_or_auth_files_read": false,
+  "candidate_presented_before_weight_download": true,
+  "candidate_bytes": 1117320768,
+  "candidate_memory_cap_bytes": 3221225472
+}

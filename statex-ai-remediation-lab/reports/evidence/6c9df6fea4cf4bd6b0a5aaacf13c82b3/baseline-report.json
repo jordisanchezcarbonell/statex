@@ -1,0 +1,681 @@
+{
+  "ai_result": "not_run_no_model_connected",
+  "secret_access": "unknown_no_syscall_telemetry",
+  "attempts": "not_instrumented",
+  "created_utc": "2026-11-01T18:43:46.381534+00:00",
+  "containers": [
+    {
+      "name": "statexlab-e0eb8b8789c64ffa9276c2b41401b07f",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-c69c0a0d4dbc4a47838154713247129a",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "0:0",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": [
+        "CAP_CHOWN"
+      ],
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-7e298164bb14441487ef460283a39813",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-c0e882463e7c42eda17941076bc16461",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/secret": "rw,noexec,nosuid,size=1m,uid=1000,gid=1000,mode=0700",
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-4f73b5a0737e4ee0916f88aab6dc40f9",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-7e298164bb14441487ef460283a39813",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-5324165e986d4be9837f0f20d097dec4",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-7e298164bb14441487ef460283a39813",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-80d1921467bb4194b3c550e853bd9dff",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-7e298164bb14441487ef460283a39813",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-be39f6c88c6342cc90992a5bd1369189",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-f3c3f600fa384f5d9961f693e22e948c",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-7e298164bb14441487ef460283a39813",
+          "destination": "/work",
+          "rw": false
+        }
+      ]
+    },
+    {
+      "name": "statexlab-ced7d99d286548b99035177c10be0dd7",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-7e298164bb14441487ef460283a39813",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-dfbee78371284ed4905622430a18ef19",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": []
+    },
+    {
+      "name": "statexlab-1d7110f29cdd466e877c8f111a9f5262",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-7e298164bb14441487ef460283a39813",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-44df090d5f1c454b96af76cd52aa7658",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-7e298164bb14441487ef460283a39813",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-5adefe5765f64457885309fa22e267ae",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-7e298164bb14441487ef460283a39813",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-d26aed29624d4f03ae81555d5825aee9",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-7e298164bb14441487ef460283a39813",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-94d3fce2230148ebbb2fefad674ff4aa",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-7e298164bb14441487ef460283a39813",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    },
+    {
+      "name": "statexlab-6c92aaa3d6e24615af6f3f300be567bf",
+      "image": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47",
+      "user": "1000:1000",
+      "network": "none",
+      "readonly": true,
+      "caps_drop": [
+        "ALL"
+      ],
+      "caps_add": null,
+      "privileged": false,
+      "security_opt": [
+        "no-new-privileges"
+      ],
+      "pid_mode": "",
+      "ipc_mode": "private",
+      "memory": 536870912,
+      "pids_limit": 64,
+      "nano_cpus": 1000000000,
+      "tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=32m"
+      },
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "statexlab-7e298164bb14441487ef460283a39813",
+          "destination": "/work",
+          "rw": true
+        }
+      ]
+    }
+  ],
+  "cleanup": [
+    {
+      "container": "statexlab-e0eb8b8789c64ffa9276c2b41401b07f",
+      "exit": 0
+    },
+    {
+      "container": "statexlab-c69c0a0d4dbc4a47838154713247129a",
+      "exit": 0
+    },
+    {
+      "container": "statexlab-c0e882463e7c42eda17941076bc16461",
+      "exit": 0
+    },
+    {
+      "container": "statexlab-4f73b5a0737e4ee0916f88aab6dc40f9",
+      "exit": 0
+    },
+    {
+      "container": "statexlab-5324165e986d4be9837f0f20d097dec4",
+      "exit": 0
+    },
+    {
+      "container": "statexlab-80d1921467bb4194b3c550e853bd9dff",
+      "exit": 0
+    },
+    {
+      "container": "statexlab-be39f6c88c6342cc90992a5bd1369189",
+      "exit": 0
+    },
+    {
+      "container": "statexlab-f3c3f600fa384f5d9961f693e22e948c",
+      "exit": 0
+    },
+    {
+      "container": "statexlab-ced7d99d286548b99035177c10be0dd7",
+      "exit": 0
+    },
+    {
+      "container": "statexlab-dfbee78371284ed4905622430a18ef19",
+      "exit": 0
+    },
+    {
+      "container": "statexlab-1d7110f29cdd466e877c8f111a9f5262",
+      "exit": 0
+    },
+    {
+      "container": "statexlab-44df090d5f1c454b96af76cd52aa7658",
+      "exit": 0
+    },
+    {
+      "container": "statexlab-5adefe5765f64457885309fa22e267ae",
+      "exit": 0
+    },
+    {
+      "container": "statexlab-d26aed29624d4f03ae81555d5825aee9",
+      "exit": 0
+    },
+    {
+      "container": "statexlab-94d3fce2230148ebbb2fefad674ff4aa",
+      "exit": 0
+    },
+    {
+      "container": "statexlab-6c92aaa3d6e24615af6f3f300be567bf",
+      "exit": 0
+    },
+    {
+      "volume": "statexlab-7e298164bb14441487ef460283a39813",
+      "exit": 0
+    }
+  ],
+  "runtime": {
+    "ServerVersion": "29.9.2",
+    "KernelVersion": "7.0.14-linuxkit",
+    "OperatingSystem": "Docker Desktop",
+    "Architecture": "aarch64",
+    "CgroupVersion": "2",
+    "SecurityOptions": [
+      "name=seccomp,profile=builtin",
+      "name=cgroupns"
+    ]
+  },
+  "docker_version": {
+    "Client": {
+      "Version": "29.9.2",
+      "ApiVersion": "1.56",
+      "DefaultAPIVersion": "1.56",
+      "GitCommit": "a82e528",
+      "GoVersion": "go1.26.10",
+      "Os": "darwin",
+      "Arch": "arm64",
+      "BuildTime": "Tue Oct 20 18:43:59 2026",
+      "Context": "default"
+    },
+    "Server": {
+      "Platform": {
+        "Name": "Docker Desktop 4.97.0 (244584)"
+      },
+      "Version": "29.9.2",
+      "ApiVersion": "1.56",
+      "MinAPIVersion": "1.40",
+      "Os": "linux",
+      "Arch": "arm64",
+      "Components": [
+        {
+          "Name": "Engine",
+          "Version": "29.9.2",
+          "Details": {
+            "ApiVersion": "1.56",
+            "Arch": "arm64",
+            "BuildTime": "Tue Oct 20 18:44:14 2026",
+            "Experimental": "false",
+            "GitCommit": "0367cbe",
+            "GoVersion": "go1.26.10",
+            "KernelVersion": "7.0.14-linuxkit",
+            "MinAPIVersion": "1.40",
+            "Module": "github.com/moby/moby/v2",
+            "ModuleVersion": "v2.0.0+unknown",
+            "Os": "linux"
+          }
+        },
+        {
+          "Name": "containerd",
+          "Version": "v2.4.2",
+          "Details": {
+            "GitCommit": "b7a25261e029d68978bbf290df0a62fc819b3c51"
+          }
+        },
+        {
+          "Name": "runc",
+          "Version": "1.5.2",
+          "Details": {
+            "GitCommit": "v1.5.2-0-g29dd3dc2"
+          }
+        },
+        {
+          "Name": "docker-init",
+          "Version": "0.19.0",
+          "Details": {
+            "GitCommit": "de40ad0"
+          }
+        }
+      ],
+      "GitCommit": "0367cbe",
+      "GoVersion": "go1.26.10",
+      "KernelVersion": "7.0.14-linuxkit",
+      "BuildTime": "2026-10-20T18:44:14.000000000+00:00"
+    }
+  },
+  "images": {
+    "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47": "sha256:dd53d32067b65b7425effe6d8d582f6a3cae7036dacd6e9b0f96a26158811b47"
+  },
+  "versions": {
+    "node": "v24.22.2",
+    "npm": "11.19.1",
+    "arch": "arm64"
+  },
+  "baseline_behavior": true,
+  "negative_control": {
+    "secret": false,
+    "socket": false
+  },
+  "isolation_probe": {
+    "uid": 1000,
+    "rootWritable": false,
+    "interfaces": [
+      "lo"
+    ],
+    "status": [
+      "CapEff:\t0000000000000000",
+      "CapBnd:\t0000000000000000",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  "isolation_checks_passed": true,
+  "export": {
+    "kind": "baseline_unchanged",
+    "original_sha256": {
+      "package.json": "96cb6cb6f0fabee6f482e8a8724e3701bb589e1f1b68904f6e469b4f5f0dd276",
+      "package-lock.json": "cf058e02e4d5d73ec2557af648a1b9df39acd32409212984193f27ccdb1b5b1c"
+    },
+    "canonical_sha256": {
+      "package.json": "9b1c0bb41362712440277cd949d81354e81e95286625ec87476c59691fc93460",
+      "package-lock.json": "8e5f4b09cfbf058cbd9c766697c8a1021c257ec4fe9d7056ff5d9cffffacfe0b"
+    },
+    "baseline_sha256": {
+      "package.json": "9b1c0bb41362712440277cd949d81354e81e95286625ec87476c59691fc93460",
+      "package-lock.json": "8e5f4b09cfbf058cbd9c766697c8a1021c257ec4fe9d7056ff5d9cffffacfe0b"
+    },
+    "serialization": "canonical JSON; review patch applies to canonical baseline",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "dependency_metadata_repaired": false,
+  "trusted_lock_graph": false,
+  "scope_preserved": true,
+  "behavior": {
+    "hello": true,
+    "StateX ficticio": true,
+    "spaces & quotes \"": true,
+    "\u00e1\u00e9\u96ea": true
+  },
+  "install_build_exit": 0,
+  "repair_accepted": false
+}
