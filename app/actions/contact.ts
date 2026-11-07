@@ -3,11 +3,13 @@
 import { headers } from "next/headers";
 import { contactForm } from "../_site/content";
 import { readContact, validateContact, type ContactValues, type FieldErrors } from "../_site/validate";
+import { verifyContactToken } from "../_site/contactToken";
 
 // Envío del formulario de contacto.
 // - Valida en servidor con las mismas reglas que el navegador (app/_site/validate.ts).
-// - Antiabuso sin dependencias: campo trampa "website", envíos demasiado rápidos tras pintar el
-//   formulario y límite por IP en memoria. En ambos primeros casos se finge éxito y no se envía nada.
+// - Antiabuso sin dependencias: campo trampa "website", token de tiempo firmado por el servidor
+//   (app/_site/contactToken.ts) y límite por IP en memoria. En el honeypot se finge éxito y no se
+//   envía nada.
 //   El límite en memoria es por instancia (orientativo en serverless); uno global necesitaría un
 //   almacén externo (ver docs/pendientes.md).
 // - Envía con la API REST de Resend. Si faltan las variables de entorno devuelve "not-configured"
@@ -21,7 +23,6 @@ export type ContactState = {
   values?: ContactValues;
 };
 
-const MIN_FILL_MS = 3000;
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_PER_WINDOW = 5;
 const hits = new Map<string, number[]>();
@@ -43,13 +44,15 @@ const oneLine = (s: string) => s.replace(/[\u0000-\u001f\u007f\u2028\u2029]+/g, 
 
 export async function sendContact(_prev: ContactState, data: FormData): Promise<ContactState> {
   const website = data.get("website");
-  const renderedAt = Number(data.get("t"));
   if (typeof website === "string" && website) return { status: "ok" };
-  // Demasiado rápido para una persona: no se envía y se pide repetir (nunca un falso éxito a quien
-  // pudiera ser real). Sin JavaScript la marca llega vacía y no se aplica.
   const input = readContact(data);
   const { values } = input;
-  if (renderedAt > 0 && Date.now() - renderedAt < MIN_FILL_MS) return { status: "error", values };
+  // Token firmado: si el cliente lo falsifica o envía al instante, se rechaza. Sin token (JavaScript
+  // desactivado) se deja pasar y el límite por IP sigue aplicando.
+  const token = String(data.get("ct") ?? "");
+  const tokenCheck = verifyContactToken(token);
+  if (tokenCheck === "invalid" || tokenCheck === "too-fast" || tokenCheck === "expired")
+    return { status: "error", values };
 
   const fieldErrors = validateContact(input);
   if (Object.keys(fieldErrors).length) return { status: "invalid", fieldErrors, values };
@@ -61,7 +64,8 @@ export async function sendContact(_prev: ContactState, data: FormData): Promise<
 
   const key = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO;
-  if (!key || !to) return { status: "not-configured", values };
+  const from = process.env.CONTACT_FROM;
+  if (!key || !to || !from) return { status: "not-configured", values };
 
   const service = contactForm.serviceOptions.find((o) => o.value === values.service)?.label ?? values.service;
   const text = [
@@ -79,7 +83,7 @@ export async function sendContact(_prev: ContactState, data: FormData): Promise<
       method: "POST",
       headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
       body: JSON.stringify({
-        from: process.env.CONTACT_FROM ?? "StateX <onboarding@resend.dev>",
+        from,
         to: [to],
         reply_to: values.email,
         subject: `Nueva solicitud (${oneLine(service)}): ${oneLine(values.company)}`,

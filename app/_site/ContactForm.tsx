@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState, useEffect, useRef, useState, type ReactNode } from "react";
+import { useActionState, useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { sendContact, type ContactState } from "../actions/contact";
 import { brand, contactForm as t } from "./content";
 import { caps, focus } from "./ui";
@@ -39,8 +39,8 @@ const messages: Partial<Record<ContactState["status"], { text: string; tone: "er
 export function ContactForm({ defaultService = t.serviceOptions[0].value, brandName = brand.name }: { defaultService?: string; brandName?: string }) {
   const [state, action, pending] = useActionState(sendContact, initial);
   const [service, setService] = useState(defaultService);
-  // Marca de tiempo de cuando se pintó el formulario: el servidor descarta envíos instantáneos (bots).
-  const [renderedAt, setRenderedAt] = useState("");
+  // Token de tiempo firmado por el servidor: el cliente no puede falsificar el instante de renderizado.
+  const [token, setToken] = useState("");
   // Errores detectados en el navegador antes de enviar; el servidor vuelve a validar siempre.
   const [clientErrors, setClientErrors] = useState<FieldErrors | null>(null);
   const status = useRef<HTMLParagraphElement>(null);
@@ -48,8 +48,27 @@ export function ContactForm({ defaultService = t.serviceOptions[0].value, brandN
   const v = state.values;
   const notice = clientErrors ? messages.invalid : messages[state.status];
 
+  const loadToken = useCallback(() => {
+    let alive = true;
+    fetch("/api/contact-token", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d: { token?: unknown } | null) => {
+        if (alive && typeof d?.token === "string") setToken(d.token);
+      })
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  useEffect(() => loadToken(), [loadToken]);
+
+  // Si el envío falla (p. ej. el token caducó), se pide uno nuevo para poder reintentar.
   useEffect(() => {
-    setRenderedAt(String(Date.now()));
+    if (state.status === "error") return loadToken();
+  }, [state, loadToken]);
+
+  useEffect(() => {
     const onInterest = (e: Event) => setService((e as CustomEvent<string>).detail);
     window.addEventListener(INTEREST_EVENT, onInterest);
     return () => window.removeEventListener(INTEREST_EVENT, onInterest);
@@ -152,7 +171,7 @@ export function ContactForm({ defaultService = t.serviceOptions[0].value, brandN
         <label htmlFor="hf-website">No rellenar</label>
         <input id="hf-website" name="website" tabIndex={-1} autoComplete="off" />
       </div>
-      <input type="hidden" name="t" value={renderedAt} />
+      <input type="hidden" name="ct" value={token} />
 
       <div className="mt-8">
         <div className="flex items-start gap-3 text-[15px] text-(--h-ivory)/85">
