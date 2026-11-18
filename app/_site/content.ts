@@ -9,7 +9,8 @@ export const site = {
   // Dominio definitivo pendiente: mientras tanto, la URL de previsualización.
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://statex-two.vercel.app").replace(/\/$/, ""),
   // Indexación desactivada hasta el lanzamiento (dominio propio y aprobación expresa).
-  indexable: process.env.SITE_INDEXABLE === "true",
+  // En Vercel solo cuenta en producción: los despliegues de preview nunca son indexables.
+  indexable: process.env.SITE_INDEXABLE === "true" && (!process.env.VERCEL_ENV || process.env.VERCEL_ENV === "production"),
   locale: "es_ES",
 };
 
@@ -22,7 +23,7 @@ export const brand = {
 export const seo = {
   title: "StateX · Auditoría de seguridad web, APIs y exposición externa",
   description:
-    "Consultoría boutique de ciberseguridad en Barcelona. Auditamos aplicaciones web, APIs e infraestructura expuesta, verificamos cada hallazgo y te ayudamos a corregirlo.",
+    "Consultoría boutique de ciberseguridad en Barcelona. Audito aplicaciones web, APIs e infraestructura expuesta, verifico cada hallazgo y te ayudo a corregirlo.",
 };
 
 export const nav = [
@@ -30,7 +31,7 @@ export const nav = [
   { href: "#metodo", label: "Método" },
   { href: "#por-que", label: "Por qué" },
   { href: "#entregables", label: "Entregables" },
-  { href: "#equipo", label: "Equipo" },
+  { href: "#quien", label: "Quién está detrás" },
 ];
 
 export const cta = {
@@ -41,10 +42,10 @@ export const cta = {
 export const hero = {
   // Dos frases, dos líneas: la primera atenuada, la segunda en marfil.
   lines: ["La seguridad no termina", "cuando encuentras una vulnerabilidad."],
-  body: "Identificamos riesgos, corregimos vulnerabilidades y reforzamos tus sistemas. De la evaluación técnica a la solución.",
+  body: "Auditoría de seguridad web y APIs con alcance y precio cerrados. Informe, corrección y retest durante 6 meses.",
   // Franja inferior: firma y las cuatro fases del método.
   lead: "Secure by Design. · Barcelona",
-  claim: ["Evaluamos", "Priorizamos", "Corregimos", "Verificamos"],
+  claim: ["Evalúo", "Priorizo", "Corrijo", "Verifico"],
 };
 
 // ─── Servicios ───────────────────────────────────────────────────────────────
@@ -66,7 +67,7 @@ export type Service = {
   price: string | null;
   priceFrom: number | null; // importe mínimo sin IVA, para los datos estructurados
   priceScope: string; // a qué alcance corresponde el precio "desde"
-  reference: string; // marcos de referencia públicos que seguimos (no son certificaciones)
+  reference: string; // marcos de referencia públicos que sigo (no son certificaciones)
 };
 
 export const services: Service[] = [
@@ -76,7 +77,7 @@ export const services: Service[] = [
     name: "Auditoría de seguridad web y APIs",
     short: "Aplicaciones y APIs",
     summary:
-      "Revisamos tu aplicación y sus APIs como lo haría un atacante, con el contexto de quien sabe cómo se construyen.",
+      "Reviso tu aplicación y sus APIs como lo haría un atacante, con el contexto de quien sabe cómo se construyen.",
     seoDescription:
       "Auditoría de seguridad de aplicaciones web y APIs: autenticación, autorización, exposición de datos e integraciones. Hallazgos verificados y plan de corrección.",
     forWho: [
@@ -84,7 +85,7 @@ export const services: Service[] = [
       "Agencias que desarrollan para sus clientes",
       "Equipos con APIs públicas o integraciones con terceros",
     ],
-    scopeLabel: "Qué revisamos",
+    scopeLabel: "Qué reviso",
     scope: [
       "Autenticación y gestión de sesiones",
       "Autorización y control de acceso entre cuentas y roles",
@@ -113,7 +114,7 @@ export const services: Service[] = [
     name: "Evaluación de exposición externa",
     short: "Superficie expuesta",
     summary:
-      "Descubrimos qué ve un atacante de tu empresa en internet y qué parte de eso supone un riesgo real.",
+      "Descubro qué ve un atacante de tu empresa en internet y qué parte de eso supone un riesgo real.",
     seoDescription:
       "Evaluación de la exposición externa de tu empresa: inventario de activos, servicios expuestos, configuraciones débiles y software desactualizado, priorizados por criticidad.",
     forWho: [
@@ -121,7 +122,7 @@ export const services: Service[] = [
       "Organizaciones que han crecido rápido o por adquisiciones",
       "Equipos sin un inventario fiable de lo que publican",
     ],
-    scopeLabel: "Qué revisamos",
+    scopeLabel: "Qué reviso",
     scope: [
       "Activos y subdominios desconocidos u olvidados",
       "Servicios expuestos sin necesidad",
@@ -149,7 +150,7 @@ export const services: Service[] = [
     name: "Ingeniería de software segura",
     short: "Arquitectura y desarrollo",
     summary:
-      "Trabajamos con tu equipo para que la seguridad forme parte de cómo diseñáis, construís y desplegáis el software.",
+      "Trabajo con tu equipo para que la seguridad forme parte de cómo diseñáis, construís y desplegáis el software.",
     seoDescription:
       "Revisión de arquitectura, autenticación, APIs, CI/CD, dependencias, contenedores y cloud. Diagnóstico técnico, plan de mejoras y acompañamiento a tu equipo de desarrollo.",
     forWho: [
@@ -184,29 +185,29 @@ export const services: Service[] = [
 export const servicesSection = {
   label: "Servicios",
   title: "Tres especialidades. Ninguna genérica.",
-  intro: "No hacemos de todo. Nos centramos en lo que mejor conocemos: el software que tu empresa construye y lo que publica en internet.",
-  scopeLabel: "Qué revisamos",
+  intro: "No hago de todo. Me centro en lo que mejor conozco: el software que tu empresa construye y lo que publica en internet.",
+  scopeLabel: "Qué reviso",
   deliverablesLabel: "Qué recibes",
   more: "Ver el servicio",
   request: "Solicitar",
   commitmentsLabel: "En todos los servicios",
   commitments: [
-    { name: "Retest durante 6 meses", text: "Cuando corrijas, comprobamos que los fallos críticos y altos están resueltos y te lo dejamos por escrito." },
+    { name: "Retest durante 6 meses", text: "Cuando corrijas, compruebo que los fallos críticos y altos están resueltos y te lo dejo por escrito." },
     { name: "Propuesta en 48 h laborables", text: "Alcance, plazo y precio cerrados tras la primera conversación." },
-    { name: "Aviso inmediato", text: "Si encontramos algo crítico, te avisamos el mismo día, sin esperar al informe." },
-    { name: "Confidencialidad", text: "Firmamos un acuerdo de confidencialidad si lo necesitas, antes de ver nada." },
+    { name: "Aviso inmediato", text: "Si encuentro algo crítico, te aviso el mismo día, sin esperar al informe." },
+    { name: "Confidencialidad", text: "Firmo un acuerdo de confidencialidad si lo necesitas, antes de ver nada." },
   ],
   start: {
     title: "¿No sabes por dónde empezar?",
     text: "Empieza por una evaluación inicial de alcance limitado: una revisión acotada de tu exposición externa y de tu aplicación principal para decidir, con datos, qué conviene auditar a fondo.",
     cta: "Pedir una evaluación inicial",
     interest: "evaluacion-inicial",
-    price: "290 € + IVA, precio cerrado. Si después contratas una auditoría, te lo descontamos.",
+    price: "290 € + IVA, precio cerrado. Si después contratas una auditoría, te lo descuento.",
   },
   // Pack para agencias: varias webs de sus clientes en un solo encargo (cálculo en services-pricing.md §10).
   agencies: {
     title: "¿Eres una agencia?",
-    text: "Revisamos la exposición externa y la web pública (sin login) de 5 webs de tus clientes. Un informe por web, uno resumen para la agencia y, si lo prefieres, con tu marca.",
+    text: "Reviso la exposición externa y la web pública (sin login) de 5 webs de tus clientes. Un informe por web, uno resumen para la agencia y, si lo prefieres, con tu marca.",
     price: "5 webs por 1.290 € + IVA. Cada web adicional, 240 €.",
     note: "Cada cliente final firma la autorización de sus activos.",
     cta: "Pedir el pack para agencias",
@@ -215,9 +216,9 @@ export const servicesSection = {
   },
 };
 
-// ─── Áreas de oferta ─────────────────────────────────────────────────────────
-// Tres áreas que agrupan los servicios con precio publicado. Son líneas de servicio, no capacidades
-// certificadas: cada encargo se define con alcance y autorización por escrito.
+// ─── Oferta ──────────────────────────────────────────────────────────────────
+// Dos productos con precio publicado y, debajo, dos complementos. Cada encargo se define con alcance
+// y autorización por escrito.
 
 const serviceById = (id: string) => {
   const s = services.find((x) => x.id === id);
@@ -225,28 +226,46 @@ const serviceById = (id: string) => {
   return s;
 };
 
+const audit = serviceById("auditoria-web-api");
+
 export const areas = {
   label: "Servicios",
-  title: "Tres áreas. Del hallazgo a la solución.",
-  intro:
-    "Evaluamos como un atacante, corregimos como un equipo de ingeniería y te ayudamos a decidir qué hacer primero. Puedes contratar un área o las tres.",
+  title: "Alcance y precio cerrados.",
+  intro: "Evalúo como un atacante, corrijo como un ingeniero y te ayudo a decidir qué hacer primero.",
   includesLabel: "Qué incluye",
   entryLabel: "Por dónde empezar",
-  note: "Líneas de servicio propuestas. Cada encargo se define con un alcance técnico cerrado y una autorización firmada antes de empezar.",
-  items: [
+  note: "Cada encargo se define con un alcance técnico cerrado y una autorización firmada antes de empezar.",
+  products: [
     {
-      id: "offensive",
-      name: "Offensive Security",
-      descriptor: "Evaluación ofensiva autorizada",
-      summary: "Buscamos lo que encontraría un atacante en tu aplicación, tus APIs y lo que tu empresa expone en internet, siempre dentro del alcance firmado.",
-      lines: ["Evaluaciones de seguridad", "Pentesting autorizado", "Análisis de vulnerabilidades", "Revisiones de seguridad web y APIs"],
-      entries: [serviceById("auditoria-web-api"), serviceById("exposicion-externa")],
+      id: audit.id,
+      name: audit.name,
+      summary: audit.summary,
+      lines: audit.deliverables,
+      price: audit.price,
+      note: null as string | null,
+      cta: servicesSection.request,
+      interest: audit.id,
+      link: { label: servicesSection.more, href: `/servicios/${audit.slug}` },
     },
     {
+      id: servicesSection.agencies.interest,
+      name: "Pack para agencias (5 webs)",
+      summary: servicesSection.agencies.text,
+      lines: [] as string[],
+      price: servicesSection.agencies.price as string | null,
+      note: servicesSection.agencies.note as string | null,
+      cta: servicesSection.agencies.cta,
+      interest: servicesSection.agencies.interest,
+      link: servicesSection.agencies.sample,
+    },
+  ],
+  complementsLabel: "Complementos",
+  items: [
+    {
       id: "engineering",
-      name: "Secure Engineering",
+      name: "Corrección",
       descriptor: "Ingeniería segura y corrección",
-      summary: "Corregimos lo encontrado en tu código, tu configuración o tu arquitectura, y dejamos a tu equipo con un sistema más difícil de romper.",
+      summary: "Corrijo lo encontrado en tu código, tu configuración o tu arquitectura, y dejo a tu equipo con un sistema más difícil de romper.",
       lines: [
         "Corrección de vulnerabilidades",
         "Desarrollo seguro",
@@ -259,9 +278,9 @@ export const areas = {
     },
     {
       id: "advisory",
-      name: "Security Advisory",
+      name: "Asesoramiento",
       descriptor: "Asesoramiento técnico",
-      summary: "Te ayudamos a decidir con criterio: qué riesgos importan, qué proteger primero y cómo mejorar con el tiempo sin frenar al equipo.",
+      summary: "Te ayudo a decidir con criterio: qué riesgos importan, qué proteger primero y cómo mejorar con el tiempo sin frenar al equipo.",
       lines: [
         "Consultoría de seguridad",
         "Evaluación de riesgos",
@@ -274,18 +293,17 @@ export const areas = {
   ],
 };
 
-// ─── Por qué elegirnos ───────────────────────────────────────────────────────
+// ─── Por qué StateX ──────────────────────────────────────────────────────────
 
-export const whyIntro = (brandName: string) =>
-  `Muchas consultoras entregan una lista de vulnerabilidades. En ${brandName} la seguridad y la ingeniería trabajan juntas, así que, si lo contratas, el encargo termina cuando el problema está resuelto y comprobado.`;
+export const whyLabel = (brandName: string) => `Por qué ${brandName}`;
 
 export const why = {
-  label: "Por qué elegirnos",
-  title: "Encontrar el fallo es solo la mitad del trabajo.",
-  intro: whyIntro(brand.name),
+  label: whyLabel(brand.name),
+  title: "Quien encuentra el fallo es quien sabe arreglarlo.",
+  intro: "Muchas auditorías acaban en un PDF que tu equipo no sabe por dónde coger. Llevo 6 años construyendo aplicaciones con React, Next.js y NestJS, así que cada hallazgo llega con la corrección pensada para tu stack. Si quieres, la aplico yo.",
   points: [
-    { name: "Seguridad e ingeniería, juntas", text: "Un especialista en seguridad y un ingeniero de software en la misma firma, desde la primera conversación." },
-    { name: "No nos quedamos en el informe", text: "Si lo contratas, aplicamos la corrección: código, configuración o arquitectura." },
+    { name: "Un solo interlocutor", text: "Hablas siempre con quien hace las pruebas y escribe el informe." },
+    { name: "No me quedo en el informe", text: "Si lo contratas, aplico la corrección: código, configuración o arquitectura." },
     { name: "Soluciones técnicas reales", text: "Correcciones pensadas para tu stack y tu forma de desplegar, no enlaces a una guía genérica." },
     { name: "Prioridad por riesgo e impacto", text: "Primero lo que puede costarte datos, dinero o clientes. Después, el resto, con un plan." },
     { name: "Resultados que se entienden", text: "Un resumen para dirección, que decide, y el detalle técnico para el equipo que corrige." },
@@ -296,17 +314,17 @@ export const why = {
 // ─── Metodología ─────────────────────────────────────────────────────────────
 
 export const method = {
-  label: "Nuestro método",
-  title: "Evaluamos. Priorizamos. Corregimos. Verificamos.",
-  intro: "Cuatro fases acotadas y trazables. Sabes qué se va a probar, cuándo, qué recibirás y cómo comprobamos que el problema ya no existe.",
+  label: "Método",
+  title: "Evalúo. Priorizo. Corrijo. Verifico.",
+  intro: "Cuatro fases acotadas y trazables. Sabes qué se va a probar, cuándo, qué recibirás y cómo compruebo que el problema ya no existe.",
   recordLabel: "Queda por escrito",
   steps: [
-    { name: "Evaluamos", text: "Comprendemos el contexto, la aplicación y los activos, e identificamos los riesgos dentro de un alcance autorizado.", record: "Alcance, autorización y registro de pruebas" },
-    { name: "Priorizamos", text: "Clasificamos cada vulnerabilidad por impacto, probabilidad y contexto de negocio. Primero, lo que más te puede costar.", record: "Informe técnico y resumen ejecutivo" },
-    { name: "Corregimos", text: "Implementamos las medidas necesarias con tu equipo, o te entregamos la corrección lista para tu stack.", record: "Plan de corrección y cambios aplicados" },
-    { name: "Verificamos", text: "Volvemos a probar las correcciones de los fallos críticos y altos para confirmar que están cerrados y que no abren otro problema.", record: "Retest de críticos y altos durante 6 meses" },
+    { name: "Evalúo", text: "Comprendo el contexto, la aplicación y los activos, e identifico los riesgos dentro de un alcance autorizado.", record: "Alcance, autorización y registro de pruebas" },
+    { name: "Priorizo", text: "Clasifico cada vulnerabilidad por impacto, probabilidad y contexto de negocio. Primero, lo que más te puede costar.", record: "Informe técnico y resumen ejecutivo" },
+    { name: "Corrijo", text: "Implemento las medidas necesarias con tu equipo, o te entrego la corrección lista para tu stack.", record: "Plan de corrección y cambios aplicados" },
+    { name: "Verifico", text: "Vuelvo a probar las correcciones de los fallos críticos y altos para confirmar que están cerrados y que no abren otro problema.", record: "Retest de críticos y altos durante 6 meses" },
   ],
-  rule: "Ninguna prueba activa empieza sin un plan de pruebas firmado. Las que puedan afectar al servicio se hacen en la ventana horaria que acordemos y, si algo se desvía de lo previsto, paramos y te llamamos.",
+  rule: "Ninguna prueba activa empieza sin un plan de pruebas firmado. Las que puedan afectar al servicio se hacen en la ventana horaria que acordemos y, si algo se desvía de lo previsto, paro y te llamo.",
 };
 
 // ─── Entregables: informe de demostración ────────────────────────────────────
@@ -376,47 +394,34 @@ export const report = {
   ],
 };
 
-// ─── Trayectoria e investigación ─────────────────────────────────────────────
-// Hechos verificados en los blogs originales (docs/design-research.md, ronda 3).
-// Autoría confirmada por el fundador el 2026-10-25: DoubleReboot (Jordi).
+// ─── Estudio destacado (bajo el hero) ────────────────────────────────────────
+// El dato sale del propio estudio (app/investigacion/_content/cabeceras-2026.tsx).
+
+export const studyHighlight = {
+  label: "Estudio propio",
+  title: "Cabeceras de seguridad en 381 webs (2026)",
+  figure: "1 de cada 2",
+  text: "webs de agencias y empresas digitales en España no tiene ninguna de las seis cabeceras de seguridad básicas.",
+  link: { href: "/investigacion/cabeceras-de-seguridad-2026", label: "Leer el estudio" },
+};
+
+// ─── Trayectoria ─────────────────────────────────────────────────────────────
+
+export const trajectoryText = (brandName: string) =>
+  `${brandName} viene de un proyecto personal de divulgación sobre seguridad (2013-2016) y se relanza en 2026 como estudio de seguridad de aplicaciones.`;
 
 export const trajectory = {
   label: "Trayectoria",
-  title: "La curiosidad nos trajo hasta aquí. El rigor define lo que hacemos ahora.",
-  intro:
-    "StateX nació en 2013 con DoubleReboot, el proyecto personal de Jordi sobre seguridad ofensiva. No era una empresa: era curiosidad, herramientas y muchas horas de pruebas. Hoy esa curiosidad trabaja con método, alcance y contrato.",
-  origins: {
-    label: "Proyecto original",
-    period: "2013 – 2016",
-    items: [
-      {
-        name: "DoubleReboot",
-        url: "https://doublereboot.blogspot.com/",
-        years: "2013 y 2016",
-        text: "El proyecto de Jordi: tutoriales y herramientas de seguridad ofensiva, bajo el paraguas de State X.",
-      },
-    ],
-    disclaimer: "Fue un proyecto personal de divulgación, no actividad empresarial.",
-  },
-  research: {
-    label: "Investigación",
-    text: "Notas técnicas, estudios y recursos para desarrolladores, siempre con fecha, autor y metodología.",
-    link: { href: "/investigacion/cabeceras-de-seguridad-2026", label: "Primer estudio: cabeceras de seguridad en 381 webs" },
-  },
-  today: {
-    label: "Hoy",
-    period: "2026",
-    text: "StateX se relanza como consultoría especializada en seguridad de aplicaciones, APIs y exposición externa.",
-  },
+  text: trajectoryText(brand.name),
 };
 
-// ─── Equipo ──────────────────────────────────────────────────────────────────
+// ─── Quién está detrás────────────────────────────────────────────────────────────
 
 export const teamIntro = (brandName: string) =>
-  `${brandName} es un estudio de Barcelona que une seguridad de aplicaciones e ingeniería de software. Quien te propone el alcance es quien hace el trabajo y te presenta los resultados.`;
+  `${brandName} es el estudio de seguridad de aplicaciones de Jordi Sánchez, desarrollador full stack en Barcelona. Trabajo solo, con alcance cerrado y pocos encargos a la vez.`;
 
 export const team = {
-  label: "Quiénes somos",
+  label: "Quién está detrás",
   title: "Seguridad revisada por quien construye software.",
   intro: teamIntro(brand.name),
   // Bios redactadas a partir de sus perfiles de LinkedIn (consultados el 2026-10-25). Sin empleadores
@@ -425,12 +430,15 @@ export const team = {
     {
       name: "Jordi Sánchez",
       role: "Fundador",
-      bio: "Desarrollador full stack desde 2020, con React, Next.js y NestJS. Antes, asesor en seguridad web. Aporta la mirada de quien construye y mantiene las aplicaciones que auditamos." as string | null,
-      duty: "Responsable del desarrollo seguro, la corrección de vulnerabilidades y las soluciones técnicas." as string | null,
-      links: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/jordi-s%C3%A1nchez-carbonell-baa83797/" }],
+      bio: "Soy desarrollador full stack desde 2020, con React, Next.js y NestJS. Antes fui asesor en seguridad web. Audito con la mirada de quien construye y mantiene aplicaciones." as string | null,
+      duty: "Hago las pruebas, escribo el informe y, si lo contratas, aplico la corrección." as string | null,
+      links: [
+        { label: "LinkedIn", url: "https://www.linkedin.com/in/jordi-s%C3%A1nchez-carbonell-baa83797/" },
+        { label: "Web personal", url: "https://www.jordisanchezweb.es/" },
+      ],
     },
   ],
-  experienceLabel: "Experiencia del equipo",
+  experienceLabel: "Experiencia",
   experience: [
     "Seguridad web",
     "React, Next.js y TypeScript",
@@ -447,47 +455,47 @@ export const team = {
 
 export const faq = {
   label: "Preguntas frecuentes",
-  title: "Antes de escribirnos.",
+  title: "Antes de escribirme.",
   items: [
     {
-      q: "¿Es legal que auditéis nuestra aplicación?",
-      a: "Sí, con vuestra autorización. Firmamos el alcance y la autorización por escrito antes de empezar. Sin ese documento no hacemos ninguna prueba activa.",
+      q: "¿Es legal que audites nuestra aplicación?",
+      a: "Sí, con vuestra autorización. El alcance y la autorización se firman por escrito antes de empezar. Sin ese documento no hago ninguna prueba activa.",
     },
     {
       q: "¿Puede afectar a nuestro servicio en producción?",
-      a: "Acordamos qué se prueba, cuándo y con qué intensidad. Si tenéis un entorno de preproducción, mejor. Lo que pueda afectar al servicio se coordina antes con vuestro equipo.",
+      a: "Antes de empezar se acuerda qué se prueba, cuándo y con qué intensidad. Si tenéis un entorno de preproducción, mejor. Lo que pueda afectar al servicio se coordina antes con vuestro equipo.",
     },
     {
       q: "¿En qué se diferencia de un escáner automático?",
-      a: "Un escáner es un punto de partida. Nosotros verificamos a mano cada hallazgo que entra en el informe, descartamos falsos positivos y buscamos lo que un escáner no ve, como los fallos de autorización o de lógica de negocio.",
+      a: "Un escáner es un punto de partida. Yo verifico a mano cada hallazgo que entra en el informe, descarto falsos positivos y busco lo que un escáner no ve, como los fallos de autorización o de lógica de negocio.",
     },
     {
       q: "¿Cómo se contrata y cuánto cuesta?",
-      a: "La evaluación inicial cuesta 290 € + IVA, precio cerrado. Los demás servicios empiezan en 390 € (exposición externa), 690 € (API), 990 € (web) y 790 € (ingeniería segura), sin IVA. El precio final depende del número de aplicaciones, endpoints, roles y dominios. Tras una primera conversación te enviamos en 48 horas laborables una propuesta cerrada, sin sorpresas después. Lo explicamos en detalle en nuestra guía sobre qué incluye una auditoría de seguridad web.",
+      a: "La evaluación inicial cuesta 290 € + IVA, precio cerrado. Los demás servicios empiezan en 390 € (exposición externa), 690 € (API), 990 € (web) y 790 € (ingeniería segura), sin IVA. El precio final depende del número de aplicaciones, endpoints, roles y dominios. Tras una primera conversación te envío en 48 horas laborables una propuesta cerrada, sin sorpresas después. Lo explico en detalle en la guía sobre qué incluye una auditoría de seguridad web.",
     },
     {
-      q: "¿Qué necesitáis de nosotros?",
-      a: "Una persona de contacto técnica, el alcance (dominios, aplicaciones o APIs), cuentas de prueba si hacen falta y la autorización firmada. Nunca te pediremos credenciales por el formulario ni por correo sin cifrar.",
+      q: "¿Qué necesitas de nosotros?",
+      a: "Una persona de contacto técnica, el alcance (dominios, aplicaciones o APIs), cuentas de prueba si hacen falta y la autorización firmada. Nunca te pediré credenciales por el formulario ni por correo sin cifrar.",
     },
     {
-      q: "¿Podéis corregir vosotros lo que encontréis?",
-      a: "Sí, si lo contratas. Aplicamos la corrección en vuestro código, configuración o arquitectura, o la dejamos lista para que la aplique vuestro equipo. Se presupuesta aparte, con el alcance claro desde el principio.",
+      q: "¿Puedes corregir tú lo que encuentres?",
+      a: "Sí, si lo contratas. Aplico la corrección en vuestro código, configuración o arquitectura, o la dejo lista para que la aplique vuestro equipo. Se presupuesta aparte, con el alcance claro desde el principio.",
     },
     {
-      q: "¿Revisáis las correcciones?",
-      a: "Sí. Durante los 6 meses siguientes al informe, comprobamos que los fallos críticos y altos están corregidos y que la corrección no abre otro problema, y te lo entregamos por escrito.",
+      q: "¿Revisas las correcciones?",
+      a: "Sí. Durante los 6 meses siguientes al informe, compruebo que los fallos críticos y altos están corregidos y que la corrección no abre otro problema, y te lo entrego por escrito.",
     },
     {
-      q: "¿Trabajáis con agencias?",
-      a: "Sí. Tenemos un pack de 5 webs por 1.290 € + IVA (240 € cada web adicional), con un informe por web, uno resumen para la agencia y, si lo preferís, con vuestra marca. Para plataformas más complejas, auditoría a medida. Como los activos son del cliente final, la autorización también la firma él.",
+      q: "¿Trabajas con agencias?",
+      a: "Sí. Tengo un pack de 5 webs por 1.290 € + IVA (240 € cada web adicional), con un informe por web, uno resumen para la agencia y, si lo preferís, con vuestra marca. Para plataformas más complejas, auditoría a medida. Como los activos son del cliente final, la autorización también la firma él.",
     },
     {
-      q: "¿Qué pasa si encontráis algo grave durante la auditoría?",
-      a: "Te avisamos el mismo día, sin esperar al informe, para que puedas corregirlo cuanto antes. El protocolo y la persona de contacto se acuerdan antes de empezar.",
+      q: "¿Qué pasa si encuentras algo grave durante la auditoría?",
+      a: "Te aviso el mismo día, sin esperar al informe, para que puedas corregirlo cuanto antes. El protocolo y la persona de contacto se acuerdan antes de empezar.",
     },
     {
-      q: "¿Qué hacéis con la información que encontráis?",
-      a: "La tratamos como confidencial y solo la compartimos con las personas que designéis. Si lo necesitáis, firmamos un acuerdo de confidencialidad antes de empezar.",
+      q: "¿Qué haces con la información que encuentras?",
+      a: "La trato como confidencial y solo la comparto con las personas que designéis. Si lo necesitáis, firmo un acuerdo de confidencialidad antes de empezar.",
     },
   ],
 };
@@ -496,11 +504,11 @@ export const faq = {
 
 export const contact = {
   label: "Contacto",
-  title: "Cuéntanos qué quieres revisar.",
-  intro: "Te responde una persona del equipo, no un sistema automático.",
+  title: "Cuéntame qué quieres revisar.",
+  intro: "Te respondo yo, no un sistema automático.",
   stepsLabel: "Qué pasa después",
   steps: [
-    { name: "Nos escribes", text: "Con lo que quieres proteger y el contexto. Sin datos sensibles." },
+    { name: "Me escribes", text: "Con lo que quieres proteger y el contexto. Sin datos sensibles." },
     { name: "Hablamos", text: "Una primera conversación para entender la aplicación, los plazos y lo que necesitas." },
     { name: "Recibes una propuesta", text: "En 48 horas laborables: alcance, plazo y precio cerrados antes de empezar cualquier trabajo." },
   ],
@@ -528,9 +536,9 @@ export const contactForm = {
   authorization: "Enviar este formulario no autoriza a {marca} a realizar ninguna prueba de seguridad. Cualquier prueba requiere una autorización firmada y un alcance acordado por escrito.",
   submit: "Enviar solicitud",
   sending: "Enviando…",
-  success: "Solicitud recibida. Te responderemos personalmente por email.",
+  success: "Solicitud recibida. Te responderé personalmente por email.",
   invalid: "Revisa los campos marcados.",
-  error: "No hemos podido enviar tu solicitud. Inténtalo de nuevo en unos minutos.",
+  error: "No he podido enviar tu solicitud. Inténtalo de nuevo en unos minutos.",
   notConfigured: "El formulario todavía no está activo y tu solicitud no se ha enviado. Inténtalo más tarde.",
   rateLimited: "Has enviado varias solicitudes seguidas. Espera unos minutos y vuelve a intentarlo.",
 };
@@ -603,6 +611,9 @@ export const company: Record<"legalName" | "taxId" | "address" | "registry" | "e
   registry: null, // Solo si es sociedad: datos del Registro Mercantil
   email: "jordigw@gmail.com", // Correo de contacto y para ejercer derechos de protección de datos (2026-10-31)
 };
+
+// Marcador visible mientras company.email valga null (pie, aviso legal y privacidad).
+export const emailPending = "[PENDIENTE: email en dominio propio]";
 
 export const legalLinks = [
   { href: "/aviso-legal", label: "Aviso legal" },

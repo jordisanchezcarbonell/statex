@@ -100,7 +100,7 @@ export default async function GuidePage({ params }: Props) {
             <div className="lg:col-span-8">
               <h2 id="h-guia-cta" className="m-0 text-[1.35rem] font-semibold">¿Quieres saber cuánto costaría la tuya?</h2>
               <p className={`m-0 mt-3 max-w-[60ch] leading-[1.6] ${muted}`}>
-                Cuéntanos qué aplicación quieres revisar y te enviamos una propuesta cerrada en 48 horas laborables. También puedes ver el detalle de la <Link href="/servicios/auditoria-seguridad-web-api" className={`underline underline-offset-4 hover:text-(--h-ivory) ${focus}`}>auditoría de seguridad web y APIs</Link>.
+                Cuéntame qué aplicación quieres revisar y te envío una propuesta cerrada en 48 horas laborables. También puedes ver el detalle de la <Link href="/servicios/auditoria-seguridad-web-api" className={`underline underline-offset-4 hover:text-(--h-ivory) ${focus}`}>auditoría de seguridad web y APIs</Link>.
               </p>
             </div>
             <div className="lg:col-span-4 lg:justify-self-end">

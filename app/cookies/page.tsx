@@ -7,18 +7,18 @@ export const metadata: Metadata = { title: "Política de cookies" };
 export default function Cookies() {
   return (
     <LegalPage title="Política de cookies" updated="24 de octubre de 2026">
-      <p>Esta web no usa cookies ni tecnologías similares para analítica, publicidad o seguimiento. Por eso no te mostramos ningún aviso de cookies.</p>
+      <p>Esta web no usa cookies ni tecnologías similares para analítica, publicidad o seguimiento. Por eso no te muestro ningún aviso de cookies.</p>
 
-      <h2>Qué no hacemos</h2>
+      <h2>Qué no hago</h2>
       <ul>
-        <li>No usamos herramientas de analítica (como Google Analytics) ni píxeles de redes sociales.</li>
-        <li>No cargamos fuentes, vídeos ni scripts de terceros: las tipografías se sirven desde nuestro propio dominio.</li>
-        <li>No guardamos información en tu navegador para reconocerte en otras visitas.</li>
+        <li>No uso herramientas de analítica (como Google Analytics) ni píxeles de redes sociales.</li>
+        <li>No cargo fuentes, vídeos ni scripts de terceros: las tipografías se sirven desde mi propio dominio.</li>
+        <li>No guardo información en tu navegador para reconocerte en otras visitas.</li>
       </ul>
       <p>La única excepción es la sección interna de diseño (<code>/design-lab</code>): recuerda en tu navegador (almacenamiento local) qué propuestas habías elegido comparar. Ese dato no sale de tu dispositivo, no te identifica y puedes borrarlo desde los ajustes del navegador.</p>
 
       <h2>Si esto cambia</h2>
-      <p>Si algún día añadimos cookies que no sean estrictamente necesarias, actualizaremos esta página y te pediremos el consentimiento antes de instalarlas.</p>
+      <p>Si algún día añado cookies que no sean estrictamente necesarias, actualizaré esta página y te pediré el consentimiento antes de instalarlas.</p>
     </LegalPage>
   );
 }

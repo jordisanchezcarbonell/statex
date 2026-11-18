@@ -25,7 +25,7 @@ export function WebAuditGuide() {
       </Section>
 
       <Section id="g-incluye" title="Qué revisa">
-        <p>El marco de referencia más usado es la guía de pruebas de OWASP (OWASP WSTG) y, para APIs, el OWASP API Security Top 10 (lo explicamos en <Link href="/guias/que-incluye-una-auditoria-de-seguridad-de-apis" className={focus}>la guía de auditoría de APIs</Link>). En la práctica, una auditoría de una web con zona privada revisa como mínimo:</p>
+        <p>El marco de referencia más usado es la guía de pruebas de OWASP (OWASP WSTG) y, para APIs, el OWASP API Security Top 10 (lo explico en <Link href="/guias/que-incluye-una-auditoria-de-seguridad-de-apis" className={focus}>la guía de auditoría de APIs</Link>). En la práctica, una auditoría de una web con zona privada revisa como mínimo:</p>
         <ul>
           <li><strong>Autenticación:</strong> registro, inicio de sesión, recuperación de contraseña, sesiones, doble factor.</li>
           <li><strong>Autorización:</strong> que cada usuario solo vea y modifique lo suyo, y que un rol básico no pueda hacer cosas de administrador.</li>
@@ -55,7 +55,7 @@ export function WebAuditGuide() {
           <li><strong>Sesión de resultados</strong> con tu equipo técnico.</li>
           <li><strong>Retest:</strong> una comprobación posterior de que lo corregido está bien corregido.</li>
         </ol>
-        <p>Pide siempre un <strong>informe de ejemplo</strong> antes de contratar. Puedes ver <a href="/informe-de-ejemplo.html" className={focus}>nuestro informe de ejemplo completo</a>, con datos ficticios, o <a href="/informe-de-ejemplo.pdf" download className={focus}>descargarlo en PDF</a>.</p>
+        <p>Pide siempre un <strong>informe de ejemplo</strong> antes de contratar. Puedes ver <a href="/informe-de-ejemplo.html" className={focus}>mi informe de ejemplo completo</a>, con datos ficticios, o <a href="/informe-de-ejemplo.pdf" download className={focus}>descargarlo en PDF</a>.</p>
       </Section>
 
       <Section id="g-precio" title="De qué depende el precio">
@@ -71,14 +71,14 @@ export function WebAuditGuide() {
           <li><strong>Retest y urgencia:</strong> si el retest está incluido o se cobra aparte, y si hay que hacerlo con plazos muy cortos.</li>
         </ul>
         <h3>Ejemplos orientativos</h3>
-        <p>Para que te hagas una idea, estos son nuestros precios para alcances habituales (sin IVA, octubre de 2026). El precio final siempre se cierra en una propuesta.</p>
+        <p>Para que te hagas una idea, estos son mis precios para alcances habituales (sin IVA, octubre de 2026). El precio final siempre se cierra en una propuesta.</p>
       </Section>
     </div>
 
     <ExampleTable label="Ejemplos de alcance y precio" rows={examples} />
 
     <div className={`mt-4 ${prose}`}>
-      <p>Si eres una agencia con varias webs de clientes, tenemos un pack de 5 webs por 1.290 € (240 € cada web adicional) que revisa la exposición externa y la parte pública de cada una.</p>
+      <p>Si eres una agencia con varias webs de clientes, tengo un pack de 5 webs por 1.290 € (240 € cada web adicional) que revisa la exposición externa y la parte pública de cada una.</p>
 
       <Section id="g-preparar" title="Qué tienes que preparar">
         <ul>
@@ -91,7 +91,7 @@ export function WebAuditGuide() {
       </Section>
 
       <Section id="g-comparar" title="Cómo comparar presupuestos">
-        <p>Antes de elegir solo por precio, haz estas preguntas a cualquier proveedor, también a nosotros:</p>
+        <p>Antes de elegir solo por precio, haz estas preguntas a cualquier proveedor, también a mí:</p>
         <ol>
           <li>¿Qué incluye exactamente el precio? ¿Cuántos roles, pantallas o endpoints?</li>
           <li>¿Las pruebas son manuales o es un escaneo automático con informe?</li>

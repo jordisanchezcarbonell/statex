@@ -3,7 +3,7 @@ import { VisaWordPressArticle } from "../../investigacion/_content/visa-wordpres
 import { visaWordPressArticle as article } from "../../investigacion/_content/research-articles";
 
 export const metadata: Metadata = {
-  title: "Cómo generamos y verificamos un parche de seguridad en WordPress con IA",
+  title: "Cómo generé y verifiqué un parche de seguridad en WordPress con IA",
   description: article.description,
   authors: [{ name: article.author }],
   alternates: { canonical: article.path },

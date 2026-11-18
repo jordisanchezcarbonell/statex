@@ -99,7 +99,7 @@ export default async function StudyPage({ params }: Props) {
             <div className="lg:col-span-8">
               <h2 id="h-estudio-cta" className="m-0 text-[1.35rem] font-semibold">¿Quieres saber cómo están tus webs?</h2>
               <p className={`m-0 mt-3 max-w-[60ch] leading-[1.6] ${muted}`}>
-                Cuéntanos qué quieres revisar y te enviamos una propuesta cerrada en 48 horas laborables. Cualquier revisión empieza con una autorización firmada por el titular de cada web.
+                Cuéntame qué quieres revisar y te envío una propuesta cerrada en 48 horas laborables. Cualquier revisión empieza con una autorización firmada por el titular de cada web.
               </p>
             </div>
             <div className="lg:col-span-4 lg:justify-self-end">

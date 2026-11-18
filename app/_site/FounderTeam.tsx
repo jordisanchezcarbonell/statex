@@ -60,7 +60,7 @@ export function FounderTeam({ data }: { data: typeof team }) {
 
   return (
     <div className={styles.team}>
-      {data.founders.length > 1 && <div className={styles.selector} role="group" aria-label="Conoce al equipo">
+      {data.founders.length > 1 && <div className={styles.selector} role="group" aria-label="Quién está detrás">
         {data.founders.map((person, index) => <button key={person.name} type="button" aria-pressed={selected === index} aria-controls={panelId} onClick={() => setSelected(index)} className={focus}>
           <span className={styles.index}>0{index + 1}</span>{person.name}<span className={styles.selectedMark} aria-hidden="true">↗</span>
         </button>)}

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { brand, company, footer, legalLinks } from "../_site/content";
+import { brand, company, emailPending, footer, legalLinks } from "../_site/content";
 import { inter } from "../_site/font";
 import { Pending, Wordmark, display, focus, muted, tokens, wrap } from "../_site/ui";
 
@@ -9,7 +9,7 @@ import { Pending, Wordmark, display, focus, muted, tokens, wrap } from "../_site
 /** Dato de la empresa o, si aún no existe, su [Pendiente] visible. */
 export function Company({ field, label }: { field: "legalName" | "taxId" | "address" | "registry" | "email"; label: string }) {
   const value = company[field];
-  if (!value) return <Pending>[Pendiente: {label}]</Pending>;
+  if (!value) return <Pending>{field === "email" ? emailPending : `[Pendiente: ${label}]`}</Pending>;
   return field === "email" ? <a href={`mailto:${value}`}>{value}</a> : <>{value}</>;
 }
 

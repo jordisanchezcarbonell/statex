@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { brand, company, footer, guides, legalLinks, nav, services, studies } from "./content";
+import { brand, company, emailPending, footer, guides, legalLinks, nav, services, studies } from "./content";
 import { inter } from "./font";
 import { Header } from "./Header";
 import { BrandMark } from "./identities/BrandMark";
@@ -57,8 +57,10 @@ function Footer({ base, identity, items }: { base: "" | "/"; identity?: Identity
           </ul>
         </nav>
         <div className={`grid content-start gap-3 text-[14px] lg:col-span-3 ${muted}`}>
-          {company.email && (
+          {company.email ? (
             <a href={`mailto:${company.email}`} className={`justify-self-start text-(--h-ivory)/80 hover:text-(--h-ivory) ${focus}`}>{company.email}</a>
+          ) : (
+            <span>{emailPending}</span>
           )}
           {company.legalName && company.taxId && <span>{company.legalName} · {company.taxId}</span>}
           <span>{footer.location}</span>

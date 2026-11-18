@@ -40,7 +40,7 @@ export function PrepareGuide() {
     <>
       <div className={prose}>
         <p className="text-[clamp(1.1rem,1.5vw,1.25rem)] leading-[1.6] text-(--h-ivory)">
-          Una auditoría bien preparada encuentra más y cuesta menos: el tiempo se dedica a probar, no a esperar cuentas o a descubrir qué hay que revisar. Esta guía es la lista que te pediremos nosotros, y que te debería pedir cualquier proveedor serio.
+          Una auditoría bien preparada encuentra más y cuesta menos: el tiempo se dedica a probar, no a esperar cuentas o a descubrir qué hay que revisar. Esta guía es la lista que te pediré yo, y que te debería pedir cualquier proveedor serio.
         </p>
 
         <Section id="g-prep-legal" title="Lo primero: la autorización">
@@ -94,7 +94,7 @@ export function PrepareGuide() {
             <li>Con el informe, planifica las correcciones por prioridad y pide el <strong>retest</strong> cuando estén desplegadas.</li>
             <li>Al terminar, elimina las cuentas de prueba y revoca las credenciales que se crearon para la auditoría.</li>
           </ul>
-          <p>Si quieres saber qué debería incluir la auditoría y cuánto cuesta, lo explicamos en la <Link href="/guias/que-incluye-una-auditoria-de-seguridad-web" className={focus}>guía de auditoría web</Link> y en la de <Link href="/guias/que-incluye-una-auditoria-de-seguridad-de-apis" className={focus}>auditoría de APIs</Link>.</p>
+          <p>Si quieres saber qué debería incluir la auditoría y cuánto cuesta, lo explico en la <Link href="/guias/que-incluye-una-auditoria-de-seguridad-web" className={focus}>guía de auditoría web</Link> y en la de <Link href="/guias/que-incluye-una-auditoria-de-seguridad-de-apis" className={focus}>auditoría de APIs</Link>.</p>
         </Section>
       </div>
     </>

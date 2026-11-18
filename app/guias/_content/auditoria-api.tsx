@@ -91,14 +91,14 @@ export function ApiAuditGuide() {
             <li><strong>Documentación:</strong> con una especificación completa se dedica el tiempo a probar, no a descubrir.</li>
           </ul>
           <h3>Ejemplos orientativos</h3>
-          <p>Nuestros precios para alcances habituales (sin IVA, octubre de 2026). El precio final se cierra siempre en una propuesta.</p>
+          <p>Mis precios para alcances habituales (sin IVA, octubre de 2026). El precio final se cierra siempre en una propuesta.</p>
         </Section>
       </div>
 
       <ExampleTable label="Ejemplos de alcance y precio de auditoría de APIs" rows={examples} />
 
       <div className={`mt-4 ${prose}`}>
-        <p>Si la API sirve a una web con zona privada, normalmente conviene auditarlas juntas: compartimos la preparación y el informe, y sale más barato que por separado. Lo explicamos en la <Link href="/guias/que-incluye-una-auditoria-de-seguridad-web" className={focus}>guía de auditoría web</Link>.</p>
+        <p>Si la API sirve a una web con zona privada, normalmente conviene auditarlas juntas: comparten la preparación y el informe, y sale más barato que por separado. Lo explico en la <Link href="/guias/que-incluye-una-auditoria-de-seguridad-web" className={focus}>guía de auditoría web</Link>.</p>
       </div>
     </>
   );

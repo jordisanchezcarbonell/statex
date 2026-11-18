@@ -8,13 +8,13 @@
  * y la dirección que firma la propuesta.
  *
  * Orden: hero · servicios (qué contratar) · método (cómo) · por qué (diferencia) · entregables (prueba
- * antes de pagar) · equipo (quién) · trayectoria (origen) · preguntas · contacto.
+ * antes de pagar) · quién está detrás · trayectoria (origen) · preguntas · contacto.
  *
  * Elemento memorable: la línea roja. Es el único uso del rojo en toda la página.
  */
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { brand, contact, faq, report, seo, services, servicesSection, site, team, trajectory } from "./content";
+import { brand, contact, faq, report, seo, services, servicesSection, site, studyHighlight, team, trajectory } from "./content";
 import { ContactForm } from "./ContactForm";
 import { evolution } from "./evolution";
 import { Hero } from "./Hero";
@@ -22,7 +22,7 @@ import { FounderTeam } from "./FounderTeam";
 import type { Identity } from "./identities/types";
 import { Method } from "./Method";
 import { Report } from "./Report";
-import { Areas, ServiceExtras } from "./Services";
+import { Areas, Products, ServiceExtras } from "./Services";
 import { JsonLd, Shell } from "./Shell";
 import { SectionHead, caps, display, focus, muted, section, wrap } from "./ui";
 
@@ -83,9 +83,28 @@ export function HomeSections({ identity }: { identity?: Identity }) {
     <>
       <Hero strip={identity ? { lead: `${identity.tagline} · Barcelona`, items: e.hero.claim } : undefined} />
 
+      {/* Estudio propio: el dato principal, enlazado al estudio completo */}
+      <aside aria-labelledby="h-estudio" className="border-b border-(--h-line) bg-(--h-graphite)">
+        <div className={`${wrap} grid gap-6 py-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-12`}>
+          <p className={`m-0 text-[14px] lg:col-span-3 ${muted}`}>{studyHighlight.label}</p>
+          <p className="m-0 flex flex-wrap items-baseline gap-x-5 gap-y-2 lg:col-span-6">
+            <strong className={`${display} text-[clamp(2rem,4.6vw,3.75rem)] tabular-nums`}>{studyHighlight.figure}</strong>
+            <span className="max-w-[44ch] leading-[1.5] text-(--h-ivory)/85">{studyHighlight.text}</span>
+          </p>
+          <div className="lg:col-span-3 lg:justify-self-end">
+            <h2 id="h-estudio" className={`m-0 text-[14px] font-normal ${muted}`}>{studyHighlight.title}</h2>
+            <Link href={studyHighlight.link.href} className={`mt-1 inline-flex min-h-11 items-center border-b border-(--h-ivory)/40 font-medium hover:border-(--h-red) ${focus}`}>
+              {studyHighlight.link.label}
+            </Link>
+          </div>
+        </div>
+      </aside>
+
       <section id="servicios" aria-labelledby="h-servicios" className={section}>
         <div className={wrap}>
           <SectionHead id="h-servicios" label={e.areas.label} title={e.areas.title} intro={e.areas.intro} />
+          <Products data={e.areas} />
+          <h3 className={`m-0 mt-16 text-[14px] font-normal lg:mt-20 ${muted}`}>{e.areas.complementsLabel}</h3>
           <Areas data={e.areas} />
           <p className={`m-0 mt-6 max-w-[70ch] text-[14px] leading-[1.6] ${muted}`}>{e.areas.note}</p>
           <ServiceExtras />
@@ -99,7 +118,7 @@ export function HomeSections({ identity }: { identity?: Identity }) {
         </div>
       </section>
 
-      {/* Por qué elegirnos: la banda grafito, de borde a borde */}
+      {/* Por qué StateX: la banda grafito, de borde a borde */}
       <section id="por-que" aria-labelledby="h-por-que" className={`${section} bg-(--h-graphite)`}>
         <div className={wrap}>
           <SectionHead id="h-por-que" label={e.why.label} title={e.why.title} intro={e.why.intro} />
@@ -129,67 +148,27 @@ export function HomeSections({ identity }: { identity?: Identity }) {
   );
 }
 
-/** Trayectoria e investigación: origen, investigación y hoy, claramente separados. */
+/** Trayectoria: el origen, en una frase. */
 export function TrajectorySection({ data = trajectory }: { data?: typeof trajectory }) {
   return (
-    <section id="trayectoria" aria-labelledby="h-trayectoria" className={`${section} ${rule}`}>
-      <div className={wrap}>
-        <SectionHead id="h-trayectoria" label={data.label} title={data.title} intro={data.intro} />
-        <div className={`mt-16 grid gap-px bg-(--h-line) lg:mt-20 lg:grid-cols-9 ${indent}`}>
-          <div className="bg-(--h-ink) py-8 lg:col-span-5 lg:pr-10">
-            <h3 className="m-0 flex flex-wrap items-baseline justify-between gap-3 text-[14px] font-normal">
-              <span className={muted}>{data.origins.label}</span>
-              <span className={`tabular-nums ${muted}`}>{data.origins.period}</span>
-            </h3>
-            <ul className="m-0 mt-4 list-none p-0">
-              {data.origins.items.map((a) => (
-                <li key={a.name} className={rule}>
-                  <a href={a.url} target="_blank" rel="noopener noreferrer" className={`group block py-6 ${focus}`}>
-                    <span className="flex flex-wrap items-baseline justify-between gap-3">
-                      <span className={`text-[clamp(1.4rem,2.2vw,1.9rem)] tracking-[-0.02em] ${caps} underline decoration-transparent decoration-1 underline-offset-8 transition-colors group-hover:decoration-(--h-red) motion-reduce:transition-none`}>
-                        {a.name}
-                        <span className="sr-only"> (se abre en una pestaña nueva)</span>
-                      </span>
-                      <span className={`text-[14px] tabular-nums ${muted}`}>{a.years}</span>
-                    </span>
-                    <span className={`mt-2 block max-w-[52ch] leading-[1.6] ${muted}`}>{a.text}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <p className={`m-0 mt-2 text-[14px] ${muted}`}>{data.origins.disclaimer}</p>
-          </div>
-          <div className="grid content-start gap-px bg-(--h-line) lg:col-span-4">
-            <div className="bg-(--h-ink) py-8 lg:pl-10">
-              <h3 className={`m-0 text-[14px] font-normal ${muted}`}>{data.research.label}</h3>
-              <p className="m-0 mt-4 max-w-[44ch] leading-[1.6]">{data.research.text}</p>
-              {data.research.link && (
-                <Link href={data.research.link.href} className={`mt-4 inline-flex min-h-11 items-center border-b border-(--h-ivory)/40 hover:border-(--h-red) ${focus}`}>
-                  {data.research.link.label}
-                </Link>
-              )}
-            </div>
-            <div className="relative bg-(--h-ink) py-8 lg:pl-10">
-              <span aria-hidden="true" className="absolute left-0 top-0 h-0.5 w-12 bg-(--h-red) lg:left-10" />
-              <h3 className="m-0 flex items-baseline justify-between gap-3 text-[14px] font-normal">
-                <span className={muted}>{data.today.label}</span>
-                <span className={`tabular-nums ${muted}`}>{data.today.period}</span>
-              </h3>
-              <p className="m-0 mt-4 max-w-[44ch] leading-[1.6]">{data.today.text}</p>
-            </div>
-          </div>
-        </div>
+    <section id="trayectoria" aria-labelledby="h-trayectoria" className={`scroll-mt-20 py-[clamp(3rem,6vw,5rem)] ${rule}`}>
+      <div className={`${wrap} grid gap-6 lg:grid-cols-12 lg:gap-10`}>
+        <h2 id="h-trayectoria" className={`m-0 flex items-center gap-3 text-[14px] font-normal lg:col-span-3 ${muted}`}>
+          <span aria-hidden="true" className="h-px w-8 bg-(--h-titanium)/60" />
+          {data.label}
+        </h2>
+        <p className="m-0 max-w-[54ch] text-[clamp(1.1rem,1.5vw,1.3rem)] leading-[1.55] lg:col-span-9">{data.text}</p>
       </div>
     </section>
   );
 }
 
-/** Equipo: fundadores con bio verificada y experiencia conjunta. */
+/** Quién está detrás: bio verificada y experiencia. */
 export function TeamSection({ data = team, interactive = true }: { data?: typeof team; interactive?: boolean }) {
   return (
-    <section id="equipo" aria-labelledby="h-equipo" className={`${section} ${rule}`}>
+    <section id="quien" aria-labelledby="h-quien" className={`${section} ${rule}`}>
       <div className={wrap}>
-        <SectionHead id="h-equipo" label={data.label} title={data.title} intro={data.intro} />
+        <SectionHead id="h-quien" label={data.label} title={data.title} intro={data.intro} />
         {interactive ? <FounderTeam data={data} /> : <div className={`mt-16 grid gap-12 lg:mt-20 lg:grid-cols-9 lg:gap-10 ${indent}`}>
           <ul className="m-0 grid list-none gap-8 p-0 sm:grid-cols-2 lg:col-span-5">
             {data.founders.map((f) => (

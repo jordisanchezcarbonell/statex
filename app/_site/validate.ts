@@ -40,7 +40,7 @@ export function validateContact({ values: v, consent }: ReturnType<typeof readCo
   if (!v.company) e.company = "Indica tu empresa.";
   if (v.url && !URL_RE.test(v.url)) e.url = "Revisa la dirección web (por ejemplo, ejemplo.com).";
   if (!SERVICES.has(v.service)) e.service = "Elige una opción.";
-  if (v.message.length < 20) e.message = "Cuéntanos un poco más (mínimo 20 caracteres).";
-  if (!consent) e.consent = "Necesitamos tu consentimiento para responderte.";
+  if (v.message.length < 20) e.message = "Cuéntame un poco más (mínimo 20 caracteres).";
+  if (!consent) e.consent = "Necesito tu consentimiento para responderte.";
   return e;
 }

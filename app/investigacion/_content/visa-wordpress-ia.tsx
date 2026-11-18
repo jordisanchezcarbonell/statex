@@ -25,10 +25,10 @@ export function VisaWordPressArticle({ draft = false }: { draft?: boolean }) {
         <div className={wrap}>
           <p className={`m-0 text-sm ${muted}`}>{draft ? "Borrador local · StateX · Proceso de laboratorio" : "Investigación · StateX · Caso de laboratorio"}</p>
           <h1 className={`${display} mt-7 max-w-[18ch] text-[clamp(2.2rem,5.6vw,5rem)]`}>
-            Cómo generamos y verificamos un parche de seguridad en WordPress con IA
+            Cómo generé y verifiqué un parche de seguridad en WordPress con IA
           </h1>
           <p className="mt-8 max-w-[68ch] text-xl leading-relaxed text-(--h-ivory)/85">
-            Probamos una cadena concreta: Visa VVAH y Claude generaron un cambio para un plugin sintético; StateX lo importó con un contrato restringido y lo comprobó en WordPress desechable. El evaluador HTTP independiente aprobó el candidato en este caso conocido.
+            Probé una cadena concreta: Visa VVAH y Claude generaron un cambio para un plugin sintético; StateX lo importó con un contrato restringido y lo comprobó en WordPress desechable. El evaluador HTTP independiente aprobó el candidato en este caso conocido.
           </p>
           <p className={`mt-5 text-sm ${muted}`}>Caso sintético conocido · Un candidato aprobado · Sin detección autónoma demostrada</p>
           <p className={`mt-4 text-sm leading-relaxed ${muted}`}>
@@ -46,8 +46,8 @@ export function VisaWordPressArticle({ draft = false }: { draft?: boolean }) {
 
           <div className={`mt-14 ${prose}`}>
             <section aria-labelledby="objetivo">
-              <h2 id="objetivo" className="scroll-mt-28">Qué queríamos demostrar</h2>
-              <p>Queríamos comprobar si podíamos reutilizar el flujo de delegación, edición y resultados estructurados de Visa Vulnerability Agentic Harness (VVAH), y mantener en StateX los límites de alcance y la decisión final. No intentábamos medir una tasa general de acierto ni encontrar un fallo desconocido.</p>
+              <h2 id="objetivo" className="scroll-mt-28">Qué quería demostrar</h2>
+              <p>Quería comprobar si podía reutilizar el flujo de delegación, edición y resultados estructurados de Visa Vulnerability Agentic Harness (VVAH), y mantener en StateX los límites de alcance y la decisión final. No intentaba medir una tasa general de acierto ni encontrar un fallo desconocido.</p>
             </section>
 
             <section aria-labelledby="fallo">
@@ -58,13 +58,13 @@ export function VisaWordPressArticle({ draft = false }: { draft?: boolean }) {
 
             <section aria-labelledby="intentos">
               <h2 id="intentos" className="scroll-mt-28">Los intentos locales también cuentan</h2>
-              <p>Antes de la ejecución aprobada hubo respuestas locales sin el formato esperado y una propuesta sin cambios, que las pruebas HTTP rechazaron. Visa con un backend local tampoco completó la delegación al fixer. Después, una primera llamada API quedó bloqueada por saldo; una segunda reveló que nuestro validador rechazaba un campo legítimo de caller en el replay de herramientas.</p>
-              <p>Reproducimos ese rechazo sin nuevas llamadas, contrastamos el campo con los tipos del SDK y añadimos soporte estricto para el caller directo. Las pruebas offline comprobaron el replay válido y rechazaron estructuras incorrectas. No rebajamos los controles restantes.</p>
+              <p>Antes de la ejecución aprobada hubo respuestas locales sin el formato esperado y una propuesta sin cambios, que las pruebas HTTP rechazaron. Visa con un backend local tampoco completó la delegación al fixer. Después, una primera llamada API quedó bloqueada por saldo; una segunda reveló que mi validador rechazaba un campo legítimo de caller en el replay de herramientas.</p>
+              <p>Reproduje ese rechazo sin nuevas llamadas, contrasté el campo con los tipos del SDK y añadí soporte estricto para el caller directo. Las pruebas offline comprobaron el replay válido y rechazaron estructuras incorrectas. No rebajé los controles restantes.</p>
             </section>
 
             <section aria-labelledby="reuso">
-              <h2 id="reuso" className="scroll-mt-28">Qué reutilizamos y qué conserva StateX</h2>
-              <p>Reutilizamos VVAH 1.5.1, su flujo S10 de padre y fixer, sus herramientas de lectura y edición y sus respuestas estructuradas. Claude Sonnet 4.6 de Anthropic fue el modelo de esta ejecución.</p>
+              <h2 id="reuso" className="scroll-mt-28">Qué reutilicé y qué conserva StateX</h2>
+              <p>Reutilicé VVAH 1.5.1, su flujo S10 de padre y fixer, sus herramientas de lectura y edición y sus respuestas estructuradas. Claude Sonnet 4.6 de Anthropic fue el modelo de esta ejecución.</p>
               <p>StateX mantuvo el worker aislado en una copia desechable, el presupuesto compartido, el contrato que limita archivo y baseline, el adaptador de importación y el evaluador HTTP protegido. El worker no recibió las pruebas protegidas ni la solución de referencia. Se detuvo antes de importar el candidato.</p>
             </section>
 
@@ -73,7 +73,7 @@ export function VisaWordPressArticle({ draft = false }: { draft?: boolean }) {
               <p>Visa delegó el arreglo a su fixer. Claude cambió la comprobación de sesión por una comprobación de capacidad administrativa:</p>
               <pre className="overflow-x-auto rounded border border-(--h-line) bg-(--h-graphite) p-5 text-sm"><code>{`-    if (!is_user_logged_in()) {
     if (!current_user_can('manage_options')) {`}</code></pre>
-              <p>El diff completo se conserva en los materiales técnicos. No editamos manualmente la salida antes de evaluarla.</p>
+              <p>El diff completo se conserva en los materiales técnicos. No edité manualmente la salida antes de evaluarla.</p>
             </section>
 
             <section aria-labelledby="pruebas">
@@ -91,7 +91,7 @@ export function VisaWordPressArticle({ draft = false }: { draft?: boolean }) {
             <section aria-labelledby="resultado">
               <h2 id="resultado" className="scroll-mt-28">Qué demuestra y qué no</h2>
               <p>Demuestra que en este plugin mínimo y con un fallo conocido, Visa VVAH y Claude produjeron un candidato que pasó el contrato y las pruebas HTTP independientes de StateX. Se aprobó un candidato en un solo caso sintético.</p>
-              <p>No demuestra detección autónoma, fiabilidad general, ausencia de otros fallos ni seguridad completa de una web. Tampoco medimos ahorro de mantenimiento ni retiramos los componentes propios. El cierre histórico del backend local mantiene una incidencia de apagado pendiente, separada del cierre limpio de este piloto API.</p>
+              <p>No demuestra detección autónoma, fiabilidad general, ausencia de otros fallos ni seguridad completa de una web. Tampoco medí ahorro de mantenimiento ni retiré los componentes propios. El cierre histórico del backend local mantiene una incidencia de apagado pendiente, separada del cierre limpio de este piloto API.</p>
             </section>
 
             <details id="detalles-tecnicos" className="my-12 scroll-mt-28 border-y border-(--h-line) py-6">

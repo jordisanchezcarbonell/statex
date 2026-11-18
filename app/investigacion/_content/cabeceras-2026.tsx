@@ -33,7 +33,7 @@ export function HeadersStudy() {
     <>
       <div className={prose}>
         <p className="text-[clamp(1.1rem,1.5vw,1.25rem)] leading-[1.6] text-(--h-ivory)">
-          Hemos revisado las cabeceras de seguridad de 381 webs de agencias y empresas digitales en España. El HTTPS ya es la norma. Casi todo lo demás, no: <strong>una de cada dos webs no tiene ninguna</strong> de las seis cabeceras básicas que analizamos.
+          He revisado las cabeceras de seguridad de 381 webs de agencias y empresas digitales en España. El HTTPS ya es la norma. Casi todo lo demás, no: <strong>una de cada dos webs no tiene ninguna</strong> de las seis cabeceras básicas que he analizado.
         </p>
 
         <Section id="g-est-resumen" title="En 30 segundos">
@@ -134,10 +134,10 @@ export function HeadersStudy() {
         <Section id="g-est-metodo" title="Metodología y limitaciones">
           <ul>
             <li><strong>Muestra:</strong> 453 entradas de OpenStreetMap en España con web propia y etiqueta de agencia de publicidad, marketing o diseño gráfico (&ldquo;agencias&rdquo;) o de empresa IT (&ldquo;IT&rdquo;), consultadas el 31 de octubre de 2026. Sin duplicados ni redes sociales quedan 437 dominios. Se excluyen 56: sin DNS (19), sin respuesta (25), <code>robots.txt</code> que prohíbe todo acceso (11) e IP privada (1). Quedan 381 webs.</li>
-            <li><strong>Qué hicimos:</strong> por cada web, una visita a la página de inicio por HTTPS y otra por HTTP, y la lectura de <code>robots.txt</code> y <code>security.txt</code>. Es lo mismo que ve cualquier navegador. No enviamos formularios, no probamos rutas, no escaneamos puertos ni intentamos acceder a nada.</li>
+            <li><strong>Qué hice:</strong> por cada web, una visita a la página de inicio por HTTPS y otra por HTTP, y la lectura de <code>robots.txt</code> y <code>security.txt</code>. Es lo mismo que ve cualquier navegador. No envié formularios, no probé rutas, no escaneé puertos ni intenté acceder a nada.</li>
             <li><strong>Qué no mide:</strong> solo la página de inicio y solo señales públicas. No dice si una web es vulnerable: una web sin estas cabeceras puede estar bien mantenida, y una con todas puede tener fallos graves en su código.</li>
             <li><strong>Limitaciones:</strong> la muestra es la que hay en OpenStreetMap, no un censo ni una muestra aleatoria, y está sesgada hacia empresas con presencia física registrada en el mapa. Las cifras son orientativas.</li>
-            <li><strong>Privacidad:</strong> no recogemos datos personales ni publicamos resultados por web. No nombramos a ninguna empresa.</li>
+            <li><strong>Privacidad:</strong> no recojo datos personales ni publico resultados por web. No nombro a ninguna empresa.</li>
           </ul>
           <p className="text-[14px]">Datos de la muestra: © colaboradores de OpenStreetMap, disponibles bajo licencia ODbL.</p>
         </Section>

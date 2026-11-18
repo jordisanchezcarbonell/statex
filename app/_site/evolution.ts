@@ -2,7 +2,7 @@
 // /preview/noxen y /preview/vantis cambian solo los textos que nombran la marca. Todo lo demás vive en
 // app/_site/content.ts, que es la única fuente del copy.
 
-import { areas, brand, hero, method, nav, team, teamIntro, trajectory, why, whyIntro } from "./content";
+import { areas, brand, hero, method, nav, team, teamIntro, trajectory, trajectoryText, why, whyLabel } from "./content";
 
 export function evolution(brandName: string = brand.name) {
   return {
@@ -10,17 +10,9 @@ export function evolution(brandName: string = brand.name) {
     hero,
     areas,
     method,
-    why: { ...why, intro: whyIntro(brandName) },
+    why: { ...why, label: whyLabel(brandName) },
     team: { ...team, intro: teamIntro(brandName) },
-    // StateX conserva su historia tal cual; con otro nombre, el origen se cuenta como antecedente.
-    trajectory:
-      brandName === brand.name
-        ? trajectory
-        : {
-            ...trajectory,
-            intro: `Todo empezó en 2013 con DoubleReboot, el proyecto personal de Jordi sobre seguridad ofensiva. No era una empresa: era curiosidad, herramientas y muchas horas de pruebas. Hoy esa curiosidad trabaja con método, alcance y contrato, y se llama ${brandName}.`,
-            today: { ...trajectory.today, text: `${brandName} nace como consultoría especializada en seguridad de aplicaciones, APIs, exposición externa y desarrollo seguro.` },
-          },
+    trajectory: { ...trajectory, text: trajectoryText(brandName) },
   };
 }
 
