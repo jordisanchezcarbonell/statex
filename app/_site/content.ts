@@ -363,7 +363,7 @@ export const report = {
     edition: "Versión 1.0 · Confidencial",
     summaryLabel: "Resumen ejecutivo",
     summary:
-      "La aplicación protege bien el acceso, pero dos fallos de autorización permiten a un usuario consultar o modificar datos de otras cuentas. Recomendamos corregirlos antes del próximo lanzamiento.",
+      "La aplicación protege bien el acceso, pero dos fallos de autorización permiten a un usuario consultar o modificar datos de otras cuentas. Recomiendo corregirlos antes del próximo lanzamiento.",
     findingsLabel: "Inventario de hallazgos",
     detailLabel: "Detalle del hallazgo",
     evidenceLabel: "Evidencia",

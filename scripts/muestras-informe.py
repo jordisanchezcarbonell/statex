@@ -36,7 +36,7 @@ R = {
  "[25/10/2026]": "20/10/2026",
  "[Iniciales]": "AS · JS",
  "[2–3 frases sin jerga: qué podría pasar, a quién afectaría (clientes, datos, ingresos) y con qué probabilidad.]":
-   "Un usuario registrado como cliente podría descargar facturas con datos fiscales de otras empresas y darse permisos de administrador en su equipo. Es fácil de explotar y afectaría a la confianza de todos los clientes; por eso recomendamos corregirlo antes del próximo lanzamiento.",
+   "Un usuario registrado como cliente podría descargar facturas con datos fiscales de otras empresas y darse permisos de administrador en su equipo. Es fácil de explotar y afectaría a la confianza de todos los clientes; por eso recomiendo corregirlo antes del próximo lanzamiento.",
  "[Controles que funcionan correctamente: no todo el informe son problemas.]":
    "El inicio de sesión, la gestión de sesiones y el cifrado en tránsito están bien resueltos. No se han encontrado inyecciones ni secretos expuestos en el código del navegador.",
  "[Firmada por Nombre, cargo, titular de los sistemas, el DD/MM/AAAA. Referencia: AUT-AAAA-NN.]": "Firmada por la dirección técnica de Ejemplo SaaS, titular de los sistemas, el 10/10/2026. Referencia: AUT-2026-00 (ejemplo).",
