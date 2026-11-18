@@ -8,9 +8,9 @@
 export const site = {
   // Dominio definitivo pendiente: mientras tanto, la URL de previsualización.
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://statex-two.vercel.app").replace(/\/$/, ""),
-  // Indexación desactivada hasta el lanzamiento (dominio propio y aprobación expresa).
-  // En Vercel solo cuenta en producción: los despliegues de preview nunca son indexables.
-  indexable: process.env.SITE_INDEXABLE === "true" && (!process.env.VERCEL_ENV || process.env.VERCEL_ENV === "production"),
+  // Indexación activada (2026-11-18). En Vercel solo cuenta en producción: los despliegues de
+  // preview nunca son indexables.
+  indexable: !process.env.VERCEL_ENV || process.env.VERCEL_ENV === "production",
   locale: "es_ES",
 };
 

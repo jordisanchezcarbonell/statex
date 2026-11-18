@@ -47,7 +47,7 @@ Proyecto de la web de StateX, startup de ciberseguridad. **Dirección elegida: C
 - Tailwind CSS 4 (`@tailwindcss/postcss`), Motion (`motion/react`) y lucide-react. Sin librerías de componentes UI.
 - Fuentes con `next/font/google` (auto-hospedadas en build, sin peticiones a terceros en runtime).
 - Node 22 (`.nvmrc`). Arranque: `nvm use && npm run dev` → http://localhost:3000
-- SEO: `robots.ts`, `sitemap.ts`, `opengraph-image.tsx`, JSON-LD. Indexación desactivada hasta `SITE_INDEXABLE=true`; dominio por `NEXT_PUBLIC_SITE_URL` (ambas se leen en build).
+- SEO: `robots.ts`, `sitemap.ts`, `opengraph-image.tsx`, JSON-LD. Indexación activa en producción (los previews de Vercel quedan en `noindex`); dominio por `NEXT_PUBLIC_SITE_URL` (se lee en build).
 - Cabeceras de seguridad en `next.config.ts`.
 
 ## Estructura

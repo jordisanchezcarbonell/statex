@@ -17,7 +17,6 @@ Actualizado: 2026-10-26.
 | Alta como autónomo del titular antes de la primera factura, y revisar las cláusulas de exclusividad o no competencia de los contratos laborales actuales (sobre todo si el empleador presta servicios de seguridad) | Fuera de la web | Riesgo laboral y fiscal |
 | Garantías de transferencia internacional de Resend (o elegir un proveedor de envío en la UE) | `app/privacidad/page.tsx` | [Por confirmar] visible en privacidad |
 | Dominio definitivo | `NEXT_PUBLIC_SITE_URL` | Canonicals, sitemap y Open Graph apuntan a statex-two.vercel.app |
-| Activar indexación | `SITE_INDEXABLE=true` (solo con aprobación expresa) | `noindex` global y `robots.txt` con `Disallow: /` |
 
 ## Marca (2026-10-26)
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: { default: seo.title, template: `%s · ${brand.name}` },
   description: seo.description,
   applicationName: brand.name,
-  // Sin indexar hasta el lanzamiento (SITE_INDEXABLE=true lo activa; ver docs/pendientes.md).
+  // Indexable en producción; los despliegues de preview quedan en noindex (ver site.indexable).
   robots: site.indexable ? { index: true, follow: true } : { index: false, follow: false },
   twitter: { card: "summary_large_image" },
   formatDetection: { telephone: false, email: false, address: false },
